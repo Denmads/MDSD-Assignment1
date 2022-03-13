@@ -59,14 +59,6 @@ public class Transition {
 		return operation != Operation.NONE;
 	}
 
-	public Operation getOperation() {
-		return operation;
-	}
-
-	public String getOperationVariableName() {
-		return operationVariable;
-	}
-
 	public void doOperation(RuntimeContext runtimeState) {
 		switch (operation) {
 			case SET -> runtimeState.setVar(operationVariable, operationValue);
@@ -79,14 +71,6 @@ public class Transition {
 		return condition != Condition.NONE;
 	}
 
-	public Condition getCondition() {
-		return condition;
-	}
-
-	public String getConditionVariableName() {
-		return conditionVariable;
-	}
-
 	public boolean isConditionFulfilled(RuntimeContext runtimeState) {
 		return switch (condition) {
 			case EQ -> runtimeState.getVar(conditionVariable) == conditionValue;
@@ -96,4 +80,19 @@ public class Transition {
 		};
 	}
 
+
+	//For test cases
+
+	public Operation getOperation() {
+		return operation;
+	}
+	public String getOperationVariableName() {
+		return operationVariable;
+	}
+	public Condition getCondition() {
+		return condition;
+	}
+	public String getConditionVariableName() {
+		return conditionVariable;
+	}
 }
