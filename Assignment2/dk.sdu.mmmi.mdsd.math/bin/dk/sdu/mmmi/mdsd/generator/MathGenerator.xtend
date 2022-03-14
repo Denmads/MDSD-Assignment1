@@ -84,50 +84,11 @@ class MathGenerator extends AbstractGenerator {
 	
 	def static List<String> requiredGlobalVars(Statement stmt, List<String> allGlobals) {
 		val vars = newArrayList()
-		val refs = stmt.getReqVars(newHashSet())
+		val refs = stmt.eAllContents.filter(VariableRef).map[value.name].toSet
 		for (String v : refs) {
 			if (allGlobals.contains(v)) {
 				vars.add(v)
 			}
-		}
-		return vars
-	}
-	
-	def static Set<String> getReqVars(EObject obj, Set<String> vars) {
-		switch (obj) {
-			Statement: {
-				obj.exp.getReqVars(vars)
-			}
-			Plus: {
-				obj.left.getReqVars(vars)
-				obj.right.getReqVars(vars)
-			}
-			Minus: {
-				obj.left.getReqVars(vars)
-				obj.right.getReqVars(vars)
-			}
-			Mult: {
-				obj.left.getReqVars(vars)
-				obj.right.getReqVars(vars)
-			}
-			Div: {
-				obj.left.getReqVars(vars)
-				obj.right.getReqVars(vars)
-			}
-			LocalVariable: {
-				obj.valExp.getReqVars(vars)
-				obj.exp.getReqVars(vars)
-			}
-			Atomic: {
-				obj.getReqVars(vars)
-			}
-		}
-		return vars
-	}
-	
-	def static Set<String> getReqVars(Atomic obj, Set<String> vars) {
-		if (obj instanceof VariableRef) {
-			vars.add(obj.value.name)
 		}
 		return vars
 	}

@@ -23,13 +23,13 @@ import java.util.Set;
 import java.util.function.BiConsumer;
 import javax.swing.JOptionPane;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 
 /**
@@ -102,69 +102,15 @@ public class MathGenerator extends AbstractGenerator {
   
   public static List<String> requiredGlobalVars(final Statement stmt, final List<String> allGlobals) {
     final ArrayList<String> vars = CollectionLiterals.<String>newArrayList();
-    final Set<String> refs = MathGenerator.getReqVars(stmt, CollectionLiterals.<String>newHashSet());
+    final Function1<VariableRef, String> _function = (VariableRef it) -> {
+      return it.getValue().getName();
+    };
+    final Set<String> refs = IteratorExtensions.<String>toSet(IteratorExtensions.<VariableRef, String>map(Iterators.<VariableRef>filter(stmt.eAllContents(), VariableRef.class), _function));
     for (final String v : refs) {
       boolean _contains = allGlobals.contains(v);
       if (_contains) {
         vars.add(v);
       }
-    }
-    return vars;
-  }
-  
-  public static Set<String> getReqVars(final EObject obj, final Set<String> vars) {
-    boolean _matched = false;
-    if (obj instanceof Statement) {
-      _matched=true;
-      MathGenerator.getReqVars(((Statement)obj).getExp(), vars);
-    }
-    if (!_matched) {
-      if (obj instanceof Plus) {
-        _matched=true;
-        MathGenerator.getReqVars(((Plus)obj).getLeft(), vars);
-        MathGenerator.getReqVars(((Plus)obj).getRight(), vars);
-      }
-    }
-    if (!_matched) {
-      if (obj instanceof Minus) {
-        _matched=true;
-        MathGenerator.getReqVars(((Minus)obj).getLeft(), vars);
-        MathGenerator.getReqVars(((Minus)obj).getRight(), vars);
-      }
-    }
-    if (!_matched) {
-      if (obj instanceof Mult) {
-        _matched=true;
-        MathGenerator.getReqVars(((Mult)obj).getLeft(), vars);
-        MathGenerator.getReqVars(((Mult)obj).getRight(), vars);
-      }
-    }
-    if (!_matched) {
-      if (obj instanceof Div) {
-        _matched=true;
-        MathGenerator.getReqVars(((Div)obj).getLeft(), vars);
-        MathGenerator.getReqVars(((Div)obj).getRight(), vars);
-      }
-    }
-    if (!_matched) {
-      if (obj instanceof LocalVariable) {
-        _matched=true;
-        MathGenerator.getReqVars(((LocalVariable)obj).getValExp(), vars);
-        MathGenerator.getReqVars(((LocalVariable)obj).getExp(), vars);
-      }
-    }
-    if (!_matched) {
-      if (obj instanceof Atomic) {
-        _matched=true;
-        MathGenerator.getReqVars(((Atomic)obj), vars);
-      }
-    }
-    return vars;
-  }
-  
-  public static Set<String> getReqVars(final Atomic obj, final Set<String> vars) {
-    if ((obj instanceof VariableRef)) {
-      vars.add(((VariableRef)obj).getValue().getName());
     }
     return vars;
   }
