@@ -5,8 +5,6 @@ package dk.sdu.mmmi.mdsd.validation;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterators;
-import dk.sdu.mmmi.mdsd.math.Expression;
-import dk.sdu.mmmi.mdsd.math.LocalVariable;
 import dk.sdu.mmmi.mdsd.math.MathPackage;
 import dk.sdu.mmmi.mdsd.math.MathScript;
 import dk.sdu.mmmi.mdsd.math.Statement;
@@ -45,14 +43,5 @@ public class MathValidator extends AbstractMathValidator {
         MathValidator.DUPLICATE_VAR);
       return;
     }
-    this.checkExpression(stmt.getExp(), globalVars);
-  }
-  
-  public Object checkExpression(final Expression exp, final List<String> availableVars) {
-    return null;
-  }
-  
-  public Object checkLetScope(final LocalVariable local, final List<String> availableVars) {
-    return null;
   }
 }

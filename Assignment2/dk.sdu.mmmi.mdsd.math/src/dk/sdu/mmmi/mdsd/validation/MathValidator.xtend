@@ -42,16 +42,6 @@ class MathValidator extends AbstractMathValidator {
 			)
 			return
 		}
-		
-		stmt.exp.checkExpression(globalVars)
-	}
-	
-	def checkExpression(Expression exp, List<String> availableVars) {
-		
-	}
-	
-	def checkLetScope(LocalVariable local, List<String> availableVars) {
-		
 	}
 	
 }

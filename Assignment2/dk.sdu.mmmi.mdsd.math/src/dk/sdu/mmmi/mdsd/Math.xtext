@@ -7,7 +7,7 @@ MathScript:
 ;
 
 Statement:
-	'var' name=ID '=' exp=Expression 'end'?
+	'var' name=ID '=' exp=Expression
 ;
 
 Expression:
