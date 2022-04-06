@@ -39,7 +39,6 @@ class MathGenerator extends AbstractGenerator {
 			val math = mathIter.next
 			val result = math.compute
 		
-			// You can replace with hovering, see Bettini Chapter 8
 			result.displayPanel	
 		}
 	}
