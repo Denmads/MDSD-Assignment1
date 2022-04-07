@@ -24,6 +24,9 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
+/**
+ * Generates all statements for one var function
+ */
 @SuppressWarnings("all")
 public class ExpressionGenerator {
   private static Map<String, Stack<Expression>> localVars = new HashMap<String, Stack<Expression>>();

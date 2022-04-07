@@ -18,6 +18,9 @@ import java.util.Set
 import java.util.HashSet
 import org.eclipse.emf.ecore.EObject
 
+/*
+ * Generates all statements for one var function
+ */
 class ExpressionGenerator {
 	
 	static Map<String, Stack<Expression>> localVars = new HashMap();
@@ -37,8 +40,10 @@ class ExpressionGenerator {
 	
 	static def String generateStatements(Expression exp) {
 		reset();
+		//Scans the expression for let statements, this allwos us to give the a name, which they can be referenced by in other expressions
 		exp.scanForLetBindings
 		
+		//Generates the variable declarations and the body for each let statement in the correct order
 		var lets = ""
 		while (letStatements.size > 0) {
 			lets += letStatements.pop().generateLetCode
