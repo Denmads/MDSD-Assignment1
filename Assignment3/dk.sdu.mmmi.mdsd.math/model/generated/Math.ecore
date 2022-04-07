@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="math" nsURI="http://www.sdu.dk/mmmi/mdsd/Math" nsPrefix="math">
-  <eClassifiers xsi:type="ecore:EClass" name="MathExp">
+  <eClassifiers xsi:type="ecore:EClass" name="MathProgram">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalFunctions" upperBound="-1"
+        eType="#//ExternalDeclaration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//VarBinding" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//ParameterType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterType"/>
   <eClassifiers xsi:type="ecore:EClass" name="VarBinding" eSuperTypes="#//Binding">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
         containment="true"/>
@@ -22,6 +31,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="VariableUse" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Binding"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalCall" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//ExternalDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="#//ParameterType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Plus" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
         containment="true"/>
@@ -48,5 +63,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MathNumber" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parenthesis" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

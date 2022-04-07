@@ -4,12 +4,12 @@
 package dk.sdu.mmmi.mdsd.scoping
 
 import dk.sdu.mmmi.mdsd.math.LetBinding
-import dk.sdu.mmmi.mdsd.math.MathExp
 import dk.sdu.mmmi.mdsd.math.VariableUse
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
+import dk.sdu.mmmi.mdsd.math.MathProgram
 
 /**
  * This class contains custom scoping description.
@@ -40,7 +40,7 @@ class MathScopeProvider extends AbstractMathScopeProvider {
 				else
 					Scopes.scopeFor(#[container], container.scopeForVarUse)
 			}
-			MathExp: Scopes.scopeFor(container.variables.filter[it != context])
+			MathProgram: Scopes.scopeFor(container.variables.filter[it != context])
 			default: container.scopeForVarUse
 		}
 	}

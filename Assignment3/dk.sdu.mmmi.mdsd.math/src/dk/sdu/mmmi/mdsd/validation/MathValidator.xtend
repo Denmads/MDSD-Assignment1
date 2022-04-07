@@ -3,10 +3,11 @@
  */
 package dk.sdu.mmmi.mdsd.validation
 
-import dk.sdu.mmmi.mdsd.math.MathExp
 import dk.sdu.mmmi.mdsd.math.MathPackage
 import dk.sdu.mmmi.mdsd.math.VarBinding
 import org.eclipse.xtext.validation.Check
+import dk.sdu.mmmi.mdsd.math.MathProgram
+import dk.sdu.mmmi.mdsd.math.ExternalCall
 
 /**
  * This class contains custom validation rules. 
@@ -16,12 +17,17 @@ import org.eclipse.xtext.validation.Check
 class MathValidator extends AbstractMathValidator {
 	
 	public static final String VAR_UNIQUE = 'var_unique'
+	public static final String ARG_CORRECT = "arg_correct"
 	
 	@Check
 	def void uniqueGlobalVariableDefinition(VarBinding binding){
-		if((binding.eContainer as MathExp).variables.filter[name == binding.name].size > 1)
+		if((binding.eContainer as MathProgram).variables.filter[name == binding.name].size > 1)
 			error("Duplicate global variable", MathPackage.eINSTANCE.binding_Name, VAR_UNIQUE)
 	}
 
-	
+	@Check
+	def void correctNumberOfArguments(ExternalCall call) {
+		if (call.method.parameters.size != call.arguments.size)
+			error("Wrong number of arguments", MathPackage.eINSTANCE.externalCall_Method, ARG_CORRECT)
+	}
 }
