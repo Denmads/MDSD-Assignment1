@@ -12,6 +12,7 @@ ExternalDeclaration:
 	'external' name=ID '(' (parameters+=ParameterType (',' parameters+=ParameterType)*)? ')'
 ;
 
+//Could be inlined, but made as seperate to to allow for extension to other types
 ParameterType:
 	{IntType} 'int'
 ;
