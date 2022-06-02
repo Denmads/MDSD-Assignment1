@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -37,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class StreamImpl extends DeclarationImpl implements Stream
 {
   /**
-   * The cached value of the '{@link #getStartNodes() <em>Start Nodes</em>}' containment reference list.
+   * The cached value of the '{@link #getStartNodes() <em>Start Nodes</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStartNodes()
@@ -87,7 +88,7 @@ public class StreamImpl extends DeclarationImpl implements Stream
   {
     if (startNodes == null)
     {
-      startNodes = new EObjectContainmentEList<NodeOrInput>(NodeOrInput.class, this, X21Package.STREAM__START_NODES);
+      startNodes = new EObjectResolvingEList<NodeOrInput>(NodeOrInput.class, this, X21Package.STREAM__START_NODES);
     }
     return startNodes;
   }
@@ -117,8 +118,6 @@ public class StreamImpl extends DeclarationImpl implements Stream
   {
     switch (featureID)
     {
-      case X21Package.STREAM__START_NODES:
-        return ((InternalEList<?>)getStartNodes()).basicRemove(otherEnd, msgs);
       case X21Package.STREAM__POINTS:
         return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
     }

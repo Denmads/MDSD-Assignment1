@@ -319,11 +319,11 @@ public class X21Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case X21Package.ANONYMOUS_LAMBDA:
+      case X21Package.ANONYMOUS_ELEMENT:
       {
-        AnonymousLambda anonymousLambda = (AnonymousLambda)theEObject;
-        T result = caseAnonymousLambda(anonymousLambda);
-        if (result == null) result = caseElement(anonymousLambda);
+        AnonymousElement anonymousElement = (AnonymousElement)theEObject;
+        T result = caseAnonymousElement(anonymousElement);
+        if (result == null) result = caseElement(anonymousElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -928,17 +928,17 @@ public class X21Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Anonymous Lambda</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Anonymous Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Anonymous Lambda</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Anonymous Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAnonymousLambda(AnonymousLambda object)
+  public T caseAnonymousElement(AnonymousElement object)
   {
     return null;
   }

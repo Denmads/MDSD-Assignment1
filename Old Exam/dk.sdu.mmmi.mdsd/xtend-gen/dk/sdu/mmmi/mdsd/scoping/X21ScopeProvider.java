@@ -3,6 +3,25 @@
  */
 package dk.sdu.mmmi.mdsd.scoping;
 
+import com.google.common.base.Objects;
+import dk.sdu.mmmi.mdsd.x21.CustomType;
+import dk.sdu.mmmi.mdsd.x21.DataAccess;
+import dk.sdu.mmmi.mdsd.x21.DataRef;
+import dk.sdu.mmmi.mdsd.x21.Lambda;
+import dk.sdu.mmmi.mdsd.x21.LetStatement;
+import dk.sdu.mmmi.mdsd.x21.NameAndType;
+import dk.sdu.mmmi.mdsd.x21.NewStatement;
+import dk.sdu.mmmi.mdsd.x21.Parameter;
+import dk.sdu.mmmi.mdsd.x21.Primary;
+import dk.sdu.mmmi.mdsd.x21.Type;
+import dk.sdu.mmmi.mdsd.x21.X21Package;
+import java.util.Arrays;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+
 /**
  * This class contains custom scoping description.
  * 
@@ -11,4 +30,69 @@ package dk.sdu.mmmi.mdsd.scoping;
  */
 @SuppressWarnings("all")
 public class X21ScopeProvider extends AbstractX21ScopeProvider {
+  @Override
+  public IScope getScope(final EObject context, final EReference reference) {
+    EReference _dataAccess_VarRefs = X21Package.eINSTANCE.getDataAccess_VarRefs();
+    boolean _equals = Objects.equal(reference, _dataAccess_VarRefs);
+    if (_equals) {
+      DataAccess dataAccess = ((DataAccess) context);
+      return this.scopeFor(dataAccess, reference);
+    } else {
+      EReference _varAssignment_Variable = X21Package.eINSTANCE.getVarAssignment_Variable();
+      boolean _equals_1 = Objects.equal(reference, _varAssignment_Variable);
+      if (_equals_1) {
+        EObject _eContainer = context.eContainer();
+        NewStatement stmt = ((NewStatement) _eContainer);
+        return this.scopeFor(stmt, reference);
+      } else {
+        return super.getScope(context, reference);
+      }
+    }
+  }
+  
+  protected IScope _scopeFor(final DataAccess context, final EReference reference) {
+    DataRef ref = context.getRef();
+    boolean _matched = false;
+    if (ref instanceof Parameter) {
+      _matched=true;
+    }
+    if (!_matched) {
+      if (ref instanceof Lambda) {
+        _matched=true;
+      }
+    }
+    if (_matched) {
+      InputOutput.<Type>println(((NameAndType)ref).getType());
+      Type _type = ((NameAndType)ref).getType();
+      if ((_type instanceof CustomType)) {
+        Type _type_1 = ((NameAndType)ref).getType();
+        CustomType type = ((CustomType) _type_1);
+        return Scopes.scopeFor(type.getDeclaration().getVariables());
+      } else {
+        return super.getScope(context, reference);
+      }
+    }
+    if (!_matched) {
+      if (ref instanceof LetStatement) {
+        _matched=true;
+        return super.getScope(context, reference);
+      }
+    }
+    return super.getScope(context, reference);
+  }
+  
+  protected IScope _scopeFor(final NewStatement context, final EReference reference) {
+    return Scopes.scopeFor(context.getType().getVariables());
+  }
+  
+  public IScope scopeFor(final Primary context, final EReference reference) {
+    if (context instanceof DataAccess) {
+      return _scopeFor((DataAccess)context, reference);
+    } else if (context instanceof NewStatement) {
+      return _scopeFor((NewStatement)context, reference);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(context, reference).toString());
+    }
+  }
 }

@@ -6,42 +6,42 @@ package dk.sdu.mmmi.mdsd.x21;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Anonymous Lambda</b></em>'.
+ * A representation of the model object '<em><b>Anonymous Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.x21.AnonymousLambda#getBody <em>Body</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.x21.AnonymousElement#getBody <em>Body</em>}</li>
  * </ul>
  *
- * @see dk.sdu.mmmi.mdsd.x21.X21Package#getAnonymousLambda()
+ * @see dk.sdu.mmmi.mdsd.x21.X21Package#getAnonymousElement()
  * @model
  * @generated
  */
-public interface AnonymousLambda extends Element
+public interface AnonymousElement extends Element
 {
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference.
-   * @see #setBody(Lambda)
-   * @see dk.sdu.mmmi.mdsd.x21.X21Package#getAnonymousLambda_Body()
+   * @see #setBody(FunctionOrLambda)
+   * @see dk.sdu.mmmi.mdsd.x21.X21Package#getAnonymousElement_Body()
    * @model containment="true"
    * @generated
    */
-  Lambda getBody();
+  FunctionOrLambda getBody();
 
   /**
-   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.x21.AnonymousLambda#getBody <em>Body</em>}' containment reference.
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.x21.AnonymousElement#getBody <em>Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Body</em>' containment reference.
    * @see #getBody()
    * @generated
    */
-  void setBody(Lambda value);
+  void setBody(FunctionOrLambda value);
 
-} // AnonymousLambda
+} // AnonymousElement

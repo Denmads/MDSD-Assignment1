@@ -552,42 +552,6 @@ ruleNode returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleNodeOrInput
-entryRuleNodeOrInput returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNodeOrInputRule()); }
-	iv_ruleNodeOrInput=ruleNodeOrInput
-	{ $current=$iv_ruleNodeOrInput.current; }
-	EOF;
-
-// Rule NodeOrInput
-ruleNodeOrInput returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getNodeOrInputAccess().getNodeParserRuleCall_0());
-		}
-		this_Node_0=ruleNode
-		{
-			$current = $this_Node_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getNodeOrInputAccess().getInputParserRuleCall_1());
-		}
-		this_Input_1=ruleInput
-		{
-			$current = $this_Input_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
 // Entry rule entryRuleStream
 entryRuleStream returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getStreamRule()); }
@@ -611,19 +575,13 @@ ruleStream returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStreamAccess().getStartNodesNodeOrInputParserRuleCall_1_0());
-				}
-				lv_startNodes_1_0=ruleNodeOrInput
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getStreamRule());
+						$current = createModelElement(grammarAccess.getStreamRule());
 					}
-					add(
-						$current,
-						"startNodes",
-						lv_startNodes_1_0,
-						"dk.sdu.mmmi.mdsd.X21.NodeOrInput");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getStreamAccess().getStartNodesNodeOrInputCrossReference_1_0());
 				}
 			)
 		)
@@ -635,19 +593,13 @@ ruleStream returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getStreamAccess().getStartNodesNodeOrInputParserRuleCall_2_1_0());
-					}
-					lv_startNodes_3_0=ruleNodeOrInput
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getStreamRule());
+							$current = createModelElement(grammarAccess.getStreamRule());
 						}
-						add(
-							$current,
-							"startNodes",
-							lv_startNodes_3_0,
-							"dk.sdu.mmmi.mdsd.X21.NodeOrInput");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_3=RULE_ID
+					{
+						newLeafNode(otherlv_3, grammarAccess.getStreamAccess().getStartNodesNodeOrInputCrossReference_2_1_0());
 					}
 				)
 			)
@@ -770,19 +722,13 @@ ruleElement returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElementAccess().getRefNodeParserRuleCall_0_1_0());
-					}
-					lv_ref_1_0=ruleNode
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getElementRule());
+							$current = createModelElement(grammarAccess.getElementRule());
 						}
-						set(
-							$current,
-							"ref",
-							lv_ref_1_0,
-							"dk.sdu.mmmi.mdsd.X21.Node");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_1=RULE_ID
+					{
+						newLeafNode(otherlv_1, grammarAccess.getElementAccess().getRefNodeCrossReference_0_1_0());
 					}
 				)
 			)
@@ -792,16 +738,16 @@ ruleElement returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getElementAccess().getAnonymousLambdaAction_1_0(),
+						grammarAccess.getElementAccess().getAnonymousElementAction_1_0(),
 						$current);
 				}
 			)
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getElementAccess().getBodyLambdaParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getElementAccess().getBodyFunctionOrLambdaParserRuleCall_1_1_0());
 					}
-					lv_body_3_0=ruleLambda
+					lv_body_3_0=ruleFunctionOrLambda
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getElementRule());
@@ -810,7 +756,7 @@ ruleElement returns [EObject current=null]
 							$current,
 							"body",
 							lv_body_3_0,
-							"dk.sdu.mmmi.mdsd.X21.Lambda");
+							"dk.sdu.mmmi.mdsd.X21.FunctionOrLambda");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1065,7 +1011,7 @@ ruleType returns [EObject current=null]
 					}
 					otherlv_5=RULE_ID
 					{
-						newLeafNode(otherlv_5, grammarAccess.getTypeAccess().getRefDataDeclCrossReference_2_1_0());
+						newLeafNode(otherlv_5, grammarAccess.getTypeAccess().getDeclarationDataDeclCrossReference_2_1_0());
 					}
 				)
 			)
@@ -1753,19 +1699,13 @@ ruleNewStatement returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNewStatementAccess().getTypeDataDeclParserRuleCall_1_0());
-				}
-				lv_type_1_0=ruleDataDecl
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNewStatementRule());
+						$current = createModelElement(grammarAccess.getNewStatementRule());
 					}
-					set(
-						$current,
-						"type",
-						lv_type_1_0,
-						"dk.sdu.mmmi.mdsd.X21.DataDecl");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getNewStatementAccess().getTypeDataDeclCrossReference_1_0());
 				}
 			)
 		)

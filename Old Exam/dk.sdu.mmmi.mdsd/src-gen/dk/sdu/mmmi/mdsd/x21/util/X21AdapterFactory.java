@@ -221,9 +221,9 @@ public class X21AdapterFactory extends AdapterFactoryImpl
         return createNodeRefAdapter();
       }
       @Override
-      public Adapter caseAnonymousLambda(AnonymousLambda object)
+      public Adapter caseAnonymousElement(AnonymousElement object)
       {
-        return createAnonymousLambdaAdapter();
+        return createAnonymousElementAdapter();
       }
       @Override
       public Adapter caseOutput(Output object)
@@ -758,16 +758,16 @@ public class X21AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.x21.AnonymousLambda <em>Anonymous Lambda</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.x21.AnonymousElement <em>Anonymous Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.x21.AnonymousLambda
+   * @see dk.sdu.mmmi.mdsd.x21.AnonymousElement
    * @generated
    */
-  public Adapter createAnonymousLambdaAdapter()
+  public Adapter createAnonymousElementAdapter()
   {
     return null;
   }

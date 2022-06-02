@@ -341,44 +341,52 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStreamKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cStartNodesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStartNodesNodeOrInputParserRuleCall_1_0 = (RuleCall)cStartNodesAssignment_1.eContents().get(0);
+		private final CrossReference cStartNodesNodeOrInputCrossReference_1_0 = (CrossReference)cStartNodesAssignment_1.eContents().get(0);
+		private final RuleCall cStartNodesNodeOrInputIDTerminalRuleCall_1_0_1 = (RuleCall)cStartNodesNodeOrInputCrossReference_1_0.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cStartNodesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cStartNodesNodeOrInputParserRuleCall_2_1_0 = (RuleCall)cStartNodesAssignment_2_1.eContents().get(0);
+		private final CrossReference cStartNodesNodeOrInputCrossReference_2_1_0 = (CrossReference)cStartNodesAssignment_2_1.eContents().get(0);
+		private final RuleCall cStartNodesNodeOrInputIDTerminalRuleCall_2_1_0_1 = (RuleCall)cStartNodesNodeOrInputCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cToKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cPointsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cPointsElementListParserRuleCall_3_1_0 = (RuleCall)cPointsAssignment_3_1.eContents().get(0);
 		
 		//Stream:
-		//    'stream' startNodes+=NodeOrInput (',' startNodes+=NodeOrInput)* ('to' points+=ElementList)+
+		//    'stream' startNodes+=[NodeOrInput] (',' startNodes+=[NodeOrInput])* ('to' points+=ElementList)+
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'stream' startNodes+=NodeOrInput (',' startNodes+=NodeOrInput)* ('to' points+=ElementList)+
+		//'stream' startNodes+=[NodeOrInput] (',' startNodes+=[NodeOrInput])* ('to' points+=ElementList)+
 		public Group getGroup() { return cGroup; }
 		
 		//'stream'
 		public Keyword getStreamKeyword_0() { return cStreamKeyword_0; }
 		
-		//startNodes+=NodeOrInput
+		//startNodes+=[NodeOrInput]
 		public Assignment getStartNodesAssignment_1() { return cStartNodesAssignment_1; }
 		
-		//NodeOrInput
-		public RuleCall getStartNodesNodeOrInputParserRuleCall_1_0() { return cStartNodesNodeOrInputParserRuleCall_1_0; }
+		//[NodeOrInput]
+		public CrossReference getStartNodesNodeOrInputCrossReference_1_0() { return cStartNodesNodeOrInputCrossReference_1_0; }
 		
-		//(',' startNodes+=NodeOrInput)*
+		//ID
+		public RuleCall getStartNodesNodeOrInputIDTerminalRuleCall_1_0_1() { return cStartNodesNodeOrInputIDTerminalRuleCall_1_0_1; }
+		
+		//(',' startNodes+=[NodeOrInput])*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//','
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
-		//startNodes+=NodeOrInput
+		//startNodes+=[NodeOrInput]
 		public Assignment getStartNodesAssignment_2_1() { return cStartNodesAssignment_2_1; }
 		
-		//NodeOrInput
-		public RuleCall getStartNodesNodeOrInputParserRuleCall_2_1_0() { return cStartNodesNodeOrInputParserRuleCall_2_1_0; }
+		//[NodeOrInput]
+		public CrossReference getStartNodesNodeOrInputCrossReference_2_1_0() { return cStartNodesNodeOrInputCrossReference_2_1_0; }
+		
+		//ID
+		public RuleCall getStartNodesNodeOrInputIDTerminalRuleCall_2_1_0_1() { return cStartNodesNodeOrInputIDTerminalRuleCall_2_1_0_1; }
 		
 		//('to' points+=ElementList)+
 		public Group getGroup_3() { return cGroup_3; }
@@ -434,11 +442,12 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cNodeRefAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Assignment cRefAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cRefNodeParserRuleCall_0_1_0 = (RuleCall)cRefAssignment_0_1.eContents().get(0);
+		private final CrossReference cRefNodeCrossReference_0_1_0 = (CrossReference)cRefAssignment_0_1.eContents().get(0);
+		private final RuleCall cRefNodeIDTerminalRuleCall_0_1_0_1 = (RuleCall)cRefNodeCrossReference_0_1_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cAnonymousLambdaAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cAnonymousElementAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cBodyAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cBodyLambdaParserRuleCall_1_1_0 = (RuleCall)cBodyAssignment_1_1.eContents().get(0);
+		private final RuleCall cBodyFunctionOrLambdaParserRuleCall_1_1_0 = (RuleCall)cBodyAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Action cOutputAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Keyword cOutputKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
@@ -446,36 +455,39 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cNameIDTerminalRuleCall_2_2_0 = (RuleCall)cNameAssignment_2_2.eContents().get(0);
 		
 		//Element:
-		//    {NodeRef} ref=Node | {AnonymousLambda} body=Lambda | {Output} 'output' name=ID
+		//    {NodeRef} ref=[Node] | {AnonymousElement} body=FunctionOrLambda | {Output} 'output' name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{NodeRef} ref=Node | {AnonymousLambda} body=Lambda | {Output} 'output' name=ID
+		//{NodeRef} ref=[Node] | {AnonymousElement} body=FunctionOrLambda | {Output} 'output' name=ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{NodeRef} ref=Node
+		//{NodeRef} ref=[Node]
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{NodeRef}
 		public Action getNodeRefAction_0_0() { return cNodeRefAction_0_0; }
 		
-		//ref=Node
+		//ref=[Node]
 		public Assignment getRefAssignment_0_1() { return cRefAssignment_0_1; }
 		
-		//Node
-		public RuleCall getRefNodeParserRuleCall_0_1_0() { return cRefNodeParserRuleCall_0_1_0; }
+		//[Node]
+		public CrossReference getRefNodeCrossReference_0_1_0() { return cRefNodeCrossReference_0_1_0; }
 		
-		//{AnonymousLambda} body=Lambda
+		//ID
+		public RuleCall getRefNodeIDTerminalRuleCall_0_1_0_1() { return cRefNodeIDTerminalRuleCall_0_1_0_1; }
+		
+		//{AnonymousElement} body=FunctionOrLambda
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{AnonymousLambda}
-		public Action getAnonymousLambdaAction_1_0() { return cAnonymousLambdaAction_1_0; }
+		//{AnonymousElement}
+		public Action getAnonymousElementAction_1_0() { return cAnonymousElementAction_1_0; }
 		
-		//body=Lambda
+		//body=FunctionOrLambda
 		public Assignment getBodyAssignment_1_1() { return cBodyAssignment_1_1; }
 		
-		//Lambda
-		public RuleCall getBodyLambdaParserRuleCall_1_1_0() { return cBodyLambdaParserRuleCall_1_1_0; }
+		//FunctionOrLambda
+		public RuleCall getBodyFunctionOrLambdaParserRuleCall_1_1_0() { return cBodyFunctionOrLambdaParserRuleCall_1_1_0; }
 		
 		//{Output} 'output' name=ID
 		public Group getGroup_2() { return cGroup_2; }
@@ -591,16 +603,16 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cStringKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Action cCustomTypeAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Assignment cRefAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cRefDataDeclCrossReference_2_1_0 = (CrossReference)cRefAssignment_2_1.eContents().get(0);
-		private final RuleCall cRefDataDeclIDTerminalRuleCall_2_1_0_1 = (RuleCall)cRefDataDeclCrossReference_2_1_0.eContents().get(1);
+		private final Assignment cDeclarationAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cDeclarationDataDeclCrossReference_2_1_0 = (CrossReference)cDeclarationAssignment_2_1.eContents().get(0);
+		private final RuleCall cDeclarationDataDeclIDTerminalRuleCall_2_1_0_1 = (RuleCall)cDeclarationDataDeclCrossReference_2_1_0.eContents().get(1);
 		
 		//Type:
-		//    {IntType} 'int' | {StringType} 'string' | {CustomType} ref=[DataDecl]
+		//    {IntType} 'int' | {StringType} 'string' | {CustomType} declaration=[DataDecl]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IntType} 'int' | {StringType} 'string' | {CustomType} ref=[DataDecl]
+		//{IntType} 'int' | {StringType} 'string' | {CustomType} declaration=[DataDecl]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{IntType} 'int'
@@ -621,20 +633,20 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'string'
 		public Keyword getStringKeyword_1_1() { return cStringKeyword_1_1; }
 		
-		//{CustomType} ref=[DataDecl]
+		//{CustomType} declaration=[DataDecl]
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//{CustomType}
 		public Action getCustomTypeAction_2_0() { return cCustomTypeAction_2_0; }
 		
-		//ref=[DataDecl]
-		public Assignment getRefAssignment_2_1() { return cRefAssignment_2_1; }
+		//declaration=[DataDecl]
+		public Assignment getDeclarationAssignment_2_1() { return cDeclarationAssignment_2_1; }
 		
 		//[DataDecl]
-		public CrossReference getRefDataDeclCrossReference_2_1_0() { return cRefDataDeclCrossReference_2_1_0; }
+		public CrossReference getDeclarationDataDeclCrossReference_2_1_0() { return cDeclarationDataDeclCrossReference_2_1_0; }
 		
 		//ID
-		public RuleCall getRefDataDeclIDTerminalRuleCall_2_1_0_1() { return cRefDataDeclIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getDeclarationDataDeclIDTerminalRuleCall_2_1_0_1() { return cDeclarationDataDeclIDTerminalRuleCall_2_1_0_1; }
 	}
 	public class LogicExpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.X21.LogicExp");
@@ -1115,7 +1127,8 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cNewKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypeDataDeclParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final CrossReference cTypeDataDeclCrossReference_1_0 = (CrossReference)cTypeAssignment_1.eContents().get(0);
+		private final RuleCall cTypeDataDeclIDTerminalRuleCall_1_0_1 = (RuleCall)cTypeDataDeclCrossReference_1_0.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cVariablesAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cVariablesVarAssignmentParserRuleCall_3_0 = (RuleCall)cVariablesAssignment_3.eContents().get(0);
@@ -1126,21 +1139,24 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//NewStatement:
-		//    'new' type=DataDecl '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
+		//    'new' type=[DataDecl] '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'new' type=DataDecl '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
+		//'new' type=[DataDecl] '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
 		public Group getGroup() { return cGroup; }
 		
 		//'new'
 		public Keyword getNewKeyword_0() { return cNewKeyword_0; }
 		
-		//type=DataDecl
+		//type=[DataDecl]
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
-		//DataDecl
-		public RuleCall getTypeDataDeclParserRuleCall_1_0() { return cTypeDataDeclParserRuleCall_1_0; }
+		//[DataDecl]
+		public CrossReference getTypeDataDeclCrossReference_1_0() { return cTypeDataDeclCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getTypeDataDeclIDTerminalRuleCall_1_0_1() { return cTypeDataDeclIDTerminalRuleCall_1_0_1; }
 		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
@@ -1408,7 +1424,7 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Stream:
-	//    'stream' startNodes+=NodeOrInput (',' startNodes+=NodeOrInput)* ('to' points+=ElementList)+
+	//    'stream' startNodes+=[NodeOrInput] (',' startNodes+=[NodeOrInput])* ('to' points+=ElementList)+
 	//;
 	public StreamElements getStreamAccess() {
 		return pStream;
@@ -1430,7 +1446,7 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Element:
-	//    {NodeRef} ref=Node | {AnonymousLambda} body=Lambda | {Output} 'output' name=ID
+	//    {NodeRef} ref=[Node] | {AnonymousElement} body=FunctionOrLambda | {Output} 'output' name=ID
 	//;
 	public ElementElements getElementAccess() {
 		return pElement;
@@ -1463,7 +1479,7 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Type:
-	//    {IntType} 'int' | {StringType} 'string' | {CustomType} ref=[DataDecl]
+	//    {IntType} 'int' | {StringType} 'string' | {CustomType} declaration=[DataDecl]
 	//;
 	public TypeElements getTypeAccess() {
 		return pType;
@@ -1579,7 +1595,7 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//NewStatement:
-	//    'new' type=DataDecl '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
+	//    'new' type=[DataDecl] '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
 	//;
 	public NewStatementElements getNewStatementAccess() {
 		return pNewStatement;

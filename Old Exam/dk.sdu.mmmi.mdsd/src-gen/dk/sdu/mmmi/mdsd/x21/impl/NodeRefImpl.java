@@ -8,7 +8,6 @@ import dk.sdu.mmmi.mdsd.x21.NodeRef;
 import dk.sdu.mmmi.mdsd.x21.X21Package;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -31,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class NodeRefImpl extends ElementImpl implements NodeRef
 {
   /**
-   * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference.
+   * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRef()
@@ -69,6 +68,16 @@ public class NodeRefImpl extends ElementImpl implements NodeRef
   @Override
   public Node getRef()
   {
+    if (ref != null && ref.eIsProxy())
+    {
+      InternalEObject oldRef = (InternalEObject)ref;
+      ref = (Node)eResolveProxy(oldRef);
+      if (ref != oldRef)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, X21Package.NODE_REF__REF, oldRef, ref));
+      }
+    }
     return ref;
   }
 
@@ -77,16 +86,9 @@ public class NodeRefImpl extends ElementImpl implements NodeRef
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRef(Node newRef, NotificationChain msgs)
+  public Node basicGetRef()
   {
-    Node oldRef = ref;
-    ref = newRef;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, X21Package.NODE_REF__REF, oldRef, newRef);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return ref;
   }
 
   /**
@@ -97,34 +99,10 @@ public class NodeRefImpl extends ElementImpl implements NodeRef
   @Override
   public void setRef(Node newRef)
   {
-    if (newRef != ref)
-    {
-      NotificationChain msgs = null;
-      if (ref != null)
-        msgs = ((InternalEObject)ref).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - X21Package.NODE_REF__REF, null, msgs);
-      if (newRef != null)
-        msgs = ((InternalEObject)newRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - X21Package.NODE_REF__REF, null, msgs);
-      msgs = basicSetRef(newRef, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.NODE_REF__REF, newRef, newRef));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case X21Package.NODE_REF__REF:
-        return basicSetRef(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    Node oldRef = ref;
+    ref = newRef;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.NODE_REF__REF, oldRef, ref));
   }
 
   /**
@@ -138,7 +116,8 @@ public class NodeRefImpl extends ElementImpl implements NodeRef
     switch (featureID)
     {
       case X21Package.NODE_REF__REF:
-        return getRef();
+        if (resolve) return getRef();
+        return basicGetRef();
     }
     return super.eGet(featureID, resolve, coreType);
   }

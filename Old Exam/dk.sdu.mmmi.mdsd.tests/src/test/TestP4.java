@@ -1,4 +1,4 @@
-package tests;
+package test;
 
 import p4.P4Main;
 

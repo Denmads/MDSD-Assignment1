@@ -13,7 +13,7 @@ package dk.sdu.mmmi.mdsd.x21;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.x21.CustomType#getRef <em>Ref</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.x21.CustomType#getDeclaration <em>Declaration</em>}</li>
  * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.x21.X21Package#getCustomType()
@@ -23,25 +23,25 @@ package dk.sdu.mmmi.mdsd.x21;
 public interface CustomType extends Type
 {
   /**
-   * Returns the value of the '<em><b>Ref</b></em>' reference.
+   * Returns the value of the '<em><b>Declaration</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ref</em>' reference.
-   * @see #setRef(DataDecl)
-   * @see dk.sdu.mmmi.mdsd.x21.X21Package#getCustomType_Ref()
+   * @return the value of the '<em>Declaration</em>' reference.
+   * @see #setDeclaration(DataDecl)
+   * @see dk.sdu.mmmi.mdsd.x21.X21Package#getCustomType_Declaration()
    * @model
    * @generated
    */
-  DataDecl getRef();
+  DataDecl getDeclaration();
 
   /**
-   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.x21.CustomType#getRef <em>Ref</em>}' reference.
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.x21.CustomType#getDeclaration <em>Declaration</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ref</em>' reference.
-   * @see #getRef()
+   * @param value the new value of the '<em>Declaration</em>' reference.
+   * @see #getDeclaration()
    * @generated
    */
-  void setRef(DataDecl value);
+  void setDeclaration(DataDecl value);
 
 } // CustomType

@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.x21.impl.CustomTypeImpl#getRef <em>Ref</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.x21.impl.CustomTypeImpl#getDeclaration <em>Declaration</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,14 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class CustomTypeImpl extends TypeImpl implements CustomType
 {
   /**
-   * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
+   * The cached value of the '{@link #getDeclaration() <em>Declaration</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRef()
+   * @see #getDeclaration()
    * @generated
    * @ordered
    */
-  protected DataDecl ref;
+  protected DataDecl declaration;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,19 +66,19 @@ public class CustomTypeImpl extends TypeImpl implements CustomType
    * @generated
    */
   @Override
-  public DataDecl getRef()
+  public DataDecl getDeclaration()
   {
-    if (ref != null && ref.eIsProxy())
+    if (declaration != null && declaration.eIsProxy())
     {
-      InternalEObject oldRef = (InternalEObject)ref;
-      ref = (DataDecl)eResolveProxy(oldRef);
-      if (ref != oldRef)
+      InternalEObject oldDeclaration = (InternalEObject)declaration;
+      declaration = (DataDecl)eResolveProxy(oldDeclaration);
+      if (declaration != oldDeclaration)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, X21Package.CUSTOM_TYPE__REF, oldRef, ref));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, X21Package.CUSTOM_TYPE__DECLARATION, oldDeclaration, declaration));
       }
     }
-    return ref;
+    return declaration;
   }
 
   /**
@@ -86,9 +86,9 @@ public class CustomTypeImpl extends TypeImpl implements CustomType
    * <!-- end-user-doc -->
    * @generated
    */
-  public DataDecl basicGetRef()
+  public DataDecl basicGetDeclaration()
   {
-    return ref;
+    return declaration;
   }
 
   /**
@@ -97,12 +97,12 @@ public class CustomTypeImpl extends TypeImpl implements CustomType
    * @generated
    */
   @Override
-  public void setRef(DataDecl newRef)
+  public void setDeclaration(DataDecl newDeclaration)
   {
-    DataDecl oldRef = ref;
-    ref = newRef;
+    DataDecl oldDeclaration = declaration;
+    declaration = newDeclaration;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.CUSTOM_TYPE__REF, oldRef, ref));
+      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.CUSTOM_TYPE__DECLARATION, oldDeclaration, declaration));
   }
 
   /**
@@ -115,9 +115,9 @@ public class CustomTypeImpl extends TypeImpl implements CustomType
   {
     switch (featureID)
     {
-      case X21Package.CUSTOM_TYPE__REF:
-        if (resolve) return getRef();
-        return basicGetRef();
+      case X21Package.CUSTOM_TYPE__DECLARATION:
+        if (resolve) return getDeclaration();
+        return basicGetDeclaration();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,8 +132,8 @@ public class CustomTypeImpl extends TypeImpl implements CustomType
   {
     switch (featureID)
     {
-      case X21Package.CUSTOM_TYPE__REF:
-        setRef((DataDecl)newValue);
+      case X21Package.CUSTOM_TYPE__DECLARATION:
+        setDeclaration((DataDecl)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -149,8 +149,8 @@ public class CustomTypeImpl extends TypeImpl implements CustomType
   {
     switch (featureID)
     {
-      case X21Package.CUSTOM_TYPE__REF:
-        setRef((DataDecl)null);
+      case X21Package.CUSTOM_TYPE__DECLARATION:
+        setDeclaration((DataDecl)null);
         return;
     }
     super.eUnset(featureID);
@@ -166,8 +166,8 @@ public class CustomTypeImpl extends TypeImpl implements CustomType
   {
     switch (featureID)
     {
-      case X21Package.CUSTOM_TYPE__REF:
-        return ref != null;
+      case X21Package.CUSTOM_TYPE__DECLARATION:
+        return declaration != null;
     }
     return super.eIsSet(featureID);
   }

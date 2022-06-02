@@ -23,22 +23,22 @@ package dk.sdu.mmmi.mdsd.x21;
 public interface NodeRef extends Element
 {
   /**
-   * Returns the value of the '<em><b>Ref</b></em>' containment reference.
+   * Returns the value of the '<em><b>Ref</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ref</em>' containment reference.
+   * @return the value of the '<em>Ref</em>' reference.
    * @see #setRef(Node)
    * @see dk.sdu.mmmi.mdsd.x21.X21Package#getNodeRef_Ref()
-   * @model containment="true"
+   * @model
    * @generated
    */
   Node getRef();
 
   /**
-   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.x21.NodeRef#getRef <em>Ref</em>}' containment reference.
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.x21.NodeRef#getRef <em>Ref</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ref</em>' containment reference.
+   * @param value the new value of the '<em>Ref</em>' reference.
    * @see #getRef()
    * @generated
    */

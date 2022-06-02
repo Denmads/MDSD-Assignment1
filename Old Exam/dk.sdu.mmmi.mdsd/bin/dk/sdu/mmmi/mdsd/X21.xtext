@@ -43,7 +43,7 @@ NodeOrInput:
 ;
 
 Stream:
-	'stream' startNodes+=NodeOrInput (',' startNodes+=NodeOrInput)* ('to' points+=ElementList)+
+	'stream' startNodes+=[NodeOrInput] (',' startNodes+=[NodeOrInput])* ('to' points+=ElementList)+
 ;
 
 ElementList:
@@ -51,7 +51,7 @@ ElementList:
 ;
 
 Element:
-	{NodeRef} ref=Node | {AnonymousLambda} body=Lambda | {Output} 'output' name=ID
+	{NodeRef} ref=[Node] | {AnonymousElement} body=FunctionOrLambda | {Output} 'output' name=ID
 ;
 
 DataDecl:
@@ -63,7 +63,7 @@ DataVariable:
 ;
 
 Type:
-	{IntType} 'int' | {StringType} 'string' | {CustomType} ref=[DataDecl]
+	{IntType} 'int' | {StringType} 'string' | {CustomType} declaration=[DataDecl]
 ;
 
 LogicExp:
@@ -90,7 +90,7 @@ Primary:
 
 LetStatement:
 	'let' name=ID '=' value=Exp 'in' body=Exp 'end'
-;
+;	
 
 DataAccess:
 	ref=[DataRef] ('.' varRefs+=[DataVariable])*
@@ -109,7 +109,7 @@ IfStatement:
 ;
 
 NewStatement:
-	'new' type=DataDecl '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
+	'new' type=[DataDecl] '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
 ;
 
 VarAssignment:

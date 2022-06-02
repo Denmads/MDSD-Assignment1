@@ -30,7 +30,7 @@
     </genClasses>
     <genClasses ecoreClass="X21.ecore#//NodeOrInput"/>
     <genClasses ecoreClass="X21.ecore#//Stream">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//Stream/startNodes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference X21.ecore#//Stream/startNodes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//Stream/points"/>
     </genClasses>
     <genClasses ecoreClass="X21.ecore#//ElementList">
@@ -67,7 +67,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//IfStatement/falseExp"/>
     </genClasses>
     <genClasses ecoreClass="X21.ecore#//NewStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//NewStatement/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference X21.ecore#//NewStatement/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//NewStatement/variables"/>
     </genClasses>
     <genClasses ecoreClass="X21.ecore#//VarAssignment">
@@ -78,10 +78,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference X21.ecore#//FunctionReference/ref"/>
     </genClasses>
     <genClasses ecoreClass="X21.ecore#//NodeRef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//NodeRef/ref"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference X21.ecore#//NodeRef/ref"/>
     </genClasses>
-    <genClasses ecoreClass="X21.ecore#//AnonymousLambda">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//AnonymousLambda/body"/>
+    <genClasses ecoreClass="X21.ecore#//AnonymousElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//AnonymousElement/body"/>
     </genClasses>
     <genClasses ecoreClass="X21.ecore#//Output">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute X21.ecore#//Output/name"/>
@@ -89,7 +89,7 @@
     <genClasses ecoreClass="X21.ecore#//IntType"/>
     <genClasses ecoreClass="X21.ecore#//StringType"/>
     <genClasses ecoreClass="X21.ecore#//CustomType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference X21.ecore#//CustomType/ref"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference X21.ecore#//CustomType/declaration"/>
     </genClasses>
     <genClasses ecoreClass="X21.ecore#//Equals">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//Equals/left"/>

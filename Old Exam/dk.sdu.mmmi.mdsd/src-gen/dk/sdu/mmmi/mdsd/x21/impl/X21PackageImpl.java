@@ -3,7 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.x21.impl;
 
-import dk.sdu.mmmi.mdsd.x21.AnonymousLambda;
+import dk.sdu.mmmi.mdsd.x21.AnonymousElement;
 import dk.sdu.mmmi.mdsd.x21.CustomType;
 import dk.sdu.mmmi.mdsd.x21.DataAccess;
 import dk.sdu.mmmi.mdsd.x21.DataDecl;
@@ -273,7 +273,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass anonymousLambdaEClass = null;
+  private EClass anonymousElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1087,9 +1087,9 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
    * @generated
    */
   @Override
-  public EClass getAnonymousLambda()
+  public EClass getAnonymousElement()
   {
-    return anonymousLambdaEClass;
+    return anonymousElementEClass;
   }
 
   /**
@@ -1098,9 +1098,9 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
    * @generated
    */
   @Override
-  public EReference getAnonymousLambda_Body()
+  public EReference getAnonymousElement_Body()
   {
-    return (EReference)anonymousLambdaEClass.getEStructuralFeatures().get(0);
+    return (EReference)anonymousElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1164,7 +1164,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
    * @generated
    */
   @Override
-  public EReference getCustomType_Ref()
+  public EReference getCustomType_Declaration()
   {
     return (EReference)customTypeEClass.getEStructuralFeatures().get(0);
   }
@@ -1628,8 +1628,8 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
     nodeRefEClass = createEClass(NODE_REF);
     createEReference(nodeRefEClass, NODE_REF__REF);
 
-    anonymousLambdaEClass = createEClass(ANONYMOUS_LAMBDA);
-    createEReference(anonymousLambdaEClass, ANONYMOUS_LAMBDA__BODY);
+    anonymousElementEClass = createEClass(ANONYMOUS_ELEMENT);
+    createEReference(anonymousElementEClass, ANONYMOUS_ELEMENT__BODY);
 
     outputEClass = createEClass(OUTPUT);
     createEAttribute(outputEClass, OUTPUT__NAME);
@@ -1639,7 +1639,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
     stringTypeEClass = createEClass(STRING_TYPE);
 
     customTypeEClass = createEClass(CUSTOM_TYPE);
-    createEReference(customTypeEClass, CUSTOM_TYPE__REF);
+    createEReference(customTypeEClass, CUSTOM_TYPE__DECLARATION);
 
     equalsEClass = createEClass(EQUALS);
     createEReference(equalsEClass, EQUALS__LEFT);
@@ -1738,7 +1738,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
     newStatementEClass.getESuperTypes().add(this.getPrimary());
     functionReferenceEClass.getESuperTypes().add(this.getFunctionOrLambda());
     nodeRefEClass.getESuperTypes().add(this.getElement());
-    anonymousLambdaEClass.getESuperTypes().add(this.getElement());
+    anonymousElementEClass.getESuperTypes().add(this.getElement());
     outputEClass.getESuperTypes().add(this.getElement());
     intTypeEClass.getESuperTypes().add(this.getType());
     stringTypeEClass.getESuperTypes().add(this.getType());
@@ -1785,7 +1785,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
     initEClass(nodeOrInputEClass, NodeOrInput.class, "NodeOrInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(streamEClass, Stream.class, "Stream", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStream_StartNodes(), this.getNodeOrInput(), null, "startNodes", null, 0, -1, Stream.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStream_StartNodes(), this.getNodeOrInput(), null, "startNodes", null, 0, -1, Stream.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStream_Points(), this.getElementList(), null, "points", null, 0, -1, Stream.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementListEClass, ElementList.class, "ElementList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1830,7 +1830,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
     initEReference(getIfStatement_FalseExp(), this.getExp(), null, "falseExp", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(newStatementEClass, NewStatement.class, "NewStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNewStatement_Type(), this.getDataDecl(), null, "type", null, 0, 1, NewStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNewStatement_Type(), this.getDataDecl(), null, "type", null, 0, 1, NewStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNewStatement_Variables(), this.getVarAssignment(), null, "variables", null, 0, -1, NewStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(varAssignmentEClass, VarAssignment.class, "VarAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1841,10 +1841,10 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
     initEReference(getFunctionReference_Ref(), this.getFunction(), null, "ref", null, 0, 1, FunctionReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nodeRefEClass, NodeRef.class, "NodeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNodeRef_Ref(), this.getNode(), null, "ref", null, 0, 1, NodeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNodeRef_Ref(), this.getNode(), null, "ref", null, 0, 1, NodeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(anonymousLambdaEClass, AnonymousLambda.class, "AnonymousLambda", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAnonymousLambda_Body(), this.getLambda(), null, "body", null, 0, 1, AnonymousLambda.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(anonymousElementEClass, AnonymousElement.class, "AnonymousElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAnonymousElement_Body(), this.getFunctionOrLambda(), null, "body", null, 0, 1, AnonymousElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(outputEClass, Output.class, "Output", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOutput_Name(), ecorePackage.getEString(), "name", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1854,7 +1854,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
     initEClass(stringTypeEClass, StringType.class, "StringType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(customTypeEClass, CustomType.class, "CustomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCustomType_Ref(), this.getDataDecl(), null, "ref", null, 0, 1, CustomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCustomType_Declaration(), this.getDataDecl(), null, "declaration", null, 0, 1, CustomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equalsEClass, Equals.class, "Equals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEquals_Left(), this.getExp(), null, "left", null, 0, 1, Equals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

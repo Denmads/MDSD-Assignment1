@@ -28,8 +28,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeOrInput"/>
   <eClassifiers xsi:type="ecore:EClass" name="Stream" eSuperTypes="#//Declaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="startNodes" upperBound="-1"
-        eType="#//NodeOrInput" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startNodes" unique="false"
+        upperBound="-1" eType="#//NodeOrInput"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="points" upperBound="-1"
         eType="#//ElementList" containment="true"/>
   </eClassifiers>
@@ -73,8 +73,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NewStatement" eSuperTypes="#//Primary">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataDecl"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataDecl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//VarAssignment" containment="true"/>
   </eClassifiers>
@@ -86,10 +85,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Function"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodeRef" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Node" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Node"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnonymousLambda" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Lambda"
+  <eClassifiers xsi:type="ecore:EClass" name="AnonymousElement" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//FunctionOrLambda"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Output" eSuperTypes="#//Element">
@@ -98,7 +97,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="CustomType" eSuperTypes="#//Type">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//DataDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" eType="#//DataDecl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Equals" eSuperTypes="#//LogicExp">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Exp" containment="true"/>

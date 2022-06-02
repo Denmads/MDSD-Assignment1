@@ -3,8 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.x21.impl;
 
-import dk.sdu.mmmi.mdsd.x21.AnonymousLambda;
-import dk.sdu.mmmi.mdsd.x21.Lambda;
+import dk.sdu.mmmi.mdsd.x21.AnonymousElement;
+import dk.sdu.mmmi.mdsd.x21.FunctionOrLambda;
 import dk.sdu.mmmi.mdsd.x21.X21Package;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,18 +17,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Anonymous Lambda</b></em>'.
+ * An implementation of the model object '<em><b>Anonymous Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.x21.impl.AnonymousLambdaImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.x21.impl.AnonymousElementImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
+public class AnonymousElementImpl extends ElementImpl implements AnonymousElement
 {
   /**
    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
@@ -38,14 +38,14 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
    * @generated
    * @ordered
    */
-  protected Lambda body;
+  protected FunctionOrLambda body;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AnonymousLambdaImpl()
+  protected AnonymousElementImpl()
   {
     super();
   }
@@ -58,7 +58,7 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
   @Override
   protected EClass eStaticClass()
   {
-    return X21Package.Literals.ANONYMOUS_LAMBDA;
+    return X21Package.Literals.ANONYMOUS_ELEMENT;
   }
 
   /**
@@ -67,7 +67,7 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
    * @generated
    */
   @Override
-  public Lambda getBody()
+  public FunctionOrLambda getBody()
   {
     return body;
   }
@@ -77,13 +77,13 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBody(Lambda newBody, NotificationChain msgs)
+  public NotificationChain basicSetBody(FunctionOrLambda newBody, NotificationChain msgs)
   {
-    Lambda oldBody = body;
+    FunctionOrLambda oldBody = body;
     body = newBody;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, X21Package.ANONYMOUS_LAMBDA__BODY, oldBody, newBody);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, X21Package.ANONYMOUS_ELEMENT__BODY, oldBody, newBody);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -95,20 +95,20 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
    * @generated
    */
   @Override
-  public void setBody(Lambda newBody)
+  public void setBody(FunctionOrLambda newBody)
   {
     if (newBody != body)
     {
       NotificationChain msgs = null;
       if (body != null)
-        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - X21Package.ANONYMOUS_LAMBDA__BODY, null, msgs);
+        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - X21Package.ANONYMOUS_ELEMENT__BODY, null, msgs);
       if (newBody != null)
-        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - X21Package.ANONYMOUS_LAMBDA__BODY, null, msgs);
+        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - X21Package.ANONYMOUS_ELEMENT__BODY, null, msgs);
       msgs = basicSetBody(newBody, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.ANONYMOUS_LAMBDA__BODY, newBody, newBody));
+      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.ANONYMOUS_ELEMENT__BODY, newBody, newBody));
   }
 
   /**
@@ -121,7 +121,7 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
   {
     switch (featureID)
     {
-      case X21Package.ANONYMOUS_LAMBDA__BODY:
+      case X21Package.ANONYMOUS_ELEMENT__BODY:
         return basicSetBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -137,7 +137,7 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
   {
     switch (featureID)
     {
-      case X21Package.ANONYMOUS_LAMBDA__BODY:
+      case X21Package.ANONYMOUS_ELEMENT__BODY:
         return getBody();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -153,8 +153,8 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
   {
     switch (featureID)
     {
-      case X21Package.ANONYMOUS_LAMBDA__BODY:
-        setBody((Lambda)newValue);
+      case X21Package.ANONYMOUS_ELEMENT__BODY:
+        setBody((FunctionOrLambda)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +170,8 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
   {
     switch (featureID)
     {
-      case X21Package.ANONYMOUS_LAMBDA__BODY:
-        setBody((Lambda)null);
+      case X21Package.ANONYMOUS_ELEMENT__BODY:
+        setBody((FunctionOrLambda)null);
         return;
     }
     super.eUnset(featureID);
@@ -187,10 +187,10 @@ public class AnonymousLambdaImpl extends ElementImpl implements AnonymousLambda
   {
     switch (featureID)
     {
-      case X21Package.ANONYMOUS_LAMBDA__BODY:
+      case X21Package.ANONYMOUS_ELEMENT__BODY:
         return body != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //AnonymousLambdaImpl
+} //AnonymousElementImpl

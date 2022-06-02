@@ -94,7 +94,7 @@ public class X21FactoryImpl extends EFactoryImpl implements X21Factory
       case X21Package.VAR_ASSIGNMENT: return createVarAssignment();
       case X21Package.FUNCTION_REFERENCE: return createFunctionReference();
       case X21Package.NODE_REF: return createNodeRef();
-      case X21Package.ANONYMOUS_LAMBDA: return createAnonymousLambda();
+      case X21Package.ANONYMOUS_ELEMENT: return createAnonymousElement();
       case X21Package.OUTPUT: return createOutput();
       case X21Package.INT_TYPE: return createIntType();
       case X21Package.STRING_TYPE: return createStringType();
@@ -469,10 +469,10 @@ public class X21FactoryImpl extends EFactoryImpl implements X21Factory
    * @generated
    */
   @Override
-  public AnonymousLambda createAnonymousLambda()
+  public AnonymousElement createAnonymousElement()
   {
-    AnonymousLambdaImpl anonymousLambda = new AnonymousLambdaImpl();
-    return anonymousLambda;
+    AnonymousElementImpl anonymousElement = new AnonymousElementImpl();
+    return anonymousElement;
   }
 
   /**

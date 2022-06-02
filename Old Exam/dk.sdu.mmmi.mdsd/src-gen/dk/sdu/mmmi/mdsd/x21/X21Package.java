@@ -384,7 +384,7 @@ public interface X21Package extends EPackage
   int STREAM = 10;
 
   /**
-   * The feature id for the '<em><b>Start Nodes</b></em>' containment reference list.
+   * The feature id for the '<em><b>Start Nodes</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -804,7 +804,7 @@ public interface X21Package extends EPackage
   int NEW_STATEMENT = 25;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -906,7 +906,7 @@ public interface X21Package extends EPackage
   int NODE_REF = 28;
 
   /**
-   * The feature id for the '<em><b>Ref</b></em>' containment reference.
+   * The feature id for the '<em><b>Ref</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -924,14 +924,14 @@ public interface X21Package extends EPackage
   int NODE_REF_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.x21.impl.AnonymousLambdaImpl <em>Anonymous Lambda</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.x21.impl.AnonymousElementImpl <em>Anonymous Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.x21.impl.AnonymousLambdaImpl
-   * @see dk.sdu.mmmi.mdsd.x21.impl.X21PackageImpl#getAnonymousLambda()
+   * @see dk.sdu.mmmi.mdsd.x21.impl.AnonymousElementImpl
+   * @see dk.sdu.mmmi.mdsd.x21.impl.X21PackageImpl#getAnonymousElement()
    * @generated
    */
-  int ANONYMOUS_LAMBDA = 29;
+  int ANONYMOUS_ELEMENT = 29;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -940,16 +940,16 @@ public interface X21Package extends EPackage
    * @generated
    * @ordered
    */
-  int ANONYMOUS_LAMBDA__BODY = ELEMENT_FEATURE_COUNT + 0;
+  int ANONYMOUS_ELEMENT__BODY = ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Anonymous Lambda</em>' class.
+   * The number of structural features of the '<em>Anonymous Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANONYMOUS_LAMBDA_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+  int ANONYMOUS_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.x21.impl.OutputImpl <em>Output</em>}' class.
@@ -1028,13 +1028,13 @@ public interface X21Package extends EPackage
   int CUSTOM_TYPE = 33;
 
   /**
-   * The feature id for the '<em><b>Ref</b></em>' reference.
+   * The feature id for the '<em><b>Declaration</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CUSTOM_TYPE__REF = TYPE_FEATURE_COUNT + 0;
+  int CUSTOM_TYPE__DECLARATION = TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Custom Type</em>' class.
@@ -1634,10 +1634,10 @@ public interface X21Package extends EPackage
   EClass getStream();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.x21.Stream#getStartNodes <em>Start Nodes</em>}'.
+   * Returns the meta object for the reference list '{@link dk.sdu.mmmi.mdsd.x21.Stream#getStartNodes <em>Start Nodes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Start Nodes</em>'.
+   * @return the meta object for the reference list '<em>Start Nodes</em>'.
    * @see dk.sdu.mmmi.mdsd.x21.Stream#getStartNodes()
    * @see #getStream()
    * @generated
@@ -1949,10 +1949,10 @@ public interface X21Package extends EPackage
   EClass getNewStatement();
 
   /**
-   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.x21.NewStatement#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.x21.NewStatement#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @return the meta object for the reference '<em>Type</em>'.
    * @see dk.sdu.mmmi.mdsd.x21.NewStatement#getType()
    * @see #getNewStatement()
    * @generated
@@ -2034,10 +2034,10 @@ public interface X21Package extends EPackage
   EClass getNodeRef();
 
   /**
-   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.x21.NodeRef#getRef <em>Ref</em>}'.
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.x21.NodeRef#getRef <em>Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ref</em>'.
+   * @return the meta object for the reference '<em>Ref</em>'.
    * @see dk.sdu.mmmi.mdsd.x21.NodeRef#getRef()
    * @see #getNodeRef()
    * @generated
@@ -2045,25 +2045,25 @@ public interface X21Package extends EPackage
   EReference getNodeRef_Ref();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.x21.AnonymousLambda <em>Anonymous Lambda</em>}'.
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.x21.AnonymousElement <em>Anonymous Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Anonymous Lambda</em>'.
-   * @see dk.sdu.mmmi.mdsd.x21.AnonymousLambda
+   * @return the meta object for class '<em>Anonymous Element</em>'.
+   * @see dk.sdu.mmmi.mdsd.x21.AnonymousElement
    * @generated
    */
-  EClass getAnonymousLambda();
+  EClass getAnonymousElement();
 
   /**
-   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.x21.AnonymousLambda#getBody <em>Body</em>}'.
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.x21.AnonymousElement#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Body</em>'.
-   * @see dk.sdu.mmmi.mdsd.x21.AnonymousLambda#getBody()
-   * @see #getAnonymousLambda()
+   * @see dk.sdu.mmmi.mdsd.x21.AnonymousElement#getBody()
+   * @see #getAnonymousElement()
    * @generated
    */
-  EReference getAnonymousLambda_Body();
+  EReference getAnonymousElement_Body();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.x21.Output <em>Output</em>}'.
@@ -2117,15 +2117,15 @@ public interface X21Package extends EPackage
   EClass getCustomType();
 
   /**
-   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.x21.CustomType#getRef <em>Ref</em>}'.
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.x21.CustomType#getDeclaration <em>Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Ref</em>'.
-   * @see dk.sdu.mmmi.mdsd.x21.CustomType#getRef()
+   * @return the meta object for the reference '<em>Declaration</em>'.
+   * @see dk.sdu.mmmi.mdsd.x21.CustomType#getDeclaration()
    * @see #getCustomType()
    * @generated
    */
-  EReference getCustomType_Ref();
+  EReference getCustomType_Declaration();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.x21.Equals <em>Equals</em>}'.
@@ -2655,7 +2655,7 @@ public interface X21Package extends EPackage
     EClass STREAM = eINSTANCE.getStream();
 
     /**
-     * The meta object literal for the '<em><b>Start Nodes</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Start Nodes</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2925,7 +2925,7 @@ public interface X21Package extends EPackage
     EClass NEW_STATEMENT = eINSTANCE.getNewStatement();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2995,7 +2995,7 @@ public interface X21Package extends EPackage
     EClass NODE_REF = eINSTANCE.getNodeRef();
 
     /**
-     * The meta object literal for the '<em><b>Ref</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3003,14 +3003,14 @@ public interface X21Package extends EPackage
     EReference NODE_REF__REF = eINSTANCE.getNodeRef_Ref();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.x21.impl.AnonymousLambdaImpl <em>Anonymous Lambda</em>}' class.
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.x21.impl.AnonymousElementImpl <em>Anonymous Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.x21.impl.AnonymousLambdaImpl
-     * @see dk.sdu.mmmi.mdsd.x21.impl.X21PackageImpl#getAnonymousLambda()
+     * @see dk.sdu.mmmi.mdsd.x21.impl.AnonymousElementImpl
+     * @see dk.sdu.mmmi.mdsd.x21.impl.X21PackageImpl#getAnonymousElement()
      * @generated
      */
-    EClass ANONYMOUS_LAMBDA = eINSTANCE.getAnonymousLambda();
+    EClass ANONYMOUS_ELEMENT = eINSTANCE.getAnonymousElement();
 
     /**
      * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
@@ -3018,7 +3018,7 @@ public interface X21Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ANONYMOUS_LAMBDA__BODY = eINSTANCE.getAnonymousLambda_Body();
+    EReference ANONYMOUS_ELEMENT__BODY = eINSTANCE.getAnonymousElement_Body();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.x21.impl.OutputImpl <em>Output</em>}' class.
@@ -3069,12 +3069,12 @@ public interface X21Package extends EPackage
     EClass CUSTOM_TYPE = eINSTANCE.getCustomType();
 
     /**
-     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Declaration</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CUSTOM_TYPE__REF = eINSTANCE.getCustomType_Ref();
+    EReference CUSTOM_TYPE__DECLARATION = eINSTANCE.getCustomType_Declaration();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.x21.impl.EqualsImpl <em>Equals</em>}' class.

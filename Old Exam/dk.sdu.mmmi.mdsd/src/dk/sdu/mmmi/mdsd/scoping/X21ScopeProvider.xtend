@@ -3,6 +3,17 @@
  */
 package dk.sdu.mmmi.mdsd.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import dk.sdu.mmmi.mdsd.x21.X21Package
+import dk.sdu.mmmi.mdsd.x21.DataAccess
+import dk.sdu.mmmi.mdsd.x21.NewStatement
+import org.eclipse.xtext.scoping.IScope
+import dk.sdu.mmmi.mdsd.x21.Parameter
+import dk.sdu.mmmi.mdsd.x21.Lambda
+import dk.sdu.mmmi.mdsd.x21.CustomType
+import org.eclipse.xtext.scoping.Scopes
+import dk.sdu.mmmi.mdsd.x21.LetStatement
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +22,39 @@ package dk.sdu.mmmi.mdsd.scoping
  * on how and when to use it.
  */
 class X21ScopeProvider extends AbstractX21ScopeProvider {
-
+	override getScope(EObject context, EReference reference) {
+		if (reference == X21Package.eINSTANCE.getDataAccess_VarRefs()) {
+			var dataAccess = context as DataAccess
+			return dataAccess.scopeFor(reference)
+		}
+		else if (reference == X21Package.eINSTANCE.varAssignment_Variable) {
+			var stmt = context.eContainer as NewStatement
+			return stmt.scopeFor(reference)
+		}
+		else {
+			return super.getScope(context, reference)
+		}
+	}
+	
+	def dispatch IScope scopeFor(DataAccess context, EReference reference) {
+		var ref = context.ref
+		switch (ref) {
+			Parameter, Lambda: {
+				println(ref.type)
+				if (ref.type instanceof CustomType) {
+					var type = ref.type as CustomType
+					return Scopes.scopeFor(type.declaration.variables)
+				}
+				else {
+					return super.getScope(context, reference)
+				}
+			}
+			LetStatement: return super.getScope(context, reference)
+		}
+		return super.getScope(context, reference)
+	}
+	
+	def dispatch IScope scopeFor(NewStatement context, EReference reference) {
+		Scopes.scopeFor(context.type.variables)
+	}
 }

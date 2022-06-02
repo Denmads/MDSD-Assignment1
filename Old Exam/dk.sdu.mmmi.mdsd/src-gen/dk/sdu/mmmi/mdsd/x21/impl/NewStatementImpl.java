@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class NewStatementImpl extends PrimaryImpl implements NewStatement
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
@@ -88,6 +88,16 @@ public class NewStatementImpl extends PrimaryImpl implements NewStatement
   @Override
   public DataDecl getType()
   {
+    if (type != null && type.eIsProxy())
+    {
+      InternalEObject oldType = (InternalEObject)type;
+      type = (DataDecl)eResolveProxy(oldType);
+      if (type != oldType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, X21Package.NEW_STATEMENT__TYPE, oldType, type));
+      }
+    }
     return type;
   }
 
@@ -96,16 +106,9 @@ public class NewStatementImpl extends PrimaryImpl implements NewStatement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(DataDecl newType, NotificationChain msgs)
+  public DataDecl basicGetType()
   {
-    DataDecl oldType = type;
-    type = newType;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, X21Package.NEW_STATEMENT__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return type;
   }
 
   /**
@@ -116,18 +119,10 @@ public class NewStatementImpl extends PrimaryImpl implements NewStatement
   @Override
   public void setType(DataDecl newType)
   {
-    if (newType != type)
-    {
-      NotificationChain msgs = null;
-      if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - X21Package.NEW_STATEMENT__TYPE, null, msgs);
-      if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - X21Package.NEW_STATEMENT__TYPE, null, msgs);
-      msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.NEW_STATEMENT__TYPE, newType, newType));
+    DataDecl oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.NEW_STATEMENT__TYPE, oldType, type));
   }
 
   /**
@@ -155,8 +150,6 @@ public class NewStatementImpl extends PrimaryImpl implements NewStatement
   {
     switch (featureID)
     {
-      case X21Package.NEW_STATEMENT__TYPE:
-        return basicSetType(null, msgs);
       case X21Package.NEW_STATEMENT__VARIABLES:
         return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
     }
@@ -174,7 +167,8 @@ public class NewStatementImpl extends PrimaryImpl implements NewStatement
     switch (featureID)
     {
       case X21Package.NEW_STATEMENT__TYPE:
-        return getType();
+        if (resolve) return getType();
+        return basicGetType();
       case X21Package.NEW_STATEMENT__VARIABLES:
         return getVariables();
     }

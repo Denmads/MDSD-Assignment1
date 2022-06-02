@@ -285,13 +285,13 @@ public interface X21Factory extends EFactory
   NodeRef createNodeRef();
 
   /**
-   * Returns a new object of class '<em>Anonymous Lambda</em>'.
+   * Returns a new object of class '<em>Anonymous Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Anonymous Lambda</em>'.
+   * @return a new object of class '<em>Anonymous Element</em>'.
    * @generated
    */
-  AnonymousLambda createAnonymousLambda();
+  AnonymousElement createAnonymousElement();
 
   /**
    * Returns a new object of class '<em>Output</em>'.

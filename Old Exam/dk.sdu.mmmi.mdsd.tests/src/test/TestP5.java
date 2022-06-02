@@ -1,4 +1,4 @@
-package tests;
+package test;
 
 import p5.P5Main;
 

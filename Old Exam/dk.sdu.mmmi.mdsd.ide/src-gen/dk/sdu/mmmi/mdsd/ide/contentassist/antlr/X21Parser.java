@@ -109,7 +109,7 @@ public class X21Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDataDeclAccess().getVariablesAssignment_4_1(), "rule__DataDecl__VariablesAssignment_4_1");
 			builder.put(grammarAccess.getDataVariableAccess().getNameAssignment_0(), "rule__DataVariable__NameAssignment_0");
 			builder.put(grammarAccess.getDataVariableAccess().getTypeAssignment_2(), "rule__DataVariable__TypeAssignment_2");
-			builder.put(grammarAccess.getTypeAccess().getRefAssignment_2_1(), "rule__Type__RefAssignment_2_1");
+			builder.put(grammarAccess.getTypeAccess().getDeclarationAssignment_2_1(), "rule__Type__DeclarationAssignment_2_1");
 			builder.put(grammarAccess.getLogicExpAccess().getRightAssignment_2(), "rule__LogicExp__RightAssignment_2");
 			builder.put(grammarAccess.getExpAccess().getRightAssignment_1_1(), "rule__Exp__RightAssignment_1_1");
 			builder.put(grammarAccess.getMulDivAccess().getRightAssignment_1_1(), "rule__MulDiv__RightAssignment_1_1");

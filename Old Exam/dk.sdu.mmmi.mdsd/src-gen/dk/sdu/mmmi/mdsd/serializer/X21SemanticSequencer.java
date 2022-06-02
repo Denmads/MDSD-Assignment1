@@ -5,7 +5,7 @@ package dk.sdu.mmmi.mdsd.serializer;
 
 import com.google.inject.Inject;
 import dk.sdu.mmmi.mdsd.services.X21GrammarAccess;
-import dk.sdu.mmmi.mdsd.x21.AnonymousLambda;
+import dk.sdu.mmmi.mdsd.x21.AnonymousElement;
 import dk.sdu.mmmi.mdsd.x21.CustomType;
 import dk.sdu.mmmi.mdsd.x21.DataAccess;
 import dk.sdu.mmmi.mdsd.x21.DataDecl;
@@ -64,8 +64,8 @@ public class X21SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == X21Package.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case X21Package.ANONYMOUS_LAMBDA:
-				sequence_Element(context, (AnonymousLambda) semanticObject); 
+			case X21Package.ANONYMOUS_ELEMENT:
+				sequence_Element(context, (AnonymousElement) semanticObject); 
 				return; 
 			case X21Package.CUSTOM_TYPE:
 				sequence_Type(context, (CustomType) semanticObject); 
@@ -252,19 +252,19 @@ public class X21SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Element returns AnonymousLambda
+	 *     Element returns AnonymousElement
 	 *
 	 * Constraint:
-	 *     body=Lambda
+	 *     body=FunctionOrLambda
 	 * </pre>
 	 */
-	protected void sequence_Element(ISerializationContext context, AnonymousLambda semanticObject) {
+	protected void sequence_Element(ISerializationContext context, AnonymousElement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, X21Package.Literals.ANONYMOUS_LAMBDA__BODY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, X21Package.Literals.ANONYMOUS_LAMBDA__BODY));
+			if (transientValues.isValueTransient(semanticObject, X21Package.Literals.ANONYMOUS_ELEMENT__BODY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, X21Package.Literals.ANONYMOUS_ELEMENT__BODY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getElementAccess().getBodyLambdaParserRuleCall_1_1_0(), semanticObject.getBody());
+		feeder.accept(grammarAccess.getElementAccess().getBodyFunctionOrLambdaParserRuleCall_1_1_0(), semanticObject.getBody());
 		feeder.finish();
 	}
 	
@@ -275,7 +275,7 @@ public class X21SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Element returns NodeRef
 	 *
 	 * Constraint:
-	 *     ref=Node
+	 *     ref=[Node|ID]
 	 * </pre>
 	 */
 	protected void sequence_Element(ISerializationContext context, NodeRef semanticObject) {
@@ -284,7 +284,7 @@ public class X21SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, X21Package.Literals.NODE_REF__REF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getElementAccess().getRefNodeParserRuleCall_0_1_0(), semanticObject.getRef());
+		feeder.accept(grammarAccess.getElementAccess().getRefNodeIDTerminalRuleCall_0_1_0_1(), semanticObject.eGet(X21Package.Literals.NODE_REF__REF, false));
 		feeder.finish();
 	}
 	
@@ -767,7 +767,7 @@ public class X21SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     NewStatement returns NewStatement
 	 *
 	 * Constraint:
-	 *     (type=DataDecl variables+=VarAssignment variables+=VarAssignment*)
+	 *     (type=[DataDecl|ID] variables+=VarAssignment variables+=VarAssignment*)
 	 * </pre>
 	 */
 	protected void sequence_NewStatement(ISerializationContext context, NewStatement semanticObject) {
@@ -895,7 +895,7 @@ public class X21SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Stream returns Stream
 	 *
 	 * Constraint:
-	 *     (startNodes+=NodeOrInput startNodes+=NodeOrInput* points+=ElementList+)
+	 *     (startNodes+=[NodeOrInput|ID] startNodes+=[NodeOrInput|ID]* points+=ElementList+)
 	 * </pre>
 	 */
 	protected void sequence_Stream(ISerializationContext context, Stream semanticObject) {
@@ -909,16 +909,16 @@ public class X21SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Type returns CustomType
 	 *
 	 * Constraint:
-	 *     ref=[DataDecl|ID]
+	 *     declaration=[DataDecl|ID]
 	 * </pre>
 	 */
 	protected void sequence_Type(ISerializationContext context, CustomType semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, X21Package.Literals.CUSTOM_TYPE__REF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, X21Package.Literals.CUSTOM_TYPE__REF));
+			if (transientValues.isValueTransient(semanticObject, X21Package.Literals.CUSTOM_TYPE__DECLARATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, X21Package.Literals.CUSTOM_TYPE__DECLARATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTypeAccess().getRefDataDeclIDTerminalRuleCall_2_1_0_1(), semanticObject.eGet(X21Package.Literals.CUSTOM_TYPE__REF, false));
+		feeder.accept(grammarAccess.getTypeAccess().getDeclarationDataDeclIDTerminalRuleCall_2_1_0_1(), semanticObject.eGet(X21Package.Literals.CUSTOM_TYPE__DECLARATION, false));
 		feeder.finish();
 	}
 	

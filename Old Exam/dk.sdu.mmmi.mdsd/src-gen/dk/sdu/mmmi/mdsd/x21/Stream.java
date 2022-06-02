@@ -25,13 +25,13 @@ import org.eclipse.emf.common.util.EList;
 public interface Stream extends Declaration
 {
   /**
-   * Returns the value of the '<em><b>Start Nodes</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Start Nodes</b></em>' reference list.
    * The list contents are of type {@link dk.sdu.mmmi.mdsd.x21.NodeOrInput}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Start Nodes</em>' containment reference list.
+   * @return the value of the '<em>Start Nodes</em>' reference list.
    * @see dk.sdu.mmmi.mdsd.x21.X21Package#getStream_StartNodes()
-   * @model containment="true"
+   * @model
    * @generated
    */
   EList<NodeOrInput> getStartNodes();
