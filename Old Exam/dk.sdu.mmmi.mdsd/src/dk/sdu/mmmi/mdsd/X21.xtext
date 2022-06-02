@@ -1,0 +1,117 @@
+grammar dk.sdu.mmmi.mdsd.X21 with org.eclipse.xtext.common.Terminals
+
+generate x21 "http://www.sdu.dk/mmmi/mdsd/X21"
+
+X21:
+	{X21} 'program' ID declarations+=Declaration*
+;
+
+Declaration:
+	Function | Input | Node | Stream | DataDecl | Parameter
+;
+
+fragment NameAndType:
+	name=ID ':' type=Type
+;
+
+Parameter:
+	'parameter' NameAndType
+;
+
+Function:
+	'function' name=ID body=Lambda
+;
+
+Lambda:
+	'(' NameAndType ')' '{' logic=Exp '}'
+;
+
+Input:
+	'input' NameAndType
+;
+
+FunctionOrLambda:
+	'[' ({FunctionReference} ref=[Function] | Lambda) ']'
+;
+
+Node:
+	'node' name=ID body=FunctionOrLambda
+;
+
+NodeOrInput:
+	Node | Input
+;
+
+Stream:
+	'stream' startNodes+=NodeOrInput (',' startNodes+=NodeOrInput)* ('to' points+=ElementList)+
+;
+
+ElementList:
+	elements+=Element (',' elements+=Element)*
+;
+
+Element:
+	{NodeRef} ref=Node | {AnonymousLambda} body=Lambda | {Output} 'output' name=ID
+;
+
+DataDecl:
+	'data' name=ID '{' variables+=DataVariable (',' variables+=DataVariable)* '}'
+;
+
+DataVariable:
+	name=ID ':' type=Type
+;
+
+Type:
+	{IntType} 'int' | {StringType} 'string' | {CustomType} ref=[DataDecl]
+;
+
+LogicExp:
+	Exp (
+		{Equals.left=current} '=' |
+		{LessThan.left = current} '<' |
+		{GreaterThan.left = current} '>' |
+		{LessThanOrEquals.left = current} '<=' |
+		{GreaterThanOrEquals.left = current} '>='
+	) right=Exp
+;
+
+Exp:
+	MulDiv (({Plus.left=current} '+' | {Minus.left=current}) right=MulDiv)*
+;
+
+MulDiv:
+	Primary (({Mul.left=current} '*' | {Div.left=current} '/') right=Primary)*
+;
+
+Primary:
+	{Int} value=INT | {Parenthesis} '(' body=Exp ')' | LetStatement | DataAccess | None | IfStatement | NewStatement
+;
+
+LetStatement:
+	'let' name=ID '=' value=Exp 'in' body=Exp 'end'
+;
+
+DataAccess:
+	ref=[DataRef] ('.' varRefs+=[DataVariable])*
+;
+
+DataRef:
+	Parameter | LetStatement | Lambda
+;
+
+None:
+	{None} 'none'
+;
+
+IfStatement:
+	'if' condition=LogicExp 'then' trueExp=Exp 'else' falseExp=Exp 'end'
+;
+
+NewStatement:
+	'new' type=DataDecl '[' variables+=VarAssignment (',' variables+=VarAssignment)* ']'
+;
+
+VarAssignment:
+	variable=[DataVariable] '=' value=Exp
+;
