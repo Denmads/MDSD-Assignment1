@@ -3,7 +3,7 @@ grammar dk.sdu.mmmi.mdsd.X21 with org.eclipse.xtext.common.Terminals
 generate x21 "http://www.sdu.dk/mmmi/mdsd/X21"
 
 X21:
-	{X21} 'program' ID declarations+=Declaration*
+	{X21} 'program' name=ID declarations+=Declaration*
 ;
 
 Declaration:

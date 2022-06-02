@@ -460,9 +460,20 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
    * @generated
    */
   @Override
+  public EAttribute getX21_Name()
+  {
+    return (EAttribute)x21EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getX21_Declarations()
   {
-    return (EReference)x21EClass.getEStructuralFeatures().get(0);
+    return (EReference)x21EClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1542,6 +1553,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
 
     // Create classes and their features
     x21EClass = createEClass(X21);
+    createEAttribute(x21EClass, X21__NAME);
     createEReference(x21EClass, X21__DECLARATIONS);
 
     declarationEClass = createEClass(DECLARATION);
@@ -1757,6 +1769,7 @@ public class X21PackageImpl extends EPackageImpl implements X21Package
 
     // Initialize classes and features; add operations and parameters
     initEClass(x21EClass, dk.sdu.mmmi.mdsd.x21.X21.class, "X21", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getX21_Name(), ecorePackage.getEString(), "name", null, 0, 1, dk.sdu.mmmi.mdsd.x21.X21.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getX21_Declarations(), this.getDeclaration(), null, "declarations", null, 0, -1, dk.sdu.mmmi.mdsd.x21.X21.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

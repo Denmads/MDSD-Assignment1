@@ -68,13 +68,22 @@ public interface X21Package extends EPackage
   int X21 = 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int X21__NAME = 0;
+
+  /**
    * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int X21__DECLARATIONS = 0;
+  int X21__DECLARATIONS = 1;
 
   /**
    * The number of structural features of the '<em>X21</em>' class.
@@ -83,7 +92,7 @@ public interface X21Package extends EPackage
    * @generated
    * @ordered
    */
-  int X21_FEATURE_COUNT = 1;
+  int X21_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.x21.impl.DeclarationImpl <em>Declaration</em>}' class.
@@ -1446,6 +1455,17 @@ public interface X21Package extends EPackage
   EClass getX21();
 
   /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.x21.X21#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.x21.X21#getName()
+   * @see #getX21()
+   * @generated
+   */
+  EAttribute getX21_Name();
+
+  /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.x21.X21#getDeclarations <em>Declarations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2489,6 +2509,14 @@ public interface X21Package extends EPackage
      * @generated
      */
     EClass X21 = eINSTANCE.getX21();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute X21__NAME = eINSTANCE.getX21_Name();
 
     /**
      * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.

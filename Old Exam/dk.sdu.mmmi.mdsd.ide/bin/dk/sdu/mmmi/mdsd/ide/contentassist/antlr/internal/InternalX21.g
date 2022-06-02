@@ -990,9 +990,9 @@ rule__X21__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getX21Access().getIDTerminalRuleCall_2()); }
-	RULE_ID
-	{ after(grammarAccess.getX21Access().getIDTerminalRuleCall_2()); }
+	{ before(grammarAccess.getX21Access().getNameAssignment_2()); }
+	(rule__X21__NameAssignment_2)
+	{ after(grammarAccess.getX21Access().getNameAssignment_2()); }
 )
 ;
 finally {
@@ -4380,6 +4380,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+
+rule__X21__NameAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getX21Access().getNameIDTerminalRuleCall_2_0()); }
+		RULE_ID
+		{ after(grammarAccess.getX21Access().getNameIDTerminalRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 rule__X21__DeclarationsAssignment_3
 	@init {

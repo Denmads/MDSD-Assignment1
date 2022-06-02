@@ -980,7 +980,7 @@ public class X21SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     X21 returns X21
 	 *
 	 * Constraint:
-	 *     declarations+=Declaration*
+	 *     (name=ID declarations+=Declaration*)
 	 * </pre>
 	 */
 	protected void sequence_X21(ISerializationContext context, X21 semanticObject) {

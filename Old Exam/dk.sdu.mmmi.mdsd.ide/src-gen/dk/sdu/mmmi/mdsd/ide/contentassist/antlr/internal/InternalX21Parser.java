@@ -3278,21 +3278,31 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__X21__Group__2__Impl"
-    // InternalX21.g:987:1: rule__X21__Group__2__Impl : ( RULE_ID ) ;
+    // InternalX21.g:987:1: rule__X21__Group__2__Impl : ( ( rule__X21__NameAssignment_2 ) ) ;
     public final void rule__X21__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:991:1: ( ( RULE_ID ) )
-            // InternalX21.g:992:1: ( RULE_ID )
+            // InternalX21.g:991:1: ( ( ( rule__X21__NameAssignment_2 ) ) )
+            // InternalX21.g:992:1: ( ( rule__X21__NameAssignment_2 ) )
             {
-            // InternalX21.g:992:1: ( RULE_ID )
-            // InternalX21.g:993:2: RULE_ID
+            // InternalX21.g:992:1: ( ( rule__X21__NameAssignment_2 ) )
+            // InternalX21.g:993:2: ( rule__X21__NameAssignment_2 )
             {
-             before(grammarAccess.getX21Access().getIDTerminalRuleCall_2()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getX21Access().getIDTerminalRuleCall_2()); 
+             before(grammarAccess.getX21Access().getNameAssignment_2()); 
+            // InternalX21.g:994:2: ( rule__X21__NameAssignment_2 )
+            // InternalX21.g:994:3: rule__X21__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__X21__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getX21Access().getNameAssignment_2()); 
 
             }
 
@@ -13200,18 +13210,55 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__VarAssignment__Group__2__Impl"
 
 
+    // $ANTLR start "rule__X21__NameAssignment_2"
+    // InternalX21.g:4384:1: rule__X21__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__X21__NameAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalX21.g:4388:1: ( ( RULE_ID ) )
+            // InternalX21.g:4389:2: ( RULE_ID )
+            {
+            // InternalX21.g:4389:2: ( RULE_ID )
+            // InternalX21.g:4390:3: RULE_ID
+            {
+             before(grammarAccess.getX21Access().getNameIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getX21Access().getNameIDTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__X21__NameAssignment_2"
+
+
     // $ANTLR start "rule__X21__DeclarationsAssignment_3"
-    // InternalX21.g:4384:1: rule__X21__DeclarationsAssignment_3 : ( ruleDeclaration ) ;
+    // InternalX21.g:4399:1: rule__X21__DeclarationsAssignment_3 : ( ruleDeclaration ) ;
     public final void rule__X21__DeclarationsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4388:1: ( ( ruleDeclaration ) )
-            // InternalX21.g:4389:2: ( ruleDeclaration )
+            // InternalX21.g:4403:1: ( ( ruleDeclaration ) )
+            // InternalX21.g:4404:2: ( ruleDeclaration )
             {
-            // InternalX21.g:4389:2: ( ruleDeclaration )
-            // InternalX21.g:4390:3: ruleDeclaration
+            // InternalX21.g:4404:2: ( ruleDeclaration )
+            // InternalX21.g:4405:3: ruleDeclaration
             {
              before(grammarAccess.getX21Access().getDeclarationsDeclarationParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -13242,17 +13289,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NameAndType__NameAssignment_0"
-    // InternalX21.g:4399:1: rule__NameAndType__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalX21.g:4414:1: rule__NameAndType__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__NameAndType__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4403:1: ( ( RULE_ID ) )
-            // InternalX21.g:4404:2: ( RULE_ID )
+            // InternalX21.g:4418:1: ( ( RULE_ID ) )
+            // InternalX21.g:4419:2: ( RULE_ID )
             {
-            // InternalX21.g:4404:2: ( RULE_ID )
-            // InternalX21.g:4405:3: RULE_ID
+            // InternalX21.g:4419:2: ( RULE_ID )
+            // InternalX21.g:4420:3: RULE_ID
             {
              before(grammarAccess.getNameAndTypeAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13279,17 +13326,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NameAndType__TypeAssignment_2"
-    // InternalX21.g:4414:1: rule__NameAndType__TypeAssignment_2 : ( ruleType ) ;
+    // InternalX21.g:4429:1: rule__NameAndType__TypeAssignment_2 : ( ruleType ) ;
     public final void rule__NameAndType__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4418:1: ( ( ruleType ) )
-            // InternalX21.g:4419:2: ( ruleType )
+            // InternalX21.g:4433:1: ( ( ruleType ) )
+            // InternalX21.g:4434:2: ( ruleType )
             {
-            // InternalX21.g:4419:2: ( ruleType )
-            // InternalX21.g:4420:3: ruleType
+            // InternalX21.g:4434:2: ( ruleType )
+            // InternalX21.g:4435:3: ruleType
             {
              before(grammarAccess.getNameAndTypeAccess().getTypeTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -13320,17 +13367,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__NameAssignment_1"
-    // InternalX21.g:4429:1: rule__Function__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalX21.g:4444:1: rule__Function__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Function__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4433:1: ( ( RULE_ID ) )
-            // InternalX21.g:4434:2: ( RULE_ID )
+            // InternalX21.g:4448:1: ( ( RULE_ID ) )
+            // InternalX21.g:4449:2: ( RULE_ID )
             {
-            // InternalX21.g:4434:2: ( RULE_ID )
-            // InternalX21.g:4435:3: RULE_ID
+            // InternalX21.g:4449:2: ( RULE_ID )
+            // InternalX21.g:4450:3: RULE_ID
             {
              before(grammarAccess.getFunctionAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13357,17 +13404,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Function__BodyAssignment_2"
-    // InternalX21.g:4444:1: rule__Function__BodyAssignment_2 : ( ruleLambda ) ;
+    // InternalX21.g:4459:1: rule__Function__BodyAssignment_2 : ( ruleLambda ) ;
     public final void rule__Function__BodyAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4448:1: ( ( ruleLambda ) )
-            // InternalX21.g:4449:2: ( ruleLambda )
+            // InternalX21.g:4463:1: ( ( ruleLambda ) )
+            // InternalX21.g:4464:2: ( ruleLambda )
             {
-            // InternalX21.g:4449:2: ( ruleLambda )
-            // InternalX21.g:4450:3: ruleLambda
+            // InternalX21.g:4464:2: ( ruleLambda )
+            // InternalX21.g:4465:3: ruleLambda
             {
              before(grammarAccess.getFunctionAccess().getBodyLambdaParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -13398,17 +13445,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Lambda__LogicAssignment_4"
-    // InternalX21.g:4459:1: rule__Lambda__LogicAssignment_4 : ( ruleExp ) ;
+    // InternalX21.g:4474:1: rule__Lambda__LogicAssignment_4 : ( ruleExp ) ;
     public final void rule__Lambda__LogicAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4463:1: ( ( ruleExp ) )
-            // InternalX21.g:4464:2: ( ruleExp )
+            // InternalX21.g:4478:1: ( ( ruleExp ) )
+            // InternalX21.g:4479:2: ( ruleExp )
             {
-            // InternalX21.g:4464:2: ( ruleExp )
-            // InternalX21.g:4465:3: ruleExp
+            // InternalX21.g:4479:2: ( ruleExp )
+            // InternalX21.g:4480:3: ruleExp
             {
              before(grammarAccess.getLambdaAccess().getLogicExpParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -13439,21 +13486,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionOrLambda__RefAssignment_1_0_1"
-    // InternalX21.g:4474:1: rule__FunctionOrLambda__RefAssignment_1_0_1 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:4489:1: rule__FunctionOrLambda__RefAssignment_1_0_1 : ( ( RULE_ID ) ) ;
     public final void rule__FunctionOrLambda__RefAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4478:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:4479:2: ( ( RULE_ID ) )
+            // InternalX21.g:4493:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:4494:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:4479:2: ( ( RULE_ID ) )
-            // InternalX21.g:4480:3: ( RULE_ID )
+            // InternalX21.g:4494:2: ( ( RULE_ID ) )
+            // InternalX21.g:4495:3: ( RULE_ID )
             {
              before(grammarAccess.getFunctionOrLambdaAccess().getRefFunctionCrossReference_1_0_1_0()); 
-            // InternalX21.g:4481:3: ( RULE_ID )
-            // InternalX21.g:4482:4: RULE_ID
+            // InternalX21.g:4496:3: ( RULE_ID )
+            // InternalX21.g:4497:4: RULE_ID
             {
              before(grammarAccess.getFunctionOrLambdaAccess().getRefFunctionIDTerminalRuleCall_1_0_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13484,17 +13531,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__NameAssignment_1"
-    // InternalX21.g:4493:1: rule__Node__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalX21.g:4508:1: rule__Node__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Node__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4497:1: ( ( RULE_ID ) )
-            // InternalX21.g:4498:2: ( RULE_ID )
+            // InternalX21.g:4512:1: ( ( RULE_ID ) )
+            // InternalX21.g:4513:2: ( RULE_ID )
             {
-            // InternalX21.g:4498:2: ( RULE_ID )
-            // InternalX21.g:4499:3: RULE_ID
+            // InternalX21.g:4513:2: ( RULE_ID )
+            // InternalX21.g:4514:3: RULE_ID
             {
              before(grammarAccess.getNodeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13521,17 +13568,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Node__BodyAssignment_2"
-    // InternalX21.g:4508:1: rule__Node__BodyAssignment_2 : ( ruleFunctionOrLambda ) ;
+    // InternalX21.g:4523:1: rule__Node__BodyAssignment_2 : ( ruleFunctionOrLambda ) ;
     public final void rule__Node__BodyAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4512:1: ( ( ruleFunctionOrLambda ) )
-            // InternalX21.g:4513:2: ( ruleFunctionOrLambda )
+            // InternalX21.g:4527:1: ( ( ruleFunctionOrLambda ) )
+            // InternalX21.g:4528:2: ( ruleFunctionOrLambda )
             {
-            // InternalX21.g:4513:2: ( ruleFunctionOrLambda )
-            // InternalX21.g:4514:3: ruleFunctionOrLambda
+            // InternalX21.g:4528:2: ( ruleFunctionOrLambda )
+            // InternalX21.g:4529:3: ruleFunctionOrLambda
             {
              before(grammarAccess.getNodeAccess().getBodyFunctionOrLambdaParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -13562,21 +13609,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Stream__StartNodesAssignment_1"
-    // InternalX21.g:4523:1: rule__Stream__StartNodesAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:4538:1: rule__Stream__StartNodesAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__Stream__StartNodesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4527:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:4528:2: ( ( RULE_ID ) )
+            // InternalX21.g:4542:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:4543:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:4528:2: ( ( RULE_ID ) )
-            // InternalX21.g:4529:3: ( RULE_ID )
+            // InternalX21.g:4543:2: ( ( RULE_ID ) )
+            // InternalX21.g:4544:3: ( RULE_ID )
             {
              before(grammarAccess.getStreamAccess().getStartNodesNodeOrInputCrossReference_1_0()); 
-            // InternalX21.g:4530:3: ( RULE_ID )
-            // InternalX21.g:4531:4: RULE_ID
+            // InternalX21.g:4545:3: ( RULE_ID )
+            // InternalX21.g:4546:4: RULE_ID
             {
              before(grammarAccess.getStreamAccess().getStartNodesNodeOrInputIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13607,21 +13654,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Stream__StartNodesAssignment_2_1"
-    // InternalX21.g:4542:1: rule__Stream__StartNodesAssignment_2_1 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:4557:1: rule__Stream__StartNodesAssignment_2_1 : ( ( RULE_ID ) ) ;
     public final void rule__Stream__StartNodesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4546:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:4547:2: ( ( RULE_ID ) )
+            // InternalX21.g:4561:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:4562:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:4547:2: ( ( RULE_ID ) )
-            // InternalX21.g:4548:3: ( RULE_ID )
+            // InternalX21.g:4562:2: ( ( RULE_ID ) )
+            // InternalX21.g:4563:3: ( RULE_ID )
             {
              before(grammarAccess.getStreamAccess().getStartNodesNodeOrInputCrossReference_2_1_0()); 
-            // InternalX21.g:4549:3: ( RULE_ID )
-            // InternalX21.g:4550:4: RULE_ID
+            // InternalX21.g:4564:3: ( RULE_ID )
+            // InternalX21.g:4565:4: RULE_ID
             {
              before(grammarAccess.getStreamAccess().getStartNodesNodeOrInputIDTerminalRuleCall_2_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13652,17 +13699,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Stream__PointsAssignment_3_1"
-    // InternalX21.g:4561:1: rule__Stream__PointsAssignment_3_1 : ( ruleElementList ) ;
+    // InternalX21.g:4576:1: rule__Stream__PointsAssignment_3_1 : ( ruleElementList ) ;
     public final void rule__Stream__PointsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4565:1: ( ( ruleElementList ) )
-            // InternalX21.g:4566:2: ( ruleElementList )
+            // InternalX21.g:4580:1: ( ( ruleElementList ) )
+            // InternalX21.g:4581:2: ( ruleElementList )
             {
-            // InternalX21.g:4566:2: ( ruleElementList )
-            // InternalX21.g:4567:3: ruleElementList
+            // InternalX21.g:4581:2: ( ruleElementList )
+            // InternalX21.g:4582:3: ruleElementList
             {
              before(grammarAccess.getStreamAccess().getPointsElementListParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13693,17 +13740,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ElementList__ElementsAssignment_0"
-    // InternalX21.g:4576:1: rule__ElementList__ElementsAssignment_0 : ( ruleElement ) ;
+    // InternalX21.g:4591:1: rule__ElementList__ElementsAssignment_0 : ( ruleElement ) ;
     public final void rule__ElementList__ElementsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4580:1: ( ( ruleElement ) )
-            // InternalX21.g:4581:2: ( ruleElement )
+            // InternalX21.g:4595:1: ( ( ruleElement ) )
+            // InternalX21.g:4596:2: ( ruleElement )
             {
-            // InternalX21.g:4581:2: ( ruleElement )
-            // InternalX21.g:4582:3: ruleElement
+            // InternalX21.g:4596:2: ( ruleElement )
+            // InternalX21.g:4597:3: ruleElement
             {
              before(grammarAccess.getElementListAccess().getElementsElementParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -13734,17 +13781,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ElementList__ElementsAssignment_1_1"
-    // InternalX21.g:4591:1: rule__ElementList__ElementsAssignment_1_1 : ( ruleElement ) ;
+    // InternalX21.g:4606:1: rule__ElementList__ElementsAssignment_1_1 : ( ruleElement ) ;
     public final void rule__ElementList__ElementsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4595:1: ( ( ruleElement ) )
-            // InternalX21.g:4596:2: ( ruleElement )
+            // InternalX21.g:4610:1: ( ( ruleElement ) )
+            // InternalX21.g:4611:2: ( ruleElement )
             {
-            // InternalX21.g:4596:2: ( ruleElement )
-            // InternalX21.g:4597:3: ruleElement
+            // InternalX21.g:4611:2: ( ruleElement )
+            // InternalX21.g:4612:3: ruleElement
             {
              before(grammarAccess.getElementListAccess().getElementsElementParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13775,21 +13822,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__RefAssignment_0_1"
-    // InternalX21.g:4606:1: rule__Element__RefAssignment_0_1 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:4621:1: rule__Element__RefAssignment_0_1 : ( ( RULE_ID ) ) ;
     public final void rule__Element__RefAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4610:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:4611:2: ( ( RULE_ID ) )
+            // InternalX21.g:4625:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:4626:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:4611:2: ( ( RULE_ID ) )
-            // InternalX21.g:4612:3: ( RULE_ID )
+            // InternalX21.g:4626:2: ( ( RULE_ID ) )
+            // InternalX21.g:4627:3: ( RULE_ID )
             {
              before(grammarAccess.getElementAccess().getRefNodeCrossReference_0_1_0()); 
-            // InternalX21.g:4613:3: ( RULE_ID )
-            // InternalX21.g:4614:4: RULE_ID
+            // InternalX21.g:4628:3: ( RULE_ID )
+            // InternalX21.g:4629:4: RULE_ID
             {
              before(grammarAccess.getElementAccess().getRefNodeIDTerminalRuleCall_0_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13820,17 +13867,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__BodyAssignment_1_1"
-    // InternalX21.g:4625:1: rule__Element__BodyAssignment_1_1 : ( ruleFunctionOrLambda ) ;
+    // InternalX21.g:4640:1: rule__Element__BodyAssignment_1_1 : ( ruleFunctionOrLambda ) ;
     public final void rule__Element__BodyAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4629:1: ( ( ruleFunctionOrLambda ) )
-            // InternalX21.g:4630:2: ( ruleFunctionOrLambda )
+            // InternalX21.g:4644:1: ( ( ruleFunctionOrLambda ) )
+            // InternalX21.g:4645:2: ( ruleFunctionOrLambda )
             {
-            // InternalX21.g:4630:2: ( ruleFunctionOrLambda )
-            // InternalX21.g:4631:3: ruleFunctionOrLambda
+            // InternalX21.g:4645:2: ( ruleFunctionOrLambda )
+            // InternalX21.g:4646:3: ruleFunctionOrLambda
             {
              before(grammarAccess.getElementAccess().getBodyFunctionOrLambdaParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13861,17 +13908,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__NameAssignment_2_2"
-    // InternalX21.g:4640:1: rule__Element__NameAssignment_2_2 : ( RULE_ID ) ;
+    // InternalX21.g:4655:1: rule__Element__NameAssignment_2_2 : ( RULE_ID ) ;
     public final void rule__Element__NameAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4644:1: ( ( RULE_ID ) )
-            // InternalX21.g:4645:2: ( RULE_ID )
+            // InternalX21.g:4659:1: ( ( RULE_ID ) )
+            // InternalX21.g:4660:2: ( RULE_ID )
             {
-            // InternalX21.g:4645:2: ( RULE_ID )
-            // InternalX21.g:4646:3: RULE_ID
+            // InternalX21.g:4660:2: ( RULE_ID )
+            // InternalX21.g:4661:3: RULE_ID
             {
              before(grammarAccess.getElementAccess().getNameIDTerminalRuleCall_2_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13898,17 +13945,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataDecl__NameAssignment_1"
-    // InternalX21.g:4655:1: rule__DataDecl__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalX21.g:4670:1: rule__DataDecl__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__DataDecl__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4659:1: ( ( RULE_ID ) )
-            // InternalX21.g:4660:2: ( RULE_ID )
+            // InternalX21.g:4674:1: ( ( RULE_ID ) )
+            // InternalX21.g:4675:2: ( RULE_ID )
             {
-            // InternalX21.g:4660:2: ( RULE_ID )
-            // InternalX21.g:4661:3: RULE_ID
+            // InternalX21.g:4675:2: ( RULE_ID )
+            // InternalX21.g:4676:3: RULE_ID
             {
              before(grammarAccess.getDataDeclAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13935,17 +13982,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataDecl__VariablesAssignment_3"
-    // InternalX21.g:4670:1: rule__DataDecl__VariablesAssignment_3 : ( ruleDataVariable ) ;
+    // InternalX21.g:4685:1: rule__DataDecl__VariablesAssignment_3 : ( ruleDataVariable ) ;
     public final void rule__DataDecl__VariablesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4674:1: ( ( ruleDataVariable ) )
-            // InternalX21.g:4675:2: ( ruleDataVariable )
+            // InternalX21.g:4689:1: ( ( ruleDataVariable ) )
+            // InternalX21.g:4690:2: ( ruleDataVariable )
             {
-            // InternalX21.g:4675:2: ( ruleDataVariable )
-            // InternalX21.g:4676:3: ruleDataVariable
+            // InternalX21.g:4690:2: ( ruleDataVariable )
+            // InternalX21.g:4691:3: ruleDataVariable
             {
              before(grammarAccess.getDataDeclAccess().getVariablesDataVariableParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -13976,17 +14023,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataDecl__VariablesAssignment_4_1"
-    // InternalX21.g:4685:1: rule__DataDecl__VariablesAssignment_4_1 : ( ruleDataVariable ) ;
+    // InternalX21.g:4700:1: rule__DataDecl__VariablesAssignment_4_1 : ( ruleDataVariable ) ;
     public final void rule__DataDecl__VariablesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4689:1: ( ( ruleDataVariable ) )
-            // InternalX21.g:4690:2: ( ruleDataVariable )
+            // InternalX21.g:4704:1: ( ( ruleDataVariable ) )
+            // InternalX21.g:4705:2: ( ruleDataVariable )
             {
-            // InternalX21.g:4690:2: ( ruleDataVariable )
-            // InternalX21.g:4691:3: ruleDataVariable
+            // InternalX21.g:4705:2: ( ruleDataVariable )
+            // InternalX21.g:4706:3: ruleDataVariable
             {
              before(grammarAccess.getDataDeclAccess().getVariablesDataVariableParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14017,17 +14064,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataVariable__NameAssignment_0"
-    // InternalX21.g:4700:1: rule__DataVariable__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalX21.g:4715:1: rule__DataVariable__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__DataVariable__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4704:1: ( ( RULE_ID ) )
-            // InternalX21.g:4705:2: ( RULE_ID )
+            // InternalX21.g:4719:1: ( ( RULE_ID ) )
+            // InternalX21.g:4720:2: ( RULE_ID )
             {
-            // InternalX21.g:4705:2: ( RULE_ID )
-            // InternalX21.g:4706:3: RULE_ID
+            // InternalX21.g:4720:2: ( RULE_ID )
+            // InternalX21.g:4721:3: RULE_ID
             {
              before(grammarAccess.getDataVariableAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -14054,17 +14101,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataVariable__TypeAssignment_2"
-    // InternalX21.g:4715:1: rule__DataVariable__TypeAssignment_2 : ( ruleType ) ;
+    // InternalX21.g:4730:1: rule__DataVariable__TypeAssignment_2 : ( ruleType ) ;
     public final void rule__DataVariable__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4719:1: ( ( ruleType ) )
-            // InternalX21.g:4720:2: ( ruleType )
+            // InternalX21.g:4734:1: ( ( ruleType ) )
+            // InternalX21.g:4735:2: ( ruleType )
             {
-            // InternalX21.g:4720:2: ( ruleType )
-            // InternalX21.g:4721:3: ruleType
+            // InternalX21.g:4735:2: ( ruleType )
+            // InternalX21.g:4736:3: ruleType
             {
              before(grammarAccess.getDataVariableAccess().getTypeTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -14095,21 +14142,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Type__DeclarationAssignment_2_1"
-    // InternalX21.g:4730:1: rule__Type__DeclarationAssignment_2_1 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:4745:1: rule__Type__DeclarationAssignment_2_1 : ( ( RULE_ID ) ) ;
     public final void rule__Type__DeclarationAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4734:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:4735:2: ( ( RULE_ID ) )
+            // InternalX21.g:4749:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:4750:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:4735:2: ( ( RULE_ID ) )
-            // InternalX21.g:4736:3: ( RULE_ID )
+            // InternalX21.g:4750:2: ( ( RULE_ID ) )
+            // InternalX21.g:4751:3: ( RULE_ID )
             {
              before(grammarAccess.getTypeAccess().getDeclarationDataDeclCrossReference_2_1_0()); 
-            // InternalX21.g:4737:3: ( RULE_ID )
-            // InternalX21.g:4738:4: RULE_ID
+            // InternalX21.g:4752:3: ( RULE_ID )
+            // InternalX21.g:4753:4: RULE_ID
             {
              before(grammarAccess.getTypeAccess().getDeclarationDataDeclIDTerminalRuleCall_2_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -14140,17 +14187,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LogicExp__RightAssignment_2"
-    // InternalX21.g:4749:1: rule__LogicExp__RightAssignment_2 : ( ruleExp ) ;
+    // InternalX21.g:4764:1: rule__LogicExp__RightAssignment_2 : ( ruleExp ) ;
     public final void rule__LogicExp__RightAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4753:1: ( ( ruleExp ) )
-            // InternalX21.g:4754:2: ( ruleExp )
+            // InternalX21.g:4768:1: ( ( ruleExp ) )
+            // InternalX21.g:4769:2: ( ruleExp )
             {
-            // InternalX21.g:4754:2: ( ruleExp )
-            // InternalX21.g:4755:3: ruleExp
+            // InternalX21.g:4769:2: ( ruleExp )
+            // InternalX21.g:4770:3: ruleExp
             {
              before(grammarAccess.getLogicExpAccess().getRightExpParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -14181,17 +14228,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Exp__RightAssignment_1_1"
-    // InternalX21.g:4764:1: rule__Exp__RightAssignment_1_1 : ( ruleMulDiv ) ;
+    // InternalX21.g:4779:1: rule__Exp__RightAssignment_1_1 : ( ruleMulDiv ) ;
     public final void rule__Exp__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4768:1: ( ( ruleMulDiv ) )
-            // InternalX21.g:4769:2: ( ruleMulDiv )
+            // InternalX21.g:4783:1: ( ( ruleMulDiv ) )
+            // InternalX21.g:4784:2: ( ruleMulDiv )
             {
-            // InternalX21.g:4769:2: ( ruleMulDiv )
-            // InternalX21.g:4770:3: ruleMulDiv
+            // InternalX21.g:4784:2: ( ruleMulDiv )
+            // InternalX21.g:4785:3: ruleMulDiv
             {
              before(grammarAccess.getExpAccess().getRightMulDivParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14222,17 +14269,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MulDiv__RightAssignment_1_1"
-    // InternalX21.g:4779:1: rule__MulDiv__RightAssignment_1_1 : ( rulePrimary ) ;
+    // InternalX21.g:4794:1: rule__MulDiv__RightAssignment_1_1 : ( rulePrimary ) ;
     public final void rule__MulDiv__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4783:1: ( ( rulePrimary ) )
-            // InternalX21.g:4784:2: ( rulePrimary )
+            // InternalX21.g:4798:1: ( ( rulePrimary ) )
+            // InternalX21.g:4799:2: ( rulePrimary )
             {
-            // InternalX21.g:4784:2: ( rulePrimary )
-            // InternalX21.g:4785:3: rulePrimary
+            // InternalX21.g:4799:2: ( rulePrimary )
+            // InternalX21.g:4800:3: rulePrimary
             {
              before(grammarAccess.getMulDivAccess().getRightPrimaryParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14263,17 +14310,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__ValueAssignment_0_1"
-    // InternalX21.g:4794:1: rule__Primary__ValueAssignment_0_1 : ( RULE_INT ) ;
+    // InternalX21.g:4809:1: rule__Primary__ValueAssignment_0_1 : ( RULE_INT ) ;
     public final void rule__Primary__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4798:1: ( ( RULE_INT ) )
-            // InternalX21.g:4799:2: ( RULE_INT )
+            // InternalX21.g:4813:1: ( ( RULE_INT ) )
+            // InternalX21.g:4814:2: ( RULE_INT )
             {
-            // InternalX21.g:4799:2: ( RULE_INT )
-            // InternalX21.g:4800:3: RULE_INT
+            // InternalX21.g:4814:2: ( RULE_INT )
+            // InternalX21.g:4815:3: RULE_INT
             {
              before(grammarAccess.getPrimaryAccess().getValueINTTerminalRuleCall_0_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -14300,17 +14347,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__BodyAssignment_1_2"
-    // InternalX21.g:4809:1: rule__Primary__BodyAssignment_1_2 : ( ruleExp ) ;
+    // InternalX21.g:4824:1: rule__Primary__BodyAssignment_1_2 : ( ruleExp ) ;
     public final void rule__Primary__BodyAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4813:1: ( ( ruleExp ) )
-            // InternalX21.g:4814:2: ( ruleExp )
+            // InternalX21.g:4828:1: ( ( ruleExp ) )
+            // InternalX21.g:4829:2: ( ruleExp )
             {
-            // InternalX21.g:4814:2: ( ruleExp )
-            // InternalX21.g:4815:3: ruleExp
+            // InternalX21.g:4829:2: ( ruleExp )
+            // InternalX21.g:4830:3: ruleExp
             {
              before(grammarAccess.getPrimaryAccess().getBodyExpParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -14341,17 +14388,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LetStatement__NameAssignment_1"
-    // InternalX21.g:4824:1: rule__LetStatement__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalX21.g:4839:1: rule__LetStatement__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__LetStatement__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4828:1: ( ( RULE_ID ) )
-            // InternalX21.g:4829:2: ( RULE_ID )
+            // InternalX21.g:4843:1: ( ( RULE_ID ) )
+            // InternalX21.g:4844:2: ( RULE_ID )
             {
-            // InternalX21.g:4829:2: ( RULE_ID )
-            // InternalX21.g:4830:3: RULE_ID
+            // InternalX21.g:4844:2: ( RULE_ID )
+            // InternalX21.g:4845:3: RULE_ID
             {
              before(grammarAccess.getLetStatementAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -14378,17 +14425,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LetStatement__ValueAssignment_3"
-    // InternalX21.g:4839:1: rule__LetStatement__ValueAssignment_3 : ( ruleExp ) ;
+    // InternalX21.g:4854:1: rule__LetStatement__ValueAssignment_3 : ( ruleExp ) ;
     public final void rule__LetStatement__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4843:1: ( ( ruleExp ) )
-            // InternalX21.g:4844:2: ( ruleExp )
+            // InternalX21.g:4858:1: ( ( ruleExp ) )
+            // InternalX21.g:4859:2: ( ruleExp )
             {
-            // InternalX21.g:4844:2: ( ruleExp )
-            // InternalX21.g:4845:3: ruleExp
+            // InternalX21.g:4859:2: ( ruleExp )
+            // InternalX21.g:4860:3: ruleExp
             {
              before(grammarAccess.getLetStatementAccess().getValueExpParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -14419,17 +14466,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LetStatement__BodyAssignment_5"
-    // InternalX21.g:4854:1: rule__LetStatement__BodyAssignment_5 : ( ruleExp ) ;
+    // InternalX21.g:4869:1: rule__LetStatement__BodyAssignment_5 : ( ruleExp ) ;
     public final void rule__LetStatement__BodyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4858:1: ( ( ruleExp ) )
-            // InternalX21.g:4859:2: ( ruleExp )
+            // InternalX21.g:4873:1: ( ( ruleExp ) )
+            // InternalX21.g:4874:2: ( ruleExp )
             {
-            // InternalX21.g:4859:2: ( ruleExp )
-            // InternalX21.g:4860:3: ruleExp
+            // InternalX21.g:4874:2: ( ruleExp )
+            // InternalX21.g:4875:3: ruleExp
             {
              before(grammarAccess.getLetStatementAccess().getBodyExpParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -14460,21 +14507,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataAccess__RefAssignment_0"
-    // InternalX21.g:4869:1: rule__DataAccess__RefAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:4884:1: rule__DataAccess__RefAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__DataAccess__RefAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4873:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:4874:2: ( ( RULE_ID ) )
+            // InternalX21.g:4888:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:4889:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:4874:2: ( ( RULE_ID ) )
-            // InternalX21.g:4875:3: ( RULE_ID )
+            // InternalX21.g:4889:2: ( ( RULE_ID ) )
+            // InternalX21.g:4890:3: ( RULE_ID )
             {
              before(grammarAccess.getDataAccessAccess().getRefDataRefCrossReference_0_0()); 
-            // InternalX21.g:4876:3: ( RULE_ID )
-            // InternalX21.g:4877:4: RULE_ID
+            // InternalX21.g:4891:3: ( RULE_ID )
+            // InternalX21.g:4892:4: RULE_ID
             {
              before(grammarAccess.getDataAccessAccess().getRefDataRefIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -14505,21 +14552,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DataAccess__VarRefsAssignment_1_1"
-    // InternalX21.g:4888:1: rule__DataAccess__VarRefsAssignment_1_1 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:4903:1: rule__DataAccess__VarRefsAssignment_1_1 : ( ( RULE_ID ) ) ;
     public final void rule__DataAccess__VarRefsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4892:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:4893:2: ( ( RULE_ID ) )
+            // InternalX21.g:4907:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:4908:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:4893:2: ( ( RULE_ID ) )
-            // InternalX21.g:4894:3: ( RULE_ID )
+            // InternalX21.g:4908:2: ( ( RULE_ID ) )
+            // InternalX21.g:4909:3: ( RULE_ID )
             {
              before(grammarAccess.getDataAccessAccess().getVarRefsDataVariableCrossReference_1_1_0()); 
-            // InternalX21.g:4895:3: ( RULE_ID )
-            // InternalX21.g:4896:4: RULE_ID
+            // InternalX21.g:4910:3: ( RULE_ID )
+            // InternalX21.g:4911:4: RULE_ID
             {
              before(grammarAccess.getDataAccessAccess().getVarRefsDataVariableIDTerminalRuleCall_1_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -14550,17 +14597,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfStatement__ConditionAssignment_1"
-    // InternalX21.g:4907:1: rule__IfStatement__ConditionAssignment_1 : ( ruleLogicExp ) ;
+    // InternalX21.g:4922:1: rule__IfStatement__ConditionAssignment_1 : ( ruleLogicExp ) ;
     public final void rule__IfStatement__ConditionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4911:1: ( ( ruleLogicExp ) )
-            // InternalX21.g:4912:2: ( ruleLogicExp )
+            // InternalX21.g:4926:1: ( ( ruleLogicExp ) )
+            // InternalX21.g:4927:2: ( ruleLogicExp )
             {
-            // InternalX21.g:4912:2: ( ruleLogicExp )
-            // InternalX21.g:4913:3: ruleLogicExp
+            // InternalX21.g:4927:2: ( ruleLogicExp )
+            // InternalX21.g:4928:3: ruleLogicExp
             {
              before(grammarAccess.getIfStatementAccess().getConditionLogicExpParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14591,17 +14638,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfStatement__TrueExpAssignment_3"
-    // InternalX21.g:4922:1: rule__IfStatement__TrueExpAssignment_3 : ( ruleExp ) ;
+    // InternalX21.g:4937:1: rule__IfStatement__TrueExpAssignment_3 : ( ruleExp ) ;
     public final void rule__IfStatement__TrueExpAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4926:1: ( ( ruleExp ) )
-            // InternalX21.g:4927:2: ( ruleExp )
+            // InternalX21.g:4941:1: ( ( ruleExp ) )
+            // InternalX21.g:4942:2: ( ruleExp )
             {
-            // InternalX21.g:4927:2: ( ruleExp )
-            // InternalX21.g:4928:3: ruleExp
+            // InternalX21.g:4942:2: ( ruleExp )
+            // InternalX21.g:4943:3: ruleExp
             {
              before(grammarAccess.getIfStatementAccess().getTrueExpExpParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -14632,17 +14679,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfStatement__FalseExpAssignment_5"
-    // InternalX21.g:4937:1: rule__IfStatement__FalseExpAssignment_5 : ( ruleExp ) ;
+    // InternalX21.g:4952:1: rule__IfStatement__FalseExpAssignment_5 : ( ruleExp ) ;
     public final void rule__IfStatement__FalseExpAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4941:1: ( ( ruleExp ) )
-            // InternalX21.g:4942:2: ( ruleExp )
+            // InternalX21.g:4956:1: ( ( ruleExp ) )
+            // InternalX21.g:4957:2: ( ruleExp )
             {
-            // InternalX21.g:4942:2: ( ruleExp )
-            // InternalX21.g:4943:3: ruleExp
+            // InternalX21.g:4957:2: ( ruleExp )
+            // InternalX21.g:4958:3: ruleExp
             {
              before(grammarAccess.getIfStatementAccess().getFalseExpExpParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -14673,21 +14720,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NewStatement__TypeAssignment_1"
-    // InternalX21.g:4952:1: rule__NewStatement__TypeAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:4967:1: rule__NewStatement__TypeAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__NewStatement__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4956:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:4957:2: ( ( RULE_ID ) )
+            // InternalX21.g:4971:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:4972:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:4957:2: ( ( RULE_ID ) )
-            // InternalX21.g:4958:3: ( RULE_ID )
+            // InternalX21.g:4972:2: ( ( RULE_ID ) )
+            // InternalX21.g:4973:3: ( RULE_ID )
             {
              before(grammarAccess.getNewStatementAccess().getTypeDataDeclCrossReference_1_0()); 
-            // InternalX21.g:4959:3: ( RULE_ID )
-            // InternalX21.g:4960:4: RULE_ID
+            // InternalX21.g:4974:3: ( RULE_ID )
+            // InternalX21.g:4975:4: RULE_ID
             {
              before(grammarAccess.getNewStatementAccess().getTypeDataDeclIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -14718,17 +14765,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NewStatement__VariablesAssignment_3"
-    // InternalX21.g:4971:1: rule__NewStatement__VariablesAssignment_3 : ( ruleVarAssignment ) ;
+    // InternalX21.g:4986:1: rule__NewStatement__VariablesAssignment_3 : ( ruleVarAssignment ) ;
     public final void rule__NewStatement__VariablesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4975:1: ( ( ruleVarAssignment ) )
-            // InternalX21.g:4976:2: ( ruleVarAssignment )
+            // InternalX21.g:4990:1: ( ( ruleVarAssignment ) )
+            // InternalX21.g:4991:2: ( ruleVarAssignment )
             {
-            // InternalX21.g:4976:2: ( ruleVarAssignment )
-            // InternalX21.g:4977:3: ruleVarAssignment
+            // InternalX21.g:4991:2: ( ruleVarAssignment )
+            // InternalX21.g:4992:3: ruleVarAssignment
             {
              before(grammarAccess.getNewStatementAccess().getVariablesVarAssignmentParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -14759,17 +14806,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NewStatement__VariablesAssignment_4_1"
-    // InternalX21.g:4986:1: rule__NewStatement__VariablesAssignment_4_1 : ( ruleVarAssignment ) ;
+    // InternalX21.g:5001:1: rule__NewStatement__VariablesAssignment_4_1 : ( ruleVarAssignment ) ;
     public final void rule__NewStatement__VariablesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:4990:1: ( ( ruleVarAssignment ) )
-            // InternalX21.g:4991:2: ( ruleVarAssignment )
+            // InternalX21.g:5005:1: ( ( ruleVarAssignment ) )
+            // InternalX21.g:5006:2: ( ruleVarAssignment )
             {
-            // InternalX21.g:4991:2: ( ruleVarAssignment )
-            // InternalX21.g:4992:3: ruleVarAssignment
+            // InternalX21.g:5006:2: ( ruleVarAssignment )
+            // InternalX21.g:5007:3: ruleVarAssignment
             {
              before(grammarAccess.getNewStatementAccess().getVariablesVarAssignmentParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -14800,21 +14847,21 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VarAssignment__VariableAssignment_0"
-    // InternalX21.g:5001:1: rule__VarAssignment__VariableAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalX21.g:5016:1: rule__VarAssignment__VariableAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__VarAssignment__VariableAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:5005:1: ( ( ( RULE_ID ) ) )
-            // InternalX21.g:5006:2: ( ( RULE_ID ) )
+            // InternalX21.g:5020:1: ( ( ( RULE_ID ) ) )
+            // InternalX21.g:5021:2: ( ( RULE_ID ) )
             {
-            // InternalX21.g:5006:2: ( ( RULE_ID ) )
-            // InternalX21.g:5007:3: ( RULE_ID )
+            // InternalX21.g:5021:2: ( ( RULE_ID ) )
+            // InternalX21.g:5022:3: ( RULE_ID )
             {
              before(grammarAccess.getVarAssignmentAccess().getVariableDataVariableCrossReference_0_0()); 
-            // InternalX21.g:5008:3: ( RULE_ID )
-            // InternalX21.g:5009:4: RULE_ID
+            // InternalX21.g:5023:3: ( RULE_ID )
+            // InternalX21.g:5024:4: RULE_ID
             {
              before(grammarAccess.getVarAssignmentAccess().getVariableDataVariableIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -14845,17 +14892,17 @@ public class InternalX21Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VarAssignment__ValueAssignment_2"
-    // InternalX21.g:5020:1: rule__VarAssignment__ValueAssignment_2 : ( ruleExp ) ;
+    // InternalX21.g:5035:1: rule__VarAssignment__ValueAssignment_2 : ( ruleExp ) ;
     public final void rule__VarAssignment__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalX21.g:5024:1: ( ( ruleExp ) )
-            // InternalX21.g:5025:2: ( ruleExp )
+            // InternalX21.g:5039:1: ( ( ruleExp ) )
+            // InternalX21.g:5040:2: ( ruleExp )
             {
-            // InternalX21.g:5025:2: ( ruleExp )
-            // InternalX21.g:5026:3: ruleExp
+            // InternalX21.g:5040:2: ( ruleExp )
+            // InternalX21.g:5041:3: ruleExp
             {
              before(grammarAccess.getVarAssignmentAccess().getValueExpParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);

@@ -9,6 +9,7 @@ import dk.sdu.mmmi.mdsd.x21.X21Package;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.x21.impl.X21Impl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.x21.impl.X21Impl#getDeclarations <em>Declarations</em>}</li>
  * </ul>
  *
@@ -36,6 +39,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class X21Impl extends MinimalEObjectImpl.Container implements X21
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getDeclarations() <em>Declarations</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +88,31 @@ public class X21Impl extends MinimalEObjectImpl.Container implements X21
   protected EClass eStaticClass()
   {
     return X21Package.Literals.X21;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, X21Package.X21__NAME, oldName, name));
   }
 
   /**
@@ -108,6 +156,8 @@ public class X21Impl extends MinimalEObjectImpl.Container implements X21
   {
     switch (featureID)
     {
+      case X21Package.X21__NAME:
+        return getName();
       case X21Package.X21__DECLARATIONS:
         return getDeclarations();
     }
@@ -125,6 +175,9 @@ public class X21Impl extends MinimalEObjectImpl.Container implements X21
   {
     switch (featureID)
     {
+      case X21Package.X21__NAME:
+        setName((String)newValue);
+        return;
       case X21Package.X21__DECLARATIONS:
         getDeclarations().clear();
         getDeclarations().addAll((Collection<? extends Declaration>)newValue);
@@ -143,6 +196,9 @@ public class X21Impl extends MinimalEObjectImpl.Container implements X21
   {
     switch (featureID)
     {
+      case X21Package.X21__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case X21Package.X21__DECLARATIONS:
         getDeclarations().clear();
         return;
@@ -160,10 +216,29 @@ public class X21Impl extends MinimalEObjectImpl.Container implements X21
   {
     switch (featureID)
     {
+      case X21Package.X21__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case X21Package.X21__DECLARATIONS:
         return declarations != null && !declarations.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //X21Impl

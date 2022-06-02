@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import dk.sdu.mmmi.mdsd.x21.X21
+import dk.sdu.mmmi.mdsd.x21.DataDecl
 
 /**
  * Generates code from your model files on save.
@@ -16,6 +18,21 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class X21Generator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		var program = resource.allContents.filter(X21).next
+		var packageName = program.name.toLowerCase
+		var className = '''«program.name»Main.java'''
+		
+		// Generate data classes
+		var customDataTypes = program.declarations.filter(DataDecl)
+		var typeGenerator = new DataTypeGenerator()
+		for (dataType : customDataTypes) {
+			var dataClassName = '''Data«dataType.name.toFirstUpper»'''
+			typeGenerator.declaration = dataType
+			fsa.generateFile('''«packageName»/«dataClassName».java''', typeGenerator.genJavaCode(packageName))
+		}
+		
+		
+		
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(Greeting)

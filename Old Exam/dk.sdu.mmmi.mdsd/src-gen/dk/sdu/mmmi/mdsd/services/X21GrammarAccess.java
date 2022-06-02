@@ -29,16 +29,17 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cX21Action_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cProgramKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Assignment cDeclarationsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDeclarationsDeclarationParserRuleCall_3_0 = (RuleCall)cDeclarationsAssignment_3.eContents().get(0);
 		
 		//X21:
-		//    {X21} 'program' ID declarations+=Declaration*
+		//    {X21} 'program' name=ID declarations+=Declaration*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{X21} 'program' ID declarations+=Declaration*
+		//{X21} 'program' name=ID declarations+=Declaration*
 		public Group getGroup() { return cGroup; }
 		
 		//{X21}
@@ -47,8 +48,11 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'program'
 		public Keyword getProgramKeyword_1() { return cProgramKeyword_1; }
 		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
 		//ID
-		public RuleCall getIDTerminalRuleCall_2() { return cIDTerminalRuleCall_2; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//declarations+=Declaration*
 		public Assignment getDeclarationsAssignment_3() { return cDeclarationsAssignment_3; }
@@ -1314,7 +1318,7 @@ public class X21GrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 
 	
 	//X21:
-	//    {X21} 'program' ID declarations+=Declaration*
+	//    {X21} 'program' name=ID declarations+=Declaration*
 	//;
 	public X21Elements getX21Access() {
 		return pX21;

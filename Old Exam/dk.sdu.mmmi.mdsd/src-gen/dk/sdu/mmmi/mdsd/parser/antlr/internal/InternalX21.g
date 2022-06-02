@@ -87,10 +87,24 @@ ruleX21 returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getX21Access().getProgramKeyword_1());
 		}
-		this_ID_2=RULE_ID
-		{
-			newLeafNode(this_ID_2, grammarAccess.getX21Access().getIDTerminalRuleCall_2());
-		}
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getX21Access().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getX21Rule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
 		(
 			(
 				{

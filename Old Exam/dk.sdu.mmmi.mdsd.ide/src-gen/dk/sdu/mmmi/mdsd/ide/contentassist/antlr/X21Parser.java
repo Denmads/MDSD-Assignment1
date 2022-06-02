@@ -87,6 +87,7 @@ public class X21Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNewStatementAccess().getGroup(), "rule__NewStatement__Group__0");
 			builder.put(grammarAccess.getNewStatementAccess().getGroup_4(), "rule__NewStatement__Group_4__0");
 			builder.put(grammarAccess.getVarAssignmentAccess().getGroup(), "rule__VarAssignment__Group__0");
+			builder.put(grammarAccess.getX21Access().getNameAssignment_2(), "rule__X21__NameAssignment_2");
 			builder.put(grammarAccess.getX21Access().getDeclarationsAssignment_3(), "rule__X21__DeclarationsAssignment_3");
 			builder.put(grammarAccess.getNameAndTypeAccess().getNameAssignment_0(), "rule__NameAndType__NameAssignment_0");
 			builder.put(grammarAccess.getNameAndTypeAccess().getTypeAssignment_2(), "rule__NameAndType__TypeAssignment_2");

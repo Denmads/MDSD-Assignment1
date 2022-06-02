@@ -3,10 +3,16 @@
  */
 package dk.sdu.mmmi.mdsd.generator;
 
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
+import dk.sdu.mmmi.mdsd.x21.DataDecl;
+import dk.sdu.mmmi.mdsd.x21.X21;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +23,30 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class X21Generator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    X21 program = Iterators.<X21>filter(resource.getAllContents(), X21.class).next();
+    String packageName = program.getName().toLowerCase();
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = program.getName();
+    _builder.append(_name);
+    _builder.append("Main.java");
+    String className = _builder.toString();
+    Iterable<DataDecl> customDataTypes = Iterables.<DataDecl>filter(program.getDeclarations(), DataDecl.class);
+    DataTypeGenerator typeGenerator = new DataTypeGenerator();
+    for (final DataDecl dataType : customDataTypes) {
+      {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("Data");
+        String _firstUpper = StringExtensions.toFirstUpper(dataType.getName());
+        _builder_1.append(_firstUpper);
+        String dataClassName = _builder_1.toString();
+        typeGenerator.setDeclaration(dataType);
+        StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append(packageName);
+        _builder_2.append("/");
+        _builder_2.append(dataClassName);
+        _builder_2.append(".java");
+        fsa.generateFile(_builder_2.toString(), typeGenerator.genJavaCode(packageName));
+      }
+    }
   }
 }

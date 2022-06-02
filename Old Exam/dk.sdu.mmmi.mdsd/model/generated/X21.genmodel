@@ -7,6 +7,7 @@
   <genPackages prefix="X21" basePackage="dk.sdu.mmmi.mdsd" disposableProviderFactory="true"
       fileExtensions="x21" ecorePackage="X21.ecore#/">
     <genClasses ecoreClass="X21.ecore#//X21">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute X21.ecore#//X21/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference X21.ecore#//X21/declarations"/>
     </genClasses>
     <genClasses ecoreClass="X21.ecore#//Declaration"/>
