@@ -44,4 +44,11 @@ public class Utility {
     }
     return _switchResult;
   }
+  
+  public static String memberName(final String name) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("_");
+    _builder.append(name);
+    return _builder.toString();
+  }
 }

@@ -25,28 +25,35 @@ public class X21Generator extends AbstractGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     X21 program = Iterators.<X21>filter(resource.getAllContents(), X21.class).next();
     String packageName = program.getName().toLowerCase();
+    Iterable<DataDecl> customDataTypes = Iterables.<DataDecl>filter(program.getDeclarations(), DataDecl.class);
+    DataTypeGenerator typeGenerator = new DataTypeGenerator();
+    for (final DataDecl dataType : customDataTypes) {
+      {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Data");
+        String _firstUpper = StringExtensions.toFirstUpper(dataType.getName());
+        _builder.append(_firstUpper);
+        String dataClassName = _builder.toString();
+        typeGenerator.setDeclaration(dataType);
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append(packageName);
+        _builder_1.append("/");
+        _builder_1.append(dataClassName);
+        _builder_1.append(".java");
+        fsa.generateFile(_builder_1.toString(), typeGenerator.genJavaCode(packageName));
+      }
+    }
     StringConcatenation _builder = new StringConcatenation();
     String _name = program.getName();
     _builder.append(_name);
     _builder.append("Main.java");
     String className = _builder.toString();
-    Iterable<DataDecl> customDataTypes = Iterables.<DataDecl>filter(program.getDeclarations(), DataDecl.class);
-    DataTypeGenerator typeGenerator = new DataTypeGenerator();
-    for (final DataDecl dataType : customDataTypes) {
-      {
-        StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("Data");
-        String _firstUpper = StringExtensions.toFirstUpper(dataType.getName());
-        _builder_1.append(_firstUpper);
-        String dataClassName = _builder_1.toString();
-        typeGenerator.setDeclaration(dataType);
-        StringConcatenation _builder_2 = new StringConcatenation();
-        _builder_2.append(packageName);
-        _builder_2.append("/");
-        _builder_2.append(dataClassName);
-        _builder_2.append(".java");
-        fsa.generateFile(_builder_2.toString(), typeGenerator.genJavaCode(packageName));
-      }
-    }
+    MainFileGenerator mainGenerator = new MainFileGenerator(packageName, className, program);
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append(packageName);
+    _builder_1.append("/");
+    _builder_1.append(className);
+    _builder_1.append(".java");
+    fsa.generateFile(_builder_1.toString(), mainGenerator.genJavaCode());
   }
 }

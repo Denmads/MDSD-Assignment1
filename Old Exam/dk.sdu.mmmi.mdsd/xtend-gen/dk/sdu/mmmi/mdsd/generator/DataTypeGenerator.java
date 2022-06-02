@@ -88,11 +88,11 @@ public class DataTypeGenerator {
       for(final DataVariable variable : _variables) {
         _builder.append("\t");
         _builder.append("this.");
-        String _javaName = this.javaName(variable);
-        _builder.append(_javaName, "\t");
+        String _memberName = Utility.memberName(variable.getName());
+        _builder.append(_memberName, "\t");
         _builder.append(" = ");
-        String _javaName_1 = this.javaName(variable);
-        _builder.append(_javaName_1, "\t");
+        String _memberName_1 = Utility.memberName(variable.getName());
+        _builder.append(_memberName_1, "\t");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
       }
@@ -116,8 +116,8 @@ public class DataTypeGenerator {
         CharSequence _javaType = Utility.getJavaType(variable.getType());
         _builder.append(_javaType);
         _builder.append(" ");
-        String _javaName = this.javaName(variable);
-        _builder.append(_javaName);
+        String _memberName = Utility.memberName(variable.getName());
+        _builder.append(_memberName);
       }
       if (_hasElements) {
         _builder.append("");
@@ -133,8 +133,8 @@ public class DataTypeGenerator {
     CharSequence _javaType = Utility.getJavaType(dvar.getType());
     _builder.append(_javaType);
     _builder.append(" ");
-    String _javaName = this.javaName(dvar);
-    _builder.append(_javaName);
+    String _memberName = Utility.memberName(dvar.getName());
+    _builder.append(_memberName);
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("public ");
@@ -144,21 +144,21 @@ public class DataTypeGenerator {
     String _firstUpper = StringExtensions.toFirstUpper(dvar.getName());
     _builder.append(_firstUpper);
     _builder.append("() { return ");
-    String _javaName_1 = this.javaName(dvar);
-    _builder.append(_javaName_1);
+    String _memberName_1 = Utility.memberName(dvar.getName());
+    _builder.append(_memberName_1);
     _builder.append("; }");
     _builder.newLineIfNotEmpty();
     _builder.append("public ");
     _builder.append(this.currentClass);
     _builder.append(" set");
-    String _javaName_2 = this.javaName(dvar);
-    _builder.append(_javaName_2);
+    String _memberName_2 = Utility.memberName(dvar.getName());
+    _builder.append(_memberName_2);
     _builder.append("(");
     CharSequence _javaType_2 = Utility.getJavaType(dvar.getType());
     _builder.append(_javaType_2);
     _builder.append(" value) { ");
-    String _javaName_3 = this.javaName(dvar);
-    _builder.append(_javaName_3);
+    String _memberName_3 = Utility.memberName(dvar.getName());
+    _builder.append(_memberName_3);
     _builder.append(" = value; return this; }");
     _builder.newLineIfNotEmpty();
     return _builder;
@@ -183,8 +183,8 @@ public class DataTypeGenerator {
           _builder.appendImmediate("\",\"", "\t");
         }
         _builder.append("+");
-        String _javaName = this.javaName(variable);
-        _builder.append(_javaName, "\t");
+        String _memberName = Utility.memberName(variable.getName());
+        _builder.append(_memberName, "\t");
         _builder.append("+");
       }
     }
@@ -209,8 +209,8 @@ public class DataTypeGenerator {
       for(final DataVariable variable : _variables) {
         _builder.append("\t");
         _builder.append("result += ");
-        String _javaName = this.javaName(variable);
-        _builder.append(_javaName, "\t");
+        String _memberName = Utility.memberName(variable.getName());
+        _builder.append(_memberName, "\t");
         _builder.append(".hashCode();");
         _builder.newLineIfNotEmpty();
       }
@@ -243,23 +243,23 @@ public class DataTypeGenerator {
       for(final DataVariable variable : _variables) {
         _builder.append("\t");
         _builder.append("if (");
-        String _javaName = this.javaName(variable);
-        _builder.append(_javaName, "\t");
+        String _memberName = Utility.memberName(variable.getName());
+        _builder.append(_memberName, "\t");
         _builder.append("==null && object.");
-        String _javaName_1 = this.javaName(variable);
-        _builder.append(_javaName_1, "\t");
+        String _memberName_1 = Utility.memberName(variable.getName());
+        _builder.append(_memberName_1, "\t");
         _builder.append("!=null) return false;");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("if (");
-        String _javaName_2 = this.javaName(variable);
-        _builder.append(_javaName_2, "\t");
+        String _memberName_2 = Utility.memberName(variable.getName());
+        _builder.append(_memberName_2, "\t");
         _builder.append("!=null && !");
-        String _javaName_3 = this.javaName(variable);
-        _builder.append(_javaName_3, "\t");
+        String _memberName_3 = Utility.memberName(variable.getName());
+        _builder.append(_memberName_3, "\t");
         _builder.append(".equals(object.");
-        String _javaName_4 = this.javaName(variable);
-        _builder.append(_javaName_4, "\t");
+        String _memberName_4 = Utility.memberName(variable.getName());
+        _builder.append(_memberName_4, "\t");
         _builder.append(")) return false;");
         _builder.newLineIfNotEmpty();
       }
@@ -270,13 +270,5 @@ public class DataTypeGenerator {
     _builder.append("}");
     _builder.newLine();
     return _builder;
-  }
-  
-  public String javaName(final DataVariable dvar) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("_");
-    String _name = dvar.getName();
-    _builder.append(_name);
-    return _builder.toString();
   }
 }

@@ -20,7 +20,6 @@ class X21Generator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		var program = resource.allContents.filter(X21).next
 		var packageName = program.name.toLowerCase
-		var className = '''«program.name»Main.java'''
 		
 		// Generate data classes
 		var customDataTypes = program.declarations.filter(DataDecl)
@@ -32,11 +31,9 @@ class X21Generator extends AbstractGenerator {
 		}
 		
 		
-		
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		// Generate main class
+		var className = '''«program.name»Main.java'''
+		var mainGenerator = new MainFileGenerator(packageName, className, program)
+		fsa.generateFile('''«packageName»/«className».java''', mainGenerator.genJavaCode)
 	}
 }
