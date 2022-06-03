@@ -21,7 +21,7 @@ public class DataInt_pair {
 		result += _i2.hashCode();
 		return result;
 	}
-	public boolean euqals(Object other) {
+	public boolean equals(Object other) {
 		if (other== null || !(other instanceof DataInt_pair)) return false;
 		DataInt_pair object = (DataInt_pair)other;
 		if (_i1==null && object._i1!=null) return false;

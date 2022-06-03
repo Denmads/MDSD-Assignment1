@@ -225,7 +225,7 @@ public class DataTypeGenerator {
   
   public CharSequence genEqualsFunc() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("public boolean euqals(Object other) {");
+    _builder.append("public boolean equals(Object other) {");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("if (other== null || !(other instanceof ");

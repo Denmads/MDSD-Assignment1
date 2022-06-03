@@ -66,8 +66,8 @@ public class P3XMain extends GenericMainX21 {
 	protected void initializeNodes() {
 		super.addNode(node_i);
 		super.addNode(node_x);
-		super.addNode(node_0);
 		super.addNode(node_1);
+		super.addNode(node_0);
 	}
 	///
 	/// Initialize network as a whole

@@ -80,7 +80,7 @@ class DataTypeGenerator {
 	
 	def genEqualsFunc() {
 		'''
-		public boolean euqals(Object other) {
+		public boolean equals(Object other) {
 			if (other== null || !(other instanceof «currentClass»)) return false;
 			«currentClass» object = («currentClass»)other;
 			«FOR variable : declaration.variables»

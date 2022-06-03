@@ -26,7 +26,7 @@ public class DataTeacher {
 		result += _course_taught.hashCode();
 		return result;
 	}
-	public boolean euqals(Object other) {
+	public boolean equals(Object other) {
 		if (other== null || !(other instanceof DataTeacher)) return false;
 		DataTeacher object = (DataTeacher)other;
 		if (_name==null && object._name!=null) return false;

@@ -21,7 +21,7 @@ public class DataCourse {
 		result += _ects.hashCode();
 		return result;
 	}
-	public boolean euqals(Object other) {
+	public boolean equals(Object other) {
 		if (other== null || !(other instanceof DataCourse)) return false;
 		DataCourse object = (DataCourse)other;
 		if (_name==null && object._name!=null) return false;

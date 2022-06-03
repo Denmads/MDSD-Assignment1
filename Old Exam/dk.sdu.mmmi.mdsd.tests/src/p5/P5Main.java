@@ -60,8 +60,8 @@ public class P5Main extends GenericMainX21 {
 	protected void initializeNodes() {
 		super.addNode(node_teachers);
 		super.addNode(node_filter);
-		super.addNode(node_1);
 		super.addNode(node_0);
+		super.addNode(node_1);
 	}
 	///
 	/// Initialize network as a whole
