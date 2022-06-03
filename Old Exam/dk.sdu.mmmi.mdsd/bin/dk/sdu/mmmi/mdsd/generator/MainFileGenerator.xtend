@@ -14,12 +14,17 @@ import dk.sdu.mmmi.mdsd.x21.Stream
 import dk.sdu.mmmi.mdsd.x21.NodeOrInput
 import dk.sdu.mmmi.mdsd.x21.Element
 import dk.sdu.mmmi.mdsd.x21.NodeRef
+import java.util.List
+import dk.sdu.mmmi.mdsd.x21.FunctionReference
+import dk.sdu.mmmi.mdsd.x21.Lambda
 
 class MainFileGenerator {
 	
 	String packageName
 	String className
 	X21 program
+	
+	List<ExpressionGenerator> expressionGens = newArrayList
 	
 	Map anonymousNodes = newHashMap
 	int anonymousNodeCounter = 0
@@ -55,6 +60,7 @@ class MainFileGenerator {
 			«FOR output : program.eAllContents.filter(Output).toIterable»
 				«output.genCode»
 			«ENDFOR»
+			«genLetMethods»
 			«genInitializeNodesFunc»
 			«genInitializeNetworkFunc»
 		}
@@ -74,6 +80,8 @@ class MainFileGenerator {
 	}
 	
 	def dispatch genCode(Function func) {
+		var expGen = new ExpressionGenerator(func.body.logic)
+		expressionGens.add(expGen)
 		'''
 		///
 		/// Code for function «func.name»
@@ -81,7 +89,7 @@ class MainFileGenerator {
 		private Object fun_«func.name»(Object arg) {
 			return funimpl_«func.name»((«func.body.type.javaType»)arg);
 		}
-		private Object funimpl_«func.name»(«func.body.type.javaType» _«func.body.name») { return ???; }
+		private Object funimpl_«func.name»(«func.body.type.javaType» _«func.body.name») { return «expGen.genExpCode»; }
 		'''
 	}
 	
@@ -104,7 +112,7 @@ class MainFileGenerator {
 		///
 		private ComputeNode<Object, Object> node_«node.name» = new AbstractComputeNode<Object, Object>() {
 			protected Object function(Object input) {
-				return ???;
+				«node.body.genNodeLogic»
 			}
 		}
 		'''
@@ -118,7 +126,7 @@ class MainFileGenerator {
 		///
 		private ComputeNode<Object, Object> node_«anonymousNodeCounter» = new AbstractComputeNode<Object, Object>() {
 			protected Object function(Object input) {
-				return ???;
+				«node.body.genNodeLogic»
 			}
 		}
 		'''
@@ -126,10 +134,34 @@ class MainFileGenerator {
 		return code
 	}
 	
+	def dispatch genNodeLogic(FunctionReference funcRef) {
+		'''return fun_«funcRef.ref.name»(input);'''
+	}
+	
+	def dispatch genNodeLogic(Lambda lambda) {
+		var expGen = new ExpressionGenerator(lambda.logic)
+		expressionGens.add(expGen)
+		'''
+		Function<«lambda.type.javaType», Object> f = («lambda.type.javaType» _«lambda.name») -> { return «expGen.genExpCode»; };
+		return f.apply((«lambda.type.javaType»)input);
+		'''
+	}
+	
 	def dispatch genCode(Output output) {
 		'''
 		private OutputNode<Object> node_«output.name» = new OutputNode<Object>();
 		public List<Object> get«output.name.toFirstUpper»() { return node_«output.name».getData(); }
+		'''
+	}
+	
+	def genLetMethods() {
+		'''
+		///
+		/// Let Methods
+		///
+		«FOR expGen : expressionGens»
+			«expGen.genLetCode»
+		«ENDFOR»
 		'''
 	}
 	

@@ -46,7 +46,7 @@ public class X21Generator extends AbstractGenerator {
     StringConcatenation _builder = new StringConcatenation();
     String _name = program.getName();
     _builder.append(_name);
-    _builder.append("Main.java");
+    _builder.append("Main");
     String className = _builder.toString();
     MainFileGenerator mainGenerator = new MainFileGenerator(packageName, className, program);
     StringConcatenation _builder_1 = new StringConcatenation();

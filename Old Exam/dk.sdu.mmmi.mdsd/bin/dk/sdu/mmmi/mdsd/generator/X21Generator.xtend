@@ -32,7 +32,7 @@ class X21Generator extends AbstractGenerator {
 		
 		
 		// Generate main class
-		var className = '''«program.name»Main.java'''
+		var className = '''«program.name»Main'''
 		var mainGenerator = new MainFileGenerator(packageName, className, program)
 		fsa.generateFile('''«packageName»/«className».java''', mainGenerator.genJavaCode)
 	}

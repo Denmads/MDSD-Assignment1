@@ -4,8 +4,12 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import dk.sdu.mmmi.mdsd.x21.AnonymousElement;
 import dk.sdu.mmmi.mdsd.x21.Element;
+import dk.sdu.mmmi.mdsd.x21.Exp;
 import dk.sdu.mmmi.mdsd.x21.Function;
+import dk.sdu.mmmi.mdsd.x21.FunctionOrLambda;
+import dk.sdu.mmmi.mdsd.x21.FunctionReference;
 import dk.sdu.mmmi.mdsd.x21.Input;
+import dk.sdu.mmmi.mdsd.x21.Lambda;
 import dk.sdu.mmmi.mdsd.x21.Node;
 import dk.sdu.mmmi.mdsd.x21.NodeOrInput;
 import dk.sdu.mmmi.mdsd.x21.NodeRef;
@@ -15,6 +19,7 @@ import dk.sdu.mmmi.mdsd.x21.Stream;
 import dk.sdu.mmmi.mdsd.x21.X21;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -31,6 +36,8 @@ public class MainFileGenerator {
   private String className;
   
   private X21 program;
+  
+  private List<ExpressionGenerator> expressionGens = CollectionLiterals.<ExpressionGenerator>newArrayList();
   
   private Map anonymousNodes = CollectionLiterals.<Object, Object>newHashMap();
   
@@ -116,6 +123,10 @@ public class MainFileGenerator {
       }
     }
     _builder.append("\t");
+    CharSequence _genLetMethods = this.genLetMethods();
+    _builder.append(_genLetMethods, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
     CharSequence _genInitializeNodesFunc = this.genInitializeNodesFunc();
     _builder.append(_genInitializeNodesFunc, "\t");
     _builder.newLineIfNotEmpty();
@@ -165,43 +176,53 @@ public class MainFileGenerator {
   }
   
   protected CharSequence _genCode(final Function func) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("///");
-    _builder.newLine();
-    _builder.append("/// Code for function ");
-    String _name = func.getName();
-    _builder.append(_name);
-    _builder.newLineIfNotEmpty();
-    _builder.append("///");
-    _builder.newLine();
-    _builder.append("private Object fun_");
-    String _name_1 = func.getName();
-    _builder.append(_name_1);
-    _builder.append("(Object arg) {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("return funimpl_");
-    String _name_2 = func.getName();
-    _builder.append(_name_2, "\t");
-    _builder.append("((");
-    CharSequence _javaType = Utility.getJavaType(func.getBody().getType());
-    _builder.append(_javaType, "\t");
-    _builder.append(")arg);");
-    _builder.newLineIfNotEmpty();
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("private Object funimpl_");
-    String _name_3 = func.getName();
-    _builder.append(_name_3);
-    _builder.append("(");
-    CharSequence _javaType_1 = Utility.getJavaType(func.getBody().getType());
-    _builder.append(_javaType_1);
-    _builder.append(" _");
-    String _name_4 = func.getBody().getName();
-    _builder.append(_name_4);
-    _builder.append(") { return ???; }");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      Exp _logic = func.getBody().getLogic();
+      ExpressionGenerator expGen = new ExpressionGenerator(_logic);
+      this.expressionGens.add(expGen);
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("///");
+      _builder.newLine();
+      _builder.append("/// Code for function ");
+      String _name = func.getName();
+      _builder.append(_name);
+      _builder.newLineIfNotEmpty();
+      _builder.append("///");
+      _builder.newLine();
+      _builder.append("private Object fun_");
+      String _name_1 = func.getName();
+      _builder.append(_name_1);
+      _builder.append("(Object arg) {");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t");
+      _builder.append("return funimpl_");
+      String _name_2 = func.getName();
+      _builder.append(_name_2, "\t");
+      _builder.append("((");
+      CharSequence _javaType = Utility.getJavaType(func.getBody().getType());
+      _builder.append(_javaType, "\t");
+      _builder.append(")arg);");
+      _builder.newLineIfNotEmpty();
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("private Object funimpl_");
+      String _name_3 = func.getName();
+      _builder.append(_name_3);
+      _builder.append("(");
+      CharSequence _javaType_1 = Utility.getJavaType(func.getBody().getType());
+      _builder.append(_javaType_1);
+      _builder.append(" _");
+      String _name_4 = func.getBody().getName();
+      _builder.append(_name_4);
+      _builder.append(") { return ");
+      CharSequence _genExpCode = expGen.genExpCode();
+      _builder.append(_genExpCode);
+      _builder.append("; }");
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _genCode(final Input input) {
@@ -257,8 +278,9 @@ public class MainFileGenerator {
     _builder.append("protected Object function(Object input) {");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("return ???;");
-    _builder.newLine();
+    CharSequence _genNodeLogic = this.genNodeLogic(node.getBody());
+    _builder.append(_genNodeLogic, "\t\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -285,8 +307,9 @@ public class MainFileGenerator {
     _builder.append("protected Object function(Object input) {");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("return ???;");
-    _builder.newLine();
+    CharSequence _genNodeLogic = this.genNodeLogic(node.getBody());
+    _builder.append(_genNodeLogic, "\t\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -296,6 +319,46 @@ public class MainFileGenerator {
     int _anonymousNodeCounter = this.anonymousNodeCounter;
     this.anonymousNodeCounter = (_anonymousNodeCounter + 1);
     return code;
+  }
+  
+  protected CharSequence _genNodeLogic(final FunctionReference funcRef) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("return fun_");
+    String _name = funcRef.getRef().getName();
+    _builder.append(_name);
+    _builder.append("(input);");
+    return _builder;
+  }
+  
+  protected CharSequence _genNodeLogic(final Lambda lambda) {
+    CharSequence _xblockexpression = null;
+    {
+      Exp _logic = lambda.getLogic();
+      ExpressionGenerator expGen = new ExpressionGenerator(_logic);
+      this.expressionGens.add(expGen);
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Function<");
+      CharSequence _javaType = Utility.getJavaType(lambda.getType());
+      _builder.append(_javaType);
+      _builder.append(", Object> f = (");
+      CharSequence _javaType_1 = Utility.getJavaType(lambda.getType());
+      _builder.append(_javaType_1);
+      _builder.append(" _");
+      String _name = lambda.getName();
+      _builder.append(_name);
+      _builder.append(") -> { return ");
+      CharSequence _genExpCode = expGen.genExpCode();
+      _builder.append(_genExpCode);
+      _builder.append("; };");
+      _builder.newLineIfNotEmpty();
+      _builder.append("return f.apply((");
+      CharSequence _javaType_2 = Utility.getJavaType(lambda.getType());
+      _builder.append(_javaType_2);
+      _builder.append(")input);");
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _genCode(final Output output) {
@@ -313,6 +376,24 @@ public class MainFileGenerator {
     _builder.append(_name_1);
     _builder.append(".getData(); }");
     _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence genLetMethods() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("///");
+    _builder.newLine();
+    _builder.append("/// Let Methods");
+    _builder.newLine();
+    _builder.append("///");
+    _builder.newLine();
+    {
+      for(final ExpressionGenerator expGen : this.expressionGens) {
+        CharSequence _genLetCode = expGen.genLetCode();
+        _builder.append(_genLetCode);
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
@@ -456,6 +537,17 @@ public class MainFileGenerator {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(node).toString());
+    }
+  }
+  
+  public CharSequence genNodeLogic(final FunctionOrLambda funcRef) {
+    if (funcRef instanceof FunctionReference) {
+      return _genNodeLogic((FunctionReference)funcRef);
+    } else if (funcRef instanceof Lambda) {
+      return _genNodeLogic((Lambda)funcRef);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(funcRef).toString());
     }
   }
 }
