@@ -225,7 +225,7 @@ public class ExpressionGenerator {
     String _get = this.letStatementNames.get(stmt);
     _builder.append(_get);
     _builder.append("(");
-    Object _genCode = this.genCode(stmt.getBody());
+    Object _genCode = this.genCode(stmt.getValue());
     _builder.append(_genCode);
     _builder.append(")");
     return _builder;

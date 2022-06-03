@@ -114,7 +114,7 @@ class MainFileGenerator {
 			protected Object function(Object input) {
 				«node.body.genNodeLogic»
 			}
-		}
+		};
 		'''
 	}
 	
@@ -128,7 +128,7 @@ class MainFileGenerator {
 			protected Object function(Object input) {
 				«node.body.genNodeLogic»
 			}
-		}
+		};
 		'''
 		anonymousNodeCounter += 1
 		return code
@@ -172,10 +172,10 @@ class MainFileGenerator {
 		///
 		protected void initializeNodes() {
 			«FOR n : program.eAllContents.filter[it instanceof Input || it instanceof Node].toIterable»
-				super.addNode(node_«n.toName»)
+				super.addNode(node_«n.toName»);
 			«ENDFOR»
 			«FOR i : anonymousNodes.values»
-				super.addNode(node_«i»)
+				super.addNode(node_«i»);
 			«ENDFOR»
 		}
 		'''

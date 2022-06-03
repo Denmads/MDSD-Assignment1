@@ -4,15 +4,22 @@ import dk.sdu.mmmi.mdsd.x21.Type
 import dk.sdu.mmmi.mdsd.x21.IntType
 import dk.sdu.mmmi.mdsd.x21.StringType
 import dk.sdu.mmmi.mdsd.x21.CustomType
-import dk.sdu.mmmi.mdsd.x21.DataVariable
 
 class Utility {
 	static def getJavaType(Type type) {
-		switch type {
-			IntType: "Integer",
-			StringType: "String",
-			CustomType: '''Data«type.declaration.name.toFirstUpper»'''
-		}
+		type.getType
+	}
+	
+	private static def dispatch getType(IntType t) {
+		return "Integer"
+	}
+	
+	private static def dispatch getType(StringType t) {
+		return "String"
+	}
+	
+	private static def dispatch getType(CustomType t) {
+		'''Data«t.declaration.name.toFirstUpper»'''
 	}
 	
 	static def String memberName(String name) {

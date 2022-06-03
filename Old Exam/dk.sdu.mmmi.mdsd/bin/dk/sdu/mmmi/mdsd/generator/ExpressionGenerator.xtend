@@ -21,6 +21,7 @@ import dk.sdu.mmmi.mdsd.x21.LessThanOrEquals
 import dk.sdu.mmmi.mdsd.x21.GreaterThanOrEquals
 import dk.sdu.mmmi.mdsd.x21.Parameter
 import dk.sdu.mmmi.mdsd.x21.Lambda
+import static extension dk.sdu.mmmi.mdsd.generator.Utility.*;
 
 class ExpressionGenerator {
 	
@@ -117,7 +118,7 @@ class ExpressionGenerator {
 	}
 	
 	private def genLetStatementCode(LetStatement stmt) {
-		'''«letStatementNames.get(stmt)»(«stmt.body.genCode»)'''
+		'''«letStatementNames.get(stmt)»(«stmt.value.genCode»)'''
 		
 	}
 	

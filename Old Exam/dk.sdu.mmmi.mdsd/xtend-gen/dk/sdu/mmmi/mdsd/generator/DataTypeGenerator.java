@@ -151,14 +151,14 @@ public class DataTypeGenerator {
     _builder.append("public ");
     _builder.append(this.currentClass);
     _builder.append(" set");
-    String _memberName_2 = Utility.memberName(dvar.getName());
-    _builder.append(_memberName_2);
+    String _firstUpper_1 = StringExtensions.toFirstUpper(dvar.getName());
+    _builder.append(_firstUpper_1);
     _builder.append("(");
     CharSequence _javaType_2 = Utility.getJavaType(dvar.getType());
     _builder.append(_javaType_2);
     _builder.append(" value) { ");
-    String _memberName_3 = Utility.memberName(dvar.getName());
-    _builder.append(_memberName_3);
+    String _memberName_2 = Utility.memberName(dvar.getName());
+    _builder.append(_memberName_2);
     _builder.append(" = value; return this; }");
     _builder.newLineIfNotEmpty();
     return _builder;

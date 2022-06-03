@@ -284,7 +284,7 @@ public class MainFileGenerator {
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
-    _builder.append("}");
+    _builder.append("};");
     _builder.newLine();
     return _builder;
   }
@@ -313,7 +313,7 @@ public class MainFileGenerator {
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
-    _builder.append("}");
+    _builder.append("};");
     _builder.newLine();
     String code = _builder.toString();
     int _anonymousNodeCounter = this.anonymousNodeCounter;
@@ -417,7 +417,7 @@ public class MainFileGenerator {
         _builder.append("super.addNode(node_");
         String _name = this.toName(n);
         _builder.append(_name, "\t");
-        _builder.append(")");
+        _builder.append(");");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -427,7 +427,7 @@ public class MainFileGenerator {
         _builder.append("\t");
         _builder.append("super.addNode(node_");
         _builder.append(i, "\t");
-        _builder.append(")");
+        _builder.append(");");
         _builder.newLineIfNotEmpty();
       }
     }

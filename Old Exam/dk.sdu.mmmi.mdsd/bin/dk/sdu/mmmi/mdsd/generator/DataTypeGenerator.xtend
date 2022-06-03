@@ -54,7 +54,7 @@ class DataTypeGenerator {
 		'''
 		private «Utility.getJavaType(dvar.type)» «dvar.name.memberName»;
 		public «Utility.getJavaType(dvar.type)» get«dvar.name.toFirstUpper»() { return «dvar.name.memberName»; }
-		public «currentClass» set«dvar.name.memberName»(«Utility.getJavaType(dvar.type)» value) { «dvar.name.memberName» = value; return this; }
+		public «currentClass» set«dvar.name.toFirstUpper»(«Utility.getJavaType(dvar.type)» value) { «dvar.name.memberName» = value; return this; }
 		'''
 	}
 	
