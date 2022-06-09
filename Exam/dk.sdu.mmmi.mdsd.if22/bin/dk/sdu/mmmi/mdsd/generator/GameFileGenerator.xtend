@@ -24,7 +24,7 @@ class GameFileGenerator {
 			public Scenario start;
 			
 			public Game(«IF program.requireExternalInterface»External external«ENDIF») {
-				this.start = new Scenario«program.scenarios.get(0)»(external);
+				this.start = new Scenario«program.scenarios.get(0).name»(«IF program.requireExternalInterface»external«ENDIF»);
 			}
 			
 			public void play() throws IOException {

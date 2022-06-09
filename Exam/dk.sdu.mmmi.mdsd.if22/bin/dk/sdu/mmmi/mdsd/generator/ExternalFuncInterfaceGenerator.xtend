@@ -18,7 +18,7 @@ class ExternalFuncInterfaceGenerator {
 	
 	def genFile() {
 		'''
-		package interactive_story.«packageName»;
+		package interactive_fiction.«packageName»;
 		
 		public interface External {
 			«FOR func : program.eAllContents.filter(Function).toIterable»

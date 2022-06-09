@@ -3,6 +3,31 @@
  */
 package dk.sdu.mmmi.mdsd.validation;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
+import dk.sdu.mmmi.mdsd.generator.Util;
+import dk.sdu.mmmi.mdsd.iF22.End;
+import dk.sdu.mmmi.mdsd.iF22.Exp;
+import dk.sdu.mmmi.mdsd.iF22.Function;
+import dk.sdu.mmmi.mdsd.iF22.FunctionCall;
+import dk.sdu.mmmi.mdsd.iF22.IF22;
+import dk.sdu.mmmi.mdsd.iF22.IF22Package;
+import dk.sdu.mmmi.mdsd.iF22.Parameter;
+import dk.sdu.mmmi.mdsd.iF22.Question;
+import dk.sdu.mmmi.mdsd.iF22.Scenario;
+import dk.sdu.mmmi.mdsd.iF22.Statement;
+import dk.sdu.mmmi.mdsd.iF22.Target;
+import dk.sdu.mmmi.mdsd.iF22.TargetDestination;
+import dk.sdu.mmmi.mdsd.iF22.This;
+import dk.sdu.mmmi.mdsd.iF22.Type;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+
 /**
  * This class contains custom validation rules.
  * 
@@ -10,4 +35,165 @@ package dk.sdu.mmmi.mdsd.validation;
  */
 @SuppressWarnings("all")
 public class IF22Validator extends AbstractIF22Validator {
+  public static final String DUPLICATE_SCENARIO_NAME = "dsn";
+  
+  public static final String DUPLICATE_FUNCTION_NAME = "dfn";
+  
+  public static final String DUPLICATE_STATEMENT_NAME = "dstn";
+  
+  public static final String NO_END_STATEMENT = "nos";
+  
+  public static final String INVALID_TYPE_USE = "itu";
+  
+  public static final String TOO_MANY_TYPE_KEYWORDS = "tmtk";
+  
+  public static final String INVALID_THIS_USE = "ithu";
+  
+  public static final String ILLEGAL_USE_OF_END_TARGETS = "iuoet";
+  
+  public static final String PARAMETER_NUMBER_MISMATCH = "pnm";
+  
+  public static final String PARAMETER_TYPE_MISMATCH = "ptm";
+  
+  public static final String VAR_TYPE_MISMATCH = "vtm";
+  
+  @Check
+  public void checkUniqueScenarioName(final Scenario scenario) {
+    EObject _eContainer = scenario.eContainer();
+    final Function1<Scenario, Boolean> _function = (Scenario it) -> {
+      String _name = it.getName();
+      String _name_1 = scenario.getName();
+      return Boolean.valueOf(Objects.equal(_name, _name_1));
+    };
+    Iterable<Scenario> allOtherNames = IterableExtensions.<Scenario>filter(((IF22) _eContainer).getScenarios(), _function);
+    int _size = IterableExtensions.size(allOtherNames);
+    boolean _greaterThan = (_size > 1);
+    if (_greaterThan) {
+      this.error("Duplicate scenario name.", IF22Package.eINSTANCE.getTargetDestination_Name(), IF22Validator.DUPLICATE_SCENARIO_NAME);
+    }
+  }
+  
+  @Check
+  public void checkUniqueFunctionName(final Function function) {
+    EObject _eContainer = function.eContainer();
+    final Function1<Function, Boolean> _function = (Function it) -> {
+      String _name = it.getName();
+      String _name_1 = function.getName();
+      return Boolean.valueOf(Objects.equal(_name, _name_1));
+    };
+    Iterable<Function> allOtherNames = IterableExtensions.<Function>filter(((IF22) _eContainer).getFunctions(), _function);
+    int _size = IterableExtensions.size(allOtherNames);
+    boolean _greaterThan = (_size > 1);
+    if (_greaterThan) {
+      this.error("Duplicate function name.", IF22Package.eINSTANCE.getFunction_Name(), IF22Validator.DUPLICATE_FUNCTION_NAME);
+    }
+  }
+  
+  @Check
+  public void checkUniqueStatementName(final Statement stmt) {
+    EObject _eContainer = stmt.eContainer();
+    final Function1<Statement, Boolean> _function = (Statement it) -> {
+      String _name = it.getName();
+      String _name_1 = stmt.getName();
+      return Boolean.valueOf(Objects.equal(_name, _name_1));
+    };
+    Iterable<Statement> allOtherNames = IterableExtensions.<Statement>filter(Iterables.<Statement>filter(((Scenario) _eContainer).getBody(), Statement.class), _function);
+    int _size = IterableExtensions.size(allOtherNames);
+    boolean _greaterThan = (_size > 1);
+    if (_greaterThan) {
+      this.error("Duplicate statement name.", IF22Package.eINSTANCE.getTargetDestination_Name(), IF22Validator.DUPLICATE_STATEMENT_NAME);
+    }
+  }
+  
+  @Check
+  public void checkAtLeastOneEndStatement(final Scenario scenario) {
+    Iterable<End> endStatements = Iterables.<End>filter(scenario.getBody(), End.class);
+    int _size = IterableExtensions.size(endStatements);
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      this.error("No end statement.", IF22Package.eINSTANCE.getTargetDestination_Name(), IF22Validator.NO_END_STATEMENT);
+    }
+  }
+  
+  public int getNumTypeUsed(final Exp exp) {
+    if ((exp instanceof Type)) {
+      return 1;
+    } else {
+      return IteratorExtensions.size(Iterators.<Type>filter(exp.eAllContents(), Type.class));
+    }
+  }
+  
+  public boolean containsThis(final Exp exp) {
+    return ((exp instanceof This) || (IteratorExtensions.size(Iterators.<This>filter(exp.eAllContents(), This.class)) > 0));
+  }
+  
+  @Check
+  public void checkStatement(final Statement stmt) {
+    if (((stmt.getBody() != null) && (this.getNumTypeUsed(stmt.getBody()) > 0))) {
+      this.error("Types is not permitted in this context.", IF22Package.eINSTANCE.getStatement_Body(), IF22Validator.INVALID_TYPE_USE);
+    }
+    if (((!Objects.equal(stmt.getBody(), null)) && this.containsThis(stmt.getBody()))) {
+      this.error("\'This\' is not permitted in this context.", IF22Package.eINSTANCE.getStatement_Body(), IF22Validator.INVALID_THIS_USE);
+    }
+  }
+  
+  @Check
+  public void checkTarget(final Target target) {
+    EList<Exp> _arguments = target.getArguments();
+    for (final Exp arg : _arguments) {
+      int _numTypeUsed = this.getNumTypeUsed(arg);
+      boolean _greaterThan = (_numTypeUsed > 0);
+      if (_greaterThan) {
+        this.error("Types are not permitted in this context.", IF22Package.eINSTANCE.getTarget_Arguments(), IF22Validator.INVALID_TYPE_USE);
+      }
+    }
+    if (((target.getCondition() != null) && (this.getNumTypeUsed(target.getCondition()) > 0))) {
+      this.error("Types are not permitted in this context.", IF22Package.eINSTANCE.getTarget_Condition(), IF22Validator.INVALID_TYPE_USE);
+    }
+    if (((target.getEndTargets().size() > 0) && (target.getDestination() instanceof Statement))) {
+      this.error("EndTargets is only allowed when the selected target is a scenario.", IF22Package.eINSTANCE.getTarget_EndTargets(), IF22Validator.ILLEGAL_USE_OF_END_TARGETS);
+    }
+    TargetDestination _destination = target.getDestination();
+    if ((_destination instanceof Scenario)) {
+      TargetDestination _destination_1 = target.getDestination();
+      EList<Parameter> funcParams = ((Scenario) _destination_1).getParameters();
+      int _size = funcParams.size();
+      int _size_1 = target.getArguments().size();
+      boolean _notEquals = (_size != _size_1);
+      if (_notEquals) {
+        this.error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.getTarget_Arguments(), IF22Validator.PARAMETER_NUMBER_MISMATCH);
+      }
+    }
+  }
+  
+  @Check
+  public void checkQuestion(final Question stmt) {
+    int _numTypeUsed = this.getNumTypeUsed(stmt.getTypeAndValidation());
+    boolean _notEquals = (_numTypeUsed != 1);
+    if (_notEquals) {
+      this.error("There should be exactly one type in the expression.", IF22Package.eINSTANCE.getQuestion_TypeAndValidation(), IF22Validator.TOO_MANY_TYPE_KEYWORDS);
+    }
+    if (((stmt.getVariable() != null) && (!Objects.equal(Util.returnTypeOfQuestion(stmt), stmt.getVariable().getType())))) {
+      this.error("Cannot assign different type to variable.", IF22Package.eINSTANCE.getQuestion_Variable(), IF22Validator.VAR_TYPE_MISMATCH);
+    }
+  }
+  
+  @Check
+  public void checkFunctionCallParams(final FunctionCall fCall) {
+    EList<Type> funcParams = fCall.getFunction().getParameterTypes();
+    int _size = funcParams.size();
+    int _size_1 = fCall.getArguments().size();
+    boolean _notEquals = (_size != _size_1);
+    if (_notEquals) {
+      this.error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.getFunctionCall_Arguments(), IF22Validator.PARAMETER_NUMBER_MISMATCH);
+    }
+    for (int i = 0; (i < funcParams.size()); i++) {
+      Type _get = funcParams.get(i);
+      Exp _get_1 = fCall.getArguments().get(i);
+      boolean _notEquals_1 = (!Objects.equal(_get, _get_1));
+      if (_notEquals_1) {
+        this.error("Argument and paramter types are not matching.", IF22Package.eINSTANCE.getFunctionCall_Arguments(), IF22Validator.PARAMETER_TYPE_MISMATCH);
+      }
+    }
+  }
 }

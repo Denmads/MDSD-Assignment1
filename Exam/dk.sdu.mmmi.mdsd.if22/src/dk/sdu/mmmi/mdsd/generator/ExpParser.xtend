@@ -44,7 +44,12 @@ class ExpParser {
 	}
 	
 	static def dispatch parse(Equals exp) {
-		'''«exp.left.parse» == «exp.right.parse»'''
+		if (exp.right instanceof StringConstant) {			
+			'''«exp.left.parse».equals(«exp.right.parse»)'''
+		}
+		else {
+			'''«exp.left.parse» == «exp.right.parse»'''
+		}
 	}
 	
 	static def dispatch parse(NotEquals exp) {
@@ -108,7 +113,7 @@ class ExpParser {
 			'''«exp.value»'''
 		}
 		else if (exp instanceof StringConstant) {
-			'''«exp.value»'''
+			'''"«exp.value»"'''
 		}
 	}
 	

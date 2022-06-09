@@ -23,7 +23,7 @@ public class ExternalFuncInterfaceGenerator {
   
   public CharSequence genFile() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package interactive_story.");
+    _builder.append("package interactive_fiction.");
     _builder.append(this.packageName);
     _builder.append(";");
     _builder.newLineIfNotEmpty();

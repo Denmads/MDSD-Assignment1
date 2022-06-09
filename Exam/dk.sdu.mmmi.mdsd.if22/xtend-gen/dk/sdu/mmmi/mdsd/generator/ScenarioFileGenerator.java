@@ -236,10 +236,10 @@ public class ScenarioFileGenerator {
   
   protected CharSequence _genLogic(final Announce stmt) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"");
+    _builder.append("System.out.println(");
     Object _parse = ExpParser.parse(stmt.getBody());
     _builder.append(_parse);
-    _builder.append("\");");
+    _builder.append(");");
     _builder.newLineIfNotEmpty();
     CharSequence _genNextInteraction = this.genNextInteraction(stmt);
     _builder.append(_genNextInteraction);
@@ -249,10 +249,10 @@ public class ScenarioFileGenerator {
   
   protected CharSequence _genLogic(final Question stmt) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"");
+    _builder.append("System.out.println(");
     Object _parse = ExpParser.parse(stmt.getBody());
     _builder.append(_parse);
-    _builder.append("\");");
+    _builder.append(");");
     _builder.newLineIfNotEmpty();
     {
       Type _returnTypeOfQuestion = Util.returnTypeOfQuestion(stmt);
@@ -476,10 +476,10 @@ public class ScenarioFileGenerator {
               }
               {
                 if ((stmt instanceof Question)) {
-                  String _parseExpWithReplace_1 = this.parseExpWithReplace(target.getCondition(), ((Question)stmt));
+                  String _parseExpWithReplace_1 = this.parseExpWithReplace(arg, ((Question)stmt));
                   _builder.append(_parseExpWithReplace_1, "\t");
                 } else {
-                  Object _parse_1 = ExpParser.parse(target.getCondition());
+                  Object _parse_1 = ExpParser.parse(arg);
                   _builder.append(_parse_1, "\t");
                 }
               }

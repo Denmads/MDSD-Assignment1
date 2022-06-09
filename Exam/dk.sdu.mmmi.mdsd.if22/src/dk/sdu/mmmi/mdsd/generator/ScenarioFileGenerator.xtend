@@ -102,14 +102,14 @@ class ScenarioFileGenerator {
 	
 	def dispatch genLogic(Announce stmt) {
 		'''
-		System.out.println("«stmt.body.parse»");
+		System.out.println(«stmt.body.parse»);
 		«stmt.genNextInteraction»
 		'''
 	}
 	
 	def dispatch genLogic(Question stmt) {
 		'''
-		System.out.println("«stmt.body.parse»");
+		System.out.println(«stmt.body.parse»);
 		«IF stmt.returnTypeOfQuestion instanceof IntType»
 			try {
 				«stmt.variableName» = Integer.parseInt(br.readLine());
@@ -189,7 +189,7 @@ class ScenarioFileGenerator {
 				nextInteraction = "«target.destination.name»";
 				break;
 			«ELSEIF target.destination instanceof Scenario»
-				calledScenarioEnd = new Scenario«target.destination.name»(«FOR arg : target.arguments SEPARATOR ", " AFTER ", "»«IF stmt instanceof Question»«target.condition.parseExpWithReplace(stmt)»«ELSE»«target.condition.parse»«ENDIF»«ENDFOR»«IF program.requireExternalInterface»external«ENDIF»).interact();
+				calledScenarioEnd = new Scenario«target.destination.name»(«FOR arg : target.arguments SEPARATOR ", " AFTER ", "»«IF stmt instanceof Question»«arg.parseExpWithReplace(stmt)»«ELSE»«arg.parse»«ENDIF»«ENDFOR»«IF program.requireExternalInterface»external«ENDIF»).interact();
 				«FOR endTarget : target.endTargets»
 					if (calledScenarioEnd.equals("«endTarget.endStatement.name»")) {
 						«endTarget.target.genTarget(stmt)»

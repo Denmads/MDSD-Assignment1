@@ -1,7 +1,6 @@
 package dk.sdu.mmmi.mdsd.generator;
 
 import dk.sdu.mmmi.mdsd.iF22.IF22;
-import dk.sdu.mmmi.mdsd.iF22.Scenario;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
@@ -46,9 +45,16 @@ public class GameFileGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("this.start = new Scenario");
-    Scenario _get = this.program.getScenarios().get(0);
-    _builder.append(_get, "\t\t");
-    _builder.append("(external);");
+    String _name = this.program.getScenarios().get(0).getName();
+    _builder.append(_name, "\t\t");
+    _builder.append("(");
+    {
+      boolean _requireExternalInterface_1 = Util.requireExternalInterface(this.program);
+      if (_requireExternalInterface_1) {
+        _builder.append("external");
+      }
+    }
+    _builder.append(");");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("}");

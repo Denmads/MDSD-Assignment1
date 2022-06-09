@@ -7,6 +7,7 @@ import dk.sdu.mmmi.mdsd.iF22.BooleanType;
 import dk.sdu.mmmi.mdsd.iF22.Concatenation;
 import dk.sdu.mmmi.mdsd.iF22.Constant;
 import dk.sdu.mmmi.mdsd.iF22.Div;
+import dk.sdu.mmmi.mdsd.iF22.Equality;
 import dk.sdu.mmmi.mdsd.iF22.Equals;
 import dk.sdu.mmmi.mdsd.iF22.Exp;
 import dk.sdu.mmmi.mdsd.iF22.FunctionCall;
@@ -59,13 +60,27 @@ public class ExpParser {
   }
   
   protected static Object _parse(final Equals exp) {
-    StringConcatenation _builder = new StringConcatenation();
-    Object _parse = ExpParser.parse(exp.getLeft());
-    _builder.append(_parse);
-    _builder.append(" == ");
-    Object _parse_1 = ExpParser.parse(exp.getRight());
-    _builder.append(_parse_1);
-    return _builder;
+    CharSequence _xifexpression = null;
+    Equality _right = exp.getRight();
+    if ((_right instanceof StringConstant)) {
+      StringConcatenation _builder = new StringConcatenation();
+      Object _parse = ExpParser.parse(exp.getLeft());
+      _builder.append(_parse);
+      _builder.append(".equals(");
+      Object _parse_1 = ExpParser.parse(exp.getRight());
+      _builder.append(_parse_1);
+      _builder.append(")");
+      _xifexpression = _builder;
+    } else {
+      StringConcatenation _builder_1 = new StringConcatenation();
+      Object _parse_2 = ExpParser.parse(exp.getLeft());
+      _builder_1.append(_parse_2);
+      _builder_1.append(" == ");
+      Object _parse_3 = ExpParser.parse(exp.getRight());
+      _builder_1.append(_parse_3);
+      _xifexpression = _builder_1;
+    }
+    return _xifexpression;
   }
   
   protected static Object _parse(final NotEquals exp) {
@@ -210,8 +225,10 @@ public class ExpParser {
         CharSequence _xifexpression_3 = null;
         if ((exp instanceof StringConstant)) {
           StringConcatenation _builder_3 = new StringConcatenation();
+          _builder_3.append("\"");
           String _value_1 = ((StringConstant)exp).getValue();
           _builder_3.append(_value_1);
+          _builder_3.append("\"");
           _xifexpression_3 = _builder_3;
         }
         _xifexpression_2 = _xifexpression_3;

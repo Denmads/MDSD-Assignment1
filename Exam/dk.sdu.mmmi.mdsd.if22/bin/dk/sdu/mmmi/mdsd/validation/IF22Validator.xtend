@@ -3,6 +3,25 @@
  */
 package dk.sdu.mmmi.mdsd.validation
 
+import static extension dk.sdu.mmmi.mdsd.generator.Util.*;
+
+import dk.sdu.mmmi.mdsd.iF22.Scenario
+import org.eclipse.xtext.validation.Check
+import org.eclipse.xtext.EcoreUtil2
+import dk.sdu.mmmi.mdsd.iF22.IF22
+import dk.sdu.mmmi.mdsd.iF22.IF22Package
+import dk.sdu.mmmi.mdsd.iF22.TargetDestination
+import dk.sdu.mmmi.mdsd.iF22.Function
+import dk.sdu.mmmi.mdsd.iF22.Statement
+import dk.sdu.mmmi.mdsd.iF22.End
+import dk.sdu.mmmi.mdsd.iF22.Question
+import dk.sdu.mmmi.mdsd.iF22.Keyword
+import dk.sdu.mmmi.mdsd.iF22.Type
+import dk.sdu.mmmi.mdsd.iF22.Exp
+import dk.sdu.mmmi.mdsd.iF22.Announce
+import dk.sdu.mmmi.mdsd.iF22.Target
+import dk.sdu.mmmi.mdsd.iF22.This
+import dk.sdu.mmmi.mdsd.iF22.FunctionCall
 
 /**
  * This class contains custom validation rules. 
@@ -10,6 +29,137 @@ package dk.sdu.mmmi.mdsd.validation
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class IF22Validator extends AbstractIF22Validator {
+	
+	public static val DUPLICATE_SCENARIO_NAME = "dsn"
+	public static val DUPLICATE_FUNCTION_NAME = "dfn"
+	public static val DUPLICATE_STATEMENT_NAME = "dstn"
+	public static val NO_END_STATEMENT = "nos"
+	public static val INVALID_TYPE_USE = "itu"
+	public static val TOO_MANY_TYPE_KEYWORDS = "tmtk"
+	public static val INVALID_THIS_USE = "ithu"
+	public static val ILLEGAL_USE_OF_END_TARGETS = "iuoet"
+	public static val PARAMETER_NUMBER_MISMATCH = "pnm"
+	public static val PARAMETER_TYPE_MISMATCH = "ptm"
+	public static val VAR_TYPE_MISMATCH = "vtm"
+	
+	@Check
+	def checkUniqueScenarioName(Scenario scenario) {
+		var allOtherNames = (scenario.eContainer as IF22).scenarios.filter[it.name == scenario.name]
+		
+		if (allOtherNames.size > 1) {
+			error("Duplicate scenario name.", IF22Package.eINSTANCE.targetDestination_Name, DUPLICATE_SCENARIO_NAME)
+		}
+	}
+	
+	@Check
+	def checkUniqueFunctionName(Function function) {
+		var allOtherNames = (function.eContainer as IF22).functions.filter[it.name == function.name]
+		
+		if (allOtherNames.size > 1) {
+			error("Duplicate function name.", IF22Package.eINSTANCE.function_Name, DUPLICATE_FUNCTION_NAME)
+		}
+	}
+	
+	@Check
+	def checkUniqueStatementName(Statement stmt) {
+		var allOtherNames = (stmt.eContainer as Scenario).body.filter(Statement).filter[it.name == stmt.name]
+		
+		if (allOtherNames.size > 1) {
+			error("Duplicate statement name.", IF22Package.eINSTANCE.targetDestination_Name, DUPLICATE_STATEMENT_NAME)
+		}
+	}
+	
+	@Check
+	def checkAtLeastOneEndStatement(Scenario scenario) {
+		var endStatements = scenario.body.filter(End)
+		
+		if (endStatements.size == 0) {
+			error("No end statement.", IF22Package.eINSTANCE.targetDestination_Name, NO_END_STATEMENT)
+		}
+	}
+	
+	def getNumTypeUsed(Exp exp) {
+		if (exp instanceof Type) {
+			return 1
+		}
+		else {
+			return exp.eAllContents.filter(Type).size
+		}
+	}
+	
+	def containsThis(Exp exp) {
+		return exp instanceof This || exp.eAllContents.filter(This).size > 0
+	}
+	
+	@Check
+	def checkStatement(Statement stmt) {
+		if (stmt.body !== null && stmt.body.numTypeUsed > 0) {
+			error("Types is not permitted in this context.", IF22Package.eINSTANCE.statement_Body, INVALID_TYPE_USE)
+		}
+		
+		if (stmt.body != null && stmt.body.containsThis) {
+			error("'This' is not permitted in this context.", IF22Package.eINSTANCE.statement_Body, INVALID_THIS_USE)
+		}
+	}
+	@Check
+	def checkTarget(Target target) {
+		for (arg : target.arguments) {
+			if (arg.numTypeUsed > 0) {
+				error("Types are not permitted in this context.", IF22Package.eINSTANCE.target_Arguments, INVALID_TYPE_USE)
+			}
+		}
+		
+		if (target.condition !== null && target.condition.numTypeUsed > 0) {
+			error("Types are not permitted in this context.", IF22Package.eINSTANCE.target_Condition, INVALID_TYPE_USE)
+		}
+		
+		if (target.endTargets.size > 0 && target.destination instanceof Statement) {
+			error("EndTargets is only allowed when the selected target is a scenario.", IF22Package.eINSTANCE.target_EndTargets, ILLEGAL_USE_OF_END_TARGETS)
+		}
+		
+		if (target.destination instanceof Scenario) {
+			var funcParams = (target.destination as Scenario).parameters
+		
+			if (funcParams.size != target.arguments.size) {
+				error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.target_Arguments, PARAMETER_NUMBER_MISMATCH)
+			}
+			
+			//TODO: need to derive type from exp
+			/*for (var i = 0; i < funcParams.size; i++) {
+				if (funcParams.get(i) != fCall.arguments.get(i)) {
+					error("Argument and paramter types are not matching.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_TYPE_MISMATCH)
+				}
+			}*/
+		}
+	}
+	
+	
+	
+	@Check
+	def checkQuestion(Question stmt) {
+		if (stmt.typeAndValidation.numTypeUsed != 1) {
+			error("There should be exactly one type in the expression.", IF22Package.eINSTANCE.question_TypeAndValidation, TOO_MANY_TYPE_KEYWORDS)
+		}
+		
+		if (stmt.variable !== null && stmt.returnTypeOfQuestion != stmt.variable.type) {
+			error("Cannot assign different type to variable.", IF22Package.eINSTANCE.question_Variable, VAR_TYPE_MISMATCH)
+		}
+	}
+	
+	@Check
+	def checkFunctionCallParams(FunctionCall fCall) {
+		var funcParams = fCall.function.parameterTypes
+		
+		if (funcParams.size != fCall.arguments.size) {
+			error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_NUMBER_MISMATCH)
+		}
+		
+		for (var i = 0; i < funcParams.size; i++) {
+			if (funcParams.get(i) != fCall.arguments.get(i)) {
+				error("Argument and paramter types are not matching.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_TYPE_MISMATCH)
+			}
+		}
+	}
 	
 //	public static val INVALID_NAME = 'invalidName'
 //
