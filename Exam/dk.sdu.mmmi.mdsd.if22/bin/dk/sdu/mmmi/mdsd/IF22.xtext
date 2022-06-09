@@ -1,0 +1,24 @@
+grammar dk.sdu.mmmi.mdsd.IF22 with org.eclipse.xtext.common.Terminals
+
+generate iF22 "http://www.sdu.dk/mmmi/mdsd/IF22"
+
+IF22:
+	'story' name=ID
+	functions+=Function*
+;
+
+Type:
+	{IntType} 'number' | {StringType} 'text' | {BooleanType} 'boolean'
+;
+
+Function:
+	'function' name=ID '(' parameterTypes+=Type (',' parameterTypes+=Type)* ')' ':' returnType=Type
+;
+
+Scenario:
+	'scenario' name=ID ()?
+;
+
+Parameter:
+	name=ID ':' type=Type
+;
