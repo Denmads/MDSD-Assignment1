@@ -4,8 +4,42 @@
 package dk.sdu.mmmi.mdsd.serializer;
 
 import com.google.inject.Inject;
+import dk.sdu.mmmi.mdsd.iF22.Add;
+import dk.sdu.mmmi.mdsd.iF22.And;
+import dk.sdu.mmmi.mdsd.iF22.Announce;
+import dk.sdu.mmmi.mdsd.iF22.BoolConstant;
+import dk.sdu.mmmi.mdsd.iF22.BooleanType;
+import dk.sdu.mmmi.mdsd.iF22.Concatenation;
+import dk.sdu.mmmi.mdsd.iF22.Div;
+import dk.sdu.mmmi.mdsd.iF22.End;
+import dk.sdu.mmmi.mdsd.iF22.EndingTarget;
+import dk.sdu.mmmi.mdsd.iF22.Equals;
+import dk.sdu.mmmi.mdsd.iF22.False;
+import dk.sdu.mmmi.mdsd.iF22.Function;
+import dk.sdu.mmmi.mdsd.iF22.FunctionCall;
+import dk.sdu.mmmi.mdsd.iF22.GreaterThan;
+import dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals;
 import dk.sdu.mmmi.mdsd.iF22.IF22;
 import dk.sdu.mmmi.mdsd.iF22.IF22Package;
+import dk.sdu.mmmi.mdsd.iF22.IntConstant;
+import dk.sdu.mmmi.mdsd.iF22.IntType;
+import dk.sdu.mmmi.mdsd.iF22.LessThan;
+import dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals;
+import dk.sdu.mmmi.mdsd.iF22.Mul;
+import dk.sdu.mmmi.mdsd.iF22.Not;
+import dk.sdu.mmmi.mdsd.iF22.NotEquals;
+import dk.sdu.mmmi.mdsd.iF22.Or;
+import dk.sdu.mmmi.mdsd.iF22.Parenthesis;
+import dk.sdu.mmmi.mdsd.iF22.Question;
+import dk.sdu.mmmi.mdsd.iF22.Scenario;
+import dk.sdu.mmmi.mdsd.iF22.StringConstant;
+import dk.sdu.mmmi.mdsd.iF22.StringType;
+import dk.sdu.mmmi.mdsd.iF22.Sub;
+import dk.sdu.mmmi.mdsd.iF22.Target;
+import dk.sdu.mmmi.mdsd.iF22.This;
+import dk.sdu.mmmi.mdsd.iF22.True;
+import dk.sdu.mmmi.mdsd.iF22.VarRef;
+import dk.sdu.mmmi.mdsd.iF22.VariableDef;
 import dk.sdu.mmmi.mdsd.services.IF22GrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -32,8 +66,113 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == IF22Package.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case IF22Package.ADD:
+				sequence_AddSub(context, (Add) semanticObject); 
+				return; 
+			case IF22Package.AND:
+				sequence_BooleanOperation(context, (And) semanticObject); 
+				return; 
+			case IF22Package.ANNOUNCE:
+				sequence_Announce(context, (Announce) semanticObject); 
+				return; 
+			case IF22Package.BOOL_CONSTANT:
+				sequence_Constant(context, (BoolConstant) semanticObject); 
+				return; 
+			case IF22Package.BOOLEAN_TYPE:
+				sequence_Type(context, (BooleanType) semanticObject); 
+				return; 
+			case IF22Package.CONCATENATION:
+				sequence_Concatenation(context, (Concatenation) semanticObject); 
+				return; 
+			case IF22Package.DIV:
+				sequence_MulDiv(context, (Div) semanticObject); 
+				return; 
+			case IF22Package.END:
+				sequence_End(context, (End) semanticObject); 
+				return; 
+			case IF22Package.ENDING_TARGET:
+				sequence_EndingTarget(context, (EndingTarget) semanticObject); 
+				return; 
+			case IF22Package.EQUALS:
+				sequence_Equality(context, (Equals) semanticObject); 
+				return; 
+			case IF22Package.FALSE:
+				sequence_BOOLEAN(context, (False) semanticObject); 
+				return; 
+			case IF22Package.FUNCTION:
+				sequence_Function(context, (Function) semanticObject); 
+				return; 
+			case IF22Package.FUNCTION_CALL:
+				sequence_FunctionCall(context, (FunctionCall) semanticObject); 
+				return; 
+			case IF22Package.GREATER_THAN:
+				sequence_LessGreaterThan(context, (GreaterThan) semanticObject); 
+				return; 
+			case IF22Package.GRETER_THAN_OR_EQUALS:
+				sequence_LessGreaterThan(context, (GreterThanOrEquals) semanticObject); 
+				return; 
 			case IF22Package.IF22:
 				sequence_IF22(context, (IF22) semanticObject); 
+				return; 
+			case IF22Package.INT_CONSTANT:
+				sequence_Constant(context, (IntConstant) semanticObject); 
+				return; 
+			case IF22Package.INT_TYPE:
+				sequence_Type(context, (IntType) semanticObject); 
+				return; 
+			case IF22Package.LESS_THAN:
+				sequence_LessGreaterThan(context, (LessThan) semanticObject); 
+				return; 
+			case IF22Package.LESS_THAN_OR_EQUALS:
+				sequence_LessGreaterThan(context, (LessThanOrEquals) semanticObject); 
+				return; 
+			case IF22Package.MUL:
+				sequence_MulDiv(context, (Mul) semanticObject); 
+				return; 
+			case IF22Package.NOT:
+				sequence_Primitive(context, (Not) semanticObject); 
+				return; 
+			case IF22Package.NOT_EQUALS:
+				sequence_Equality(context, (NotEquals) semanticObject); 
+				return; 
+			case IF22Package.OR:
+				sequence_BooleanOperation(context, (Or) semanticObject); 
+				return; 
+			case IF22Package.PARAMETER:
+				sequence_Parameter(context, (dk.sdu.mmmi.mdsd.iF22.Parameter) semanticObject); 
+				return; 
+			case IF22Package.PARENTHESIS:
+				sequence_Primitive(context, (Parenthesis) semanticObject); 
+				return; 
+			case IF22Package.QUESTION:
+				sequence_Question(context, (Question) semanticObject); 
+				return; 
+			case IF22Package.SCENARIO:
+				sequence_Scenario(context, (Scenario) semanticObject); 
+				return; 
+			case IF22Package.STRING_CONSTANT:
+				sequence_Constant(context, (StringConstant) semanticObject); 
+				return; 
+			case IF22Package.STRING_TYPE:
+				sequence_Type(context, (StringType) semanticObject); 
+				return; 
+			case IF22Package.SUB:
+				sequence_AddSub(context, (Sub) semanticObject); 
+				return; 
+			case IF22Package.TARGET:
+				sequence_Target(context, (Target) semanticObject); 
+				return; 
+			case IF22Package.THIS:
+				sequence_Keyword(context, (This) semanticObject); 
+				return; 
+			case IF22Package.TRUE:
+				sequence_BOOLEAN(context, (True) semanticObject); 
+				return; 
+			case IF22Package.VAR_REF:
+				sequence_Primitive(context, (VarRef) semanticObject); 
+				return; 
+			case IF22Package.VARIABLE_DEF:
+				sequence_VariableDef(context, (VariableDef) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -43,19 +182,1068 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Exp returns Add
+	 *     BooleanOperation returns Add
+	 *     BooleanOperation.And_1_0_0_0 returns Add
+	 *     BooleanOperation.Or_1_0_1_0 returns Add
+	 *     Equality returns Add
+	 *     Equality.Equals_1_0_0_0 returns Add
+	 *     Equality.NotEquals_1_0_1_0 returns Add
+	 *     LessGreaterThan returns Add
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns Add
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Add
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Add
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Add
+	 *     Concatenation returns Add
+	 *     Concatenation.Concatenation_1_0 returns Add
+	 *     AddSub returns Add
+	 *     AddSub.Add_1_0_0_0 returns Add
+	 *     AddSub.Sub_1_0_1_0 returns Add
+	 *
+	 * Constraint:
+	 *     (left=AddSub_Add_1_0_0_0 right=MulDiv)
+	 * </pre>
+	 */
+	protected void sequence_AddSub(ISerializationContext context, Add semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAddSubAccess().getAddLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getAddSubAccess().getRightMulDivParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns Sub
+	 *     BooleanOperation returns Sub
+	 *     BooleanOperation.And_1_0_0_0 returns Sub
+	 *     BooleanOperation.Or_1_0_1_0 returns Sub
+	 *     Equality returns Sub
+	 *     Equality.Equals_1_0_0_0 returns Sub
+	 *     Equality.NotEquals_1_0_1_0 returns Sub
+	 *     LessGreaterThan returns Sub
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns Sub
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Sub
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Sub
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Sub
+	 *     Concatenation returns Sub
+	 *     Concatenation.Concatenation_1_0 returns Sub
+	 *     AddSub returns Sub
+	 *     AddSub.Add_1_0_0_0 returns Sub
+	 *     AddSub.Sub_1_0_1_0 returns Sub
+	 *
+	 * Constraint:
+	 *     (left=AddSub_Sub_1_0_1_0 right=MulDiv)
+	 * </pre>
+	 */
+	protected void sequence_AddSub(ISerializationContext context, Sub semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAddSubAccess().getSubLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getAddSubAccess().getRightMulDivParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns Announce
+	 *     Announce returns Announce
+	 *     TargetDestination returns Announce
+	 *
+	 * Constraint:
+	 *     (name=ID body=Exp targets+=Target+)
+	 * </pre>
+	 */
+	protected void sequence_Announce(ISerializationContext context, Announce semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BOOLEAN returns False
+	 *
+	 * Constraint:
+	 *     {False}
+	 * </pre>
+	 */
+	protected void sequence_BOOLEAN(ISerializationContext context, False semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BOOLEAN returns True
+	 *
+	 * Constraint:
+	 *     {True}
+	 * </pre>
+	 */
+	protected void sequence_BOOLEAN(ISerializationContext context, True semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns And
+	 *     BooleanOperation returns And
+	 *     BooleanOperation.And_1_0_0_0 returns And
+	 *     BooleanOperation.Or_1_0_1_0 returns And
+	 *
+	 * Constraint:
+	 *     (left=BooleanOperation_And_1_0_0_0 right=Equality)
+	 * </pre>
+	 */
+	protected void sequence_BooleanOperation(ISerializationContext context, And semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBooleanOperationAccess().getAndLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getBooleanOperationAccess().getRightEqualityParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns Or
+	 *     BooleanOperation returns Or
+	 *     BooleanOperation.And_1_0_0_0 returns Or
+	 *     BooleanOperation.Or_1_0_1_0 returns Or
+	 *
+	 * Constraint:
+	 *     (left=BooleanOperation_Or_1_0_1_0 right=Equality)
+	 * </pre>
+	 */
+	protected void sequence_BooleanOperation(ISerializationContext context, Or semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBooleanOperationAccess().getOrLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getBooleanOperationAccess().getRightEqualityParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns Concatenation
+	 *     BooleanOperation returns Concatenation
+	 *     BooleanOperation.And_1_0_0_0 returns Concatenation
+	 *     BooleanOperation.Or_1_0_1_0 returns Concatenation
+	 *     Equality returns Concatenation
+	 *     Equality.Equals_1_0_0_0 returns Concatenation
+	 *     Equality.NotEquals_1_0_1_0 returns Concatenation
+	 *     LessGreaterThan returns Concatenation
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns Concatenation
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Concatenation
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Concatenation
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Concatenation
+	 *     Concatenation returns Concatenation
+	 *     Concatenation.Concatenation_1_0 returns Concatenation
+	 *
+	 * Constraint:
+	 *     (left=Concatenation_Concatenation_1_0 right=AddSub)
+	 * </pre>
+	 */
+	protected void sequence_Concatenation(ISerializationContext context, Concatenation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConcatenationAccess().getConcatenationLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getConcatenationAccess().getRightAddSubParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns BoolConstant
+	 *     BooleanOperation returns BoolConstant
+	 *     BooleanOperation.And_1_0_0_0 returns BoolConstant
+	 *     BooleanOperation.Or_1_0_1_0 returns BoolConstant
+	 *     Equality returns BoolConstant
+	 *     Equality.Equals_1_0_0_0 returns BoolConstant
+	 *     Equality.NotEquals_1_0_1_0 returns BoolConstant
+	 *     LessGreaterThan returns BoolConstant
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns BoolConstant
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns BoolConstant
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns BoolConstant
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns BoolConstant
+	 *     Concatenation returns BoolConstant
+	 *     Concatenation.Concatenation_1_0 returns BoolConstant
+	 *     AddSub returns BoolConstant
+	 *     AddSub.Add_1_0_0_0 returns BoolConstant
+	 *     AddSub.Sub_1_0_1_0 returns BoolConstant
+	 *     MulDiv returns BoolConstant
+	 *     MulDiv.Mul_1_0_0_0 returns BoolConstant
+	 *     MulDiv.Div_1_0_1_0 returns BoolConstant
+	 *     Primitive returns BoolConstant
+	 *     Constant returns BoolConstant
+	 *
+	 * Constraint:
+	 *     value=BOOLEAN
+	 * </pre>
+	 */
+	protected void sequence_Constant(ISerializationContext context, BoolConstant semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOL_CONSTANT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOL_CONSTANT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConstantAccess().getValueBOOLEANParserRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns IntConstant
+	 *     BooleanOperation returns IntConstant
+	 *     BooleanOperation.And_1_0_0_0 returns IntConstant
+	 *     BooleanOperation.Or_1_0_1_0 returns IntConstant
+	 *     Equality returns IntConstant
+	 *     Equality.Equals_1_0_0_0 returns IntConstant
+	 *     Equality.NotEquals_1_0_1_0 returns IntConstant
+	 *     LessGreaterThan returns IntConstant
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns IntConstant
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns IntConstant
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns IntConstant
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns IntConstant
+	 *     Concatenation returns IntConstant
+	 *     Concatenation.Concatenation_1_0 returns IntConstant
+	 *     AddSub returns IntConstant
+	 *     AddSub.Add_1_0_0_0 returns IntConstant
+	 *     AddSub.Sub_1_0_1_0 returns IntConstant
+	 *     MulDiv returns IntConstant
+	 *     MulDiv.Mul_1_0_0_0 returns IntConstant
+	 *     MulDiv.Div_1_0_1_0 returns IntConstant
+	 *     Primitive returns IntConstant
+	 *     Constant returns IntConstant
+	 *
+	 * Constraint:
+	 *     value=INT
+	 * </pre>
+	 */
+	protected void sequence_Constant(ISerializationContext context, IntConstant semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.INT_CONSTANT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.INT_CONSTANT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConstantAccess().getValueINTTerminalRuleCall_0_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns StringConstant
+	 *     BooleanOperation returns StringConstant
+	 *     BooleanOperation.And_1_0_0_0 returns StringConstant
+	 *     BooleanOperation.Or_1_0_1_0 returns StringConstant
+	 *     Equality returns StringConstant
+	 *     Equality.Equals_1_0_0_0 returns StringConstant
+	 *     Equality.NotEquals_1_0_1_0 returns StringConstant
+	 *     LessGreaterThan returns StringConstant
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns StringConstant
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns StringConstant
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns StringConstant
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns StringConstant
+	 *     Concatenation returns StringConstant
+	 *     Concatenation.Concatenation_1_0 returns StringConstant
+	 *     AddSub returns StringConstant
+	 *     AddSub.Add_1_0_0_0 returns StringConstant
+	 *     AddSub.Sub_1_0_1_0 returns StringConstant
+	 *     MulDiv returns StringConstant
+	 *     MulDiv.Mul_1_0_0_0 returns StringConstant
+	 *     MulDiv.Div_1_0_1_0 returns StringConstant
+	 *     Primitive returns StringConstant
+	 *     Constant returns StringConstant
+	 *
+	 * Constraint:
+	 *     value=STRING
+	 * </pre>
+	 */
+	protected void sequence_Constant(ISerializationContext context, StringConstant semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.STRING_CONSTANT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.STRING_CONSTANT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConstantAccess().getValueSTRINGTerminalRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns End
+	 *     End returns End
+	 *     TargetDestination returns End
+	 *
+	 * Constraint:
+	 *     (name=ID body=Exp?)
+	 * </pre>
+	 */
+	protected void sequence_End(ISerializationContext context, End semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EndingTarget returns EndingTarget
+	 *
+	 * Constraint:
+	 *     (endStatement=[End|ID] target=Target)
+	 * </pre>
+	 */
+	protected void sequence_EndingTarget(ISerializationContext context, EndingTarget semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.ENDING_TARGET__END_STATEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.ENDING_TARGET__END_STATEMENT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.ENDING_TARGET__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.ENDING_TARGET__TARGET));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEndingTargetAccess().getEndStatementEndIDTerminalRuleCall_1_0_1(), semanticObject.eGet(IF22Package.Literals.ENDING_TARGET__END_STATEMENT, false));
+		feeder.accept(grammarAccess.getEndingTargetAccess().getTargetTargetParserRuleCall_2_0(), semanticObject.getTarget());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns Equals
+	 *     BooleanOperation returns Equals
+	 *     BooleanOperation.And_1_0_0_0 returns Equals
+	 *     BooleanOperation.Or_1_0_1_0 returns Equals
+	 *     Equality returns Equals
+	 *     Equality.Equals_1_0_0_0 returns Equals
+	 *     Equality.NotEquals_1_0_1_0 returns Equals
+	 *
+	 * Constraint:
+	 *     (left=Equality_Equals_1_0_0_0 right=LessGreaterThan)
+	 * </pre>
+	 */
+	protected void sequence_Equality(ISerializationContext context, Equals semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEqualityAccess().getEqualsLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getEqualityAccess().getRightLessGreaterThanParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns NotEquals
+	 *     BooleanOperation returns NotEquals
+	 *     BooleanOperation.And_1_0_0_0 returns NotEquals
+	 *     BooleanOperation.Or_1_0_1_0 returns NotEquals
+	 *     Equality returns NotEquals
+	 *     Equality.Equals_1_0_0_0 returns NotEquals
+	 *     Equality.NotEquals_1_0_1_0 returns NotEquals
+	 *
+	 * Constraint:
+	 *     (left=Equality_NotEquals_1_0_1_0 right=LessGreaterThan)
+	 * </pre>
+	 */
+	protected void sequence_Equality(ISerializationContext context, NotEquals semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEqualityAccess().getNotEqualsLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getEqualityAccess().getRightLessGreaterThanParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns FunctionCall
+	 *     BooleanOperation returns FunctionCall
+	 *     BooleanOperation.And_1_0_0_0 returns FunctionCall
+	 *     BooleanOperation.Or_1_0_1_0 returns FunctionCall
+	 *     Equality returns FunctionCall
+	 *     Equality.Equals_1_0_0_0 returns FunctionCall
+	 *     Equality.NotEquals_1_0_1_0 returns FunctionCall
+	 *     LessGreaterThan returns FunctionCall
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns FunctionCall
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns FunctionCall
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns FunctionCall
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns FunctionCall
+	 *     Concatenation returns FunctionCall
+	 *     Concatenation.Concatenation_1_0 returns FunctionCall
+	 *     AddSub returns FunctionCall
+	 *     AddSub.Add_1_0_0_0 returns FunctionCall
+	 *     AddSub.Sub_1_0_1_0 returns FunctionCall
+	 *     MulDiv returns FunctionCall
+	 *     MulDiv.Mul_1_0_0_0 returns FunctionCall
+	 *     MulDiv.Div_1_0_1_0 returns FunctionCall
+	 *     Primitive returns FunctionCall
+	 *     FunctionCall returns FunctionCall
+	 *
+	 * Constraint:
+	 *     (function=[Function|ID] (arguments+=Exp arguments+=Exp*)?)
+	 * </pre>
+	 */
+	protected void sequence_FunctionCall(ISerializationContext context, FunctionCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Function returns Function
+	 *
+	 * Constraint:
+	 *     (name=ID (parameterTypes+=Type parameterTypes+=Type*)? returnType=Type)
+	 * </pre>
+	 */
+	protected void sequence_Function(ISerializationContext context, Function semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     IF22 returns IF22
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID functions+=Function* scenarios+=Scenario*)
 	 * </pre>
 	 */
 	protected void sequence_IF22(ISerializationContext context, IF22 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns This
+	 *     BooleanOperation returns This
+	 *     BooleanOperation.And_1_0_0_0 returns This
+	 *     BooleanOperation.Or_1_0_1_0 returns This
+	 *     Equality returns This
+	 *     Equality.Equals_1_0_0_0 returns This
+	 *     Equality.NotEquals_1_0_1_0 returns This
+	 *     LessGreaterThan returns This
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns This
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns This
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns This
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns This
+	 *     Concatenation returns This
+	 *     Concatenation.Concatenation_1_0 returns This
+	 *     AddSub returns This
+	 *     AddSub.Add_1_0_0_0 returns This
+	 *     AddSub.Sub_1_0_1_0 returns This
+	 *     MulDiv returns This
+	 *     MulDiv.Mul_1_0_0_0 returns This
+	 *     MulDiv.Div_1_0_1_0 returns This
+	 *     Primitive returns This
+	 *     Keyword returns This
+	 *
+	 * Constraint:
+	 *     {This}
+	 * </pre>
+	 */
+	protected void sequence_Keyword(ISerializationContext context, This semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns GreaterThan
+	 *     BooleanOperation returns GreaterThan
+	 *     BooleanOperation.And_1_0_0_0 returns GreaterThan
+	 *     BooleanOperation.Or_1_0_1_0 returns GreaterThan
+	 *     Equality returns GreaterThan
+	 *     Equality.Equals_1_0_0_0 returns GreaterThan
+	 *     Equality.NotEquals_1_0_1_0 returns GreaterThan
+	 *     LessGreaterThan returns GreaterThan
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns GreaterThan
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns GreaterThan
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns GreaterThan
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns GreaterThan
+	 *
+	 * Constraint:
+	 *     (left=LessGreaterThan_GreaterThan_1_0_1_0 right=Concatenation)
+	 * </pre>
+	 */
+	protected void sequence_LessGreaterThan(ISerializationContext context, GreaterThan semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.IF22__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.IF22__NAME));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIF22Access().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getGreaterThanLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns GreterThanOrEquals
+	 *     BooleanOperation returns GreterThanOrEquals
+	 *     BooleanOperation.And_1_0_0_0 returns GreterThanOrEquals
+	 *     BooleanOperation.Or_1_0_1_0 returns GreterThanOrEquals
+	 *     Equality returns GreterThanOrEquals
+	 *     Equality.Equals_1_0_0_0 returns GreterThanOrEquals
+	 *     Equality.NotEquals_1_0_1_0 returns GreterThanOrEquals
+	 *     LessGreaterThan returns GreterThanOrEquals
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns GreterThanOrEquals
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns GreterThanOrEquals
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns GreterThanOrEquals
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns GreterThanOrEquals
+	 *
+	 * Constraint:
+	 *     (left=LessGreaterThan_GreterThanOrEquals_1_0_3_0 right=Concatenation)
+	 * </pre>
+	 */
+	protected void sequence_LessGreaterThan(ISerializationContext context, GreterThanOrEquals semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getGreterThanOrEqualsLeftAction_1_0_3_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns LessThan
+	 *     BooleanOperation returns LessThan
+	 *     BooleanOperation.And_1_0_0_0 returns LessThan
+	 *     BooleanOperation.Or_1_0_1_0 returns LessThan
+	 *     Equality returns LessThan
+	 *     Equality.Equals_1_0_0_0 returns LessThan
+	 *     Equality.NotEquals_1_0_1_0 returns LessThan
+	 *     LessGreaterThan returns LessThan
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns LessThan
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns LessThan
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns LessThan
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns LessThan
+	 *
+	 * Constraint:
+	 *     (left=LessGreaterThan_LessThan_1_0_0_0 right=Concatenation)
+	 * </pre>
+	 */
+	protected void sequence_LessGreaterThan(ISerializationContext context, LessThan semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getLessThanLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns LessThanOrEquals
+	 *     BooleanOperation returns LessThanOrEquals
+	 *     BooleanOperation.And_1_0_0_0 returns LessThanOrEquals
+	 *     BooleanOperation.Or_1_0_1_0 returns LessThanOrEquals
+	 *     Equality returns LessThanOrEquals
+	 *     Equality.Equals_1_0_0_0 returns LessThanOrEquals
+	 *     Equality.NotEquals_1_0_1_0 returns LessThanOrEquals
+	 *     LessGreaterThan returns LessThanOrEquals
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns LessThanOrEquals
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns LessThanOrEquals
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns LessThanOrEquals
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns LessThanOrEquals
+	 *
+	 * Constraint:
+	 *     (left=LessGreaterThan_LessThanOrEquals_1_0_2_0 right=Concatenation)
+	 * </pre>
+	 */
+	protected void sequence_LessGreaterThan(ISerializationContext context, LessThanOrEquals semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getLessThanOrEqualsLeftAction_1_0_2_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns Div
+	 *     BooleanOperation returns Div
+	 *     BooleanOperation.And_1_0_0_0 returns Div
+	 *     BooleanOperation.Or_1_0_1_0 returns Div
+	 *     Equality returns Div
+	 *     Equality.Equals_1_0_0_0 returns Div
+	 *     Equality.NotEquals_1_0_1_0 returns Div
+	 *     LessGreaterThan returns Div
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns Div
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Div
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Div
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Div
+	 *     Concatenation returns Div
+	 *     Concatenation.Concatenation_1_0 returns Div
+	 *     AddSub returns Div
+	 *     AddSub.Add_1_0_0_0 returns Div
+	 *     AddSub.Sub_1_0_1_0 returns Div
+	 *     MulDiv returns Div
+	 *     MulDiv.Mul_1_0_0_0 returns Div
+	 *     MulDiv.Div_1_0_1_0 returns Div
+	 *
+	 * Constraint:
+	 *     (left=MulDiv_Div_1_0_1_0 right=Primitive)
+	 * </pre>
+	 */
+	protected void sequence_MulDiv(ISerializationContext context, Div semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMulDivAccess().getDivLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMulDivAccess().getRightPrimitiveParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns Mul
+	 *     BooleanOperation returns Mul
+	 *     BooleanOperation.And_1_0_0_0 returns Mul
+	 *     BooleanOperation.Or_1_0_1_0 returns Mul
+	 *     Equality returns Mul
+	 *     Equality.Equals_1_0_0_0 returns Mul
+	 *     Equality.NotEquals_1_0_1_0 returns Mul
+	 *     LessGreaterThan returns Mul
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns Mul
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Mul
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Mul
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Mul
+	 *     Concatenation returns Mul
+	 *     Concatenation.Concatenation_1_0 returns Mul
+	 *     AddSub returns Mul
+	 *     AddSub.Add_1_0_0_0 returns Mul
+	 *     AddSub.Sub_1_0_1_0 returns Mul
+	 *     MulDiv returns Mul
+	 *     MulDiv.Mul_1_0_0_0 returns Mul
+	 *     MulDiv.Div_1_0_1_0 returns Mul
+	 *
+	 * Constraint:
+	 *     (left=MulDiv_Mul_1_0_0_0 right=Primitive)
+	 * </pre>
+	 */
+	protected void sequence_MulDiv(ISerializationContext context, Mul semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMulDivAccess().getMulLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMulDivAccess().getRightPrimitiveParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Parameter returns Parameter
+	 *     Referable returns Parameter
+	 *
+	 * Constraint:
+	 *     (name=ID type=Type)
+	 * </pre>
+	 */
+	protected void sequence_Parameter(ISerializationContext context, dk.sdu.mmmi.mdsd.iF22.Parameter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.REFERABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.REFERABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.REFERABLE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.REFERABLE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getParameterAccess().getTypeTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns Not
+	 *     BooleanOperation returns Not
+	 *     BooleanOperation.And_1_0_0_0 returns Not
+	 *     BooleanOperation.Or_1_0_1_0 returns Not
+	 *     Equality returns Not
+	 *     Equality.Equals_1_0_0_0 returns Not
+	 *     Equality.NotEquals_1_0_1_0 returns Not
+	 *     LessGreaterThan returns Not
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns Not
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Not
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Not
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Not
+	 *     Concatenation returns Not
+	 *     Concatenation.Concatenation_1_0 returns Not
+	 *     AddSub returns Not
+	 *     AddSub.Add_1_0_0_0 returns Not
+	 *     AddSub.Sub_1_0_1_0 returns Not
+	 *     MulDiv returns Not
+	 *     MulDiv.Mul_1_0_0_0 returns Not
+	 *     MulDiv.Div_1_0_1_0 returns Not
+	 *     Primitive returns Not
+	 *
+	 * Constraint:
+	 *     body=Exp
+	 * </pre>
+	 */
+	protected void sequence_Primitive(ISerializationContext context, Not semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.NOT__BODY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.NOT__BODY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPrimitiveAccess().getBodyExpParserRuleCall_1_2_0(), semanticObject.getBody());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns Parenthesis
+	 *     BooleanOperation returns Parenthesis
+	 *     BooleanOperation.And_1_0_0_0 returns Parenthesis
+	 *     BooleanOperation.Or_1_0_1_0 returns Parenthesis
+	 *     Equality returns Parenthesis
+	 *     Equality.Equals_1_0_0_0 returns Parenthesis
+	 *     Equality.NotEquals_1_0_1_0 returns Parenthesis
+	 *     LessGreaterThan returns Parenthesis
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns Parenthesis
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Parenthesis
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Parenthesis
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Parenthesis
+	 *     Concatenation returns Parenthesis
+	 *     Concatenation.Concatenation_1_0 returns Parenthesis
+	 *     AddSub returns Parenthesis
+	 *     AddSub.Add_1_0_0_0 returns Parenthesis
+	 *     AddSub.Sub_1_0_1_0 returns Parenthesis
+	 *     MulDiv returns Parenthesis
+	 *     MulDiv.Mul_1_0_0_0 returns Parenthesis
+	 *     MulDiv.Div_1_0_1_0 returns Parenthesis
+	 *     Primitive returns Parenthesis
+	 *
+	 * Constraint:
+	 *     body=Exp
+	 * </pre>
+	 */
+	protected void sequence_Primitive(ISerializationContext context, Parenthesis semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.PARENTHESIS__BODY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.PARENTHESIS__BODY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPrimitiveAccess().getBodyExpParserRuleCall_0_2_0(), semanticObject.getBody());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Exp returns VarRef
+	 *     BooleanOperation returns VarRef
+	 *     BooleanOperation.And_1_0_0_0 returns VarRef
+	 *     BooleanOperation.Or_1_0_1_0 returns VarRef
+	 *     Equality returns VarRef
+	 *     Equality.Equals_1_0_0_0 returns VarRef
+	 *     Equality.NotEquals_1_0_1_0 returns VarRef
+	 *     LessGreaterThan returns VarRef
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns VarRef
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns VarRef
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns VarRef
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns VarRef
+	 *     Concatenation returns VarRef
+	 *     Concatenation.Concatenation_1_0 returns VarRef
+	 *     AddSub returns VarRef
+	 *     AddSub.Add_1_0_0_0 returns VarRef
+	 *     AddSub.Sub_1_0_1_0 returns VarRef
+	 *     MulDiv returns VarRef
+	 *     MulDiv.Mul_1_0_0_0 returns VarRef
+	 *     MulDiv.Div_1_0_1_0 returns VarRef
+	 *     Primitive returns VarRef
+	 *
+	 * Constraint:
+	 *     variable=[Referable|ID]
+	 * </pre>
+	 */
+	protected void sequence_Primitive(ISerializationContext context, VarRef semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.VAR_REF__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.VAR_REF__VARIABLE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPrimitiveAccess().getVariableReferableIDTerminalRuleCall_4_1_0_1(), semanticObject.eGet(IF22Package.Literals.VAR_REF__VARIABLE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns Question
+	 *     Question returns Question
+	 *     TargetDestination returns Question
+	 *
+	 * Constraint:
+	 *     (name=ID body=Exp typeAndValidation=Exp variable=[VariableDef|ID]? targets+=Target+)
+	 * </pre>
+	 */
+	protected void sequence_Question(ISerializationContext context, Question semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Scenario returns Scenario
+	 *     TargetDestination returns Scenario
+	 *
+	 * Constraint:
+	 *     (name=ID (parameters+=Parameter parameters+=Parameter*)? (body+=VariableDef | body+=Statement)*)
+	 * </pre>
+	 */
+	protected void sequence_Scenario(ISerializationContext context, Scenario semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Target returns Target
+	 *
+	 * Constraint:
+	 *     (destination=[TargetDestination|ID] (arguments+=Exp arguments+=Exp*)? condition=Exp? endTargets+=EndingTarget*)
+	 * </pre>
+	 */
+	protected void sequence_Target(ISerializationContext context, Target semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Type returns BooleanType
+	 *     Exp returns BooleanType
+	 *     BooleanOperation returns BooleanType
+	 *     BooleanOperation.And_1_0_0_0 returns BooleanType
+	 *     BooleanOperation.Or_1_0_1_0 returns BooleanType
+	 *     Equality returns BooleanType
+	 *     Equality.Equals_1_0_0_0 returns BooleanType
+	 *     Equality.NotEquals_1_0_1_0 returns BooleanType
+	 *     LessGreaterThan returns BooleanType
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns BooleanType
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns BooleanType
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns BooleanType
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns BooleanType
+	 *     Concatenation returns BooleanType
+	 *     Concatenation.Concatenation_1_0 returns BooleanType
+	 *     AddSub returns BooleanType
+	 *     AddSub.Add_1_0_0_0 returns BooleanType
+	 *     AddSub.Sub_1_0_1_0 returns BooleanType
+	 *     MulDiv returns BooleanType
+	 *     MulDiv.Mul_1_0_0_0 returns BooleanType
+	 *     MulDiv.Div_1_0_1_0 returns BooleanType
+	 *     Primitive returns BooleanType
+	 *     Keyword returns BooleanType
+	 *
+	 * Constraint:
+	 *     {BooleanType}
+	 * </pre>
+	 */
+	protected void sequence_Type(ISerializationContext context, BooleanType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Type returns IntType
+	 *     Exp returns IntType
+	 *     BooleanOperation returns IntType
+	 *     BooleanOperation.And_1_0_0_0 returns IntType
+	 *     BooleanOperation.Or_1_0_1_0 returns IntType
+	 *     Equality returns IntType
+	 *     Equality.Equals_1_0_0_0 returns IntType
+	 *     Equality.NotEquals_1_0_1_0 returns IntType
+	 *     LessGreaterThan returns IntType
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns IntType
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns IntType
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns IntType
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns IntType
+	 *     Concatenation returns IntType
+	 *     Concatenation.Concatenation_1_0 returns IntType
+	 *     AddSub returns IntType
+	 *     AddSub.Add_1_0_0_0 returns IntType
+	 *     AddSub.Sub_1_0_1_0 returns IntType
+	 *     MulDiv returns IntType
+	 *     MulDiv.Mul_1_0_0_0 returns IntType
+	 *     MulDiv.Div_1_0_1_0 returns IntType
+	 *     Primitive returns IntType
+	 *     Keyword returns IntType
+	 *
+	 * Constraint:
+	 *     {IntType}
+	 * </pre>
+	 */
+	protected void sequence_Type(ISerializationContext context, IntType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Type returns StringType
+	 *     Exp returns StringType
+	 *     BooleanOperation returns StringType
+	 *     BooleanOperation.And_1_0_0_0 returns StringType
+	 *     BooleanOperation.Or_1_0_1_0 returns StringType
+	 *     Equality returns StringType
+	 *     Equality.Equals_1_0_0_0 returns StringType
+	 *     Equality.NotEquals_1_0_1_0 returns StringType
+	 *     LessGreaterThan returns StringType
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns StringType
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns StringType
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns StringType
+	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns StringType
+	 *     Concatenation returns StringType
+	 *     Concatenation.Concatenation_1_0 returns StringType
+	 *     AddSub returns StringType
+	 *     AddSub.Add_1_0_0_0 returns StringType
+	 *     AddSub.Sub_1_0_1_0 returns StringType
+	 *     MulDiv returns StringType
+	 *     MulDiv.Mul_1_0_0_0 returns StringType
+	 *     MulDiv.Div_1_0_1_0 returns StringType
+	 *     Primitive returns StringType
+	 *     Keyword returns StringType
+	 *
+	 * Constraint:
+	 *     {StringType}
+	 * </pre>
+	 */
+	protected void sequence_Type(ISerializationContext context, StringType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VariableDef returns VariableDef
+	 *     Referable returns VariableDef
+	 *
+	 * Constraint:
+	 *     (name=ID type=Type)
+	 * </pre>
+	 */
+	protected void sequence_VariableDef(ISerializationContext context, VariableDef semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.REFERABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.REFERABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.REFERABLE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.REFERABLE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableDefAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableDefAccess().getTypeTypeParserRuleCall_3_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	

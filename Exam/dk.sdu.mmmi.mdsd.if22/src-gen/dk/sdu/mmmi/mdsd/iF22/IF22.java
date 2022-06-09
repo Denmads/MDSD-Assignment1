@@ -3,6 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.iF22;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.iF22.IF22#getName <em>Name</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.iF22.IF22#getFunctions <em>Functions</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.iF22.IF22#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getIF22()
@@ -44,5 +48,29 @@ public interface IF22 extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.mmmi.mdsd.iF22.Function}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Functions</em>' containment reference list.
+   * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getIF22_Functions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Function> getFunctions();
+
+  /**
+   * Returns the value of the '<em><b>Scenarios</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.mmmi.mdsd.iF22.Scenario}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Scenarios</em>' containment reference list.
+   * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getIF22_Scenarios()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Scenario> getScenarios();
 
 } // IF22

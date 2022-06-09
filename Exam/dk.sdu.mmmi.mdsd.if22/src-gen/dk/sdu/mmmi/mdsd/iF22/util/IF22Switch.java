@@ -80,6 +80,564 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case IF22Package.TYPE:
+      {
+        Type type = (Type)theEObject;
+        T result = caseType(type);
+        if (result == null) result = caseKeyword(type);
+        if (result == null) result = casePrimitive(type);
+        if (result == null) result = caseMulDiv(type);
+        if (result == null) result = caseAddSub(type);
+        if (result == null) result = caseConcatenation(type);
+        if (result == null) result = caseLessGreaterThan(type);
+        if (result == null) result = caseEquality(type);
+        if (result == null) result = caseBooleanOperation(type);
+        if (result == null) result = caseExp(type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.FUNCTION:
+      {
+        Function function = (Function)theEObject;
+        T result = caseFunction(function);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.SCENARIO:
+      {
+        Scenario scenario = (Scenario)theEObject;
+        T result = caseScenario(scenario);
+        if (result == null) result = caseTargetDestination(scenario);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.PARAMETER:
+      {
+        Parameter parameter = (Parameter)theEObject;
+        T result = caseParameter(parameter);
+        if (result == null) result = caseReferable(parameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.VARIABLE_DEF:
+      {
+        VariableDef variableDef = (VariableDef)theEObject;
+        T result = caseVariableDef(variableDef);
+        if (result == null) result = caseReferable(variableDef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.STATEMENT:
+      {
+        Statement statement = (Statement)theEObject;
+        T result = caseStatement(statement);
+        if (result == null) result = caseTargetDestination(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.ANNOUNCE:
+      {
+        Announce announce = (Announce)theEObject;
+        T result = caseAnnounce(announce);
+        if (result == null) result = caseStatement(announce);
+        if (result == null) result = caseTargetDestination(announce);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.QUESTION:
+      {
+        Question question = (Question)theEObject;
+        T result = caseQuestion(question);
+        if (result == null) result = caseStatement(question);
+        if (result == null) result = caseTargetDestination(question);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.END:
+      {
+        End end = (End)theEObject;
+        T result = caseEnd(end);
+        if (result == null) result = caseStatement(end);
+        if (result == null) result = caseTargetDestination(end);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.TARGET:
+      {
+        Target target = (Target)theEObject;
+        T result = caseTarget(target);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.TARGET_DESTINATION:
+      {
+        TargetDestination targetDestination = (TargetDestination)theEObject;
+        T result = caseTargetDestination(targetDestination);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.ENDING_TARGET:
+      {
+        EndingTarget endingTarget = (EndingTarget)theEObject;
+        T result = caseEndingTarget(endingTarget);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.EXP:
+      {
+        Exp exp = (Exp)theEObject;
+        T result = caseExp(exp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.BOOLEAN_OPERATION:
+      {
+        BooleanOperation booleanOperation = (BooleanOperation)theEObject;
+        T result = caseBooleanOperation(booleanOperation);
+        if (result == null) result = caseExp(booleanOperation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.EQUALITY:
+      {
+        Equality equality = (Equality)theEObject;
+        T result = caseEquality(equality);
+        if (result == null) result = caseBooleanOperation(equality);
+        if (result == null) result = caseExp(equality);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.LESS_GREATER_THAN:
+      {
+        LessGreaterThan lessGreaterThan = (LessGreaterThan)theEObject;
+        T result = caseLessGreaterThan(lessGreaterThan);
+        if (result == null) result = caseEquality(lessGreaterThan);
+        if (result == null) result = caseBooleanOperation(lessGreaterThan);
+        if (result == null) result = caseExp(lessGreaterThan);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.CONCATENATION:
+      {
+        Concatenation concatenation = (Concatenation)theEObject;
+        T result = caseConcatenation(concatenation);
+        if (result == null) result = caseLessGreaterThan(concatenation);
+        if (result == null) result = caseEquality(concatenation);
+        if (result == null) result = caseBooleanOperation(concatenation);
+        if (result == null) result = caseExp(concatenation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.ADD_SUB:
+      {
+        AddSub addSub = (AddSub)theEObject;
+        T result = caseAddSub(addSub);
+        if (result == null) result = caseConcatenation(addSub);
+        if (result == null) result = caseLessGreaterThan(addSub);
+        if (result == null) result = caseEquality(addSub);
+        if (result == null) result = caseBooleanOperation(addSub);
+        if (result == null) result = caseExp(addSub);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.MUL_DIV:
+      {
+        MulDiv mulDiv = (MulDiv)theEObject;
+        T result = caseMulDiv(mulDiv);
+        if (result == null) result = caseAddSub(mulDiv);
+        if (result == null) result = caseConcatenation(mulDiv);
+        if (result == null) result = caseLessGreaterThan(mulDiv);
+        if (result == null) result = caseEquality(mulDiv);
+        if (result == null) result = caseBooleanOperation(mulDiv);
+        if (result == null) result = caseExp(mulDiv);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.PRIMITIVE:
+      {
+        Primitive primitive = (Primitive)theEObject;
+        T result = casePrimitive(primitive);
+        if (result == null) result = caseMulDiv(primitive);
+        if (result == null) result = caseAddSub(primitive);
+        if (result == null) result = caseConcatenation(primitive);
+        if (result == null) result = caseLessGreaterThan(primitive);
+        if (result == null) result = caseEquality(primitive);
+        if (result == null) result = caseBooleanOperation(primitive);
+        if (result == null) result = caseExp(primitive);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.REFERABLE:
+      {
+        Referable referable = (Referable)theEObject;
+        T result = caseReferable(referable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.CONSTANT:
+      {
+        Constant constant = (Constant)theEObject;
+        T result = caseConstant(constant);
+        if (result == null) result = casePrimitive(constant);
+        if (result == null) result = caseMulDiv(constant);
+        if (result == null) result = caseAddSub(constant);
+        if (result == null) result = caseConcatenation(constant);
+        if (result == null) result = caseLessGreaterThan(constant);
+        if (result == null) result = caseEquality(constant);
+        if (result == null) result = caseBooleanOperation(constant);
+        if (result == null) result = caseExp(constant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.KEYWORD:
+      {
+        Keyword keyword = (Keyword)theEObject;
+        T result = caseKeyword(keyword);
+        if (result == null) result = casePrimitive(keyword);
+        if (result == null) result = caseMulDiv(keyword);
+        if (result == null) result = caseAddSub(keyword);
+        if (result == null) result = caseConcatenation(keyword);
+        if (result == null) result = caseLessGreaterThan(keyword);
+        if (result == null) result = caseEquality(keyword);
+        if (result == null) result = caseBooleanOperation(keyword);
+        if (result == null) result = caseExp(keyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.FUNCTION_CALL:
+      {
+        FunctionCall functionCall = (FunctionCall)theEObject;
+        T result = caseFunctionCall(functionCall);
+        if (result == null) result = casePrimitive(functionCall);
+        if (result == null) result = caseMulDiv(functionCall);
+        if (result == null) result = caseAddSub(functionCall);
+        if (result == null) result = caseConcatenation(functionCall);
+        if (result == null) result = caseLessGreaterThan(functionCall);
+        if (result == null) result = caseEquality(functionCall);
+        if (result == null) result = caseBooleanOperation(functionCall);
+        if (result == null) result = caseExp(functionCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.BOOLEAN:
+      {
+        BOOLEAN boolean_ = (BOOLEAN)theEObject;
+        T result = caseBOOLEAN(boolean_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.INT_TYPE:
+      {
+        IntType intType = (IntType)theEObject;
+        T result = caseIntType(intType);
+        if (result == null) result = caseType(intType);
+        if (result == null) result = caseKeyword(intType);
+        if (result == null) result = casePrimitive(intType);
+        if (result == null) result = caseMulDiv(intType);
+        if (result == null) result = caseAddSub(intType);
+        if (result == null) result = caseConcatenation(intType);
+        if (result == null) result = caseLessGreaterThan(intType);
+        if (result == null) result = caseEquality(intType);
+        if (result == null) result = caseBooleanOperation(intType);
+        if (result == null) result = caseExp(intType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.STRING_TYPE:
+      {
+        StringType stringType = (StringType)theEObject;
+        T result = caseStringType(stringType);
+        if (result == null) result = caseType(stringType);
+        if (result == null) result = caseKeyword(stringType);
+        if (result == null) result = casePrimitive(stringType);
+        if (result == null) result = caseMulDiv(stringType);
+        if (result == null) result = caseAddSub(stringType);
+        if (result == null) result = caseConcatenation(stringType);
+        if (result == null) result = caseLessGreaterThan(stringType);
+        if (result == null) result = caseEquality(stringType);
+        if (result == null) result = caseBooleanOperation(stringType);
+        if (result == null) result = caseExp(stringType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.BOOLEAN_TYPE:
+      {
+        BooleanType booleanType = (BooleanType)theEObject;
+        T result = caseBooleanType(booleanType);
+        if (result == null) result = caseType(booleanType);
+        if (result == null) result = caseKeyword(booleanType);
+        if (result == null) result = casePrimitive(booleanType);
+        if (result == null) result = caseMulDiv(booleanType);
+        if (result == null) result = caseAddSub(booleanType);
+        if (result == null) result = caseConcatenation(booleanType);
+        if (result == null) result = caseLessGreaterThan(booleanType);
+        if (result == null) result = caseEquality(booleanType);
+        if (result == null) result = caseBooleanOperation(booleanType);
+        if (result == null) result = caseExp(booleanType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.AND:
+      {
+        And and = (And)theEObject;
+        T result = caseAnd(and);
+        if (result == null) result = caseBooleanOperation(and);
+        if (result == null) result = caseExp(and);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.OR:
+      {
+        Or or = (Or)theEObject;
+        T result = caseOr(or);
+        if (result == null) result = caseBooleanOperation(or);
+        if (result == null) result = caseExp(or);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.EQUALS:
+      {
+        Equals equals = (Equals)theEObject;
+        T result = caseEquals(equals);
+        if (result == null) result = caseEquality(equals);
+        if (result == null) result = caseBooleanOperation(equals);
+        if (result == null) result = caseExp(equals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.NOT_EQUALS:
+      {
+        NotEquals notEquals = (NotEquals)theEObject;
+        T result = caseNotEquals(notEquals);
+        if (result == null) result = caseEquality(notEquals);
+        if (result == null) result = caseBooleanOperation(notEquals);
+        if (result == null) result = caseExp(notEquals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.LESS_THAN:
+      {
+        LessThan lessThan = (LessThan)theEObject;
+        T result = caseLessThan(lessThan);
+        if (result == null) result = caseLessGreaterThan(lessThan);
+        if (result == null) result = caseEquality(lessThan);
+        if (result == null) result = caseBooleanOperation(lessThan);
+        if (result == null) result = caseExp(lessThan);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.GREATER_THAN:
+      {
+        GreaterThan greaterThan = (GreaterThan)theEObject;
+        T result = caseGreaterThan(greaterThan);
+        if (result == null) result = caseLessGreaterThan(greaterThan);
+        if (result == null) result = caseEquality(greaterThan);
+        if (result == null) result = caseBooleanOperation(greaterThan);
+        if (result == null) result = caseExp(greaterThan);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.LESS_THAN_OR_EQUALS:
+      {
+        LessThanOrEquals lessThanOrEquals = (LessThanOrEquals)theEObject;
+        T result = caseLessThanOrEquals(lessThanOrEquals);
+        if (result == null) result = caseLessGreaterThan(lessThanOrEquals);
+        if (result == null) result = caseEquality(lessThanOrEquals);
+        if (result == null) result = caseBooleanOperation(lessThanOrEquals);
+        if (result == null) result = caseExp(lessThanOrEquals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.GRETER_THAN_OR_EQUALS:
+      {
+        GreterThanOrEquals greterThanOrEquals = (GreterThanOrEquals)theEObject;
+        T result = caseGreterThanOrEquals(greterThanOrEquals);
+        if (result == null) result = caseLessGreaterThan(greterThanOrEquals);
+        if (result == null) result = caseEquality(greterThanOrEquals);
+        if (result == null) result = caseBooleanOperation(greterThanOrEquals);
+        if (result == null) result = caseExp(greterThanOrEquals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.ADD:
+      {
+        Add add = (Add)theEObject;
+        T result = caseAdd(add);
+        if (result == null) result = caseAddSub(add);
+        if (result == null) result = caseConcatenation(add);
+        if (result == null) result = caseLessGreaterThan(add);
+        if (result == null) result = caseEquality(add);
+        if (result == null) result = caseBooleanOperation(add);
+        if (result == null) result = caseExp(add);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.SUB:
+      {
+        Sub sub = (Sub)theEObject;
+        T result = caseSub(sub);
+        if (result == null) result = caseAddSub(sub);
+        if (result == null) result = caseConcatenation(sub);
+        if (result == null) result = caseLessGreaterThan(sub);
+        if (result == null) result = caseEquality(sub);
+        if (result == null) result = caseBooleanOperation(sub);
+        if (result == null) result = caseExp(sub);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.MUL:
+      {
+        Mul mul = (Mul)theEObject;
+        T result = caseMul(mul);
+        if (result == null) result = caseMulDiv(mul);
+        if (result == null) result = caseAddSub(mul);
+        if (result == null) result = caseConcatenation(mul);
+        if (result == null) result = caseLessGreaterThan(mul);
+        if (result == null) result = caseEquality(mul);
+        if (result == null) result = caseBooleanOperation(mul);
+        if (result == null) result = caseExp(mul);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.DIV:
+      {
+        Div div = (Div)theEObject;
+        T result = caseDiv(div);
+        if (result == null) result = caseMulDiv(div);
+        if (result == null) result = caseAddSub(div);
+        if (result == null) result = caseConcatenation(div);
+        if (result == null) result = caseLessGreaterThan(div);
+        if (result == null) result = caseEquality(div);
+        if (result == null) result = caseBooleanOperation(div);
+        if (result == null) result = caseExp(div);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.PARENTHESIS:
+      {
+        Parenthesis parenthesis = (Parenthesis)theEObject;
+        T result = caseParenthesis(parenthesis);
+        if (result == null) result = casePrimitive(parenthesis);
+        if (result == null) result = caseMulDiv(parenthesis);
+        if (result == null) result = caseAddSub(parenthesis);
+        if (result == null) result = caseConcatenation(parenthesis);
+        if (result == null) result = caseLessGreaterThan(parenthesis);
+        if (result == null) result = caseEquality(parenthesis);
+        if (result == null) result = caseBooleanOperation(parenthesis);
+        if (result == null) result = caseExp(parenthesis);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.NOT:
+      {
+        Not not = (Not)theEObject;
+        T result = caseNot(not);
+        if (result == null) result = casePrimitive(not);
+        if (result == null) result = caseMulDiv(not);
+        if (result == null) result = caseAddSub(not);
+        if (result == null) result = caseConcatenation(not);
+        if (result == null) result = caseLessGreaterThan(not);
+        if (result == null) result = caseEquality(not);
+        if (result == null) result = caseBooleanOperation(not);
+        if (result == null) result = caseExp(not);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.VAR_REF:
+      {
+        VarRef varRef = (VarRef)theEObject;
+        T result = caseVarRef(varRef);
+        if (result == null) result = casePrimitive(varRef);
+        if (result == null) result = caseMulDiv(varRef);
+        if (result == null) result = caseAddSub(varRef);
+        if (result == null) result = caseConcatenation(varRef);
+        if (result == null) result = caseLessGreaterThan(varRef);
+        if (result == null) result = caseEquality(varRef);
+        if (result == null) result = caseBooleanOperation(varRef);
+        if (result == null) result = caseExp(varRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.INT_CONSTANT:
+      {
+        IntConstant intConstant = (IntConstant)theEObject;
+        T result = caseIntConstant(intConstant);
+        if (result == null) result = caseConstant(intConstant);
+        if (result == null) result = casePrimitive(intConstant);
+        if (result == null) result = caseMulDiv(intConstant);
+        if (result == null) result = caseAddSub(intConstant);
+        if (result == null) result = caseConcatenation(intConstant);
+        if (result == null) result = caseLessGreaterThan(intConstant);
+        if (result == null) result = caseEquality(intConstant);
+        if (result == null) result = caseBooleanOperation(intConstant);
+        if (result == null) result = caseExp(intConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.STRING_CONSTANT:
+      {
+        StringConstant stringConstant = (StringConstant)theEObject;
+        T result = caseStringConstant(stringConstant);
+        if (result == null) result = caseConstant(stringConstant);
+        if (result == null) result = casePrimitive(stringConstant);
+        if (result == null) result = caseMulDiv(stringConstant);
+        if (result == null) result = caseAddSub(stringConstant);
+        if (result == null) result = caseConcatenation(stringConstant);
+        if (result == null) result = caseLessGreaterThan(stringConstant);
+        if (result == null) result = caseEquality(stringConstant);
+        if (result == null) result = caseBooleanOperation(stringConstant);
+        if (result == null) result = caseExp(stringConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.BOOL_CONSTANT:
+      {
+        BoolConstant boolConstant = (BoolConstant)theEObject;
+        T result = caseBoolConstant(boolConstant);
+        if (result == null) result = caseConstant(boolConstant);
+        if (result == null) result = casePrimitive(boolConstant);
+        if (result == null) result = caseMulDiv(boolConstant);
+        if (result == null) result = caseAddSub(boolConstant);
+        if (result == null) result = caseConcatenation(boolConstant);
+        if (result == null) result = caseLessGreaterThan(boolConstant);
+        if (result == null) result = caseEquality(boolConstant);
+        if (result == null) result = caseBooleanOperation(boolConstant);
+        if (result == null) result = caseExp(boolConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.THIS:
+      {
+        This this_ = (This)theEObject;
+        T result = caseThis(this_);
+        if (result == null) result = caseKeyword(this_);
+        if (result == null) result = casePrimitive(this_);
+        if (result == null) result = caseMulDiv(this_);
+        if (result == null) result = caseAddSub(this_);
+        if (result == null) result = caseConcatenation(this_);
+        if (result == null) result = caseLessGreaterThan(this_);
+        if (result == null) result = caseEquality(this_);
+        if (result == null) result = caseBooleanOperation(this_);
+        if (result == null) result = caseExp(this_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.TRUE:
+      {
+        True true_ = (True)theEObject;
+        T result = caseTrue(true_);
+        if (result == null) result = caseBOOLEAN(true_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case IF22Package.FALSE:
+      {
+        False false_ = (False)theEObject;
+        T result = caseFalse(false_);
+        if (result == null) result = caseBOOLEAN(false_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -96,6 +654,790 @@ public class IF22Switch<T> extends Switch<T>
    * @generated
    */
   public T caseIF22(IF22 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseType(Type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunction(Function object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Scenario</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Scenario</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScenario(Scenario object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParameter(Parameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Def</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Def</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableDef(VariableDef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Announce</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Announce</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnounce(Announce object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Question</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Question</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuestion(Question object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>End</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>End</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnd(End object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Target</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Target</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTarget(Target object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Target Destination</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Target Destination</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTargetDestination(TargetDestination object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ending Target</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ending Target</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEndingTarget(EndingTarget object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExp(Exp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanOperation(BooleanOperation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Equality</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Equality</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEquality(Equality object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Less Greater Than</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Less Greater Than</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLessGreaterThan(LessGreaterThan object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Concatenation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Concatenation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConcatenation(Concatenation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Add Sub</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Add Sub</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAddSub(AddSub object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Mul Div</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mul Div</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMulDiv(MulDiv object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primitive</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primitive</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimitive(Primitive object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Referable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Referable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferable(Referable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConstant(Constant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseKeyword(Keyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionCall(FunctionCall object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>BOOLEAN</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>BOOLEAN</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBOOLEAN(BOOLEAN object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Int Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Int Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntType(IntType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringType(StringType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanType(BooleanType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>And</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnd(And object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Or</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOr(Or object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Equals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Equals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEquals(Equals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Not Equals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Not Equals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNotEquals(NotEquals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Less Than</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Less Than</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLessThan(LessThan object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Greater Than</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Greater Than</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGreaterThan(GreaterThan object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Less Than Or Equals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Less Than Or Equals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLessThanOrEquals(LessThanOrEquals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Greter Than Or Equals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Greter Than Or Equals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGreterThanOrEquals(GreterThanOrEquals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Add</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Add</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAdd(Add object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sub</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sub</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSub(Sub object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Mul</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mul</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMul(Mul object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Div</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDiv(Div object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parenthesis</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parenthesis</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParenthesis(Parenthesis object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Not</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Not</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNot(Not object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Var Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Var Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVarRef(VarRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Int Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Int Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntConstant(IntConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringConstant(StringConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Bool Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bool Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBoolConstant(BoolConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>This</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>This</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseThis(This object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>True</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>True</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTrue(True object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>False</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>False</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFalse(False object)
   {
     return null;
   }

@@ -5,6 +5,7 @@ generate iF22 "http://www.sdu.dk/mmmi/mdsd/IF22"
 IF22:
 	'story' name=ID
 	functions+=Function*
+	scenarios+=Scenario*
 ;
 
 Type:
@@ -12,13 +13,97 @@ Type:
 ;
 
 Function:
-	'function' name=ID '(' parameterTypes+=Type (',' parameterTypes+=Type)* ')' ':' returnType=Type
+	'function' name=ID '(' ( parameterTypes+=Type (',' parameterTypes+=Type)* )? ')' ':' returnType=Type
 ;
 
 Scenario:
-	'scenario' name=ID ()?
+	'scenario' name=ID ( '(' parameters+=Parameter (',' parameters+=Parameter)* ')' )? '{' body+=(VariableDef | Statement)* '}'
 ;
 
 Parameter:
 	name=ID ':' type=Type
+;
+
+VariableDef:
+	'var' name=ID ':' type=Type
+;
+
+Statement:
+	Announce | Question | End
+;
+
+Announce:
+	'announce' name=ID body=Exp targets+=Target+
+;
+
+Question:
+	'question' name=ID body=Exp 'as' typeAndValidation=Exp ('in' variable=[VariableDef])? targets+=Target+
+;
+
+End:
+	'end' name=ID body=Exp?
+;
+
+Target:
+	'to' destination=[TargetDestination] ('(' arguments+=Exp (',' arguments+=Exp)* ')')? ('if' condition=Exp)? ('{' endTargets+=EndingTarget+ '}')?
+;
+
+TargetDestination:
+	Statement | Scenario
+;
+
+EndingTarget:
+	'on' endStatement=[End] target=Target
+;
+
+Exp:
+	BooleanOperation
+;
+
+BooleanOperation:
+	Equality (({And.left=current} '&&' | {Or.left=current} '||') right=Equality)*
+;
+
+Equality:
+	LessGreaterThan (({Equals.left=current} '==' | {NotEquals.left=current} '!=') right=LessGreaterThan)*
+;
+
+LessGreaterThan:
+	Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreterThanOrEquals.left=current} '>=') right=Concatenation)*
+;
+
+Concatenation:
+	AddSub ({Concatenation.left=current} '&' right=AddSub)*
+;
+
+AddSub:
+	MulDiv (({Add.left=current} '+' | {Sub.left=current} '-') right=MulDiv)*
+;
+
+MulDiv:
+	Primitive (({Mul.left=current} '*' | {Div.left=current} '/') right=Primitive)*
+;
+
+Primitive:
+	{Parenthesis} '(' body=Exp ')' | {Not} '!' body=Exp | Constant | Keyword | {VarRef} variable=[Referable] | FunctionCall
+;
+
+Referable:
+	VariableDef | Parameter
+;
+
+Constant:
+	{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=BOOLEAN
+;
+
+Keyword:
+	{This} 'this' | Type
+;
+
+FunctionCall:
+	function=[Function] '(' ( arguments+=Exp (',' arguments+=Exp)* )? ')'
+;
+
+BOOLEAN:
+	{True} 'true' | {False} 'false'
 ;

@@ -6,6 +6,7 @@ package dk.sdu.mmmi.mdsd.iF22;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,13 +77,1907 @@ public interface IF22Package extends EPackage
   int IF22__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Functions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF22__FUNCTIONS = 1;
+
+  /**
+   * The feature id for the '<em><b>Scenarios</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF22__SCENARIOS = 2;
+
+  /**
    * The number of structural features of the '<em>IF22</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF22_FEATURE_COUNT = 1;
+  int IF22_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ExpImpl <em>Exp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ExpImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getExp()
+   * @generated
+   */
+  int EXP = 13;
+
+  /**
+   * The number of structural features of the '<em>Exp</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXP_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.BooleanOperationImpl <em>Boolean Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.BooleanOperationImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBooleanOperation()
+   * @generated
+   */
+  int BOOLEAN_OPERATION = 14;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_OPERATION__LEFT = EXP_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_OPERATION__RIGHT = EXP_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Boolean Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_OPERATION_FEATURE_COUNT = EXP_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EqualityImpl <em>Equality</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.EqualityImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getEquality()
+   * @generated
+   */
+  int EQUALITY = 15;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY__LEFT = BOOLEAN_OPERATION__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY__RIGHT = BOOLEAN_OPERATION__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Equality</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_FEATURE_COUNT = BOOLEAN_OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessGreaterThanImpl <em>Less Greater Than</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.LessGreaterThanImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getLessGreaterThan()
+   * @generated
+   */
+  int LESS_GREATER_THAN = 16;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_GREATER_THAN__LEFT = EQUALITY__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_GREATER_THAN__RIGHT = EQUALITY__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Less Greater Than</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_GREATER_THAN_FEATURE_COUNT = EQUALITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl <em>Concatenation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConcatenation()
+   * @generated
+   */
+  int CONCATENATION = 17;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCATENATION__LEFT = LESS_GREATER_THAN__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCATENATION__RIGHT = LESS_GREATER_THAN__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Concatenation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCATENATION_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddSubImpl <em>Add Sub</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.AddSubImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAddSub()
+   * @generated
+   */
+  int ADD_SUB = 18;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_SUB__LEFT = CONCATENATION__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_SUB__RIGHT = CONCATENATION__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Add Sub</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_SUB_FEATURE_COUNT = CONCATENATION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.MulDivImpl <em>Mul Div</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.MulDivImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getMulDiv()
+   * @generated
+   */
+  int MUL_DIV = 19;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL_DIV__LEFT = ADD_SUB__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL_DIV__RIGHT = ADD_SUB__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Mul Div</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL_DIV_FEATURE_COUNT = ADD_SUB_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.PrimitiveImpl <em>Primitive</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.PrimitiveImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getPrimitive()
+   * @generated
+   */
+  int PRIMITIVE = 20;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMITIVE__LEFT = MUL_DIV__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMITIVE__RIGHT = MUL_DIV__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Primitive</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMITIVE_FEATURE_COUNT = MUL_DIV_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.KeywordImpl <em>Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.KeywordImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getKeyword()
+   * @generated
+   */
+  int KEYWORD = 23;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYWORD__LEFT = PRIMITIVE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYWORD__RIGHT = PRIMITIVE__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYWORD_FEATURE_COUNT = PRIMITIVE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.TypeImpl <em>Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.TypeImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getType()
+   * @generated
+   */
+  int TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__LEFT = KEYWORD__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__RIGHT = KEYWORD__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_FEATURE_COUNT = KEYWORD_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.FunctionImpl <em>Function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.FunctionImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getFunction()
+   * @generated
+   */
+  int FUNCTION = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Parameter Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__PARAMETER_TYPES = 1;
+
+  /**
+   * The feature id for the '<em><b>Return Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__RETURN_TYPE = 2;
+
+  /**
+   * The number of structural features of the '<em>Function</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.TargetDestinationImpl <em>Target Destination</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.TargetDestinationImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getTargetDestination()
+   * @generated
+   */
+  int TARGET_DESTINATION = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET_DESTINATION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Target Destination</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET_DESTINATION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ScenarioImpl <em>Scenario</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ScenarioImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getScenario()
+   * @generated
+   */
+  int SCENARIO = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO__NAME = TARGET_DESTINATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO__PARAMETERS = TARGET_DESTINATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO__BODY = TARGET_DESTINATION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Scenario</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO_FEATURE_COUNT = TARGET_DESTINATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ReferableImpl <em>Referable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ReferableImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getReferable()
+   * @generated
+   */
+  int REFERABLE = 21;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERABLE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERABLE__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Referable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERABLE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ParameterImpl <em>Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ParameterImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getParameter()
+   * @generated
+   */
+  int PARAMETER = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__NAME = REFERABLE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__TYPE = REFERABLE__TYPE;
+
+  /**
+   * The number of structural features of the '<em>Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_FEATURE_COUNT = REFERABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.VariableDefImpl <em>Variable Def</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.VariableDefImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getVariableDef()
+   * @generated
+   */
+  int VARIABLE_DEF = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DEF__NAME = REFERABLE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DEF__TYPE = REFERABLE__TYPE;
+
+  /**
+   * The number of structural features of the '<em>Variable Def</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DEF_FEATURE_COUNT = REFERABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.StatementImpl <em>Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.StatementImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getStatement()
+   * @generated
+   */
+  int STATEMENT = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__NAME = TARGET_DESTINATION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__BODY = TARGET_DESTINATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT_FEATURE_COUNT = TARGET_DESTINATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AnnounceImpl <em>Announce</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.AnnounceImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAnnounce()
+   * @generated
+   */
+  int ANNOUNCE = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOUNCE__NAME = STATEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOUNCE__BODY = STATEMENT__BODY;
+
+  /**
+   * The feature id for the '<em><b>Targets</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOUNCE__TARGETS = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Announce</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOUNCE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.QuestionImpl <em>Question</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.QuestionImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getQuestion()
+   * @generated
+   */
+  int QUESTION = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUESTION__NAME = STATEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUESTION__BODY = STATEMENT__BODY;
+
+  /**
+   * The feature id for the '<em><b>Type And Validation</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUESTION__TYPE_AND_VALIDATION = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUESTION__VARIABLE = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Targets</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUESTION__TARGETS = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Question</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUESTION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EndImpl <em>End</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.EndImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getEnd()
+   * @generated
+   */
+  int END = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END__NAME = STATEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END__BODY = STATEMENT__BODY;
+
+  /**
+   * The number of structural features of the '<em>End</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int END_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.TargetImpl <em>Target</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.TargetImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getTarget()
+   * @generated
+   */
+  int TARGET = 10;
+
+  /**
+   * The feature id for the '<em><b>Destination</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET__DESTINATION = 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET__ARGUMENTS = 1;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET__CONDITION = 2;
+
+  /**
+   * The feature id for the '<em><b>End Targets</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET__END_TARGETS = 3;
+
+  /**
+   * The number of structural features of the '<em>Target</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EndingTargetImpl <em>Ending Target</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.EndingTargetImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getEndingTarget()
+   * @generated
+   */
+  int ENDING_TARGET = 12;
+
+  /**
+   * The feature id for the '<em><b>End Statement</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENDING_TARGET__END_STATEMENT = 0;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENDING_TARGET__TARGET = 1;
+
+  /**
+   * The number of structural features of the '<em>Ending Target</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENDING_TARGET_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConstantImpl <em>Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ConstantImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConstant()
+   * @generated
+   */
+  int CONSTANT = 22;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__LEFT = PRIMITIVE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__RIGHT = PRIMITIVE__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_FEATURE_COUNT = PRIMITIVE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.FunctionCallImpl <em>Function Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.FunctionCallImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getFunctionCall()
+   * @generated
+   */
+  int FUNCTION_CALL = 24;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__LEFT = PRIMITIVE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__RIGHT = PRIMITIVE__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Function</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__FUNCTION = PRIMITIVE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL__ARGUMENTS = PRIMITIVE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Function Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_CALL_FEATURE_COUNT = PRIMITIVE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.BOOLEANImpl <em>BOOLEAN</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.BOOLEANImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBOOLEAN()
+   * @generated
+   */
+  int BOOLEAN = 25;
+
+  /**
+   * The number of structural features of the '<em>BOOLEAN</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.IntTypeImpl <em>Int Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IntTypeImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getIntType()
+   * @generated
+   */
+  int INT_TYPE = 26;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_TYPE__LEFT = TYPE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_TYPE__RIGHT = TYPE__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Int Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.StringTypeImpl <em>String Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.StringTypeImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getStringType()
+   * @generated
+   */
+  int STRING_TYPE = 27;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_TYPE__LEFT = TYPE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_TYPE__RIGHT = TYPE__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>String Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.BooleanTypeImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBooleanType()
+   * @generated
+   */
+  int BOOLEAN_TYPE = 28;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_TYPE__LEFT = TYPE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_TYPE__RIGHT = TYPE__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Boolean Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AndImpl <em>And</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.AndImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAnd()
+   * @generated
+   */
+  int AND = 29;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND__LEFT = BOOLEAN_OPERATION__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND__RIGHT = BOOLEAN_OPERATION__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>And</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND_FEATURE_COUNT = BOOLEAN_OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.OrImpl <em>Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.OrImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getOr()
+   * @generated
+   */
+  int OR = 30;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__LEFT = BOOLEAN_OPERATION__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__RIGHT = BOOLEAN_OPERATION__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_FEATURE_COUNT = BOOLEAN_OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EqualsImpl <em>Equals</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.EqualsImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getEquals()
+   * @generated
+   */
+  int EQUALS = 31;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALS__LEFT = EQUALITY__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALS__RIGHT = EQUALITY__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Equals</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALS_FEATURE_COUNT = EQUALITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.NotEqualsImpl <em>Not Equals</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.NotEqualsImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getNotEquals()
+   * @generated
+   */
+  int NOT_EQUALS = 32;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EQUALS__LEFT = EQUALITY__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EQUALS__RIGHT = EQUALITY__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Not Equals</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EQUALS_FEATURE_COUNT = EQUALITY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessThanImpl <em>Less Than</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.LessThanImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getLessThan()
+   * @generated
+   */
+  int LESS_THAN = 33;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_THAN__LEFT = LESS_GREATER_THAN__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_THAN__RIGHT = LESS_GREATER_THAN__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Less Than</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_THAN_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanImpl <em>Greater Than</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getGreaterThan()
+   * @generated
+   */
+  int GREATER_THAN = 34;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GREATER_THAN__LEFT = LESS_GREATER_THAN__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GREATER_THAN__RIGHT = LESS_GREATER_THAN__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Greater Than</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GREATER_THAN_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessThanOrEqualsImpl <em>Less Than Or Equals</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.LessThanOrEqualsImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getLessThanOrEquals()
+   * @generated
+   */
+  int LESS_THAN_OR_EQUALS = 35;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_THAN_OR_EQUALS__LEFT = LESS_GREATER_THAN__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_THAN_OR_EQUALS__RIGHT = LESS_GREATER_THAN__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Less Than Or Equals</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LESS_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreterThanOrEqualsImpl <em>Greter Than Or Equals</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.GreterThanOrEqualsImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getGreterThanOrEquals()
+   * @generated
+   */
+  int GRETER_THAN_OR_EQUALS = 36;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRETER_THAN_OR_EQUALS__LEFT = LESS_GREATER_THAN__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRETER_THAN_OR_EQUALS__RIGHT = LESS_GREATER_THAN__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Greter Than Or Equals</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRETER_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddImpl <em>Add</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.AddImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAdd()
+   * @generated
+   */
+  int ADD = 37;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD__LEFT = ADD_SUB__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD__RIGHT = ADD_SUB__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Add</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_FEATURE_COUNT = ADD_SUB_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.SubImpl <em>Sub</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.SubImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getSub()
+   * @generated
+   */
+  int SUB = 38;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB__LEFT = ADD_SUB__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB__RIGHT = ADD_SUB__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Sub</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_FEATURE_COUNT = ADD_SUB_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.MulImpl <em>Mul</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.MulImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getMul()
+   * @generated
+   */
+  int MUL = 39;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL__LEFT = MUL_DIV__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL__RIGHT = MUL_DIV__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Mul</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL_FEATURE_COUNT = MUL_DIV_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.DivImpl <em>Div</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.DivImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getDiv()
+   * @generated
+   */
+  int DIV = 40;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV__LEFT = MUL_DIV__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV__RIGHT = MUL_DIV__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>Div</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV_FEATURE_COUNT = MUL_DIV_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ParenthesisImpl <em>Parenthesis</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ParenthesisImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getParenthesis()
+   * @generated
+   */
+  int PARENTHESIS = 41;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARENTHESIS__LEFT = PRIMITIVE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARENTHESIS__RIGHT = PRIMITIVE__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARENTHESIS__BODY = PRIMITIVE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Parenthesis</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARENTHESIS_FEATURE_COUNT = PRIMITIVE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.NotImpl <em>Not</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.NotImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getNot()
+   * @generated
+   */
+  int NOT = 42;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT__LEFT = PRIMITIVE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT__RIGHT = PRIMITIVE__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT__BODY = PRIMITIVE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Not</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_FEATURE_COUNT = PRIMITIVE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.VarRefImpl <em>Var Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.VarRefImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getVarRef()
+   * @generated
+   */
+  int VAR_REF = 43;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_REF__LEFT = PRIMITIVE__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_REF__RIGHT = PRIMITIVE__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_REF__VARIABLE = PRIMITIVE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Var Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_REF_FEATURE_COUNT = PRIMITIVE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.IntConstantImpl <em>Int Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IntConstantImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getIntConstant()
+   * @generated
+   */
+  int INT_CONSTANT = 44;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_CONSTANT__LEFT = CONSTANT__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_CONSTANT__RIGHT = CONSTANT__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_CONSTANT__VALUE = CONSTANT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Int Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_CONSTANT_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.StringConstantImpl <em>String Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.StringConstantImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getStringConstant()
+   * @generated
+   */
+  int STRING_CONSTANT = 45;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_CONSTANT__LEFT = CONSTANT__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_CONSTANT__RIGHT = CONSTANT__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_CONSTANT__VALUE = CONSTANT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_CONSTANT_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.BoolConstantImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBoolConstant()
+   * @generated
+   */
+  int BOOL_CONSTANT = 46;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CONSTANT__LEFT = CONSTANT__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CONSTANT__RIGHT = CONSTANT__RIGHT;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CONSTANT__VALUE = CONSTANT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Bool Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CONSTANT_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ThisImpl <em>This</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ThisImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getThis()
+   * @generated
+   */
+  int THIS = 47;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int THIS__LEFT = KEYWORD__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int THIS__RIGHT = KEYWORD__RIGHT;
+
+  /**
+   * The number of structural features of the '<em>This</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int THIS_FEATURE_COUNT = KEYWORD_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.TrueImpl <em>True</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.TrueImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getTrue()
+   * @generated
+   */
+  int TRUE = 48;
+
+  /**
+   * The number of structural features of the '<em>True</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRUE_FEATURE_COUNT = BOOLEAN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.FalseImpl <em>False</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.FalseImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getFalse()
+   * @generated
+   */
+  int FALSE = 49;
+
+  /**
+   * The number of structural features of the '<em>False</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FALSE_FEATURE_COUNT = BOOLEAN_FEATURE_COUNT + 0;
 
 
   /**
@@ -105,6 +2000,837 @@ public interface IF22Package extends EPackage
    * @generated
    */
   EAttribute getIF22_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.IF22#getFunctions <em>Functions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Functions</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.IF22#getFunctions()
+   * @see #getIF22()
+   * @generated
+   */
+  EReference getIF22_Functions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.IF22#getScenarios <em>Scenarios</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Scenarios</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.IF22#getScenarios()
+   * @see #getIF22()
+   * @generated
+   */
+  EReference getIF22_Scenarios();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Type
+   * @generated
+   */
+  EClass getType();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Function <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Function
+   * @generated
+   */
+  EClass getFunction();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.iF22.Function#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Function#getName()
+   * @see #getFunction()
+   * @generated
+   */
+  EAttribute getFunction_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.Function#getParameterTypes <em>Parameter Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameter Types</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Function#getParameterTypes()
+   * @see #getFunction()
+   * @generated
+   */
+  EReference getFunction_ParameterTypes();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Function#getReturnType <em>Return Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Return Type</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Function#getReturnType()
+   * @see #getFunction()
+   * @generated
+   */
+  EReference getFunction_ReturnType();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Scenario <em>Scenario</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scenario</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Scenario
+   * @generated
+   */
+  EClass getScenario();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.Scenario#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Scenario#getParameters()
+   * @see #getScenario()
+   * @generated
+   */
+  EReference getScenario_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.Scenario#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Body</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Scenario#getBody()
+   * @see #getScenario()
+   * @generated
+   */
+  EReference getScenario_Body();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Parameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parameter</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Parameter
+   * @generated
+   */
+  EClass getParameter();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.VariableDef <em>Variable Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Def</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.VariableDef
+   * @generated
+   */
+  EClass getVariableDef();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Statement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Statement</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Statement
+   * @generated
+   */
+  EClass getStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Statement#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Statement#getBody()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Body();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Announce <em>Announce</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Announce</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Announce
+   * @generated
+   */
+  EClass getAnnounce();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.Announce#getTargets <em>Targets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Targets</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Announce#getTargets()
+   * @see #getAnnounce()
+   * @generated
+   */
+  EReference getAnnounce_Targets();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Question <em>Question</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Question</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Question
+   * @generated
+   */
+  EClass getQuestion();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Question#getTypeAndValidation <em>Type And Validation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type And Validation</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Question#getTypeAndValidation()
+   * @see #getQuestion()
+   * @generated
+   */
+  EReference getQuestion_TypeAndValidation();
+
+  /**
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.iF22.Question#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Variable</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Question#getVariable()
+   * @see #getQuestion()
+   * @generated
+   */
+  EReference getQuestion_Variable();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.Question#getTargets <em>Targets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Targets</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Question#getTargets()
+   * @see #getQuestion()
+   * @generated
+   */
+  EReference getQuestion_Targets();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.End <em>End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>End</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.End
+   * @generated
+   */
+  EClass getEnd();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Target <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Target</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Target
+   * @generated
+   */
+  EClass getTarget();
+
+  /**
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.iF22.Target#getDestination <em>Destination</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Destination</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Target#getDestination()
+   * @see #getTarget()
+   * @generated
+   */
+  EReference getTarget_Destination();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.Target#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arguments</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Target#getArguments()
+   * @see #getTarget()
+   * @generated
+   */
+  EReference getTarget_Arguments();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Target#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Target#getCondition()
+   * @see #getTarget()
+   * @generated
+   */
+  EReference getTarget_Condition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.Target#getEndTargets <em>End Targets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>End Targets</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Target#getEndTargets()
+   * @see #getTarget()
+   * @generated
+   */
+  EReference getTarget_EndTargets();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.TargetDestination <em>Target Destination</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Target Destination</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.TargetDestination
+   * @generated
+   */
+  EClass getTargetDestination();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.iF22.TargetDestination#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.TargetDestination#getName()
+   * @see #getTargetDestination()
+   * @generated
+   */
+  EAttribute getTargetDestination_Name();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.EndingTarget <em>Ending Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ending Target</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.EndingTarget
+   * @generated
+   */
+  EClass getEndingTarget();
+
+  /**
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.iF22.EndingTarget#getEndStatement <em>End Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>End Statement</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.EndingTarget#getEndStatement()
+   * @see #getEndingTarget()
+   * @generated
+   */
+  EReference getEndingTarget_EndStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.EndingTarget#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Target</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.EndingTarget#getTarget()
+   * @see #getEndingTarget()
+   * @generated
+   */
+  EReference getEndingTarget_Target();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Exp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exp</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Exp
+   * @generated
+   */
+  EClass getExp();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.BooleanOperation <em>Boolean Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Operation</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.BooleanOperation
+   * @generated
+   */
+  EClass getBooleanOperation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.BooleanOperation#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.BooleanOperation#getLeft()
+   * @see #getBooleanOperation()
+   * @generated
+   */
+  EReference getBooleanOperation_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.BooleanOperation#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.BooleanOperation#getRight()
+   * @see #getBooleanOperation()
+   * @generated
+   */
+  EReference getBooleanOperation_Right();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Equality <em>Equality</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Equality</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Equality
+   * @generated
+   */
+  EClass getEquality();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.LessGreaterThan <em>Less Greater Than</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Less Greater Than</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.LessGreaterThan
+   * @generated
+   */
+  EClass getLessGreaterThan();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Concatenation <em>Concatenation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Concatenation</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Concatenation
+   * @generated
+   */
+  EClass getConcatenation();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.AddSub <em>Add Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Add Sub</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.AddSub
+   * @generated
+   */
+  EClass getAddSub();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.MulDiv <em>Mul Div</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mul Div</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.MulDiv
+   * @generated
+   */
+  EClass getMulDiv();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Primitive <em>Primitive</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primitive</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Primitive
+   * @generated
+   */
+  EClass getPrimitive();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Referable <em>Referable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Referable</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Referable
+   * @generated
+   */
+  EClass getReferable();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.iF22.Referable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Referable#getName()
+   * @see #getReferable()
+   * @generated
+   */
+  EAttribute getReferable_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Referable#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Referable#getType()
+   * @see #getReferable()
+   * @generated
+   */
+  EReference getReferable_Type();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Constant <em>Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Constant</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Constant
+   * @generated
+   */
+  EClass getConstant();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Keyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Keyword</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Keyword
+   * @generated
+   */
+  EClass getKeyword();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.FunctionCall <em>Function Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Call</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.FunctionCall
+   * @generated
+   */
+  EClass getFunctionCall();
+
+  /**
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.iF22.FunctionCall#getFunction <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Function</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.FunctionCall#getFunction()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EReference getFunctionCall_Function();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.iF22.FunctionCall#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arguments</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.FunctionCall#getArguments()
+   * @see #getFunctionCall()
+   * @generated
+   */
+  EReference getFunctionCall_Arguments();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.BOOLEAN <em>BOOLEAN</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>BOOLEAN</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.BOOLEAN
+   * @generated
+   */
+  EClass getBOOLEAN();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.IntType <em>Int Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Int Type</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.IntType
+   * @generated
+   */
+  EClass getIntType();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.StringType <em>String Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Type</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.StringType
+   * @generated
+   */
+  EClass getStringType();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.BooleanType <em>Boolean Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Type</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.BooleanType
+   * @generated
+   */
+  EClass getBooleanType();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>And</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.And
+   * @generated
+   */
+  EClass getAnd();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Or
+   * @generated
+   */
+  EClass getOr();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Equals <em>Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Equals</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Equals
+   * @generated
+   */
+  EClass getEquals();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.NotEquals <em>Not Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Not Equals</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.NotEquals
+   * @generated
+   */
+  EClass getNotEquals();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.LessThan <em>Less Than</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Less Than</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.LessThan
+   * @generated
+   */
+  EClass getLessThan();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThan <em>Greater Than</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Greater Than</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.GreaterThan
+   * @generated
+   */
+  EClass getGreaterThan();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals <em>Less Than Or Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Less Than Or Equals</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals
+   * @generated
+   */
+  EClass getLessThanOrEquals();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals <em>Greter Than Or Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Greter Than Or Equals</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals
+   * @generated
+   */
+  EClass getGreterThanOrEquals();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Add <em>Add</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Add</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Add
+   * @generated
+   */
+  EClass getAdd();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Sub <em>Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sub</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Sub
+   * @generated
+   */
+  EClass getSub();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Mul <em>Mul</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mul</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Mul
+   * @generated
+   */
+  EClass getMul();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Div <em>Div</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Div</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Div
+   * @generated
+   */
+  EClass getDiv();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Parenthesis <em>Parenthesis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Parenthesis</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Parenthesis
+   * @generated
+   */
+  EClass getParenthesis();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Parenthesis#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Parenthesis#getBody()
+   * @see #getParenthesis()
+   * @generated
+   */
+  EReference getParenthesis_Body();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Not <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Not</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Not
+   * @generated
+   */
+  EClass getNot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Not#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Not#getBody()
+   * @see #getNot()
+   * @generated
+   */
+  EReference getNot_Body();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.VarRef <em>Var Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Var Ref</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.VarRef
+   * @generated
+   */
+  EClass getVarRef();
+
+  /**
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.iF22.VarRef#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Variable</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.VarRef#getVariable()
+   * @see #getVarRef()
+   * @generated
+   */
+  EReference getVarRef_Variable();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.IntConstant <em>Int Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Int Constant</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.IntConstant
+   * @generated
+   */
+  EClass getIntConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.iF22.IntConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.IntConstant#getValue()
+   * @see #getIntConstant()
+   * @generated
+   */
+  EAttribute getIntConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.StringConstant <em>String Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Constant</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.StringConstant
+   * @generated
+   */
+  EClass getStringConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.iF22.StringConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.StringConstant#getValue()
+   * @see #getStringConstant()
+   * @generated
+   */
+  EAttribute getStringConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.BoolConstant <em>Bool Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Bool Constant</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.BoolConstant
+   * @generated
+   */
+  EClass getBoolConstant();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.BoolConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.BoolConstant#getValue()
+   * @see #getBoolConstant()
+   * @generated
+   */
+  EReference getBoolConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.This <em>This</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>This</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.This
+   * @generated
+   */
+  EClass getThis();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.True <em>True</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>True</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.True
+   * @generated
+   */
+  EClass getTrue();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.False <em>False</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>False</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.False
+   * @generated
+   */
+  EClass getFalse();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -146,6 +2872,744 @@ public interface IF22Package extends EPackage
      * @generated
      */
     EAttribute IF22__NAME = eINSTANCE.getIF22_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Functions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF22__FUNCTIONS = eINSTANCE.getIF22_Functions();
+
+    /**
+     * The meta object literal for the '<em><b>Scenarios</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF22__SCENARIOS = eINSTANCE.getIF22_Scenarios();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.TypeImpl <em>Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.TypeImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getType()
+     * @generated
+     */
+    EClass TYPE = eINSTANCE.getType();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.FunctionImpl <em>Function</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.FunctionImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getFunction()
+     * @generated
+     */
+    EClass FUNCTION = eINSTANCE.getFunction();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__PARAMETER_TYPES = eINSTANCE.getFunction_ParameterTypes();
+
+    /**
+     * The meta object literal for the '<em><b>Return Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__RETURN_TYPE = eINSTANCE.getFunction_ReturnType();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ScenarioImpl <em>Scenario</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ScenarioImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getScenario()
+     * @generated
+     */
+    EClass SCENARIO = eINSTANCE.getScenario();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO__PARAMETERS = eINSTANCE.getScenario_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO__BODY = eINSTANCE.getScenario_Body();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ParameterImpl <em>Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ParameterImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getParameter()
+     * @generated
+     */
+    EClass PARAMETER = eINSTANCE.getParameter();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.VariableDefImpl <em>Variable Def</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.VariableDefImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getVariableDef()
+     * @generated
+     */
+    EClass VARIABLE_DEF = eINSTANCE.getVariableDef();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.StatementImpl <em>Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.StatementImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getStatement()
+     * @generated
+     */
+    EClass STATEMENT = eINSTANCE.getStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__BODY = eINSTANCE.getStatement_Body();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AnnounceImpl <em>Announce</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.AnnounceImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAnnounce()
+     * @generated
+     */
+    EClass ANNOUNCE = eINSTANCE.getAnnounce();
+
+    /**
+     * The meta object literal for the '<em><b>Targets</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ANNOUNCE__TARGETS = eINSTANCE.getAnnounce_Targets();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.QuestionImpl <em>Question</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.QuestionImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getQuestion()
+     * @generated
+     */
+    EClass QUESTION = eINSTANCE.getQuestion();
+
+    /**
+     * The meta object literal for the '<em><b>Type And Validation</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QUESTION__TYPE_AND_VALIDATION = eINSTANCE.getQuestion_TypeAndValidation();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QUESTION__VARIABLE = eINSTANCE.getQuestion_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Targets</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QUESTION__TARGETS = eINSTANCE.getQuestion_Targets();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EndImpl <em>End</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.EndImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getEnd()
+     * @generated
+     */
+    EClass END = eINSTANCE.getEnd();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.TargetImpl <em>Target</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.TargetImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getTarget()
+     * @generated
+     */
+    EClass TARGET = eINSTANCE.getTarget();
+
+    /**
+     * The meta object literal for the '<em><b>Destination</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TARGET__DESTINATION = eINSTANCE.getTarget_Destination();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TARGET__ARGUMENTS = eINSTANCE.getTarget_Arguments();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TARGET__CONDITION = eINSTANCE.getTarget_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>End Targets</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TARGET__END_TARGETS = eINSTANCE.getTarget_EndTargets();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.TargetDestinationImpl <em>Target Destination</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.TargetDestinationImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getTargetDestination()
+     * @generated
+     */
+    EClass TARGET_DESTINATION = eINSTANCE.getTargetDestination();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TARGET_DESTINATION__NAME = eINSTANCE.getTargetDestination_Name();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EndingTargetImpl <em>Ending Target</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.EndingTargetImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getEndingTarget()
+     * @generated
+     */
+    EClass ENDING_TARGET = eINSTANCE.getEndingTarget();
+
+    /**
+     * The meta object literal for the '<em><b>End Statement</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENDING_TARGET__END_STATEMENT = eINSTANCE.getEndingTarget_EndStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENDING_TARGET__TARGET = eINSTANCE.getEndingTarget_Target();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ExpImpl <em>Exp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ExpImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getExp()
+     * @generated
+     */
+    EClass EXP = eINSTANCE.getExp();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.BooleanOperationImpl <em>Boolean Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.BooleanOperationImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBooleanOperation()
+     * @generated
+     */
+    EClass BOOLEAN_OPERATION = eINSTANCE.getBooleanOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BOOLEAN_OPERATION__LEFT = eINSTANCE.getBooleanOperation_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BOOLEAN_OPERATION__RIGHT = eINSTANCE.getBooleanOperation_Right();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EqualityImpl <em>Equality</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.EqualityImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getEquality()
+     * @generated
+     */
+    EClass EQUALITY = eINSTANCE.getEquality();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessGreaterThanImpl <em>Less Greater Than</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.LessGreaterThanImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getLessGreaterThan()
+     * @generated
+     */
+    EClass LESS_GREATER_THAN = eINSTANCE.getLessGreaterThan();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl <em>Concatenation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConcatenation()
+     * @generated
+     */
+    EClass CONCATENATION = eINSTANCE.getConcatenation();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddSubImpl <em>Add Sub</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.AddSubImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAddSub()
+     * @generated
+     */
+    EClass ADD_SUB = eINSTANCE.getAddSub();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.MulDivImpl <em>Mul Div</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.MulDivImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getMulDiv()
+     * @generated
+     */
+    EClass MUL_DIV = eINSTANCE.getMulDiv();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.PrimitiveImpl <em>Primitive</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.PrimitiveImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getPrimitive()
+     * @generated
+     */
+    EClass PRIMITIVE = eINSTANCE.getPrimitive();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ReferableImpl <em>Referable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ReferableImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getReferable()
+     * @generated
+     */
+    EClass REFERABLE = eINSTANCE.getReferable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REFERABLE__NAME = eINSTANCE.getReferable_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REFERABLE__TYPE = eINSTANCE.getReferable_Type();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConstantImpl <em>Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ConstantImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConstant()
+     * @generated
+     */
+    EClass CONSTANT = eINSTANCE.getConstant();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.KeywordImpl <em>Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.KeywordImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getKeyword()
+     * @generated
+     */
+    EClass KEYWORD = eINSTANCE.getKeyword();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.FunctionCallImpl <em>Function Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.FunctionCallImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getFunctionCall()
+     * @generated
+     */
+    EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
+
+    /**
+     * The meta object literal for the '<em><b>Function</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_CALL__FUNCTION = eINSTANCE.getFunctionCall_Function();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION_CALL__ARGUMENTS = eINSTANCE.getFunctionCall_Arguments();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.BOOLEANImpl <em>BOOLEAN</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.BOOLEANImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBOOLEAN()
+     * @generated
+     */
+    EClass BOOLEAN = eINSTANCE.getBOOLEAN();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.IntTypeImpl <em>Int Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IntTypeImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getIntType()
+     * @generated
+     */
+    EClass INT_TYPE = eINSTANCE.getIntType();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.StringTypeImpl <em>String Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.StringTypeImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getStringType()
+     * @generated
+     */
+    EClass STRING_TYPE = eINSTANCE.getStringType();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.BooleanTypeImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBooleanType()
+     * @generated
+     */
+    EClass BOOLEAN_TYPE = eINSTANCE.getBooleanType();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AndImpl <em>And</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.AndImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAnd()
+     * @generated
+     */
+    EClass AND = eINSTANCE.getAnd();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.OrImpl <em>Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.OrImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getOr()
+     * @generated
+     */
+    EClass OR = eINSTANCE.getOr();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EqualsImpl <em>Equals</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.EqualsImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getEquals()
+     * @generated
+     */
+    EClass EQUALS = eINSTANCE.getEquals();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.NotEqualsImpl <em>Not Equals</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.NotEqualsImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getNotEquals()
+     * @generated
+     */
+    EClass NOT_EQUALS = eINSTANCE.getNotEquals();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessThanImpl <em>Less Than</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.LessThanImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getLessThan()
+     * @generated
+     */
+    EClass LESS_THAN = eINSTANCE.getLessThan();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanImpl <em>Greater Than</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getGreaterThan()
+     * @generated
+     */
+    EClass GREATER_THAN = eINSTANCE.getGreaterThan();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessThanOrEqualsImpl <em>Less Than Or Equals</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.LessThanOrEqualsImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getLessThanOrEquals()
+     * @generated
+     */
+    EClass LESS_THAN_OR_EQUALS = eINSTANCE.getLessThanOrEquals();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreterThanOrEqualsImpl <em>Greter Than Or Equals</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.GreterThanOrEqualsImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getGreterThanOrEquals()
+     * @generated
+     */
+    EClass GRETER_THAN_OR_EQUALS = eINSTANCE.getGreterThanOrEquals();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddImpl <em>Add</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.AddImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAdd()
+     * @generated
+     */
+    EClass ADD = eINSTANCE.getAdd();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.SubImpl <em>Sub</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.SubImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getSub()
+     * @generated
+     */
+    EClass SUB = eINSTANCE.getSub();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.MulImpl <em>Mul</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.MulImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getMul()
+     * @generated
+     */
+    EClass MUL = eINSTANCE.getMul();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.DivImpl <em>Div</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.DivImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getDiv()
+     * @generated
+     */
+    EClass DIV = eINSTANCE.getDiv();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ParenthesisImpl <em>Parenthesis</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ParenthesisImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getParenthesis()
+     * @generated
+     */
+    EClass PARENTHESIS = eINSTANCE.getParenthesis();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARENTHESIS__BODY = eINSTANCE.getParenthesis_Body();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.NotImpl <em>Not</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.NotImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getNot()
+     * @generated
+     */
+    EClass NOT = eINSTANCE.getNot();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NOT__BODY = eINSTANCE.getNot_Body();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.VarRefImpl <em>Var Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.VarRefImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getVarRef()
+     * @generated
+     */
+    EClass VAR_REF = eINSTANCE.getVarRef();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VAR_REF__VARIABLE = eINSTANCE.getVarRef_Variable();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.IntConstantImpl <em>Int Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IntConstantImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getIntConstant()
+     * @generated
+     */
+    EClass INT_CONSTANT = eINSTANCE.getIntConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INT_CONSTANT__VALUE = eINSTANCE.getIntConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.StringConstantImpl <em>String Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.StringConstantImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getStringConstant()
+     * @generated
+     */
+    EClass STRING_CONSTANT = eINSTANCE.getStringConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_CONSTANT__VALUE = eINSTANCE.getStringConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.BoolConstantImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBoolConstant()
+     * @generated
+     */
+    EClass BOOL_CONSTANT = eINSTANCE.getBoolConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BOOL_CONSTANT__VALUE = eINSTANCE.getBoolConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ThisImpl <em>This</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ThisImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getThis()
+     * @generated
+     */
+    EClass THIS = eINSTANCE.getThis();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.TrueImpl <em>True</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.TrueImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getTrue()
+     * @generated
+     */
+    EClass TRUE = eINSTANCE.getTrue();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.FalseImpl <em>False</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.FalseImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getFalse()
+     * @generated
+     */
+    EClass FALSE = eINSTANCE.getFalse();
 
   }
 

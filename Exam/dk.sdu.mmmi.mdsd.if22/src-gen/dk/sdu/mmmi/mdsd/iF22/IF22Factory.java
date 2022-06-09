@@ -33,6 +33,447 @@ public interface IF22Factory extends EFactory
   IF22 createIF22();
 
   /**
+   * Returns a new object of class '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type</em>'.
+   * @generated
+   */
+  Type createType();
+
+  /**
+   * Returns a new object of class '<em>Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function</em>'.
+   * @generated
+   */
+  Function createFunction();
+
+  /**
+   * Returns a new object of class '<em>Scenario</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scenario</em>'.
+   * @generated
+   */
+  Scenario createScenario();
+
+  /**
+   * Returns a new object of class '<em>Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parameter</em>'.
+   * @generated
+   */
+  Parameter createParameter();
+
+  /**
+   * Returns a new object of class '<em>Variable Def</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Def</em>'.
+   * @generated
+   */
+  VariableDef createVariableDef();
+
+  /**
+   * Returns a new object of class '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement</em>'.
+   * @generated
+   */
+  Statement createStatement();
+
+  /**
+   * Returns a new object of class '<em>Announce</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Announce</em>'.
+   * @generated
+   */
+  Announce createAnnounce();
+
+  /**
+   * Returns a new object of class '<em>Question</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Question</em>'.
+   * @generated
+   */
+  Question createQuestion();
+
+  /**
+   * Returns a new object of class '<em>End</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>End</em>'.
+   * @generated
+   */
+  End createEnd();
+
+  /**
+   * Returns a new object of class '<em>Target</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Target</em>'.
+   * @generated
+   */
+  Target createTarget();
+
+  /**
+   * Returns a new object of class '<em>Target Destination</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Target Destination</em>'.
+   * @generated
+   */
+  TargetDestination createTargetDestination();
+
+  /**
+   * Returns a new object of class '<em>Ending Target</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ending Target</em>'.
+   * @generated
+   */
+  EndingTarget createEndingTarget();
+
+  /**
+   * Returns a new object of class '<em>Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exp</em>'.
+   * @generated
+   */
+  Exp createExp();
+
+  /**
+   * Returns a new object of class '<em>Boolean Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Operation</em>'.
+   * @generated
+   */
+  BooleanOperation createBooleanOperation();
+
+  /**
+   * Returns a new object of class '<em>Equality</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equality</em>'.
+   * @generated
+   */
+  Equality createEquality();
+
+  /**
+   * Returns a new object of class '<em>Less Greater Than</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Less Greater Than</em>'.
+   * @generated
+   */
+  LessGreaterThan createLessGreaterThan();
+
+  /**
+   * Returns a new object of class '<em>Concatenation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Concatenation</em>'.
+   * @generated
+   */
+  Concatenation createConcatenation();
+
+  /**
+   * Returns a new object of class '<em>Add Sub</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Add Sub</em>'.
+   * @generated
+   */
+  AddSub createAddSub();
+
+  /**
+   * Returns a new object of class '<em>Mul Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mul Div</em>'.
+   * @generated
+   */
+  MulDiv createMulDiv();
+
+  /**
+   * Returns a new object of class '<em>Primitive</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primitive</em>'.
+   * @generated
+   */
+  Primitive createPrimitive();
+
+  /**
+   * Returns a new object of class '<em>Referable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Referable</em>'.
+   * @generated
+   */
+  Referable createReferable();
+
+  /**
+   * Returns a new object of class '<em>Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constant</em>'.
+   * @generated
+   */
+  Constant createConstant();
+
+  /**
+   * Returns a new object of class '<em>Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Keyword</em>'.
+   * @generated
+   */
+  Keyword createKeyword();
+
+  /**
+   * Returns a new object of class '<em>Function Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Call</em>'.
+   * @generated
+   */
+  FunctionCall createFunctionCall();
+
+  /**
+   * Returns a new object of class '<em>BOOLEAN</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>BOOLEAN</em>'.
+   * @generated
+   */
+  BOOLEAN createBOOLEAN();
+
+  /**
+   * Returns a new object of class '<em>Int Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Type</em>'.
+   * @generated
+   */
+  IntType createIntType();
+
+  /**
+   * Returns a new object of class '<em>String Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Type</em>'.
+   * @generated
+   */
+  StringType createStringType();
+
+  /**
+   * Returns a new object of class '<em>Boolean Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Type</em>'.
+   * @generated
+   */
+  BooleanType createBooleanType();
+
+  /**
+   * Returns a new object of class '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And</em>'.
+   * @generated
+   */
+  And createAnd();
+
+  /**
+   * Returns a new object of class '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or</em>'.
+   * @generated
+   */
+  Or createOr();
+
+  /**
+   * Returns a new object of class '<em>Equals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equals</em>'.
+   * @generated
+   */
+  Equals createEquals();
+
+  /**
+   * Returns a new object of class '<em>Not Equals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not Equals</em>'.
+   * @generated
+   */
+  NotEquals createNotEquals();
+
+  /**
+   * Returns a new object of class '<em>Less Than</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Less Than</em>'.
+   * @generated
+   */
+  LessThan createLessThan();
+
+  /**
+   * Returns a new object of class '<em>Greater Than</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Greater Than</em>'.
+   * @generated
+   */
+  GreaterThan createGreaterThan();
+
+  /**
+   * Returns a new object of class '<em>Less Than Or Equals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Less Than Or Equals</em>'.
+   * @generated
+   */
+  LessThanOrEquals createLessThanOrEquals();
+
+  /**
+   * Returns a new object of class '<em>Greter Than Or Equals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Greter Than Or Equals</em>'.
+   * @generated
+   */
+  GreterThanOrEquals createGreterThanOrEquals();
+
+  /**
+   * Returns a new object of class '<em>Add</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Add</em>'.
+   * @generated
+   */
+  Add createAdd();
+
+  /**
+   * Returns a new object of class '<em>Sub</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sub</em>'.
+   * @generated
+   */
+  Sub createSub();
+
+  /**
+   * Returns a new object of class '<em>Mul</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mul</em>'.
+   * @generated
+   */
+  Mul createMul();
+
+  /**
+   * Returns a new object of class '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Div</em>'.
+   * @generated
+   */
+  Div createDiv();
+
+  /**
+   * Returns a new object of class '<em>Parenthesis</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parenthesis</em>'.
+   * @generated
+   */
+  Parenthesis createParenthesis();
+
+  /**
+   * Returns a new object of class '<em>Not</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not</em>'.
+   * @generated
+   */
+  Not createNot();
+
+  /**
+   * Returns a new object of class '<em>Var Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Ref</em>'.
+   * @generated
+   */
+  VarRef createVarRef();
+
+  /**
+   * Returns a new object of class '<em>Int Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Constant</em>'.
+   * @generated
+   */
+  IntConstant createIntConstant();
+
+  /**
+   * Returns a new object of class '<em>String Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Constant</em>'.
+   * @generated
+   */
+  StringConstant createStringConstant();
+
+  /**
+   * Returns a new object of class '<em>Bool Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bool Constant</em>'.
+   * @generated
+   */
+  BoolConstant createBoolConstant();
+
+  /**
+   * Returns a new object of class '<em>This</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>This</em>'.
+   * @generated
+   */
+  This createThis();
+
+  /**
+   * Returns a new object of class '<em>True</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>True</em>'.
+   * @generated
+   */
+  True createTrue();
+
+  /**
+   * Returns a new object of class '<em>False</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>False</em>'.
+   * @generated
+   */
+  False createFalse();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

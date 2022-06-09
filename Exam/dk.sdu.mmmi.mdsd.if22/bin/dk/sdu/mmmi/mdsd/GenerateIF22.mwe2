@@ -32,7 +32,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "dk.sdu.mmmi.mdsd.IF22"
-			fileExtensions = "if"
+			fileExtensions = "if22"
 
 			serializer = {
 				generateStub = false

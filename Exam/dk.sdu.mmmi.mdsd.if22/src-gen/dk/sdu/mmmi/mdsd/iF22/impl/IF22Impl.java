@@ -3,15 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.iF22.impl;
 
+import dk.sdu.mmmi.mdsd.iF22.Function;
 import dk.sdu.mmmi.mdsd.iF22.IF22;
 import dk.sdu.mmmi.mdsd.iF22.IF22Package;
+import dk.sdu.mmmi.mdsd.iF22.Scenario;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +33,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.iF22.impl.IF22Impl#getName <em>Name</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.iF22.impl.IF22Impl#getFunctions <em>Functions</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.iF22.impl.IF22Impl#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +60,26 @@ public class IF22Impl extends MinimalEObjectImpl.Container implements IF22
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFunctions()
+   * @generated
+   * @ordered
+   */
+  protected EList<Function> functions;
+
+  /**
+   * The cached value of the '{@link #getScenarios() <em>Scenarios</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getScenarios()
+   * @generated
+   * @ordered
+   */
+  protected EList<Scenario> scenarios;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +133,64 @@ public class IF22Impl extends MinimalEObjectImpl.Container implements IF22
    * @generated
    */
   @Override
+  public EList<Function> getFunctions()
+  {
+    if (functions == null)
+    {
+      functions = new EObjectContainmentEList<Function>(Function.class, this, IF22Package.IF22__FUNCTIONS);
+    }
+    return functions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Scenario> getScenarios()
+  {
+    if (scenarios == null)
+    {
+      scenarios = new EObjectContainmentEList<Scenario>(Scenario.class, this, IF22Package.IF22__SCENARIOS);
+    }
+    return scenarios;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case IF22Package.IF22__FUNCTIONS:
+        return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
+      case IF22Package.IF22__SCENARIOS:
+        return ((InternalEList<?>)getScenarios()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case IF22Package.IF22__NAME:
         return getName();
+      case IF22Package.IF22__FUNCTIONS:
+        return getFunctions();
+      case IF22Package.IF22__SCENARIOS:
+        return getScenarios();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,6 +200,7 @@ public class IF22Impl extends MinimalEObjectImpl.Container implements IF22
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -122,6 +208,14 @@ public class IF22Impl extends MinimalEObjectImpl.Container implements IF22
     {
       case IF22Package.IF22__NAME:
         setName((String)newValue);
+        return;
+      case IF22Package.IF22__FUNCTIONS:
+        getFunctions().clear();
+        getFunctions().addAll((Collection<? extends Function>)newValue);
+        return;
+      case IF22Package.IF22__SCENARIOS:
+        getScenarios().clear();
+        getScenarios().addAll((Collection<? extends Scenario>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +234,12 @@ public class IF22Impl extends MinimalEObjectImpl.Container implements IF22
       case IF22Package.IF22__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case IF22Package.IF22__FUNCTIONS:
+        getFunctions().clear();
+        return;
+      case IF22Package.IF22__SCENARIOS:
+        getScenarios().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +256,10 @@ public class IF22Impl extends MinimalEObjectImpl.Container implements IF22
     {
       case IF22Package.IF22__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case IF22Package.IF22__FUNCTIONS:
+        return functions != null && !functions.isEmpty();
+      case IF22Package.IF22__SCENARIOS:
+        return scenarios != null && !scenarios.isEmpty();
     }
     return super.eIsSet(featureID);
   }
