@@ -22,7 +22,7 @@ import dk.sdu.mmmi.mdsd.iF22.False;
 import dk.sdu.mmmi.mdsd.iF22.Function;
 import dk.sdu.mmmi.mdsd.iF22.FunctionCall;
 import dk.sdu.mmmi.mdsd.iF22.GreaterThan;
-import dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals;
+import dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals;
 import dk.sdu.mmmi.mdsd.iF22.IF22Factory;
 import dk.sdu.mmmi.mdsd.iF22.IF22Package;
 import dk.sdu.mmmi.mdsd.iF22.IntConstant;
@@ -326,7 +326,7 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greterThanOrEqualsEClass = null;
+  private EClass greaterThanOrEqualsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1170,9 +1170,9 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
-  public EClass getGreterThanOrEquals()
+  public EClass getGreaterThanOrEquals()
   {
-    return greterThanOrEqualsEClass;
+    return greaterThanOrEqualsEClass;
   }
 
   /**
@@ -1513,7 +1513,7 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
 
     lessThanOrEqualsEClass = createEClass(LESS_THAN_OR_EQUALS);
 
-    greterThanOrEqualsEClass = createEClass(GRETER_THAN_OR_EQUALS);
+    greaterThanOrEqualsEClass = createEClass(GREATER_THAN_OR_EQUALS);
 
     addEClass = createEClass(ADD);
 
@@ -1605,7 +1605,7 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
     lessThanEClass.getESuperTypes().add(this.getLessGreaterThan());
     greaterThanEClass.getESuperTypes().add(this.getLessGreaterThan());
     lessThanOrEqualsEClass.getESuperTypes().add(this.getLessGreaterThan());
-    greterThanOrEqualsEClass.getESuperTypes().add(this.getLessGreaterThan());
+    greaterThanOrEqualsEClass.getESuperTypes().add(this.getLessGreaterThan());
     addEClass.getESuperTypes().add(this.getAddSub());
     subEClass.getESuperTypes().add(this.getAddSub());
     mulEClass.getESuperTypes().add(this.getMulDiv());
@@ -1719,7 +1719,7 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
 
     initEClass(lessThanOrEqualsEClass, LessThanOrEquals.class, "LessThanOrEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(greterThanOrEqualsEClass, GreterThanOrEquals.class, "GreterThanOrEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(greaterThanOrEqualsEClass, GreaterThanOrEquals.class, "GreaterThanOrEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(addEClass, Add.class, "Add", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

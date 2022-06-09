@@ -101,7 +101,7 @@ public class IF22FactoryImpl extends EFactoryImpl implements IF22Factory
       case IF22Package.LESS_THAN: return createLessThan();
       case IF22Package.GREATER_THAN: return createGreaterThan();
       case IF22Package.LESS_THAN_OR_EQUALS: return createLessThanOrEquals();
-      case IF22Package.GRETER_THAN_OR_EQUALS: return createGreterThanOrEquals();
+      case IF22Package.GREATER_THAN_OR_EQUALS: return createGreaterThanOrEquals();
       case IF22Package.ADD: return createAdd();
       case IF22Package.SUB: return createSub();
       case IF22Package.MUL: return createMul();
@@ -558,10 +558,10 @@ public class IF22FactoryImpl extends EFactoryImpl implements IF22Factory
    * @generated
    */
   @Override
-  public GreterThanOrEquals createGreterThanOrEquals()
+  public GreaterThanOrEquals createGreaterThanOrEquals()
   {
-    GreterThanOrEqualsImpl greterThanOrEquals = new GreterThanOrEqualsImpl();
-    return greterThanOrEquals;
+    GreaterThanOrEqualsImpl greaterThanOrEquals = new GreaterThanOrEqualsImpl();
+    return greaterThanOrEquals;
   }
 
   /**

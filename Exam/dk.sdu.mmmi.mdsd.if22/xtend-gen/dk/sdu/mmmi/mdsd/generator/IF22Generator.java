@@ -35,9 +35,6 @@ public class IF22Generator extends AbstractGenerator {
       fsa.generateFile(_builder.toString(), interfaceGen.genFile());
     }
     ScenarioFileGenerator scenarioFileGen = new ScenarioFileGenerator(program, packageName);
-    Scenario scenario0 = IteratorExtensions.<Scenario>toList(Iterators.<Scenario>filter(program.eAllContents(), Scenario.class)).get(0);
-    scenarioFileGen.setScenario(scenario0);
-    CharSequence firstClassName = scenarioFileGen.getClassName();
     Iterable<Scenario> _iterable = IteratorExtensions.<Scenario>toIterable(Iterators.<Scenario>filter(program.eAllContents(), Scenario.class));
     for (final Scenario scenario : _iterable) {
       {
@@ -52,7 +49,7 @@ public class IF22Generator extends AbstractGenerator {
         fsa.generateFile(_builder_1.toString(), scenarioFileGen.genFile());
       }
     }
-    GameFileGenerator gamefileGen = new GameFileGenerator(program, packageName, ((String) firstClassName));
+    GameFileGenerator gamefileGen = new GameFileGenerator(program, packageName);
     StringConcatenation _builder_1 = new StringConcatenation();
     _builder_1.append("interactive_fiction/");
     _builder_1.append(packageName);

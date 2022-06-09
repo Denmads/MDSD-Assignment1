@@ -3,6 +3,15 @@
  */
 package dk.sdu.mmmi.mdsd.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import dk.sdu.mmmi.mdsd.iF22.IF22Package
+import dk.sdu.mmmi.mdsd.iF22.IF22
+import dk.sdu.mmmi.mdsd.iF22.Target
+import dk.sdu.mmmi.mdsd.iF22.Scenario
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.scoping.Scopes
+import dk.sdu.mmmi.mdsd.iF22.End
 
 /**
  * This class contains custom scoping description.
@@ -12,4 +21,22 @@ package dk.sdu.mmmi.mdsd.scoping
  */
 class IF22ScopeProvider extends AbstractIF22ScopeProvider {
 
+
+	override getScope(EObject context, EReference ref) {
+		if (ref == IF22Package.eINSTANCE.endingTarget_EndStatement) {
+			var target = (context.eContainer as Target).destination
+			
+			if (target instanceof Scenario) {
+				var scenario = target as Scenario
+				Scopes.scopeFor(scenario.eAllContents.filter(End).toIterable)
+			}
+			else {
+				super.getScope(context, ref)
+			}
+			
+		}
+		else {
+			super.getScope(context, ref)
+		}
+	}
 }

@@ -30,9 +30,6 @@ class IF22Generator extends AbstractGenerator {
 		
 		//Scenario files
 		var scenarioFileGen = new ScenarioFileGenerator(program, packageName)
-		var scenario0 = program.eAllContents.filter(Scenario).toList.get(0)
-		scenarioFileGen.scenario = scenario0
-		var firstClassName = scenarioFileGen.className
 		
 		for (scenario : program.eAllContents.filter(Scenario).toIterable) {
 			scenarioFileGen.scenario = scenario
@@ -40,7 +37,7 @@ class IF22Generator extends AbstractGenerator {
 		}
 		
 		//Game files
-		var gamefileGen = new GameFileGenerator(program, packageName, firstClassName as String)
+		var gamefileGen = new GameFileGenerator(program, packageName)
 		fsa.generateFile('''interactive_fiction/«packageName»/Game.java''', gamefileGen.genFile)
 	}
 	

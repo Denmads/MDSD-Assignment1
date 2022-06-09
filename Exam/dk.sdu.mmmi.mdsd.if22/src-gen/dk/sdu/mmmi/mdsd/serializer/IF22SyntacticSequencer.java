@@ -11,6 +11,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,10 +21,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class IF22SyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected IF22GrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Scenario___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (IF22GrammarAccess) access;
+		match_Scenario___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getScenarioAccess().getLeftParenthesisKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getScenarioAccess().getRightParenthesisKeyword_2_2()));
 	}
 	
 	@Override
@@ -36,8 +41,26 @@ public class IF22SyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Scenario___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q.equals(syntax))
+				emit_Scenario___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=ID (ambiguity) '{' '}' (rule end)
+	 *     name=ID (ambiguity) '{' body+=Statement
+	 *     name=ID (ambiguity) '{' body+=VariableDef
+	 
+	 * </pre>
+	 */
+	protected void emit_Scenario___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

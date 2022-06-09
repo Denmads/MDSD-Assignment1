@@ -256,9 +256,9 @@ public class IF22AdapterFactory extends AdapterFactoryImpl
         return createLessThanOrEqualsAdapter();
       }
       @Override
-      public Adapter caseGreterThanOrEquals(GreterThanOrEquals object)
+      public Adapter caseGreaterThanOrEquals(GreaterThanOrEquals object)
       {
-        return createGreterThanOrEqualsAdapter();
+        return createGreaterThanOrEqualsAdapter();
       }
       @Override
       public Adapter caseAdd(Add object)
@@ -888,16 +888,16 @@ public class IF22AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals <em>Greter Than Or Equals</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals <em>Greater Than Or Equals</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals
+   * @see dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals
    * @generated
    */
-  public Adapter createGreterThanOrEqualsAdapter()
+  public Adapter createGreaterThanOrEqualsAdapter()
   {
     return null;
   }

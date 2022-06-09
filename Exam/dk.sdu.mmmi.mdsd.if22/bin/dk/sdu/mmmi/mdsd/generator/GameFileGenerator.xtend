@@ -7,12 +7,10 @@ class GameFileGenerator {
 	
 	IF22 program
 	String packageName
-	String firstScenarioClass
 	
-	new(IF22 program, String packageName, String firstScenarioClass) {
+	new(IF22 program, String packageName) {
 		this.program = program
 		this.packageName = packageName
-		this.firstScenarioClass = firstScenarioClass
 	}
 	
 	def genFile() {
@@ -26,7 +24,7 @@ class GameFileGenerator {
 			public Scenario start;
 			
 			public Game(«IF program.requireExternalInterface»External external«ENDIF») {
-				this.start = new «firstScenarioClass»(external);
+				this.start = new Scenario«program.scenarios.get(0)»(external);
 			}
 			
 			public void play() throws IOException {

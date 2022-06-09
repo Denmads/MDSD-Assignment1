@@ -54,7 +54,8 @@ public class IF22Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFunctionAccess().getGroup_3_1(), "rule__Function__Group_3_1__0");
 			builder.put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
 			builder.put(grammarAccess.getScenarioAccess().getGroup_2(), "rule__Scenario__Group_2__0");
-			builder.put(grammarAccess.getScenarioAccess().getGroup_2_2(), "rule__Scenario__Group_2_2__0");
+			builder.put(grammarAccess.getScenarioAccess().getGroup_2_1(), "rule__Scenario__Group_2_1__0");
+			builder.put(grammarAccess.getScenarioAccess().getGroup_2_1_1(), "rule__Scenario__Group_2_1_1__0");
 			builder.put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
 			builder.put(grammarAccess.getVariableDefAccess().getGroup(), "rule__VariableDef__Group__0");
 			builder.put(grammarAccess.getAnnounceAccess().getGroup(), "rule__Announce__Group__0");
@@ -111,8 +112,8 @@ public class IF22Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFunctionAccess().getParameterTypesAssignment_3_1_1(), "rule__Function__ParameterTypesAssignment_3_1_1");
 			builder.put(grammarAccess.getFunctionAccess().getReturnTypeAssignment_6(), "rule__Function__ReturnTypeAssignment_6");
 			builder.put(grammarAccess.getScenarioAccess().getNameAssignment_1(), "rule__Scenario__NameAssignment_1");
-			builder.put(grammarAccess.getScenarioAccess().getParametersAssignment_2_1(), "rule__Scenario__ParametersAssignment_2_1");
-			builder.put(grammarAccess.getScenarioAccess().getParametersAssignment_2_2_1(), "rule__Scenario__ParametersAssignment_2_2_1");
+			builder.put(grammarAccess.getScenarioAccess().getParametersAssignment_2_1_0(), "rule__Scenario__ParametersAssignment_2_1_0");
+			builder.put(grammarAccess.getScenarioAccess().getParametersAssignment_2_1_1_1(), "rule__Scenario__ParametersAssignment_2_1_1_1");
 			builder.put(grammarAccess.getScenarioAccess().getBodyAssignment_4(), "rule__Scenario__BodyAssignment_4");
 			builder.put(grammarAccess.getParameterAccess().getNameAssignment_0(), "rule__Parameter__NameAssignment_0");
 			builder.put(grammarAccess.getParameterAccess().getTypeAssignment_2(), "rule__Parameter__TypeAssignment_2");

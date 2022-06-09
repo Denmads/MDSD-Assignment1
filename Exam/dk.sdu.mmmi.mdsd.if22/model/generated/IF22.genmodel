@@ -80,7 +80,7 @@
     <genClasses ecoreClass="IF22.ecore#//LessThan"/>
     <genClasses ecoreClass="IF22.ecore#//GreaterThan"/>
     <genClasses ecoreClass="IF22.ecore#//LessThanOrEquals"/>
-    <genClasses ecoreClass="IF22.ecore#//GreterThanOrEquals"/>
+    <genClasses ecoreClass="IF22.ecore#//GreaterThanOrEquals"/>
     <genClasses ecoreClass="IF22.ecore#//Add"/>
     <genClasses ecoreClass="IF22.ecore#//Sub"/>
     <genClasses ecoreClass="IF22.ecore#//Mul"/>

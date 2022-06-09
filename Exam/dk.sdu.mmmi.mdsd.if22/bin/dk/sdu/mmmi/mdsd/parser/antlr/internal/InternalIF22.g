@@ -362,34 +362,11 @@ ruleScenario returns [EObject current=null]
 			}
 			(
 				(
-					{
-						newCompositeNode(grammarAccess.getScenarioAccess().getParametersParameterParserRuleCall_2_1_0());
-					}
-					lv_parameters_3_0=ruleParameter
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getScenarioRule());
-						}
-						add(
-							$current,
-							"parameters",
-							lv_parameters_3_0,
-							"dk.sdu.mmmi.mdsd.IF22.Parameter");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_4=','
-				{
-					newLeafNode(otherlv_4, grammarAccess.getScenarioAccess().getCommaKeyword_2_2_0());
-				}
-				(
 					(
 						{
-							newCompositeNode(grammarAccess.getScenarioAccess().getParametersParameterParserRuleCall_2_2_1_0());
+							newCompositeNode(grammarAccess.getScenarioAccess().getParametersParameterParserRuleCall_2_1_0_0());
 						}
-						lv_parameters_5_0=ruleParameter
+						lv_parameters_3_0=ruleParameter
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getScenarioRule());
@@ -397,16 +374,41 @@ ruleScenario returns [EObject current=null]
 							add(
 								$current,
 								"parameters",
-								lv_parameters_5_0,
+								lv_parameters_3_0,
 								"dk.sdu.mmmi.mdsd.IF22.Parameter");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
-			)*
+				(
+					otherlv_4=','
+					{
+						newLeafNode(otherlv_4, grammarAccess.getScenarioAccess().getCommaKeyword_2_1_1_0());
+					}
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getScenarioAccess().getParametersParameterParserRuleCall_2_1_1_1_0());
+							}
+							lv_parameters_5_0=ruleParameter
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getScenarioRule());
+								}
+								add(
+									$current,
+									"parameters",
+									lv_parameters_5_0,
+									"dk.sdu.mmmi.mdsd.IF22.Parameter");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)*
+			)?
 			otherlv_6=')'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getScenarioAccess().getRightParenthesisKeyword_2_3());
+				newLeafNode(otherlv_6, grammarAccess.getScenarioAccess().getRightParenthesisKeyword_2_2());
 			}
 		)?
 		otherlv_7='{'
@@ -1336,7 +1338,7 @@ ruleLessGreaterThan returns [EObject current=null]
 					(
 						{
 							$current = forceCreateModelElementAndSet(
-								grammarAccess.getLessGreaterThanAccess().getGreterThanOrEqualsLeftAction_1_0_3_0(),
+								grammarAccess.getLessGreaterThanAccess().getGreaterThanOrEqualsLeftAction_1_0_3_0(),
 								$current);
 						}
 					)

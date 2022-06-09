@@ -8,6 +8,7 @@ import dk.sdu.mmmi.mdsd.iF22.BooleanType
 import dk.sdu.mmmi.mdsd.iF22.Question
 import dk.sdu.mmmi.mdsd.iF22.Scenario
 import dk.sdu.mmmi.mdsd.iF22.Statement
+import dk.sdu.mmmi.mdsd.iF22.Exp
 
 class Util {
 	static def requireExternalInterface(IF22 program) {
@@ -27,7 +28,7 @@ class Util {
 	}
 	
 	static def returnTypeOfQuestion(Question question) {
-		question.typeAndValidation.eAllContents.filter(Type).toList.get(0)
+		question.typeAndValidation.eContainer.eAllContents.filter(Type).toList.get(0)
 	}
 	
 	static def variableName(Question question) {

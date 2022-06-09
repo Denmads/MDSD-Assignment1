@@ -196,13 +196,14 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cParametersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cParametersParameterParserRuleCall_2_1_0 = (RuleCall)cParametersAssignment_2_1.eContents().get(0);
-		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cParametersAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cParametersParameterParserRuleCall_2_2_1_0 = (RuleCall)cParametersAssignment_2_2_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Assignment cParametersAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final RuleCall cParametersParameterParserRuleCall_2_1_0_0 = (RuleCall)cParametersAssignment_2_1_0.eContents().get(0);
+		private final Group cGroup_2_1_1 = (Group)cGroup_2_1.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_1_0 = (Keyword)cGroup_2_1_1.eContents().get(0);
+		private final Assignment cParametersAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
+		private final RuleCall cParametersParameterParserRuleCall_2_1_1_1_0 = (RuleCall)cParametersAssignment_2_1_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cBodyAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final Alternatives cBodyAlternatives_4_0 = (Alternatives)cBodyAssignment_4.eContents().get(0);
@@ -211,11 +212,11 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Scenario:
-		//    'scenario' name=ID ( '(' parameters+=Parameter (',' parameters+=Parameter)* ')' )? '{' body+=(VariableDef | Statement)* '}'
+		//    'scenario' name=ID ( '(' ( parameters+=Parameter (',' parameters+=Parameter)* )? ')' )? '{' body+=(VariableDef | Statement)* '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'scenario' name=ID ( '(' parameters+=Parameter (',' parameters+=Parameter)* ')' )? '{' body+=(VariableDef | Statement)* '}'
+		//'scenario' name=ID ( '(' ( parameters+=Parameter (',' parameters+=Parameter)* )? ')' )? '{' body+=(VariableDef | Statement)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'scenario'
@@ -227,32 +228,35 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//( '(' parameters+=Parameter (',' parameters+=Parameter)* ')' )?
+		//( '(' ( parameters+=Parameter (',' parameters+=Parameter)* )? ')' )?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 		
+		//( parameters+=Parameter (',' parameters+=Parameter)* )?
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
 		//parameters+=Parameter
-		public Assignment getParametersAssignment_2_1() { return cParametersAssignment_2_1; }
+		public Assignment getParametersAssignment_2_1_0() { return cParametersAssignment_2_1_0; }
 		
 		//Parameter
-		public RuleCall getParametersParameterParserRuleCall_2_1_0() { return cParametersParameterParserRuleCall_2_1_0; }
+		public RuleCall getParametersParameterParserRuleCall_2_1_0_0() { return cParametersParameterParserRuleCall_2_1_0_0; }
 		
 		//(',' parameters+=Parameter)*
-		public Group getGroup_2_2() { return cGroup_2_2; }
+		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 		
 		//','
-		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
+		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 		
 		//parameters+=Parameter
-		public Assignment getParametersAssignment_2_2_1() { return cParametersAssignment_2_2_1; }
+		public Assignment getParametersAssignment_2_1_1_1() { return cParametersAssignment_2_1_1_1; }
 		
 		//Parameter
-		public RuleCall getParametersParameterParserRuleCall_2_2_1_0() { return cParametersParameterParserRuleCall_2_2_1_0; }
+		public RuleCall getParametersParameterParserRuleCall_2_1_1_1_0() { return cParametersParameterParserRuleCall_2_1_1_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -804,26 +808,26 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Action cLessThanOrEqualsLeftAction_1_0_2_0 = (Action)cGroup_1_0_2.eContents().get(0);
 		private final Keyword cLessThanSignEqualsSignKeyword_1_0_2_1 = (Keyword)cGroup_1_0_2.eContents().get(1);
 		private final Group cGroup_1_0_3 = (Group)cAlternatives_1_0.eContents().get(3);
-		private final Action cGreterThanOrEqualsLeftAction_1_0_3_0 = (Action)cGroup_1_0_3.eContents().get(0);
+		private final Action cGreaterThanOrEqualsLeftAction_1_0_3_0 = (Action)cGroup_1_0_3.eContents().get(0);
 		private final Keyword cGreaterThanSignEqualsSignKeyword_1_0_3_1 = (Keyword)cGroup_1_0_3.eContents().get(1);
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightConcatenationParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//LessGreaterThan:
-		//    Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreterThanOrEquals.left=current} '>=') right=Concatenation)*
+		//    Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreterThanOrEquals.left=current} '>=') right=Concatenation)*
+		//Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
 		public Group getGroup() { return cGroup; }
 		
 		//Concatenation
 		public RuleCall getConcatenationParserRuleCall_0() { return cConcatenationParserRuleCall_0; }
 		
-		//(({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreterThanOrEquals.left=current} '>=') right=Concatenation)*
+		//(({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreterThanOrEquals.left=current} '>=')
+		//({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=')
 		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 		
 		//{LessThan.left=current} '<'
@@ -853,11 +857,11 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'<='
 		public Keyword getLessThanSignEqualsSignKeyword_1_0_2_1() { return cLessThanSignEqualsSignKeyword_1_0_2_1; }
 		
-		//{GreterThanOrEquals.left=current} '>='
+		//{GreaterThanOrEquals.left=current} '>='
 		public Group getGroup_1_0_3() { return cGroup_1_0_3; }
 		
-		//{GreterThanOrEquals.left=current}
-		public Action getGreterThanOrEqualsLeftAction_1_0_3_0() { return cGreterThanOrEqualsLeftAction_1_0_3_0; }
+		//{GreaterThanOrEquals.left=current}
+		public Action getGreaterThanOrEqualsLeftAction_1_0_3_0() { return cGreaterThanOrEqualsLeftAction_1_0_3_0; }
 		
 		//'>='
 		public Keyword getGreaterThanSignEqualsSignKeyword_1_0_3_1() { return cGreaterThanSignEqualsSignKeyword_1_0_3_1; }
@@ -1437,7 +1441,7 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Scenario:
-	//    'scenario' name=ID ( '(' parameters+=Parameter (',' parameters+=Parameter)* ')' )? '{' body+=(VariableDef | Statement)* '}'
+	//    'scenario' name=ID ( '(' ( parameters+=Parameter (',' parameters+=Parameter)* )? ')' )? '{' body+=(VariableDef | Statement)* '}'
 	//;
 	public ScenarioElements getScenarioAccess() {
 		return pScenario;
@@ -1580,7 +1584,7 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//LessGreaterThan:
-	//    Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreterThanOrEquals.left=current} '>=') right=Concatenation)*
+	//    Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
 	//;
 	public LessGreaterThanElements getLessGreaterThanAccess() {
 		return pLessGreaterThan;

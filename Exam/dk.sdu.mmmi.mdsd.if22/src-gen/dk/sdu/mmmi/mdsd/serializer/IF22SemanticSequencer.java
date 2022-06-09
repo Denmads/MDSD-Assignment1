@@ -18,7 +18,7 @@ import dk.sdu.mmmi.mdsd.iF22.False;
 import dk.sdu.mmmi.mdsd.iF22.Function;
 import dk.sdu.mmmi.mdsd.iF22.FunctionCall;
 import dk.sdu.mmmi.mdsd.iF22.GreaterThan;
-import dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals;
+import dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals;
 import dk.sdu.mmmi.mdsd.iF22.IF22;
 import dk.sdu.mmmi.mdsd.iF22.IF22Package;
 import dk.sdu.mmmi.mdsd.iF22.IntConstant;
@@ -108,8 +108,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case IF22Package.GREATER_THAN:
 				sequence_LessGreaterThan(context, (GreaterThan) semanticObject); 
 				return; 
-			case IF22Package.GRETER_THAN_OR_EQUALS:
-				sequence_LessGreaterThan(context, (GreterThanOrEquals) semanticObject); 
+			case IF22Package.GREATER_THAN_OR_EQUALS:
+				sequence_LessGreaterThan(context, (GreaterThanOrEquals) semanticObject); 
 				return; 
 			case IF22Package.IF22:
 				sequence_IF22(context, (IF22) semanticObject); 
@@ -193,7 +193,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns Add
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Add
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Add
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Add
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Add
 	 *     Concatenation returns Add
 	 *     Concatenation.Concatenation_1_0 returns Add
 	 *     AddSub returns Add
@@ -232,7 +232,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns Sub
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Sub
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Sub
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Sub
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Sub
 	 *     Concatenation returns Sub
 	 *     Concatenation.Concatenation_1_0 returns Sub
 	 *     AddSub returns Sub
@@ -367,7 +367,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns Concatenation
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Concatenation
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Concatenation
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Concatenation
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Concatenation
 	 *     Concatenation returns Concatenation
 	 *     Concatenation.Concatenation_1_0 returns Concatenation
 	 *
@@ -403,7 +403,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns BoolConstant
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns BoolConstant
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns BoolConstant
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns BoolConstant
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns BoolConstant
 	 *     Concatenation returns BoolConstant
 	 *     Concatenation.Concatenation_1_0 returns BoolConstant
 	 *     AddSub returns BoolConstant
@@ -444,7 +444,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns IntConstant
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns IntConstant
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns IntConstant
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns IntConstant
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns IntConstant
 	 *     Concatenation returns IntConstant
 	 *     Concatenation.Concatenation_1_0 returns IntConstant
 	 *     AddSub returns IntConstant
@@ -485,7 +485,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns StringConstant
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns StringConstant
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns StringConstant
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns StringConstant
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns StringConstant
 	 *     Concatenation returns StringConstant
 	 *     Concatenation.Concatenation_1_0 returns StringConstant
 	 *     AddSub returns StringConstant
@@ -623,7 +623,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns FunctionCall
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns FunctionCall
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns FunctionCall
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns FunctionCall
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns FunctionCall
 	 *     Concatenation returns FunctionCall
 	 *     Concatenation.Concatenation_1_0 returns FunctionCall
 	 *     AddSub returns FunctionCall
@@ -686,7 +686,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns This
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns This
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns This
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns This
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns This
 	 *     Concatenation returns This
 	 *     Concatenation.Concatenation_1_0 returns This
 	 *     AddSub returns This
@@ -721,7 +721,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns GreaterThan
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns GreaterThan
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns GreaterThan
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns GreaterThan
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns GreaterThan
 	 *
 	 * Constraint:
 	 *     (left=LessGreaterThan_GreaterThan_1_0_1_0 right=Concatenation)
@@ -744,24 +744,24 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Exp returns GreterThanOrEquals
-	 *     BooleanOperation returns GreterThanOrEquals
-	 *     BooleanOperation.And_1_0_0_0 returns GreterThanOrEquals
-	 *     BooleanOperation.Or_1_0_1_0 returns GreterThanOrEquals
-	 *     Equality returns GreterThanOrEquals
-	 *     Equality.Equals_1_0_0_0 returns GreterThanOrEquals
-	 *     Equality.NotEquals_1_0_1_0 returns GreterThanOrEquals
-	 *     LessGreaterThan returns GreterThanOrEquals
-	 *     LessGreaterThan.LessThan_1_0_0_0 returns GreterThanOrEquals
-	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns GreterThanOrEquals
-	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns GreterThanOrEquals
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns GreterThanOrEquals
+	 *     Exp returns GreaterThanOrEquals
+	 *     BooleanOperation returns GreaterThanOrEquals
+	 *     BooleanOperation.And_1_0_0_0 returns GreaterThanOrEquals
+	 *     BooleanOperation.Or_1_0_1_0 returns GreaterThanOrEquals
+	 *     Equality returns GreaterThanOrEquals
+	 *     Equality.Equals_1_0_0_0 returns GreaterThanOrEquals
+	 *     Equality.NotEquals_1_0_1_0 returns GreaterThanOrEquals
+	 *     LessGreaterThan returns GreaterThanOrEquals
+	 *     LessGreaterThan.LessThan_1_0_0_0 returns GreaterThanOrEquals
+	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns GreaterThanOrEquals
+	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns GreaterThanOrEquals
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns GreaterThanOrEquals
 	 *
 	 * Constraint:
-	 *     (left=LessGreaterThan_GreterThanOrEquals_1_0_3_0 right=Concatenation)
+	 *     (left=LessGreaterThan_GreaterThanOrEquals_1_0_3_0 right=Concatenation)
 	 * </pre>
 	 */
-	protected void sequence_LessGreaterThan(ISerializationContext context, GreterThanOrEquals semanticObject) {
+	protected void sequence_LessGreaterThan(ISerializationContext context, GreaterThanOrEquals semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
@@ -769,7 +769,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLessGreaterThanAccess().getGreterThanOrEqualsLeftAction_1_0_3_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getGreaterThanOrEqualsLeftAction_1_0_3_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
@@ -789,7 +789,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns LessThan
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns LessThan
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns LessThan
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns LessThan
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns LessThan
 	 *
 	 * Constraint:
 	 *     (left=LessGreaterThan_LessThan_1_0_0_0 right=Concatenation)
@@ -823,7 +823,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns LessThanOrEquals
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns LessThanOrEquals
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns LessThanOrEquals
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns LessThanOrEquals
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns LessThanOrEquals
 	 *
 	 * Constraint:
 	 *     (left=LessGreaterThan_LessThanOrEquals_1_0_2_0 right=Concatenation)
@@ -857,7 +857,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns Div
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Div
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Div
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Div
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Div
 	 *     Concatenation returns Div
 	 *     Concatenation.Concatenation_1_0 returns Div
 	 *     AddSub returns Div
@@ -899,7 +899,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns Mul
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Mul
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Mul
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Mul
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Mul
 	 *     Concatenation returns Mul
 	 *     Concatenation.Concatenation_1_0 returns Mul
 	 *     AddSub returns Mul
@@ -965,7 +965,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns Not
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Not
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Not
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Not
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Not
 	 *     Concatenation returns Not
 	 *     Concatenation.Concatenation_1_0 returns Not
 	 *     AddSub returns Not
@@ -1005,7 +1005,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns Parenthesis
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Parenthesis
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Parenthesis
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns Parenthesis
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Parenthesis
 	 *     Concatenation returns Parenthesis
 	 *     Concatenation.Concatenation_1_0 returns Parenthesis
 	 *     AddSub returns Parenthesis
@@ -1045,7 +1045,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns VarRef
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns VarRef
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns VarRef
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns VarRef
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns VarRef
 	 *     Concatenation returns VarRef
 	 *     Concatenation.Concatenation_1_0 returns VarRef
 	 *     AddSub returns VarRef
@@ -1131,7 +1131,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns BooleanType
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns BooleanType
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns BooleanType
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns BooleanType
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns BooleanType
 	 *     Concatenation returns BooleanType
 	 *     Concatenation.Concatenation_1_0 returns BooleanType
 	 *     AddSub returns BooleanType
@@ -1167,7 +1167,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns IntType
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns IntType
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns IntType
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns IntType
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns IntType
 	 *     Concatenation returns IntType
 	 *     Concatenation.Concatenation_1_0 returns IntType
 	 *     AddSub returns IntType
@@ -1203,7 +1203,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.LessThan_1_0_0_0 returns StringType
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns StringType
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns StringType
-	 *     LessGreaterThan.GreterThanOrEquals_1_0_3_0 returns StringType
+	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns StringType
 	 *     Concatenation returns StringType
 	 *     Concatenation.Concatenation_1_0 returns StringType
 	 *     AddSub returns StringType

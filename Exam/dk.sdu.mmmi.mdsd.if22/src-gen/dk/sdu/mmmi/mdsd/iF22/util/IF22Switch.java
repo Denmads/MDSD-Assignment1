@@ -448,14 +448,14 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case IF22Package.GRETER_THAN_OR_EQUALS:
+      case IF22Package.GREATER_THAN_OR_EQUALS:
       {
-        GreterThanOrEquals greterThanOrEquals = (GreterThanOrEquals)theEObject;
-        T result = caseGreterThanOrEquals(greterThanOrEquals);
-        if (result == null) result = caseLessGreaterThan(greterThanOrEquals);
-        if (result == null) result = caseEquality(greterThanOrEquals);
-        if (result == null) result = caseBooleanOperation(greterThanOrEquals);
-        if (result == null) result = caseExp(greterThanOrEquals);
+        GreaterThanOrEquals greaterThanOrEquals = (GreaterThanOrEquals)theEObject;
+        T result = caseGreaterThanOrEquals(greaterThanOrEquals);
+        if (result == null) result = caseLessGreaterThan(greaterThanOrEquals);
+        if (result == null) result = caseEquality(greaterThanOrEquals);
+        if (result == null) result = caseBooleanOperation(greaterThanOrEquals);
+        if (result == null) result = caseExp(greaterThanOrEquals);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1219,17 +1219,17 @@ public class IF22Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greter Than Or Equals</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Greater Than Or Equals</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greter Than Or Equals</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Greater Than Or Equals</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreterThanOrEquals(GreterThanOrEquals object)
+  public T caseGreaterThanOrEquals(GreaterThanOrEquals object)
   {
     return null;
   }

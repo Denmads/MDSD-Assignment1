@@ -42,7 +42,7 @@ public class Util {
   }
   
   public static Type returnTypeOfQuestion(final Question question) {
-    return IteratorExtensions.<Type>toList(Iterators.<Type>filter(question.getTypeAndValidation().eAllContents(), Type.class)).get(0);
+    return IteratorExtensions.<Type>toList(Iterators.<Type>filter(question.getTypeAndValidation().eContainer().eAllContents(), Type.class)).get(0);
   }
   
   public static CharSequence variableName(final Question question) {

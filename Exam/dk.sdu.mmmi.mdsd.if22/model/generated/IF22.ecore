@@ -91,7 +91,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LessThan" eSuperTypes="#//LessGreaterThan"/>
   <eClassifiers xsi:type="ecore:EClass" name="GreaterThan" eSuperTypes="#//LessGreaterThan"/>
   <eClassifiers xsi:type="ecore:EClass" name="LessThanOrEquals" eSuperTypes="#//LessGreaterThan"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GreterThanOrEquals" eSuperTypes="#//LessGreaterThan"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GreaterThanOrEquals" eSuperTypes="#//LessGreaterThan"/>
   <eClassifiers xsi:type="ecore:EClass" name="Add" eSuperTypes="#//AddSub"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sub" eSuperTypes="#//AddSub"/>
   <eClassifiers xsi:type="ecore:EClass" name="Mul" eSuperTypes="#//MulDiv"/>

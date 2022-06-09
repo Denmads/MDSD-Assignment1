@@ -348,13 +348,13 @@ public interface IF22Factory extends EFactory
   LessThanOrEquals createLessThanOrEquals();
 
   /**
-   * Returns a new object of class '<em>Greter Than Or Equals</em>'.
+   * Returns a new object of class '<em>Greater Than Or Equals</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greter Than Or Equals</em>'.
+   * @return a new object of class '<em>Greater Than Or Equals</em>'.
    * @generated
    */
-  GreterThanOrEquals createGreterThanOrEquals();
+  GreaterThanOrEquals createGreaterThanOrEquals();
 
   /**
    * Returns a new object of class '<em>Add</em>'.

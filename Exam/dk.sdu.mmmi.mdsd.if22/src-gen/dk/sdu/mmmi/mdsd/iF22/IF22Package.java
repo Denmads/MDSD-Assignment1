@@ -1444,14 +1444,14 @@ public interface IF22Package extends EPackage
   int LESS_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreterThanOrEqualsImpl <em>Greter Than Or Equals</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanOrEqualsImpl <em>Greater Than Or Equals</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.iF22.impl.GreterThanOrEqualsImpl
-   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getGreterThanOrEquals()
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanOrEqualsImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getGreaterThanOrEquals()
    * @generated
    */
-  int GRETER_THAN_OR_EQUALS = 36;
+  int GREATER_THAN_OR_EQUALS = 36;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1460,7 +1460,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int GRETER_THAN_OR_EQUALS__LEFT = LESS_GREATER_THAN__LEFT;
+  int GREATER_THAN_OR_EQUALS__LEFT = LESS_GREATER_THAN__LEFT;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1469,16 +1469,16 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int GRETER_THAN_OR_EQUALS__RIGHT = LESS_GREATER_THAN__RIGHT;
+  int GREATER_THAN_OR_EQUALS__RIGHT = LESS_GREATER_THAN__RIGHT;
 
   /**
-   * The number of structural features of the '<em>Greter Than Or Equals</em>' class.
+   * The number of structural features of the '<em>Greater Than Or Equals</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRETER_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+  int GREATER_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddImpl <em>Add</em>}' class.
@@ -2627,14 +2627,14 @@ public interface IF22Package extends EPackage
   EClass getLessThanOrEquals();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals <em>Greter Than Or Equals</em>}'.
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals <em>Greater Than Or Equals</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greter Than Or Equals</em>'.
-   * @see dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals
+   * @return the meta object for class '<em>Greater Than Or Equals</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals
    * @generated
    */
-  EClass getGreterThanOrEquals();
+  EClass getGreaterThanOrEquals();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Add <em>Add</em>}'.
@@ -3424,14 +3424,14 @@ public interface IF22Package extends EPackage
     EClass LESS_THAN_OR_EQUALS = eINSTANCE.getLessThanOrEquals();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreterThanOrEqualsImpl <em>Greter Than Or Equals</em>}' class.
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanOrEqualsImpl <em>Greater Than Or Equals</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.iF22.impl.GreterThanOrEqualsImpl
-     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getGreterThanOrEquals()
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanOrEqualsImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getGreaterThanOrEquals()
      * @generated
      */
-    EClass GRETER_THAN_OR_EQUALS = eINSTANCE.getGreterThanOrEquals();
+    EClass GREATER_THAN_OR_EQUALS = eINSTANCE.getGreaterThanOrEquals();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddImpl <em>Add</em>}' class.

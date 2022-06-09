@@ -3,26 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.iF22.impl;
 
-import dk.sdu.mmmi.mdsd.iF22.GreterThanOrEquals;
+import dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals;
 import dk.sdu.mmmi.mdsd.iF22.IF22Package;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Greter Than Or Equals</b></em>'.
+ * An implementation of the model object '<em><b>Greater Than Or Equals</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class GreterThanOrEqualsImpl extends LessGreaterThanImpl implements GreterThanOrEquals
+public class GreaterThanOrEqualsImpl extends LessGreaterThanImpl implements GreaterThanOrEquals
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GreterThanOrEqualsImpl()
+  protected GreaterThanOrEqualsImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class GreterThanOrEqualsImpl extends LessGreaterThanImpl implements Grete
   @Override
   protected EClass eStaticClass()
   {
-    return IF22Package.Literals.GRETER_THAN_OR_EQUALS;
+    return IF22Package.Literals.GREATER_THAN_OR_EQUALS;
   }
 
-} //GreterThanOrEqualsImpl
+} //GreaterThanOrEqualsImpl

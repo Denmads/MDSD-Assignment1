@@ -3,6 +3,19 @@
  */
 package dk.sdu.mmmi.mdsd.scoping;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterators;
+import dk.sdu.mmmi.mdsd.iF22.End;
+import dk.sdu.mmmi.mdsd.iF22.IF22Package;
+import dk.sdu.mmmi.mdsd.iF22.Scenario;
+import dk.sdu.mmmi.mdsd.iF22.Target;
+import dk.sdu.mmmi.mdsd.iF22.TargetDestination;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.scoping.IScope;
+import org.eclipse.xtext.scoping.Scopes;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+
 /**
  * This class contains custom scoping description.
  * 
@@ -11,4 +24,33 @@ package dk.sdu.mmmi.mdsd.scoping;
  */
 @SuppressWarnings("all")
 public class IF22ScopeProvider extends AbstractIF22ScopeProvider {
+  @Override
+  public IScope getScope(final EObject context, final EReference ref) {
+    IScope _xifexpression = null;
+    EReference _endingTarget_EndStatement = IF22Package.eINSTANCE.getEndingTarget_EndStatement();
+    boolean _equals = Objects.equal(ref, _endingTarget_EndStatement);
+    if (_equals) {
+      IScope _xblockexpression = null;
+      {
+        EObject _eContainer = context.eContainer();
+        TargetDestination target = ((Target) _eContainer).getDestination();
+        IScope _xifexpression_1 = null;
+        if ((target instanceof Scenario)) {
+          IScope _xblockexpression_1 = null;
+          {
+            Scenario scenario = ((Scenario) target);
+            _xblockexpression_1 = Scopes.scopeFor(IteratorExtensions.<End>toIterable(Iterators.<End>filter(scenario.eAllContents(), End.class)));
+          }
+          _xifexpression_1 = _xblockexpression_1;
+        } else {
+          _xifexpression_1 = super.getScope(context, ref);
+        }
+        _xblockexpression = _xifexpression_1;
+      }
+      _xifexpression = _xblockexpression;
+    } else {
+      _xifexpression = super.getScope(context, ref);
+    }
+    return _xifexpression;
+  }
 }
