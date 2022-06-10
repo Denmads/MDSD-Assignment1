@@ -49,13 +49,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//EndingTarget/target"/>
     </genClasses>
     <genClasses ecoreClass="IF22.ecore#//Exp"/>
-    <genClasses ecoreClass="IF22.ecore#//BooleanOperation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//BooleanOperation/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//BooleanOperation/right"/>
-    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//BooleanOperation"/>
     <genClasses ecoreClass="IF22.ecore#//Equality"/>
     <genClasses ecoreClass="IF22.ecore#//LessGreaterThan"/>
-    <genClasses ecoreClass="IF22.ecore#//Concatenation"/>
+    <genClasses ecoreClass="IF22.ecore#//ConcatenationPart"/>
     <genClasses ecoreClass="IF22.ecore#//AddSub"/>
     <genClasses ecoreClass="IF22.ecore#//MulDiv"/>
     <genClasses ecoreClass="IF22.ecore#//Primitive"/>
@@ -73,18 +70,58 @@
     <genClasses ecoreClass="IF22.ecore#//IntType"/>
     <genClasses ecoreClass="IF22.ecore#//StringType"/>
     <genClasses ecoreClass="IF22.ecore#//BooleanType"/>
-    <genClasses ecoreClass="IF22.ecore#//And"/>
-    <genClasses ecoreClass="IF22.ecore#//Or"/>
-    <genClasses ecoreClass="IF22.ecore#//Equals"/>
-    <genClasses ecoreClass="IF22.ecore#//NotEquals"/>
-    <genClasses ecoreClass="IF22.ecore#//LessThan"/>
-    <genClasses ecoreClass="IF22.ecore#//GreaterThan"/>
-    <genClasses ecoreClass="IF22.ecore#//LessThanOrEquals"/>
-    <genClasses ecoreClass="IF22.ecore#//GreaterThanOrEquals"/>
-    <genClasses ecoreClass="IF22.ecore#//Add"/>
-    <genClasses ecoreClass="IF22.ecore#//Sub"/>
-    <genClasses ecoreClass="IF22.ecore#//Mul"/>
-    <genClasses ecoreClass="IF22.ecore#//Div"/>
+    <genClasses ecoreClass="IF22.ecore#//And">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//And/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//And/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Or/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Or/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//Equals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Equals/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Equals/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//NotEquals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//NotEquals/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//NotEquals/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//LessThan">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//LessThan/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//LessThan/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//GreaterThan">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//GreaterThan/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//GreaterThan/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//LessThanOrEquals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//LessThanOrEquals/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//LessThanOrEquals/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//GreaterThanOrEquals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//GreaterThanOrEquals/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//GreaterThanOrEquals/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//Concatenation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Concatenation/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Concatenation/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//Add">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Add/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Add/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//Sub">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Sub/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Sub/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//Mul">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Mul/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Mul/right"/>
+    </genClasses>
+    <genClasses ecoreClass="IF22.ecore#//Div">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Div/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Div/right"/>
+    </genClasses>
     <genClasses ecoreClass="IF22.ecore#//Parenthesis">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//Parenthesis/body"/>
     </genClasses>

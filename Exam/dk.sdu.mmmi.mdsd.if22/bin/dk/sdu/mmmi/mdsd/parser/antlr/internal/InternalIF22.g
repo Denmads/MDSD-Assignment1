@@ -1283,11 +1283,11 @@ ruleLessGreaterThan returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getLessGreaterThanAccess().getConcatenationParserRuleCall_0());
+			newCompositeNode(grammarAccess.getLessGreaterThanAccess().getConcatenationPartParserRuleCall_0());
 		}
-		this_Concatenation_0=ruleConcatenation
+		this_ConcatenationPart_0=ruleConcatenationPart
 		{
-			$current = $this_Concatenation_0.current;
+			$current = $this_ConcatenationPart_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		(
@@ -1351,9 +1351,9 @@ ruleLessGreaterThan returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0());
 					}
-					lv_right_9_0=ruleConcatenation
+					lv_right_9_0=ruleConcatenationPart
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLessGreaterThanRule());
@@ -1362,7 +1362,7 @@ ruleLessGreaterThan returns [EObject current=null]
 							$current,
 							"right",
 							lv_right_9_0,
-							"dk.sdu.mmmi.mdsd.IF22.Concatenation");
+							"dk.sdu.mmmi.mdsd.IF22.ConcatenationPart");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1371,15 +1371,15 @@ ruleLessGreaterThan returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleConcatenation
-entryRuleConcatenation returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConcatenationRule()); }
-	iv_ruleConcatenation=ruleConcatenation
-	{ $current=$iv_ruleConcatenation.current; }
+// Entry rule entryRuleConcatenationPart
+entryRuleConcatenationPart returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConcatenationPartRule()); }
+	iv_ruleConcatenationPart=ruleConcatenationPart
+	{ $current=$iv_ruleConcatenationPart.current; }
 	EOF;
 
-// Rule Concatenation
-ruleConcatenation returns [EObject current=null]
+// Rule ConcatenationPart
+ruleConcatenationPart returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1388,7 +1388,7 @@ ruleConcatenation returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getConcatenationAccess().getAddSubParserRuleCall_0());
+			newCompositeNode(grammarAccess.getConcatenationPartAccess().getAddSubParserRuleCall_0());
 		}
 		this_AddSub_0=ruleAddSub
 		{
@@ -1399,23 +1399,23 @@ ruleConcatenation returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElementAndSet(
-						grammarAccess.getConcatenationAccess().getConcatenationLeftAction_1_0(),
+						grammarAccess.getConcatenationPartAccess().getConcatenationLeftAction_1_0(),
 						$current);
 				}
 			)
 			otherlv_2='&'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getConcatenationAccess().getAmpersandKeyword_1_1());
+				newLeafNode(otherlv_2, grammarAccess.getConcatenationPartAccess().getAmpersandKeyword_1_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getConcatenationAccess().getRightAddSubParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getConcatenationPartAccess().getRightAddSubParserRuleCall_1_2_0());
 					}
 					lv_right_3_0=ruleAddSub
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConcatenationRule());
+							$current = createModelElementForParent(grammarAccess.getConcatenationPartRule());
 						}
 						set(
 							$current,

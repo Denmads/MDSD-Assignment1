@@ -1332,20 +1332,20 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleLessGreaterThan"
 
 
-    // $ANTLR start "entryRuleConcatenation"
-    // InternalIF22.g:453:1: entryRuleConcatenation : ruleConcatenation EOF ;
-    public final void entryRuleConcatenation() throws RecognitionException {
+    // $ANTLR start "entryRuleConcatenationPart"
+    // InternalIF22.g:453:1: entryRuleConcatenationPart : ruleConcatenationPart EOF ;
+    public final void entryRuleConcatenationPart() throws RecognitionException {
         try {
-            // InternalIF22.g:454:1: ( ruleConcatenation EOF )
-            // InternalIF22.g:455:1: ruleConcatenation EOF
+            // InternalIF22.g:454:1: ( ruleConcatenationPart EOF )
+            // InternalIF22.g:455:1: ruleConcatenationPart EOF
             {
-             before(grammarAccess.getConcatenationRule()); 
+             before(grammarAccess.getConcatenationPartRule()); 
             pushFollow(FOLLOW_1);
-            ruleConcatenation();
+            ruleConcatenationPart();
 
             state._fsp--;
 
-             after(grammarAccess.getConcatenationRule()); 
+             after(grammarAccess.getConcatenationPartRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1359,35 +1359,35 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleConcatenation"
+    // $ANTLR end "entryRuleConcatenationPart"
 
 
-    // $ANTLR start "ruleConcatenation"
-    // InternalIF22.g:462:1: ruleConcatenation : ( ( rule__Concatenation__Group__0 ) ) ;
-    public final void ruleConcatenation() throws RecognitionException {
+    // $ANTLR start "ruleConcatenationPart"
+    // InternalIF22.g:462:1: ruleConcatenationPart : ( ( rule__ConcatenationPart__Group__0 ) ) ;
+    public final void ruleConcatenationPart() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:466:2: ( ( ( rule__Concatenation__Group__0 ) ) )
-            // InternalIF22.g:467:2: ( ( rule__Concatenation__Group__0 ) )
+            // InternalIF22.g:466:2: ( ( ( rule__ConcatenationPart__Group__0 ) ) )
+            // InternalIF22.g:467:2: ( ( rule__ConcatenationPart__Group__0 ) )
             {
-            // InternalIF22.g:467:2: ( ( rule__Concatenation__Group__0 ) )
-            // InternalIF22.g:468:3: ( rule__Concatenation__Group__0 )
+            // InternalIF22.g:467:2: ( ( rule__ConcatenationPart__Group__0 ) )
+            // InternalIF22.g:468:3: ( rule__ConcatenationPart__Group__0 )
             {
-             before(grammarAccess.getConcatenationAccess().getGroup()); 
-            // InternalIF22.g:469:3: ( rule__Concatenation__Group__0 )
-            // InternalIF22.g:469:4: rule__Concatenation__Group__0
+             before(grammarAccess.getConcatenationPartAccess().getGroup()); 
+            // InternalIF22.g:469:3: ( rule__ConcatenationPart__Group__0 )
+            // InternalIF22.g:469:4: rule__ConcatenationPart__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Concatenation__Group__0();
+            rule__ConcatenationPart__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConcatenationAccess().getGroup()); 
+             after(grammarAccess.getConcatenationPartAccess().getGroup()); 
 
             }
 
@@ -1406,7 +1406,7 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleConcatenation"
+    // $ANTLR end "ruleConcatenationPart"
 
 
     // $ANTLR start "entryRuleAddSub"
@@ -10930,25 +10930,25 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LessGreaterThan__Group__0__Impl"
-    // InternalIF22.g:3475:1: rule__LessGreaterThan__Group__0__Impl : ( ruleConcatenation ) ;
+    // InternalIF22.g:3475:1: rule__LessGreaterThan__Group__0__Impl : ( ruleConcatenationPart ) ;
     public final void rule__LessGreaterThan__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:3479:1: ( ( ruleConcatenation ) )
-            // InternalIF22.g:3480:1: ( ruleConcatenation )
+            // InternalIF22.g:3479:1: ( ( ruleConcatenationPart ) )
+            // InternalIF22.g:3480:1: ( ruleConcatenationPart )
             {
-            // InternalIF22.g:3480:1: ( ruleConcatenation )
-            // InternalIF22.g:3481:2: ruleConcatenation
+            // InternalIF22.g:3480:1: ( ruleConcatenationPart )
+            // InternalIF22.g:3481:2: ruleConcatenationPart
             {
-             before(grammarAccess.getLessGreaterThanAccess().getConcatenationParserRuleCall_0()); 
+             before(grammarAccess.getLessGreaterThanAccess().getConcatenationPartParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
-            ruleConcatenation();
+            ruleConcatenationPart();
 
             state._fsp--;
 
-             after(grammarAccess.getLessGreaterThanAccess().getConcatenationParserRuleCall_0()); 
+             after(grammarAccess.getLessGreaterThanAccess().getConcatenationPartParserRuleCall_0()); 
 
             }
 
@@ -11830,23 +11830,23 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__LessGreaterThan__Group_1_0_3__1__Impl"
 
 
-    // $ANTLR start "rule__Concatenation__Group__0"
-    // InternalIF22.g:3787:1: rule__Concatenation__Group__0 : rule__Concatenation__Group__0__Impl rule__Concatenation__Group__1 ;
-    public final void rule__Concatenation__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group__0"
+    // InternalIF22.g:3787:1: rule__ConcatenationPart__Group__0 : rule__ConcatenationPart__Group__0__Impl rule__ConcatenationPart__Group__1 ;
+    public final void rule__ConcatenationPart__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:3791:1: ( rule__Concatenation__Group__0__Impl rule__Concatenation__Group__1 )
-            // InternalIF22.g:3792:2: rule__Concatenation__Group__0__Impl rule__Concatenation__Group__1
+            // InternalIF22.g:3791:1: ( rule__ConcatenationPart__Group__0__Impl rule__ConcatenationPart__Group__1 )
+            // InternalIF22.g:3792:2: rule__ConcatenationPart__Group__0__Impl rule__ConcatenationPart__Group__1
             {
             pushFollow(FOLLOW_42);
-            rule__Concatenation__Group__0__Impl();
+            rule__ConcatenationPart__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Concatenation__Group__1();
+            rule__ConcatenationPart__Group__1();
 
             state._fsp--;
 
@@ -11865,12 +11865,12 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group__0"
+    // $ANTLR end "rule__ConcatenationPart__Group__0"
 
 
-    // $ANTLR start "rule__Concatenation__Group__0__Impl"
-    // InternalIF22.g:3799:1: rule__Concatenation__Group__0__Impl : ( ruleAddSub ) ;
-    public final void rule__Concatenation__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group__0__Impl"
+    // InternalIF22.g:3799:1: rule__ConcatenationPart__Group__0__Impl : ( ruleAddSub ) ;
+    public final void rule__ConcatenationPart__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -11881,13 +11881,13 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
             // InternalIF22.g:3804:1: ( ruleAddSub )
             // InternalIF22.g:3805:2: ruleAddSub
             {
-             before(grammarAccess.getConcatenationAccess().getAddSubParserRuleCall_0()); 
+             before(grammarAccess.getConcatenationPartAccess().getAddSubParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
             ruleAddSub();
 
             state._fsp--;
 
-             after(grammarAccess.getConcatenationAccess().getAddSubParserRuleCall_0()); 
+             after(grammarAccess.getConcatenationPartAccess().getAddSubParserRuleCall_0()); 
 
             }
 
@@ -11906,21 +11906,21 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group__0__Impl"
+    // $ANTLR end "rule__ConcatenationPart__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Concatenation__Group__1"
-    // InternalIF22.g:3814:1: rule__Concatenation__Group__1 : rule__Concatenation__Group__1__Impl ;
-    public final void rule__Concatenation__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group__1"
+    // InternalIF22.g:3814:1: rule__ConcatenationPart__Group__1 : rule__ConcatenationPart__Group__1__Impl ;
+    public final void rule__ConcatenationPart__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:3818:1: ( rule__Concatenation__Group__1__Impl )
-            // InternalIF22.g:3819:2: rule__Concatenation__Group__1__Impl
+            // InternalIF22.g:3818:1: ( rule__ConcatenationPart__Group__1__Impl )
+            // InternalIF22.g:3819:2: rule__ConcatenationPart__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Concatenation__Group__1__Impl();
+            rule__ConcatenationPart__Group__1__Impl();
 
             state._fsp--;
 
@@ -11939,24 +11939,24 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group__1"
+    // $ANTLR end "rule__ConcatenationPart__Group__1"
 
 
-    // $ANTLR start "rule__Concatenation__Group__1__Impl"
-    // InternalIF22.g:3825:1: rule__Concatenation__Group__1__Impl : ( ( rule__Concatenation__Group_1__0 )* ) ;
-    public final void rule__Concatenation__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group__1__Impl"
+    // InternalIF22.g:3825:1: rule__ConcatenationPart__Group__1__Impl : ( ( rule__ConcatenationPart__Group_1__0 )* ) ;
+    public final void rule__ConcatenationPart__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:3829:1: ( ( ( rule__Concatenation__Group_1__0 )* ) )
-            // InternalIF22.g:3830:1: ( ( rule__Concatenation__Group_1__0 )* )
+            // InternalIF22.g:3829:1: ( ( ( rule__ConcatenationPart__Group_1__0 )* ) )
+            // InternalIF22.g:3830:1: ( ( rule__ConcatenationPart__Group_1__0 )* )
             {
-            // InternalIF22.g:3830:1: ( ( rule__Concatenation__Group_1__0 )* )
-            // InternalIF22.g:3831:2: ( rule__Concatenation__Group_1__0 )*
+            // InternalIF22.g:3830:1: ( ( rule__ConcatenationPart__Group_1__0 )* )
+            // InternalIF22.g:3831:2: ( rule__ConcatenationPart__Group_1__0 )*
             {
-             before(grammarAccess.getConcatenationAccess().getGroup_1()); 
-            // InternalIF22.g:3832:2: ( rule__Concatenation__Group_1__0 )*
+             before(grammarAccess.getConcatenationPartAccess().getGroup_1()); 
+            // InternalIF22.g:3832:2: ( rule__ConcatenationPart__Group_1__0 )*
             loop33:
             do {
                 int alt33=2;
@@ -11969,10 +11969,10 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
 
                 switch (alt33) {
             	case 1 :
-            	    // InternalIF22.g:3832:3: rule__Concatenation__Group_1__0
+            	    // InternalIF22.g:3832:3: rule__ConcatenationPart__Group_1__0
             	    {
             	    pushFollow(FOLLOW_43);
-            	    rule__Concatenation__Group_1__0();
+            	    rule__ConcatenationPart__Group_1__0();
 
             	    state._fsp--;
 
@@ -11985,7 +11985,7 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getConcatenationAccess().getGroup_1()); 
+             after(grammarAccess.getConcatenationPartAccess().getGroup_1()); 
 
             }
 
@@ -12004,26 +12004,26 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group__1__Impl"
+    // $ANTLR end "rule__ConcatenationPart__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Concatenation__Group_1__0"
-    // InternalIF22.g:3841:1: rule__Concatenation__Group_1__0 : rule__Concatenation__Group_1__0__Impl rule__Concatenation__Group_1__1 ;
-    public final void rule__Concatenation__Group_1__0() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group_1__0"
+    // InternalIF22.g:3841:1: rule__ConcatenationPart__Group_1__0 : rule__ConcatenationPart__Group_1__0__Impl rule__ConcatenationPart__Group_1__1 ;
+    public final void rule__ConcatenationPart__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:3845:1: ( rule__Concatenation__Group_1__0__Impl rule__Concatenation__Group_1__1 )
-            // InternalIF22.g:3846:2: rule__Concatenation__Group_1__0__Impl rule__Concatenation__Group_1__1
+            // InternalIF22.g:3845:1: ( rule__ConcatenationPart__Group_1__0__Impl rule__ConcatenationPart__Group_1__1 )
+            // InternalIF22.g:3846:2: rule__ConcatenationPart__Group_1__0__Impl rule__ConcatenationPart__Group_1__1
             {
             pushFollow(FOLLOW_42);
-            rule__Concatenation__Group_1__0__Impl();
+            rule__ConcatenationPart__Group_1__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Concatenation__Group_1__1();
+            rule__ConcatenationPart__Group_1__1();
 
             state._fsp--;
 
@@ -12042,12 +12042,12 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group_1__0"
+    // $ANTLR end "rule__ConcatenationPart__Group_1__0"
 
 
-    // $ANTLR start "rule__Concatenation__Group_1__0__Impl"
-    // InternalIF22.g:3853:1: rule__Concatenation__Group_1__0__Impl : ( () ) ;
-    public final void rule__Concatenation__Group_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group_1__0__Impl"
+    // InternalIF22.g:3853:1: rule__ConcatenationPart__Group_1__0__Impl : ( () ) ;
+    public final void rule__ConcatenationPart__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12058,13 +12058,13 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
             // InternalIF22.g:3858:1: ( () )
             // InternalIF22.g:3859:2: ()
             {
-             before(grammarAccess.getConcatenationAccess().getConcatenationLeftAction_1_0()); 
+             before(grammarAccess.getConcatenationPartAccess().getConcatenationLeftAction_1_0()); 
             // InternalIF22.g:3860:2: ()
             // InternalIF22.g:3860:3: 
             {
             }
 
-             after(grammarAccess.getConcatenationAccess().getConcatenationLeftAction_1_0()); 
+             after(grammarAccess.getConcatenationPartAccess().getConcatenationLeftAction_1_0()); 
 
             }
 
@@ -12079,26 +12079,26 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group_1__0__Impl"
+    // $ANTLR end "rule__ConcatenationPart__Group_1__0__Impl"
 
 
-    // $ANTLR start "rule__Concatenation__Group_1__1"
-    // InternalIF22.g:3868:1: rule__Concatenation__Group_1__1 : rule__Concatenation__Group_1__1__Impl rule__Concatenation__Group_1__2 ;
-    public final void rule__Concatenation__Group_1__1() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group_1__1"
+    // InternalIF22.g:3868:1: rule__ConcatenationPart__Group_1__1 : rule__ConcatenationPart__Group_1__1__Impl rule__ConcatenationPart__Group_1__2 ;
+    public final void rule__ConcatenationPart__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:3872:1: ( rule__Concatenation__Group_1__1__Impl rule__Concatenation__Group_1__2 )
-            // InternalIF22.g:3873:2: rule__Concatenation__Group_1__1__Impl rule__Concatenation__Group_1__2
+            // InternalIF22.g:3872:1: ( rule__ConcatenationPart__Group_1__1__Impl rule__ConcatenationPart__Group_1__2 )
+            // InternalIF22.g:3873:2: rule__ConcatenationPart__Group_1__1__Impl rule__ConcatenationPart__Group_1__2
             {
             pushFollow(FOLLOW_20);
-            rule__Concatenation__Group_1__1__Impl();
+            rule__ConcatenationPart__Group_1__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Concatenation__Group_1__2();
+            rule__ConcatenationPart__Group_1__2();
 
             state._fsp--;
 
@@ -12117,12 +12117,12 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group_1__1"
+    // $ANTLR end "rule__ConcatenationPart__Group_1__1"
 
 
-    // $ANTLR start "rule__Concatenation__Group_1__1__Impl"
-    // InternalIF22.g:3880:1: rule__Concatenation__Group_1__1__Impl : ( '&' ) ;
-    public final void rule__Concatenation__Group_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group_1__1__Impl"
+    // InternalIF22.g:3880:1: rule__ConcatenationPart__Group_1__1__Impl : ( '&' ) ;
+    public final void rule__ConcatenationPart__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -12133,9 +12133,9 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
             // InternalIF22.g:3885:1: ( '&' )
             // InternalIF22.g:3886:2: '&'
             {
-             before(grammarAccess.getConcatenationAccess().getAmpersandKeyword_1_1()); 
+             before(grammarAccess.getConcatenationPartAccess().getAmpersandKeyword_1_1()); 
             match(input,40,FOLLOW_2); 
-             after(grammarAccess.getConcatenationAccess().getAmpersandKeyword_1_1()); 
+             after(grammarAccess.getConcatenationPartAccess().getAmpersandKeyword_1_1()); 
 
             }
 
@@ -12154,21 +12154,21 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group_1__1__Impl"
+    // $ANTLR end "rule__ConcatenationPart__Group_1__1__Impl"
 
 
-    // $ANTLR start "rule__Concatenation__Group_1__2"
-    // InternalIF22.g:3895:1: rule__Concatenation__Group_1__2 : rule__Concatenation__Group_1__2__Impl ;
-    public final void rule__Concatenation__Group_1__2() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group_1__2"
+    // InternalIF22.g:3895:1: rule__ConcatenationPart__Group_1__2 : rule__ConcatenationPart__Group_1__2__Impl ;
+    public final void rule__ConcatenationPart__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:3899:1: ( rule__Concatenation__Group_1__2__Impl )
-            // InternalIF22.g:3900:2: rule__Concatenation__Group_1__2__Impl
+            // InternalIF22.g:3899:1: ( rule__ConcatenationPart__Group_1__2__Impl )
+            // InternalIF22.g:3900:2: rule__ConcatenationPart__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Concatenation__Group_1__2__Impl();
+            rule__ConcatenationPart__Group_1__2__Impl();
 
             state._fsp--;
 
@@ -12187,35 +12187,35 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group_1__2"
+    // $ANTLR end "rule__ConcatenationPart__Group_1__2"
 
 
-    // $ANTLR start "rule__Concatenation__Group_1__2__Impl"
-    // InternalIF22.g:3906:1: rule__Concatenation__Group_1__2__Impl : ( ( rule__Concatenation__RightAssignment_1_2 ) ) ;
-    public final void rule__Concatenation__Group_1__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__Group_1__2__Impl"
+    // InternalIF22.g:3906:1: rule__ConcatenationPart__Group_1__2__Impl : ( ( rule__ConcatenationPart__RightAssignment_1_2 ) ) ;
+    public final void rule__ConcatenationPart__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:3910:1: ( ( ( rule__Concatenation__RightAssignment_1_2 ) ) )
-            // InternalIF22.g:3911:1: ( ( rule__Concatenation__RightAssignment_1_2 ) )
+            // InternalIF22.g:3910:1: ( ( ( rule__ConcatenationPart__RightAssignment_1_2 ) ) )
+            // InternalIF22.g:3911:1: ( ( rule__ConcatenationPart__RightAssignment_1_2 ) )
             {
-            // InternalIF22.g:3911:1: ( ( rule__Concatenation__RightAssignment_1_2 ) )
-            // InternalIF22.g:3912:2: ( rule__Concatenation__RightAssignment_1_2 )
+            // InternalIF22.g:3911:1: ( ( rule__ConcatenationPart__RightAssignment_1_2 ) )
+            // InternalIF22.g:3912:2: ( rule__ConcatenationPart__RightAssignment_1_2 )
             {
-             before(grammarAccess.getConcatenationAccess().getRightAssignment_1_2()); 
-            // InternalIF22.g:3913:2: ( rule__Concatenation__RightAssignment_1_2 )
-            // InternalIF22.g:3913:3: rule__Concatenation__RightAssignment_1_2
+             before(grammarAccess.getConcatenationPartAccess().getRightAssignment_1_2()); 
+            // InternalIF22.g:3913:2: ( rule__ConcatenationPart__RightAssignment_1_2 )
+            // InternalIF22.g:3913:3: rule__ConcatenationPart__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
-            rule__Concatenation__RightAssignment_1_2();
+            rule__ConcatenationPart__RightAssignment_1_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConcatenationAccess().getRightAssignment_1_2()); 
+             after(grammarAccess.getConcatenationPartAccess().getRightAssignment_1_2()); 
 
             }
 
@@ -12234,7 +12234,7 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__Group_1__2__Impl"
+    // $ANTLR end "rule__ConcatenationPart__Group_1__2__Impl"
 
 
     // $ANTLR start "rule__AddSub__Group__0"
@@ -17142,25 +17142,25 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LessGreaterThan__RightAssignment_1_1"
-    // InternalIF22.g:5659:1: rule__LessGreaterThan__RightAssignment_1_1 : ( ruleConcatenation ) ;
+    // InternalIF22.g:5659:1: rule__LessGreaterThan__RightAssignment_1_1 : ( ruleConcatenationPart ) ;
     public final void rule__LessGreaterThan__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalIF22.g:5663:1: ( ( ruleConcatenation ) )
-            // InternalIF22.g:5664:2: ( ruleConcatenation )
+            // InternalIF22.g:5663:1: ( ( ruleConcatenationPart ) )
+            // InternalIF22.g:5664:2: ( ruleConcatenationPart )
             {
-            // InternalIF22.g:5664:2: ( ruleConcatenation )
-            // InternalIF22.g:5665:3: ruleConcatenation
+            // InternalIF22.g:5664:2: ( ruleConcatenationPart )
+            // InternalIF22.g:5665:3: ruleConcatenationPart
             {
-             before(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0()); 
+             before(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleConcatenation();
+            ruleConcatenationPart();
 
             state._fsp--;
 
-             after(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0()); 
+             after(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0()); 
 
             }
 
@@ -17182,9 +17182,9 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__LessGreaterThan__RightAssignment_1_1"
 
 
-    // $ANTLR start "rule__Concatenation__RightAssignment_1_2"
-    // InternalIF22.g:5674:1: rule__Concatenation__RightAssignment_1_2 : ( ruleAddSub ) ;
-    public final void rule__Concatenation__RightAssignment_1_2() throws RecognitionException {
+    // $ANTLR start "rule__ConcatenationPart__RightAssignment_1_2"
+    // InternalIF22.g:5674:1: rule__ConcatenationPart__RightAssignment_1_2 : ( ruleAddSub ) ;
+    public final void rule__ConcatenationPart__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -17195,13 +17195,13 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
             // InternalIF22.g:5679:2: ( ruleAddSub )
             // InternalIF22.g:5680:3: ruleAddSub
             {
-             before(grammarAccess.getConcatenationAccess().getRightAddSubParserRuleCall_1_2_0()); 
+             before(grammarAccess.getConcatenationPartAccess().getRightAddSubParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
             ruleAddSub();
 
             state._fsp--;
 
-             after(grammarAccess.getConcatenationAccess().getRightAddSubParserRuleCall_1_2_0()); 
+             after(grammarAccess.getConcatenationPartAccess().getRightAddSubParserRuleCall_1_2_0()); 
 
             }
 
@@ -17220,7 +17220,7 @@ public class InternalIF22Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Concatenation__RightAssignment_1_2"
+    // $ANTLR end "rule__ConcatenationPart__RightAssignment_1_2"
 
 
     // $ANTLR start "rule__AddSub__RightAssignment_1_1"

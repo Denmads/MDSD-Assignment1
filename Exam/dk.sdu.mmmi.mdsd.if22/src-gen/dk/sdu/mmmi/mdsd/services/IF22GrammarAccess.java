@@ -795,7 +795,7 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	public class LessGreaterThanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.IF22.LessGreaterThan");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cConcatenationParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cConcatenationPartParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
 		private final Group cGroup_1_0_0 = (Group)cAlternatives_1_0.eContents().get(0);
@@ -811,20 +811,20 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Action cGreaterThanOrEqualsLeftAction_1_0_3_0 = (Action)cGroup_1_0_3.eContents().get(0);
 		private final Keyword cGreaterThanSignEqualsSignKeyword_1_0_3_1 = (Keyword)cGroup_1_0_3.eContents().get(1);
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightConcatenationParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		private final RuleCall cRightConcatenationPartParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//LessGreaterThan:
-		//    Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
+		//    ConcatenationPart (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=ConcatenationPart)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
+		//ConcatenationPart (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=ConcatenationPart)*
 		public Group getGroup() { return cGroup; }
 		
-		//Concatenation
-		public RuleCall getConcatenationParserRuleCall_0() { return cConcatenationParserRuleCall_0; }
+		//ConcatenationPart
+		public RuleCall getConcatenationPartParserRuleCall_0() { return cConcatenationPartParserRuleCall_0; }
 		
-		//(({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
+		//(({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=ConcatenationPart)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=')
@@ -866,14 +866,14 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'>='
 		public Keyword getGreaterThanSignEqualsSignKeyword_1_0_3_1() { return cGreaterThanSignEqualsSignKeyword_1_0_3_1; }
 		
-		//right=Concatenation
+		//right=ConcatenationPart
 		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 		
-		//Concatenation
-		public RuleCall getRightConcatenationParserRuleCall_1_1_0() { return cRightConcatenationParserRuleCall_1_1_0; }
+		//ConcatenationPart
+		public RuleCall getRightConcatenationPartParserRuleCall_1_1_0() { return cRightConcatenationPartParserRuleCall_1_1_0; }
 	}
-	public class ConcatenationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.IF22.Concatenation");
+	public class ConcatenationPartElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.IF22.ConcatenationPart");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cAddSubParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -882,7 +882,7 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightAddSubParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//Concatenation:
+		//ConcatenationPart:
 		//    AddSub ({Concatenation.left=current} '&' right=AddSub)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -1331,7 +1331,7 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final BooleanOperationElements pBooleanOperation;
 	private final EqualityElements pEquality;
 	private final LessGreaterThanElements pLessGreaterThan;
-	private final ConcatenationElements pConcatenation;
+	private final ConcatenationPartElements pConcatenationPart;
 	private final AddSubElements pAddSub;
 	private final MulDivElements pMulDiv;
 	private final PrimitiveElements pPrimitive;
@@ -1367,7 +1367,7 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pBooleanOperation = new BooleanOperationElements();
 		this.pEquality = new EqualityElements();
 		this.pLessGreaterThan = new LessGreaterThanElements();
-		this.pConcatenation = new ConcatenationElements();
+		this.pConcatenationPart = new ConcatenationPartElements();
 		this.pAddSub = new AddSubElements();
 		this.pMulDiv = new MulDivElements();
 		this.pPrimitive = new PrimitiveElements();
@@ -1584,7 +1584,7 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//LessGreaterThan:
-	//    Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
+	//    ConcatenationPart (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=ConcatenationPart)*
 	//;
 	public LessGreaterThanElements getLessGreaterThanAccess() {
 		return pLessGreaterThan;
@@ -1594,15 +1594,15 @@ public class IF22GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getLessGreaterThanAccess().getRule();
 	}
 	
-	//Concatenation:
+	//ConcatenationPart:
 	//    AddSub ({Concatenation.left=current} '&' right=AddSub)*
 	//;
-	public ConcatenationElements getConcatenationAccess() {
-		return pConcatenation;
+	public ConcatenationPartElements getConcatenationPartAccess() {
+		return pConcatenationPart;
 	}
 	
-	public ParserRule getConcatenationRule() {
-		return getConcatenationAccess().getRule();
+	public ParserRule getConcatenationPartRule() {
+		return getConcatenationPartAccess().getRule();
 	}
 	
 	//AddSub:

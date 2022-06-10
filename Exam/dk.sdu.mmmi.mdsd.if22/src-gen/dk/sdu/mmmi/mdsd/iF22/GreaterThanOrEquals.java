@@ -9,6 +9,13 @@ package dk.sdu.mmmi.mdsd.iF22;
  * A representation of the model object '<em><b>Greater Than Or Equals</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals#getLeft <em>Left</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals#getRight <em>Right</em>}</li>
+ * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getGreaterThanOrEquals()
  * @model
@@ -16,4 +23,48 @@ package dk.sdu.mmmi.mdsd.iF22;
  */
 public interface GreaterThanOrEquals extends LessGreaterThan
 {
+  /**
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(LessGreaterThan)
+   * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getGreaterThanOrEquals_Left()
+   * @model containment="true"
+   * @generated
+   */
+  LessGreaterThan getLeft();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals#getLeft <em>Left</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
+   * @generated
+   */
+  void setLeft(LessGreaterThan value);
+
+  /**
+   * Returns the value of the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right</em>' containment reference.
+   * @see #setRight(ConcatenationPart)
+   * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getGreaterThanOrEquals_Right()
+   * @model containment="true"
+   * @generated
+   */
+  ConcatenationPart getRight();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals#getRight <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right</em>' containment reference.
+   * @see #getRight()
+   * @generated
+   */
+  void setRight(ConcatenationPart value);
+
 } // GreaterThanOrEquals

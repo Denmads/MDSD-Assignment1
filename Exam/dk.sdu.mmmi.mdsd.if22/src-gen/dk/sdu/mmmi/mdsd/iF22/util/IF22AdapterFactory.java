@@ -161,9 +161,9 @@ public class IF22AdapterFactory extends AdapterFactoryImpl
         return createLessGreaterThanAdapter();
       }
       @Override
-      public Adapter caseConcatenation(Concatenation object)
+      public Adapter caseConcatenationPart(ConcatenationPart object)
       {
-        return createConcatenationAdapter();
+        return createConcatenationPartAdapter();
       }
       @Override
       public Adapter caseAddSub(AddSub object)
@@ -259,6 +259,11 @@ public class IF22AdapterFactory extends AdapterFactoryImpl
       public Adapter caseGreaterThanOrEquals(GreaterThanOrEquals object)
       {
         return createGreaterThanOrEqualsAdapter();
+      }
+      @Override
+      public Adapter caseConcatenation(Concatenation object)
+      {
+        return createConcatenationAdapter();
       }
       @Override
       public Adapter caseAdd(Add object)
@@ -603,16 +608,16 @@ public class IF22AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.iF22.Concatenation <em>Concatenation</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.iF22.ConcatenationPart <em>Concatenation Part</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.iF22.Concatenation
+   * @see dk.sdu.mmmi.mdsd.iF22.ConcatenationPart
    * @generated
    */
-  public Adapter createConcatenationAdapter()
+  public Adapter createConcatenationPartAdapter()
   {
     return null;
   }
@@ -898,6 +903,21 @@ public class IF22AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGreaterThanOrEqualsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.iF22.Concatenation <em>Concatenation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.iF22.Concatenation
+   * @generated
+   */
+  public Adapter createConcatenationAdapter()
   {
     return null;
   }

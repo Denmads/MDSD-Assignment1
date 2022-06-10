@@ -449,25 +449,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleConcatenation
-entryRuleConcatenation
+// Entry rule entryRuleConcatenationPart
+entryRuleConcatenationPart
 :
-{ before(grammarAccess.getConcatenationRule()); }
-	 ruleConcatenation
-{ after(grammarAccess.getConcatenationRule()); } 
+{ before(grammarAccess.getConcatenationPartRule()); }
+	 ruleConcatenationPart
+{ after(grammarAccess.getConcatenationPartRule()); } 
 	 EOF 
 ;
 
-// Rule Concatenation
-ruleConcatenation 
+// Rule ConcatenationPart
+ruleConcatenationPart 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getConcatenationAccess().getGroup()); }
-		(rule__Concatenation__Group__0)
-		{ after(grammarAccess.getConcatenationAccess().getGroup()); }
+		{ before(grammarAccess.getConcatenationPartAccess().getGroup()); }
+		(rule__ConcatenationPart__Group__0)
+		{ after(grammarAccess.getConcatenationPartAccess().getGroup()); }
 	)
 ;
 finally {
@@ -3478,9 +3478,9 @@ rule__LessGreaterThan__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getLessGreaterThanAccess().getConcatenationParserRuleCall_0()); }
-	ruleConcatenation
-	{ after(grammarAccess.getLessGreaterThanAccess().getConcatenationParserRuleCall_0()); }
+	{ before(grammarAccess.getLessGreaterThanAccess().getConcatenationPartParserRuleCall_0()); }
+	ruleConcatenationPart
+	{ after(grammarAccess.getLessGreaterThanAccess().getConcatenationPartParserRuleCall_0()); }
 )
 ;
 finally {
@@ -3784,53 +3784,53 @@ finally {
 }
 
 
-rule__Concatenation__Group__0
+rule__ConcatenationPart__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Concatenation__Group__0__Impl
-	rule__Concatenation__Group__1
+	rule__ConcatenationPart__Group__0__Impl
+	rule__ConcatenationPart__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__Group__0__Impl
+rule__ConcatenationPart__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getConcatenationAccess().getAddSubParserRuleCall_0()); }
+	{ before(grammarAccess.getConcatenationPartAccess().getAddSubParserRuleCall_0()); }
 	ruleAddSub
-	{ after(grammarAccess.getConcatenationAccess().getAddSubParserRuleCall_0()); }
+	{ after(grammarAccess.getConcatenationPartAccess().getAddSubParserRuleCall_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__Group__1
+rule__ConcatenationPart__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Concatenation__Group__1__Impl
+	rule__ConcatenationPart__Group__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__Group__1__Impl
+rule__ConcatenationPart__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getConcatenationAccess().getGroup_1()); }
-	(rule__Concatenation__Group_1__0)*
-	{ after(grammarAccess.getConcatenationAccess().getGroup_1()); }
+	{ before(grammarAccess.getConcatenationPartAccess().getGroup_1()); }
+	(rule__ConcatenationPart__Group_1__0)*
+	{ after(grammarAccess.getConcatenationPartAccess().getGroup_1()); }
 )
 ;
 finally {
@@ -3838,80 +3838,80 @@ finally {
 }
 
 
-rule__Concatenation__Group_1__0
+rule__ConcatenationPart__Group_1__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Concatenation__Group_1__0__Impl
-	rule__Concatenation__Group_1__1
+	rule__ConcatenationPart__Group_1__0__Impl
+	rule__ConcatenationPart__Group_1__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__Group_1__0__Impl
+rule__ConcatenationPart__Group_1__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getConcatenationAccess().getConcatenationLeftAction_1_0()); }
+	{ before(grammarAccess.getConcatenationPartAccess().getConcatenationLeftAction_1_0()); }
 	()
-	{ after(grammarAccess.getConcatenationAccess().getConcatenationLeftAction_1_0()); }
+	{ after(grammarAccess.getConcatenationPartAccess().getConcatenationLeftAction_1_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__Group_1__1
+rule__ConcatenationPart__Group_1__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Concatenation__Group_1__1__Impl
-	rule__Concatenation__Group_1__2
+	rule__ConcatenationPart__Group_1__1__Impl
+	rule__ConcatenationPart__Group_1__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__Group_1__1__Impl
+rule__ConcatenationPart__Group_1__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getConcatenationAccess().getAmpersandKeyword_1_1()); }
+	{ before(grammarAccess.getConcatenationPartAccess().getAmpersandKeyword_1_1()); }
 	'&'
-	{ after(grammarAccess.getConcatenationAccess().getAmpersandKeyword_1_1()); }
+	{ after(grammarAccess.getConcatenationPartAccess().getAmpersandKeyword_1_1()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__Group_1__2
+rule__ConcatenationPart__Group_1__2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Concatenation__Group_1__2__Impl
+	rule__ConcatenationPart__Group_1__2__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__Group_1__2__Impl
+rule__ConcatenationPart__Group_1__2__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getConcatenationAccess().getRightAssignment_1_2()); }
-	(rule__Concatenation__RightAssignment_1_2)
-	{ after(grammarAccess.getConcatenationAccess().getRightAssignment_1_2()); }
+	{ before(grammarAccess.getConcatenationPartAccess().getRightAssignment_1_2()); }
+	(rule__ConcatenationPart__RightAssignment_1_2)
+	{ after(grammarAccess.getConcatenationPartAccess().getRightAssignment_1_2()); }
 )
 ;
 finally {
@@ -5662,24 +5662,24 @@ rule__LessGreaterThan__RightAssignment_1_1
 	}
 :
 	(
-		{ before(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0()); }
-		ruleConcatenation
-		{ after(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0()); }
+		{ before(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0()); }
+		ruleConcatenationPart
+		{ after(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Concatenation__RightAssignment_1_2
+rule__ConcatenationPart__RightAssignment_1_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getConcatenationAccess().getRightAddSubParserRuleCall_1_2_0()); }
+		{ before(grammarAccess.getConcatenationPartAccess().getRightAddSubParserRuleCall_1_2_0()); }
 		ruleAddSub
-		{ after(grammarAccess.getConcatenationAccess().getRightAddSubParserRuleCall_1_2_0()); }
+		{ after(grammarAccess.getConcatenationPartAccess().getRightAddSubParserRuleCall_1_2_0()); }
 	)
 ;
 finally {

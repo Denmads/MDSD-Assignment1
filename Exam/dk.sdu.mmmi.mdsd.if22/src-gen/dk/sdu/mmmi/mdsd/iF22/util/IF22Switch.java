@@ -88,7 +88,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(type);
         if (result == null) result = caseMulDiv(type);
         if (result == null) result = caseAddSub(type);
-        if (result == null) result = caseConcatenation(type);
+        if (result == null) result = caseConcatenationPart(type);
         if (result == null) result = caseLessGreaterThan(type);
         if (result == null) result = caseEquality(type);
         if (result == null) result = caseBooleanOperation(type);
@@ -217,14 +217,14 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case IF22Package.CONCATENATION:
+      case IF22Package.CONCATENATION_PART:
       {
-        Concatenation concatenation = (Concatenation)theEObject;
-        T result = caseConcatenation(concatenation);
-        if (result == null) result = caseLessGreaterThan(concatenation);
-        if (result == null) result = caseEquality(concatenation);
-        if (result == null) result = caseBooleanOperation(concatenation);
-        if (result == null) result = caseExp(concatenation);
+        ConcatenationPart concatenationPart = (ConcatenationPart)theEObject;
+        T result = caseConcatenationPart(concatenationPart);
+        if (result == null) result = caseLessGreaterThan(concatenationPart);
+        if (result == null) result = caseEquality(concatenationPart);
+        if (result == null) result = caseBooleanOperation(concatenationPart);
+        if (result == null) result = caseExp(concatenationPart);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -232,7 +232,7 @@ public class IF22Switch<T> extends Switch<T>
       {
         AddSub addSub = (AddSub)theEObject;
         T result = caseAddSub(addSub);
-        if (result == null) result = caseConcatenation(addSub);
+        if (result == null) result = caseConcatenationPart(addSub);
         if (result == null) result = caseLessGreaterThan(addSub);
         if (result == null) result = caseEquality(addSub);
         if (result == null) result = caseBooleanOperation(addSub);
@@ -245,7 +245,7 @@ public class IF22Switch<T> extends Switch<T>
         MulDiv mulDiv = (MulDiv)theEObject;
         T result = caseMulDiv(mulDiv);
         if (result == null) result = caseAddSub(mulDiv);
-        if (result == null) result = caseConcatenation(mulDiv);
+        if (result == null) result = caseConcatenationPart(mulDiv);
         if (result == null) result = caseLessGreaterThan(mulDiv);
         if (result == null) result = caseEquality(mulDiv);
         if (result == null) result = caseBooleanOperation(mulDiv);
@@ -259,7 +259,7 @@ public class IF22Switch<T> extends Switch<T>
         T result = casePrimitive(primitive);
         if (result == null) result = caseMulDiv(primitive);
         if (result == null) result = caseAddSub(primitive);
-        if (result == null) result = caseConcatenation(primitive);
+        if (result == null) result = caseConcatenationPart(primitive);
         if (result == null) result = caseLessGreaterThan(primitive);
         if (result == null) result = caseEquality(primitive);
         if (result == null) result = caseBooleanOperation(primitive);
@@ -281,7 +281,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(constant);
         if (result == null) result = caseMulDiv(constant);
         if (result == null) result = caseAddSub(constant);
-        if (result == null) result = caseConcatenation(constant);
+        if (result == null) result = caseConcatenationPart(constant);
         if (result == null) result = caseLessGreaterThan(constant);
         if (result == null) result = caseEquality(constant);
         if (result == null) result = caseBooleanOperation(constant);
@@ -296,7 +296,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(keyword);
         if (result == null) result = caseMulDiv(keyword);
         if (result == null) result = caseAddSub(keyword);
-        if (result == null) result = caseConcatenation(keyword);
+        if (result == null) result = caseConcatenationPart(keyword);
         if (result == null) result = caseLessGreaterThan(keyword);
         if (result == null) result = caseEquality(keyword);
         if (result == null) result = caseBooleanOperation(keyword);
@@ -311,7 +311,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(functionCall);
         if (result == null) result = caseMulDiv(functionCall);
         if (result == null) result = caseAddSub(functionCall);
-        if (result == null) result = caseConcatenation(functionCall);
+        if (result == null) result = caseConcatenationPart(functionCall);
         if (result == null) result = caseLessGreaterThan(functionCall);
         if (result == null) result = caseEquality(functionCall);
         if (result == null) result = caseBooleanOperation(functionCall);
@@ -335,7 +335,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(intType);
         if (result == null) result = caseMulDiv(intType);
         if (result == null) result = caseAddSub(intType);
-        if (result == null) result = caseConcatenation(intType);
+        if (result == null) result = caseConcatenationPart(intType);
         if (result == null) result = caseLessGreaterThan(intType);
         if (result == null) result = caseEquality(intType);
         if (result == null) result = caseBooleanOperation(intType);
@@ -352,7 +352,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(stringType);
         if (result == null) result = caseMulDiv(stringType);
         if (result == null) result = caseAddSub(stringType);
-        if (result == null) result = caseConcatenation(stringType);
+        if (result == null) result = caseConcatenationPart(stringType);
         if (result == null) result = caseLessGreaterThan(stringType);
         if (result == null) result = caseEquality(stringType);
         if (result == null) result = caseBooleanOperation(stringType);
@@ -369,7 +369,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(booleanType);
         if (result == null) result = caseMulDiv(booleanType);
         if (result == null) result = caseAddSub(booleanType);
-        if (result == null) result = caseConcatenation(booleanType);
+        if (result == null) result = caseConcatenationPart(booleanType);
         if (result == null) result = caseLessGreaterThan(booleanType);
         if (result == null) result = caseEquality(booleanType);
         if (result == null) result = caseBooleanOperation(booleanType);
@@ -459,12 +459,24 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case IF22Package.CONCATENATION:
+      {
+        Concatenation concatenation = (Concatenation)theEObject;
+        T result = caseConcatenation(concatenation);
+        if (result == null) result = caseConcatenationPart(concatenation);
+        if (result == null) result = caseLessGreaterThan(concatenation);
+        if (result == null) result = caseEquality(concatenation);
+        if (result == null) result = caseBooleanOperation(concatenation);
+        if (result == null) result = caseExp(concatenation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case IF22Package.ADD:
       {
         Add add = (Add)theEObject;
         T result = caseAdd(add);
         if (result == null) result = caseAddSub(add);
-        if (result == null) result = caseConcatenation(add);
+        if (result == null) result = caseConcatenationPart(add);
         if (result == null) result = caseLessGreaterThan(add);
         if (result == null) result = caseEquality(add);
         if (result == null) result = caseBooleanOperation(add);
@@ -477,7 +489,7 @@ public class IF22Switch<T> extends Switch<T>
         Sub sub = (Sub)theEObject;
         T result = caseSub(sub);
         if (result == null) result = caseAddSub(sub);
-        if (result == null) result = caseConcatenation(sub);
+        if (result == null) result = caseConcatenationPart(sub);
         if (result == null) result = caseLessGreaterThan(sub);
         if (result == null) result = caseEquality(sub);
         if (result == null) result = caseBooleanOperation(sub);
@@ -491,7 +503,7 @@ public class IF22Switch<T> extends Switch<T>
         T result = caseMul(mul);
         if (result == null) result = caseMulDiv(mul);
         if (result == null) result = caseAddSub(mul);
-        if (result == null) result = caseConcatenation(mul);
+        if (result == null) result = caseConcatenationPart(mul);
         if (result == null) result = caseLessGreaterThan(mul);
         if (result == null) result = caseEquality(mul);
         if (result == null) result = caseBooleanOperation(mul);
@@ -505,7 +517,7 @@ public class IF22Switch<T> extends Switch<T>
         T result = caseDiv(div);
         if (result == null) result = caseMulDiv(div);
         if (result == null) result = caseAddSub(div);
-        if (result == null) result = caseConcatenation(div);
+        if (result == null) result = caseConcatenationPart(div);
         if (result == null) result = caseLessGreaterThan(div);
         if (result == null) result = caseEquality(div);
         if (result == null) result = caseBooleanOperation(div);
@@ -520,7 +532,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(parenthesis);
         if (result == null) result = caseMulDiv(parenthesis);
         if (result == null) result = caseAddSub(parenthesis);
-        if (result == null) result = caseConcatenation(parenthesis);
+        if (result == null) result = caseConcatenationPart(parenthesis);
         if (result == null) result = caseLessGreaterThan(parenthesis);
         if (result == null) result = caseEquality(parenthesis);
         if (result == null) result = caseBooleanOperation(parenthesis);
@@ -535,7 +547,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(not);
         if (result == null) result = caseMulDiv(not);
         if (result == null) result = caseAddSub(not);
-        if (result == null) result = caseConcatenation(not);
+        if (result == null) result = caseConcatenationPart(not);
         if (result == null) result = caseLessGreaterThan(not);
         if (result == null) result = caseEquality(not);
         if (result == null) result = caseBooleanOperation(not);
@@ -550,7 +562,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(varRef);
         if (result == null) result = caseMulDiv(varRef);
         if (result == null) result = caseAddSub(varRef);
-        if (result == null) result = caseConcatenation(varRef);
+        if (result == null) result = caseConcatenationPart(varRef);
         if (result == null) result = caseLessGreaterThan(varRef);
         if (result == null) result = caseEquality(varRef);
         if (result == null) result = caseBooleanOperation(varRef);
@@ -566,7 +578,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(intConstant);
         if (result == null) result = caseMulDiv(intConstant);
         if (result == null) result = caseAddSub(intConstant);
-        if (result == null) result = caseConcatenation(intConstant);
+        if (result == null) result = caseConcatenationPart(intConstant);
         if (result == null) result = caseLessGreaterThan(intConstant);
         if (result == null) result = caseEquality(intConstant);
         if (result == null) result = caseBooleanOperation(intConstant);
@@ -582,7 +594,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(stringConstant);
         if (result == null) result = caseMulDiv(stringConstant);
         if (result == null) result = caseAddSub(stringConstant);
-        if (result == null) result = caseConcatenation(stringConstant);
+        if (result == null) result = caseConcatenationPart(stringConstant);
         if (result == null) result = caseLessGreaterThan(stringConstant);
         if (result == null) result = caseEquality(stringConstant);
         if (result == null) result = caseBooleanOperation(stringConstant);
@@ -598,7 +610,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(boolConstant);
         if (result == null) result = caseMulDiv(boolConstant);
         if (result == null) result = caseAddSub(boolConstant);
-        if (result == null) result = caseConcatenation(boolConstant);
+        if (result == null) result = caseConcatenationPart(boolConstant);
         if (result == null) result = caseLessGreaterThan(boolConstant);
         if (result == null) result = caseEquality(boolConstant);
         if (result == null) result = caseBooleanOperation(boolConstant);
@@ -614,7 +626,7 @@ public class IF22Switch<T> extends Switch<T>
         if (result == null) result = casePrimitive(this_);
         if (result == null) result = caseMulDiv(this_);
         if (result == null) result = caseAddSub(this_);
-        if (result == null) result = caseConcatenation(this_);
+        if (result == null) result = caseConcatenationPart(this_);
         if (result == null) result = caseLessGreaterThan(this_);
         if (result == null) result = caseEquality(this_);
         if (result == null) result = caseBooleanOperation(this_);
@@ -915,17 +927,17 @@ public class IF22Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Concatenation</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Concatenation Part</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Concatenation</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Concatenation Part</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseConcatenation(Concatenation object)
+  public T caseConcatenationPart(ConcatenationPart object)
   {
     return null;
   }
@@ -1230,6 +1242,22 @@ public class IF22Switch<T> extends Switch<T>
    * @generated
    */
   public T caseGreaterThanOrEquals(GreaterThanOrEquals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Concatenation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Concatenation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConcatenation(Concatenation object)
   {
     return null;
   }

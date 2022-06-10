@@ -69,10 +69,10 @@ Equality:
 ;
 
 LessGreaterThan:
-	Concatenation (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=Concatenation)*
+	ConcatenationPart (({LessThan.left=current} '<' | {GreaterThan.left=current} '>' | {LessThanOrEquals.left=current} '<=' | {GreaterThanOrEquals.left=current} '>=') right=ConcatenationPart)*
 ;
 
-Concatenation:
+ConcatenationPart:
 	AddSub ({Concatenation.left=current} '&' right=AddSub)*
 ;
 

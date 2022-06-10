@@ -82,7 +82,7 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_Type(context, (BooleanType) semanticObject); 
 				return; 
 			case IF22Package.CONCATENATION:
-				sequence_Concatenation(context, (Concatenation) semanticObject); 
+				sequence_ConcatenationPart(context, (Concatenation) semanticObject); 
 				return; 
 			case IF22Package.DIV:
 				sequence_MulDiv(context, (Div) semanticObject); 
@@ -194,8 +194,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Add
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Add
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Add
-	 *     Concatenation returns Add
-	 *     Concatenation.Concatenation_1_0 returns Add
+	 *     ConcatenationPart returns Add
+	 *     ConcatenationPart.Concatenation_1_0 returns Add
 	 *     AddSub returns Add
 	 *     AddSub.Add_1_0_0_0 returns Add
 	 *     AddSub.Sub_1_0_1_0 returns Add
@@ -206,10 +206,10 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_AddSub(ISerializationContext context, Add semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.ADD__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.ADD__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.ADD__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.ADD__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAddSubAccess().getAddLeftAction_1_0_0_0(), semanticObject.getLeft());
@@ -233,8 +233,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Sub
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Sub
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Sub
-	 *     Concatenation returns Sub
-	 *     Concatenation.Concatenation_1_0 returns Sub
+	 *     ConcatenationPart returns Sub
+	 *     ConcatenationPart.Concatenation_1_0 returns Sub
 	 *     AddSub returns Sub
 	 *     AddSub.Add_1_0_0_0 returns Sub
 	 *     AddSub.Sub_1_0_1_0 returns Sub
@@ -245,10 +245,10 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_AddSub(ISerializationContext context, Sub semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.SUB__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.SUB__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.SUB__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.SUB__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAddSubAccess().getSubLeftAction_1_0_1_0(), semanticObject.getLeft());
@@ -315,10 +315,10 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_BooleanOperation(ISerializationContext context, And semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.AND__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.AND__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.AND__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.AND__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBooleanOperationAccess().getAndLeftAction_1_0_0_0(), semanticObject.getLeft());
@@ -341,10 +341,10 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_BooleanOperation(ISerializationContext context, Or semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.OR__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.OR__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.OR__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.OR__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBooleanOperationAccess().getOrLeftAction_1_0_1_0(), semanticObject.getLeft());
@@ -368,23 +368,23 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Concatenation
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Concatenation
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Concatenation
-	 *     Concatenation returns Concatenation
-	 *     Concatenation.Concatenation_1_0 returns Concatenation
+	 *     ConcatenationPart returns Concatenation
+	 *     ConcatenationPart.Concatenation_1_0 returns Concatenation
 	 *
 	 * Constraint:
-	 *     (left=Concatenation_Concatenation_1_0 right=AddSub)
+	 *     (left=ConcatenationPart_Concatenation_1_0 right=AddSub)
 	 * </pre>
 	 */
-	protected void sequence_Concatenation(ISerializationContext context, Concatenation semanticObject) {
+	protected void sequence_ConcatenationPart(ISerializationContext context, Concatenation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.CONCATENATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.CONCATENATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.CONCATENATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.CONCATENATION__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConcatenationAccess().getConcatenationLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getConcatenationAccess().getRightAddSubParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getConcatenationPartAccess().getConcatenationLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getConcatenationPartAccess().getRightAddSubParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -404,8 +404,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns BoolConstant
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns BoolConstant
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns BoolConstant
-	 *     Concatenation returns BoolConstant
-	 *     Concatenation.Concatenation_1_0 returns BoolConstant
+	 *     ConcatenationPart returns BoolConstant
+	 *     ConcatenationPart.Concatenation_1_0 returns BoolConstant
 	 *     AddSub returns BoolConstant
 	 *     AddSub.Add_1_0_0_0 returns BoolConstant
 	 *     AddSub.Sub_1_0_1_0 returns BoolConstant
@@ -445,8 +445,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns IntConstant
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns IntConstant
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns IntConstant
-	 *     Concatenation returns IntConstant
-	 *     Concatenation.Concatenation_1_0 returns IntConstant
+	 *     ConcatenationPart returns IntConstant
+	 *     ConcatenationPart.Concatenation_1_0 returns IntConstant
 	 *     AddSub returns IntConstant
 	 *     AddSub.Add_1_0_0_0 returns IntConstant
 	 *     AddSub.Sub_1_0_1_0 returns IntConstant
@@ -486,8 +486,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns StringConstant
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns StringConstant
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns StringConstant
-	 *     Concatenation returns StringConstant
-	 *     Concatenation.Concatenation_1_0 returns StringConstant
+	 *     ConcatenationPart returns StringConstant
+	 *     ConcatenationPart.Concatenation_1_0 returns StringConstant
 	 *     AddSub returns StringConstant
 	 *     AddSub.Add_1_0_0_0 returns StringConstant
 	 *     AddSub.Sub_1_0_1_0 returns StringConstant
@@ -568,10 +568,10 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Equality(ISerializationContext context, Equals semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.EQUALS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.EQUALS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.EQUALS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.EQUALS__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEqualityAccess().getEqualsLeftAction_1_0_0_0(), semanticObject.getLeft());
@@ -597,10 +597,10 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Equality(ISerializationContext context, NotEquals semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.NOT_EQUALS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.NOT_EQUALS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.NOT_EQUALS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.NOT_EQUALS__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEqualityAccess().getNotEqualsLeftAction_1_0_1_0(), semanticObject.getLeft());
@@ -624,8 +624,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns FunctionCall
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns FunctionCall
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns FunctionCall
-	 *     Concatenation returns FunctionCall
-	 *     Concatenation.Concatenation_1_0 returns FunctionCall
+	 *     ConcatenationPart returns FunctionCall
+	 *     ConcatenationPart.Concatenation_1_0 returns FunctionCall
 	 *     AddSub returns FunctionCall
 	 *     AddSub.Add_1_0_0_0 returns FunctionCall
 	 *     AddSub.Sub_1_0_1_0 returns FunctionCall
@@ -687,8 +687,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns This
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns This
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns This
-	 *     Concatenation returns This
-	 *     Concatenation.Concatenation_1_0 returns This
+	 *     ConcatenationPart returns This
+	 *     ConcatenationPart.Concatenation_1_0 returns This
 	 *     AddSub returns This
 	 *     AddSub.Add_1_0_0_0 returns This
 	 *     AddSub.Sub_1_0_1_0 returns This
@@ -724,19 +724,19 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns GreaterThan
 	 *
 	 * Constraint:
-	 *     (left=LessGreaterThan_GreaterThan_1_0_1_0 right=Concatenation)
+	 *     (left=LessGreaterThan_GreaterThan_1_0_1_0 right=ConcatenationPart)
 	 * </pre>
 	 */
 	protected void sequence_LessGreaterThan(ISerializationContext context, GreaterThan semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.GREATER_THAN__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.GREATER_THAN__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.GREATER_THAN__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.GREATER_THAN__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLessGreaterThanAccess().getGreaterThanLeftAction_1_0_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -758,19 +758,19 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns GreaterThanOrEquals
 	 *
 	 * Constraint:
-	 *     (left=LessGreaterThan_GreaterThanOrEquals_1_0_3_0 right=Concatenation)
+	 *     (left=LessGreaterThan_GreaterThanOrEquals_1_0_3_0 right=ConcatenationPart)
 	 * </pre>
 	 */
 	protected void sequence_LessGreaterThan(ISerializationContext context, GreaterThanOrEquals semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.GREATER_THAN_OR_EQUALS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.GREATER_THAN_OR_EQUALS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.GREATER_THAN_OR_EQUALS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.GREATER_THAN_OR_EQUALS__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLessGreaterThanAccess().getGreaterThanOrEqualsLeftAction_1_0_3_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -792,19 +792,19 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns LessThan
 	 *
 	 * Constraint:
-	 *     (left=LessGreaterThan_LessThan_1_0_0_0 right=Concatenation)
+	 *     (left=LessGreaterThan_LessThan_1_0_0_0 right=ConcatenationPart)
 	 * </pre>
 	 */
 	protected void sequence_LessGreaterThan(ISerializationContext context, LessThan semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.LESS_THAN__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.LESS_THAN__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.LESS_THAN__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.LESS_THAN__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLessGreaterThanAccess().getLessThanLeftAction_1_0_0_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -826,19 +826,19 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns LessThanOrEquals
 	 *
 	 * Constraint:
-	 *     (left=LessGreaterThan_LessThanOrEquals_1_0_2_0 right=Concatenation)
+	 *     (left=LessGreaterThan_LessThanOrEquals_1_0_2_0 right=ConcatenationPart)
 	 * </pre>
 	 */
 	protected void sequence_LessGreaterThan(ISerializationContext context, LessThanOrEquals semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.LESS_THAN_OR_EQUALS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.LESS_THAN_OR_EQUALS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.LESS_THAN_OR_EQUALS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.LESS_THAN_OR_EQUALS__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLessGreaterThanAccess().getLessThanOrEqualsLeftAction_1_0_2_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -858,8 +858,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Div
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Div
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Div
-	 *     Concatenation returns Div
-	 *     Concatenation.Concatenation_1_0 returns Div
+	 *     ConcatenationPart returns Div
+	 *     ConcatenationPart.Concatenation_1_0 returns Div
 	 *     AddSub returns Div
 	 *     AddSub.Add_1_0_0_0 returns Div
 	 *     AddSub.Sub_1_0_1_0 returns Div
@@ -873,10 +873,10 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_MulDiv(ISerializationContext context, Div semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.DIV__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.DIV__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.DIV__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.DIV__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMulDivAccess().getDivLeftAction_1_0_1_0(), semanticObject.getLeft());
@@ -900,8 +900,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Mul
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Mul
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Mul
-	 *     Concatenation returns Mul
-	 *     Concatenation.Concatenation_1_0 returns Mul
+	 *     ConcatenationPart returns Mul
+	 *     ConcatenationPart.Concatenation_1_0 returns Mul
 	 *     AddSub returns Mul
 	 *     AddSub.Add_1_0_0_0 returns Mul
 	 *     AddSub.Sub_1_0_1_0 returns Mul
@@ -915,10 +915,10 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_MulDiv(ISerializationContext context, Mul semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__LEFT));
-			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.BOOLEAN_OPERATION__RIGHT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.MUL__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.MUL__LEFT));
+			if (transientValues.isValueTransient(semanticObject, IF22Package.Literals.MUL__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, IF22Package.Literals.MUL__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMulDivAccess().getMulLeftAction_1_0_0_0(), semanticObject.getLeft());
@@ -966,8 +966,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Not
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Not
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Not
-	 *     Concatenation returns Not
-	 *     Concatenation.Concatenation_1_0 returns Not
+	 *     ConcatenationPart returns Not
+	 *     ConcatenationPart.Concatenation_1_0 returns Not
 	 *     AddSub returns Not
 	 *     AddSub.Add_1_0_0_0 returns Not
 	 *     AddSub.Sub_1_0_1_0 returns Not
@@ -1006,8 +1006,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns Parenthesis
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns Parenthesis
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns Parenthesis
-	 *     Concatenation returns Parenthesis
-	 *     Concatenation.Concatenation_1_0 returns Parenthesis
+	 *     ConcatenationPart returns Parenthesis
+	 *     ConcatenationPart.Concatenation_1_0 returns Parenthesis
 	 *     AddSub returns Parenthesis
 	 *     AddSub.Add_1_0_0_0 returns Parenthesis
 	 *     AddSub.Sub_1_0_1_0 returns Parenthesis
@@ -1046,8 +1046,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns VarRef
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns VarRef
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns VarRef
-	 *     Concatenation returns VarRef
-	 *     Concatenation.Concatenation_1_0 returns VarRef
+	 *     ConcatenationPart returns VarRef
+	 *     ConcatenationPart.Concatenation_1_0 returns VarRef
 	 *     AddSub returns VarRef
 	 *     AddSub.Add_1_0_0_0 returns VarRef
 	 *     AddSub.Sub_1_0_1_0 returns VarRef
@@ -1132,8 +1132,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns BooleanType
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns BooleanType
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns BooleanType
-	 *     Concatenation returns BooleanType
-	 *     Concatenation.Concatenation_1_0 returns BooleanType
+	 *     ConcatenationPart returns BooleanType
+	 *     ConcatenationPart.Concatenation_1_0 returns BooleanType
 	 *     AddSub returns BooleanType
 	 *     AddSub.Add_1_0_0_0 returns BooleanType
 	 *     AddSub.Sub_1_0_1_0 returns BooleanType
@@ -1168,8 +1168,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns IntType
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns IntType
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns IntType
-	 *     Concatenation returns IntType
-	 *     Concatenation.Concatenation_1_0 returns IntType
+	 *     ConcatenationPart returns IntType
+	 *     ConcatenationPart.Concatenation_1_0 returns IntType
 	 *     AddSub returns IntType
 	 *     AddSub.Add_1_0_0_0 returns IntType
 	 *     AddSub.Sub_1_0_1_0 returns IntType
@@ -1204,8 +1204,8 @@ public class IF22SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LessGreaterThan.GreaterThan_1_0_1_0 returns StringType
 	 *     LessGreaterThan.LessThanOrEquals_1_0_2_0 returns StringType
 	 *     LessGreaterThan.GreaterThanOrEquals_1_0_3_0 returns StringType
-	 *     Concatenation returns StringType
-	 *     Concatenation.Concatenation_1_0 returns StringType
+	 *     ConcatenationPart returns StringType
+	 *     ConcatenationPart.Concatenation_1_0 returns StringType
 	 *     AddSub returns StringType
 	 *     AddSub.Add_1_0_0_0 returns StringType
 	 *     AddSub.Sub_1_0_1_0 returns StringType

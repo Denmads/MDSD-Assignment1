@@ -3247,7 +3247,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLessGreaterThan"
-    // InternalIF22.g:1277:1: ruleLessGreaterThan returns [EObject current=null] : (this_Concatenation_0= ruleConcatenation ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenation ) ) )* ) ;
+    // InternalIF22.g:1277:1: ruleLessGreaterThan returns [EObject current=null] : (this_ConcatenationPart_0= ruleConcatenationPart ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenationPart ) ) )* ) ;
     public final EObject ruleLessGreaterThan() throws RecognitionException {
         EObject current = null;
 
@@ -3255,7 +3255,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_6=null;
         Token otherlv_8=null;
-        EObject this_Concatenation_0 = null;
+        EObject this_ConcatenationPart_0 = null;
 
         EObject lv_right_9_0 = null;
 
@@ -3264,25 +3264,25 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalIF22.g:1283:2: ( (this_Concatenation_0= ruleConcatenation ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenation ) ) )* ) )
-            // InternalIF22.g:1284:2: (this_Concatenation_0= ruleConcatenation ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenation ) ) )* )
+            // InternalIF22.g:1283:2: ( (this_ConcatenationPart_0= ruleConcatenationPart ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenationPart ) ) )* ) )
+            // InternalIF22.g:1284:2: (this_ConcatenationPart_0= ruleConcatenationPart ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenationPart ) ) )* )
             {
-            // InternalIF22.g:1284:2: (this_Concatenation_0= ruleConcatenation ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenation ) ) )* )
-            // InternalIF22.g:1285:3: this_Concatenation_0= ruleConcatenation ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenation ) ) )*
+            // InternalIF22.g:1284:2: (this_ConcatenationPart_0= ruleConcatenationPart ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenationPart ) ) )* )
+            // InternalIF22.g:1285:3: this_ConcatenationPart_0= ruleConcatenationPart ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenationPart ) ) )*
             {
 
-            			newCompositeNode(grammarAccess.getLessGreaterThanAccess().getConcatenationParserRuleCall_0());
+            			newCompositeNode(grammarAccess.getLessGreaterThanAccess().getConcatenationPartParserRuleCall_0());
             		
             pushFollow(FOLLOW_28);
-            this_Concatenation_0=ruleConcatenation();
+            this_ConcatenationPart_0=ruleConcatenationPart();
 
             state._fsp--;
 
 
-            			current = this_Concatenation_0;
+            			current = this_ConcatenationPart_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalIF22.g:1293:3: ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenation ) ) )*
+            // InternalIF22.g:1293:3: ( ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenationPart ) ) )*
             loop26:
             do {
                 int alt26=2;
@@ -3312,7 +3312,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // InternalIF22.g:1294:4: ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenation ) )
+            	    // InternalIF22.g:1294:4: ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) ) ( (lv_right_9_0= ruleConcatenationPart ) )
             	    {
             	    // InternalIF22.g:1294:4: ( ( () otherlv_2= '<' ) | ( () otherlv_4= '>' ) | ( () otherlv_6= '<=' ) | ( () otherlv_8= '>=' ) )
             	    int alt25=4;
@@ -3456,17 +3456,17 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalIF22.g:1351:4: ( (lv_right_9_0= ruleConcatenation ) )
-            	    // InternalIF22.g:1352:5: (lv_right_9_0= ruleConcatenation )
+            	    // InternalIF22.g:1351:4: ( (lv_right_9_0= ruleConcatenationPart ) )
+            	    // InternalIF22.g:1352:5: (lv_right_9_0= ruleConcatenationPart )
             	    {
-            	    // InternalIF22.g:1352:5: (lv_right_9_0= ruleConcatenation )
-            	    // InternalIF22.g:1353:6: lv_right_9_0= ruleConcatenation
+            	    // InternalIF22.g:1352:5: (lv_right_9_0= ruleConcatenationPart )
+            	    // InternalIF22.g:1353:6: lv_right_9_0= ruleConcatenationPart
             	    {
 
-            	    						newCompositeNode(grammarAccess.getLessGreaterThanAccess().getRightConcatenationParserRuleCall_1_1_0());
+            	    						newCompositeNode(grammarAccess.getLessGreaterThanAccess().getRightConcatenationPartParserRuleCall_1_1_0());
             	    					
             	    pushFollow(FOLLOW_28);
-            	    lv_right_9_0=ruleConcatenation();
+            	    lv_right_9_0=ruleConcatenationPart();
 
             	    state._fsp--;
 
@@ -3478,7 +3478,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
             	    							current,
             	    							"right",
             	    							lv_right_9_0,
-            	    							"dk.sdu.mmmi.mdsd.IF22.Concatenation");
+            	    							"dk.sdu.mmmi.mdsd.IF22.ConcatenationPart");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -3518,25 +3518,25 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleLessGreaterThan"
 
 
-    // $ANTLR start "entryRuleConcatenation"
-    // InternalIF22.g:1375:1: entryRuleConcatenation returns [EObject current=null] : iv_ruleConcatenation= ruleConcatenation EOF ;
-    public final EObject entryRuleConcatenation() throws RecognitionException {
+    // $ANTLR start "entryRuleConcatenationPart"
+    // InternalIF22.g:1375:1: entryRuleConcatenationPart returns [EObject current=null] : iv_ruleConcatenationPart= ruleConcatenationPart EOF ;
+    public final EObject entryRuleConcatenationPart() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleConcatenation = null;
+        EObject iv_ruleConcatenationPart = null;
 
 
         try {
-            // InternalIF22.g:1375:54: (iv_ruleConcatenation= ruleConcatenation EOF )
-            // InternalIF22.g:1376:2: iv_ruleConcatenation= ruleConcatenation EOF
+            // InternalIF22.g:1375:58: (iv_ruleConcatenationPart= ruleConcatenationPart EOF )
+            // InternalIF22.g:1376:2: iv_ruleConcatenationPart= ruleConcatenationPart EOF
             {
-             newCompositeNode(grammarAccess.getConcatenationRule()); 
+             newCompositeNode(grammarAccess.getConcatenationPartRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleConcatenation=ruleConcatenation();
+            iv_ruleConcatenationPart=ruleConcatenationPart();
 
             state._fsp--;
 
-             current =iv_ruleConcatenation; 
+             current =iv_ruleConcatenationPart; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -3551,12 +3551,12 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleConcatenation"
+    // $ANTLR end "entryRuleConcatenationPart"
 
 
-    // $ANTLR start "ruleConcatenation"
-    // InternalIF22.g:1382:1: ruleConcatenation returns [EObject current=null] : (this_AddSub_0= ruleAddSub ( () otherlv_2= '&' ( (lv_right_3_0= ruleAddSub ) ) )* ) ;
-    public final EObject ruleConcatenation() throws RecognitionException {
+    // $ANTLR start "ruleConcatenationPart"
+    // InternalIF22.g:1382:1: ruleConcatenationPart returns [EObject current=null] : (this_AddSub_0= ruleAddSub ( () otherlv_2= '&' ( (lv_right_3_0= ruleAddSub ) ) )* ) ;
+    public final EObject ruleConcatenationPart() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
@@ -3576,7 +3576,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
             // InternalIF22.g:1390:3: this_AddSub_0= ruleAddSub ( () otherlv_2= '&' ( (lv_right_3_0= ruleAddSub ) ) )*
             {
 
-            			newCompositeNode(grammarAccess.getConcatenationAccess().getAddSubParserRuleCall_0());
+            			newCompositeNode(grammarAccess.getConcatenationPartAccess().getAddSubParserRuleCall_0());
             		
             pushFollow(FOLLOW_29);
             this_AddSub_0=ruleAddSub();
@@ -3607,7 +3607,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
             	    {
 
             	    					current = forceCreateModelElementAndSet(
-            	    						grammarAccess.getConcatenationAccess().getConcatenationLeftAction_1_0(),
+            	    						grammarAccess.getConcatenationPartAccess().getConcatenationLeftAction_1_0(),
             	    						current);
             	    				
 
@@ -3615,7 +3615,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
 
             	    otherlv_2=(Token)match(input,40,FOLLOW_15); 
 
-            	    				newLeafNode(otherlv_2, grammarAccess.getConcatenationAccess().getAmpersandKeyword_1_1());
+            	    				newLeafNode(otherlv_2, grammarAccess.getConcatenationPartAccess().getAmpersandKeyword_1_1());
             	    			
             	    // InternalIF22.g:1410:4: ( (lv_right_3_0= ruleAddSub ) )
             	    // InternalIF22.g:1411:5: (lv_right_3_0= ruleAddSub )
@@ -3624,7 +3624,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
             	    // InternalIF22.g:1412:6: lv_right_3_0= ruleAddSub
             	    {
 
-            	    						newCompositeNode(grammarAccess.getConcatenationAccess().getRightAddSubParserRuleCall_1_2_0());
+            	    						newCompositeNode(grammarAccess.getConcatenationPartAccess().getRightAddSubParserRuleCall_1_2_0());
             	    					
             	    pushFollow(FOLLOW_29);
             	    lv_right_3_0=ruleAddSub();
@@ -3633,7 +3633,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
 
 
             	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getConcatenationRule());
+            	    							current = createModelElementForParent(grammarAccess.getConcatenationPartRule());
             	    						}
             	    						set(
             	    							current,
@@ -3676,7 +3676,7 @@ public class InternalIF22Parser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleConcatenation"
+    // $ANTLR end "ruleConcatenationPart"
 
 
     // $ANTLR start "entryRuleAddSub"

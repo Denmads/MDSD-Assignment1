@@ -177,13 +177,13 @@ public interface IF22Factory extends EFactory
   LessGreaterThan createLessGreaterThan();
 
   /**
-   * Returns a new object of class '<em>Concatenation</em>'.
+   * Returns a new object of class '<em>Concatenation Part</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Concatenation</em>'.
+   * @return a new object of class '<em>Concatenation Part</em>'.
    * @generated
    */
-  Concatenation createConcatenation();
+  ConcatenationPart createConcatenationPart();
 
   /**
    * Returns a new object of class '<em>Add Sub</em>'.
@@ -355,6 +355,15 @@ public interface IF22Factory extends EFactory
    * @generated
    */
   GreaterThanOrEquals createGreaterThanOrEquals();
+
+  /**
+   * Returns a new object of class '<em>Concatenation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Concatenation</em>'.
+   * @generated
+   */
+  Concatenation createConcatenation();
 
   /**
    * Returns a new object of class '<em>Add</em>'.

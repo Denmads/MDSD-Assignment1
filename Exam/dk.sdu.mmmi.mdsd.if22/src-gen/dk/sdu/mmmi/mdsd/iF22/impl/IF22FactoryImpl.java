@@ -82,7 +82,7 @@ public class IF22FactoryImpl extends EFactoryImpl implements IF22Factory
       case IF22Package.BOOLEAN_OPERATION: return createBooleanOperation();
       case IF22Package.EQUALITY: return createEquality();
       case IF22Package.LESS_GREATER_THAN: return createLessGreaterThan();
-      case IF22Package.CONCATENATION: return createConcatenation();
+      case IF22Package.CONCATENATION_PART: return createConcatenationPart();
       case IF22Package.ADD_SUB: return createAddSub();
       case IF22Package.MUL_DIV: return createMulDiv();
       case IF22Package.PRIMITIVE: return createPrimitive();
@@ -102,6 +102,7 @@ public class IF22FactoryImpl extends EFactoryImpl implements IF22Factory
       case IF22Package.GREATER_THAN: return createGreaterThan();
       case IF22Package.LESS_THAN_OR_EQUALS: return createLessThanOrEquals();
       case IF22Package.GREATER_THAN_OR_EQUALS: return createGreaterThanOrEquals();
+      case IF22Package.CONCATENATION: return createConcatenation();
       case IF22Package.ADD: return createAdd();
       case IF22Package.SUB: return createSub();
       case IF22Package.MUL: return createMul();
@@ -330,10 +331,10 @@ public class IF22FactoryImpl extends EFactoryImpl implements IF22Factory
    * @generated
    */
   @Override
-  public Concatenation createConcatenation()
+  public ConcatenationPart createConcatenationPart()
   {
-    ConcatenationImpl concatenation = new ConcatenationImpl();
-    return concatenation;
+    ConcatenationPartImpl concatenationPart = new ConcatenationPartImpl();
+    return concatenationPart;
   }
 
   /**
@@ -562,6 +563,18 @@ public class IF22FactoryImpl extends EFactoryImpl implements IF22Factory
   {
     GreaterThanOrEqualsImpl greaterThanOrEquals = new GreaterThanOrEqualsImpl();
     return greaterThanOrEquals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Concatenation createConcatenation()
+  {
+    ConcatenationImpl concatenation = new ConcatenationImpl();
+    return concatenation;
   }
 
   /**

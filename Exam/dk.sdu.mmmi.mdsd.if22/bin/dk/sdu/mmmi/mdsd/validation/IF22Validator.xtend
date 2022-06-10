@@ -22,6 +22,26 @@ import dk.sdu.mmmi.mdsd.iF22.Announce
 import dk.sdu.mmmi.mdsd.iF22.Target
 import dk.sdu.mmmi.mdsd.iF22.This
 import dk.sdu.mmmi.mdsd.iF22.FunctionCall
+import javax.inject.Inject
+import dk.sdu.mmmi.mdsd.generator.typing.TypeComputer
+import dk.sdu.mmmi.mdsd.generator.typing.ExpType
+import org.eclipse.emf.ecore.EReference
+import dk.sdu.mmmi.mdsd.iF22.Not
+import dk.sdu.mmmi.mdsd.iF22.Mul
+import dk.sdu.mmmi.mdsd.iF22.Div
+import dk.sdu.mmmi.mdsd.iF22.Add
+import dk.sdu.mmmi.mdsd.iF22.Sub
+import dk.sdu.mmmi.mdsd.iF22.Concatenation
+import dk.sdu.mmmi.mdsd.iF22.LessGreaterThan
+import dk.sdu.mmmi.mdsd.iF22.Equality
+import dk.sdu.mmmi.mdsd.iF22.LessThan
+import dk.sdu.mmmi.mdsd.iF22.GreaterThan
+import dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals
+import dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals
+import dk.sdu.mmmi.mdsd.iF22.Equals
+import dk.sdu.mmmi.mdsd.iF22.NotEquals
+import dk.sdu.mmmi.mdsd.iF22.And
+import dk.sdu.mmmi.mdsd.iF22.Or
 
 /**
  * This class contains custom validation rules. 
@@ -41,6 +61,44 @@ class IF22Validator extends AbstractIF22Validator {
 	public static val PARAMETER_NUMBER_MISMATCH = "pnm"
 	public static val PARAMETER_TYPE_MISMATCH = "ptm"
 	public static val VAR_TYPE_MISMATCH = "vtm"
+	
+	public static val TYPE_MISMATCH = "tm"
+	
+	@Inject extension TypeComputer
+	
+	def private checkExpectedSame(ExpType left, ExpType right) {
+		if (left !== null && right !== null && left !== right) {
+			error('''Expected the same type but was «left», «right»''', IF22Package.Literals.EQUALITY.EIDAttribute, TYPE_MISMATCH)
+		}
+	}
+	
+	def private checkExpectedBoolean(Exp exp, EReference ref) {
+		checkExpectedType(exp, TypeComputer.BOOL_TYPE, ref)
+	}
+	
+	def private checkExpectedString(Exp exp, EReference ref) {
+		checkExpectedType(exp, TypeComputer.STRING_TYPE, ref)
+	}
+	
+	def private checkExpectedInt(Exp exp, EReference ref) {
+		checkExpectedType(exp, TypeComputer.INT_TYPE, ref)
+	}
+	
+	def private checkExpectedType(Exp exp, ExpType expectedType, EReference ref) {
+		val actualType = getTypeAndCheckNull(exp, ref)
+		if (actualType !== expectedType) {
+			error('''Expected «expectedType» type, but was «actualType»''', ref, TYPE_MISMATCH)
+		}
+	}
+	
+	def private getTypeAndCheckNull(Exp exp, EReference ref) {
+		var type = exp?.typeFor
+		if (type === null) {
+			error("Null type", ref, TYPE_MISMATCH)
+		}
+		return type
+	}
+	
 	
 	@Check
 	def checkUniqueScenarioName(Scenario scenario) {
@@ -118,18 +176,21 @@ class IF22Validator extends AbstractIF22Validator {
 		}
 		
 		if (target.destination instanceof Scenario) {
-			var funcParams = (target.destination as Scenario).parameters
+			var scenarioParams = (target.destination as Scenario).parameters
 		
-			if (funcParams.size != target.arguments.size) {
+			if (scenarioParams.size != target.arguments.size) {
 				error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.target_Arguments, PARAMETER_NUMBER_MISMATCH)
 			}
 			
-			//TODO: need to derive type from exp
-			/*for (var i = 0; i < funcParams.size; i++) {
-				if (funcParams.get(i) != fCall.arguments.get(i)) {
-					error("Argument and paramter types are not matching.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_TYPE_MISMATCH)
+			for (var i = 0; i < scenarioParams.size; i++) {
+				if (scenarioParams.get(i).type.toExpType !== target.arguments.get(i).typeFor) {
+					error("Argument and paramter types are not matching.", IF22Package.eINSTANCE.target_Arguments, PARAMETER_TYPE_MISMATCH)
 				}
-			}*/
+			}
+		}
+		
+		if (target.condition !== null) {
+			checkExpectedBoolean(target.condition, IF22Package.Literals.TARGET__CONDITION)
 		}
 	}
 	
@@ -144,6 +205,10 @@ class IF22Validator extends AbstractIF22Validator {
 		if (stmt.variable !== null && !stmt.returnTypeOfQuestion.toJavaType.equals(stmt.variable.type.toJavaType)) {
 			error("Cannot assign different type to variable.", IF22Package.eINSTANCE.question_Variable, VAR_TYPE_MISMATCH)
 		}
+		
+		if (!(stmt.typeAndValidation instanceof Type)) {			
+			checkExpectedBoolean(stmt.typeAndValidation, IF22Package.Literals.QUESTION__TYPE_AND_VALIDATION)
+		}
 	}
 	
 	@Check
@@ -154,12 +219,104 @@ class IF22Validator extends AbstractIF22Validator {
 			error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_NUMBER_MISMATCH)
 		}
 		
-		//TODO: need to derive type from exp
-		/*for (var i = 0; i < funcParams.size; i++) {
-			if (funcParams.get(i) != fCall.arguments.get(i)) {
+		for (var i = 0; i < funcParams.size; i++) {
+			if (funcParams.get(i).toExpType !== fCall.arguments.get(i).typeFor) {
 				error("Argument and parameter types are not matching.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_TYPE_MISMATCH)
 			}
-		}*/
+		}
 	}
 	
+	
+	
+	
+	//TYPE CHECKING
+	
+	@Check
+	def checkType(Not not) {
+		checkExpectedBoolean(not.body, IF22Package.Literals.NOT__BODY)
+	}
+	
+	@Check
+	def checkType(Mul exp) {
+		checkExpectedInt(exp.left, IF22Package.Literals.MUL__LEFT)
+		checkExpectedInt(exp.right, IF22Package.Literals.MUL__RIGHT)
+	}
+	
+	@Check
+	def checkType(Div exp) {
+		checkExpectedInt(exp.left, IF22Package.Literals.DIV__LEFT)
+		checkExpectedInt(exp.right, IF22Package.Literals.DIV__RIGHT)
+	}
+	
+	@Check
+	def checkType(Add exp) {
+		checkExpectedInt(exp.left, IF22Package.Literals.ADD__LEFT)
+		checkExpectedInt(exp.right, IF22Package.Literals.ADD__RIGHT)
+	}
+	
+	@Check
+	def checkType(Sub exp) {
+		checkExpectedInt(exp.left, IF22Package.Literals.SUB__LEFT)
+		checkExpectedInt(exp.right, IF22Package.Literals.SUB__RIGHT)
+	}
+	
+	@Check
+	def checkType(Concatenation exp) {
+		var leftType = getTypeAndCheckNull(exp.left, IF22Package.Literals.CONCATENATION__LEFT)
+		var rightType = getTypeAndCheckNull(exp.left, IF22Package.Literals.CONCATENATION__RIGHT)
+		
+		if (!leftType.isStringType() && !rightType.isStringType()) {
+			error("Concatenation expects at least one string.", IF22Package.Literals.CONCATENATION.EIDAttribute, TYPE_MISMATCH)
+		}
+	}
+	
+	@Check
+	def checkType(LessThan exp) {
+		checkExpectedInt(exp.left, IF22Package.Literals.LESS_THAN__LEFT)
+		checkExpectedInt(exp.right, IF22Package.Literals.LESS_THAN__RIGHT)
+	}
+	
+	@Check
+	def checkType(GreaterThan exp) {
+		checkExpectedInt(exp.left, IF22Package.Literals.GREATER_THAN__LEFT)
+		checkExpectedInt(exp.right, IF22Package.Literals.GREATER_THAN__RIGHT)
+	}
+	
+	@Check
+	def checkType(LessThanOrEquals exp) {
+		checkExpectedInt(exp.left, IF22Package.Literals.LESS_THAN_OR_EQUALS__LEFT)
+		checkExpectedInt(exp.right, IF22Package.Literals.LESS_THAN_OR_EQUALS__RIGHT)
+	}
+	
+	@Check
+	def checkType(GreaterThanOrEquals exp) {
+		checkExpectedInt(exp.left, IF22Package.Literals.GREATER_THAN_OR_EQUALS__LEFT)
+		checkExpectedInt(exp.right, IF22Package.Literals.GREATER_THAN_OR_EQUALS__RIGHT)
+	}
+	
+	@Check
+	def checkType(Equals exp) {
+		var leftType = getTypeAndCheckNull(exp.left, IF22Package.Literals.EQUALS__LEFT)
+		var rightType = getTypeAndCheckNull(exp.left, IF22Package.Literals.EQUALS__RIGHT)
+		checkExpectedSame(leftType, rightType)
+	}
+	
+	@Check
+	def checkType(NotEquals exp) {
+		var leftType = getTypeAndCheckNull(exp.left, IF22Package.Literals.NOT_EQUALS__LEFT)
+		var rightType = getTypeAndCheckNull(exp.left, IF22Package.Literals.NOT_EQUALS__RIGHT)
+		checkExpectedSame(leftType, rightType)
+	}
+	
+	@Check
+	def checkType(And exp) {
+		checkExpectedBoolean(exp.left, IF22Package.Literals.AND__LEFT)
+		checkExpectedBoolean(exp.right, IF22Package.Literals.AND__RIGHT)
+	}
+	
+	@Check
+	def checkType(Or exp) {
+		checkExpectedBoolean(exp.left, IF22Package.Literals.OR__LEFT)
+		checkExpectedBoolean(exp.right, IF22Package.Literals.OR__RIGHT)
+	}
 }

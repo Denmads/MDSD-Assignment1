@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AddSubImpl extends ConcatenationImpl implements AddSub
+public class AddSubImpl extends ConcatenationPartImpl implements AddSub
 {
   /**
    * <!-- begin-user-doc -->

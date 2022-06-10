@@ -9,6 +9,13 @@ package dk.sdu.mmmi.mdsd.iF22;
  * A representation of the model object '<em><b>Equals</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.iF22.Equals#getLeft <em>Left</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.iF22.Equals#getRight <em>Right</em>}</li>
+ * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getEquals()
  * @model
@@ -16,4 +23,48 @@ package dk.sdu.mmmi.mdsd.iF22;
  */
 public interface Equals extends Equality
 {
+  /**
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(Equality)
+   * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getEquals_Left()
+   * @model containment="true"
+   * @generated
+   */
+  Equality getLeft();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.iF22.Equals#getLeft <em>Left</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
+   * @generated
+   */
+  void setLeft(Equality value);
+
+  /**
+   * Returns the value of the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Right</em>' containment reference.
+   * @see #setRight(LessGreaterThan)
+   * @see dk.sdu.mmmi.mdsd.iF22.IF22Package#getEquals_Right()
+   * @model containment="true"
+   * @generated
+   */
+  LessGreaterThan getRight();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.iF22.Equals#getRight <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right</em>' containment reference.
+   * @see #getRight()
+   * @generated
+   */
+  void setRight(LessGreaterThan value);
+
 } // Equals

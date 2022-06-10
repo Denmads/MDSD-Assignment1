@@ -7,23 +7,43 @@ import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import dk.sdu.mmmi.mdsd.generator.Util;
+import dk.sdu.mmmi.mdsd.generator.typing.ExpType;
+import dk.sdu.mmmi.mdsd.generator.typing.TypeComputer;
+import dk.sdu.mmmi.mdsd.iF22.Add;
+import dk.sdu.mmmi.mdsd.iF22.And;
+import dk.sdu.mmmi.mdsd.iF22.Concatenation;
+import dk.sdu.mmmi.mdsd.iF22.Div;
 import dk.sdu.mmmi.mdsd.iF22.End;
+import dk.sdu.mmmi.mdsd.iF22.Equals;
 import dk.sdu.mmmi.mdsd.iF22.Exp;
 import dk.sdu.mmmi.mdsd.iF22.Function;
 import dk.sdu.mmmi.mdsd.iF22.FunctionCall;
+import dk.sdu.mmmi.mdsd.iF22.GreaterThan;
+import dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals;
 import dk.sdu.mmmi.mdsd.iF22.IF22;
 import dk.sdu.mmmi.mdsd.iF22.IF22Package;
+import dk.sdu.mmmi.mdsd.iF22.LessThan;
+import dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals;
+import dk.sdu.mmmi.mdsd.iF22.Mul;
+import dk.sdu.mmmi.mdsd.iF22.Not;
+import dk.sdu.mmmi.mdsd.iF22.NotEquals;
+import dk.sdu.mmmi.mdsd.iF22.Or;
 import dk.sdu.mmmi.mdsd.iF22.Parameter;
 import dk.sdu.mmmi.mdsd.iF22.Question;
 import dk.sdu.mmmi.mdsd.iF22.Scenario;
 import dk.sdu.mmmi.mdsd.iF22.Statement;
+import dk.sdu.mmmi.mdsd.iF22.Sub;
 import dk.sdu.mmmi.mdsd.iF22.Target;
 import dk.sdu.mmmi.mdsd.iF22.TargetDestination;
 import dk.sdu.mmmi.mdsd.iF22.This;
 import dk.sdu.mmmi.mdsd.iF22.Type;
+import javax.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
@@ -56,6 +76,59 @@ public class IF22Validator extends AbstractIF22Validator {
   public static final String PARAMETER_TYPE_MISMATCH = "ptm";
   
   public static final String VAR_TYPE_MISMATCH = "vtm";
+  
+  public static final String TYPE_MISMATCH = "tm";
+  
+  @Inject
+  @Extension
+  private TypeComputer _typeComputer;
+  
+  private void checkExpectedSame(final ExpType left, final ExpType right) {
+    if ((((left != null) && (right != null)) && (left != right))) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Expected the same type but was ");
+      _builder.append(left);
+      _builder.append(", ");
+      _builder.append(right);
+      this.error(_builder.toString(), IF22Package.Literals.EQUALITY.getEIDAttribute(), IF22Validator.TYPE_MISMATCH);
+    }
+  }
+  
+  private void checkExpectedBoolean(final Exp exp, final EReference ref) {
+    this.checkExpectedType(exp, TypeComputer.BOOL_TYPE, ref);
+  }
+  
+  private void checkExpectedString(final Exp exp, final EReference ref) {
+    this.checkExpectedType(exp, TypeComputer.STRING_TYPE, ref);
+  }
+  
+  private void checkExpectedInt(final Exp exp, final EReference ref) {
+    this.checkExpectedType(exp, TypeComputer.INT_TYPE, ref);
+  }
+  
+  private void checkExpectedType(final Exp exp, final ExpType expectedType, final EReference ref) {
+    final ExpType actualType = this.getTypeAndCheckNull(exp, ref);
+    if ((actualType != expectedType)) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Expected ");
+      _builder.append(expectedType);
+      _builder.append(" type, but was ");
+      _builder.append(actualType);
+      this.error(_builder.toString(), ref, IF22Validator.TYPE_MISMATCH);
+    }
+  }
+  
+  private ExpType getTypeAndCheckNull(final Exp exp, final EReference ref) {
+    ExpType _typeFor = null;
+    if (exp!=null) {
+      _typeFor=this._typeComputer.typeFor(exp);
+    }
+    ExpType type = _typeFor;
+    if ((type == null)) {
+      this.error("Null type", ref, IF22Validator.TYPE_MISMATCH);
+    }
+    return type;
+  }
   
   @Check
   public void checkUniqueScenarioName(final Scenario scenario) {
@@ -156,13 +229,26 @@ public class IF22Validator extends AbstractIF22Validator {
     TargetDestination _destination = target.getDestination();
     if ((_destination instanceof Scenario)) {
       TargetDestination _destination_1 = target.getDestination();
-      EList<Parameter> funcParams = ((Scenario) _destination_1).getParameters();
-      int _size = funcParams.size();
+      EList<Parameter> scenarioParams = ((Scenario) _destination_1).getParameters();
+      int _size = scenarioParams.size();
       int _size_1 = target.getArguments().size();
       boolean _notEquals = (_size != _size_1);
       if (_notEquals) {
         this.error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.getTarget_Arguments(), IF22Validator.PARAMETER_NUMBER_MISMATCH);
       }
+      for (int i = 0; (i < scenarioParams.size()); i++) {
+        ExpType _expType = this._typeComputer.toExpType(scenarioParams.get(i).getType());
+        ExpType _typeFor = this._typeComputer.typeFor(target.getArguments().get(i));
+        boolean _tripleNotEquals = (_expType != _typeFor);
+        if (_tripleNotEquals) {
+          this.error("Argument and paramter types are not matching.", IF22Package.eINSTANCE.getTarget_Arguments(), IF22Validator.PARAMETER_TYPE_MISMATCH);
+        }
+      }
+    }
+    Exp _condition = target.getCondition();
+    boolean _tripleNotEquals = (_condition != null);
+    if (_tripleNotEquals) {
+      this.checkExpectedBoolean(target.getCondition(), IF22Package.Literals.TARGET__CONDITION);
     }
   }
   
@@ -176,6 +262,11 @@ public class IF22Validator extends AbstractIF22Validator {
     if (((stmt.getVariable() != null) && (!Util.toJavaType(Util.returnTypeOfQuestion(stmt)).equals(Util.toJavaType(stmt.getVariable().getType()))))) {
       this.error("Cannot assign different type to variable.", IF22Package.eINSTANCE.getQuestion_Variable(), IF22Validator.VAR_TYPE_MISMATCH);
     }
+    Exp _typeAndValidation = stmt.getTypeAndValidation();
+    boolean _not = (!(_typeAndValidation instanceof Type));
+    if (_not) {
+      this.checkExpectedBoolean(stmt.getTypeAndValidation(), IF22Package.Literals.QUESTION__TYPE_AND_VALIDATION);
+    }
   }
   
   @Check
@@ -187,5 +278,101 @@ public class IF22Validator extends AbstractIF22Validator {
     if (_notEquals) {
       this.error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.getFunctionCall_Arguments(), IF22Validator.PARAMETER_NUMBER_MISMATCH);
     }
+    for (int i = 0; (i < funcParams.size()); i++) {
+      ExpType _expType = this._typeComputer.toExpType(funcParams.get(i));
+      ExpType _typeFor = this._typeComputer.typeFor(fCall.getArguments().get(i));
+      boolean _tripleNotEquals = (_expType != _typeFor);
+      if (_tripleNotEquals) {
+        this.error("Argument and parameter types are not matching.", IF22Package.eINSTANCE.getFunctionCall_Arguments(), IF22Validator.PARAMETER_TYPE_MISMATCH);
+      }
+    }
+  }
+  
+  @Check
+  public void checkType(final Not not) {
+    this.checkExpectedBoolean(not.getBody(), IF22Package.Literals.NOT__BODY);
+  }
+  
+  @Check
+  public void checkType(final Mul exp) {
+    this.checkExpectedInt(exp.getLeft(), IF22Package.Literals.MUL__LEFT);
+    this.checkExpectedInt(exp.getRight(), IF22Package.Literals.MUL__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Div exp) {
+    this.checkExpectedInt(exp.getLeft(), IF22Package.Literals.DIV__LEFT);
+    this.checkExpectedInt(exp.getRight(), IF22Package.Literals.DIV__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Add exp) {
+    this.checkExpectedInt(exp.getLeft(), IF22Package.Literals.ADD__LEFT);
+    this.checkExpectedInt(exp.getRight(), IF22Package.Literals.ADD__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Sub exp) {
+    this.checkExpectedInt(exp.getLeft(), IF22Package.Literals.SUB__LEFT);
+    this.checkExpectedInt(exp.getRight(), IF22Package.Literals.SUB__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Concatenation exp) {
+    ExpType leftType = this.getTypeAndCheckNull(exp.getLeft(), IF22Package.Literals.CONCATENATION__LEFT);
+    ExpType rightType = this.getTypeAndCheckNull(exp.getLeft(), IF22Package.Literals.CONCATENATION__RIGHT);
+    if (((!this._typeComputer.isStringType(leftType)) && (!this._typeComputer.isStringType(rightType)))) {
+      this.error("Concatenation expects at least one string.", IF22Package.Literals.CONCATENATION.getEIDAttribute(), IF22Validator.TYPE_MISMATCH);
+    }
+  }
+  
+  @Check
+  public void checkType(final LessThan exp) {
+    this.checkExpectedInt(exp.getLeft(), IF22Package.Literals.LESS_THAN__LEFT);
+    this.checkExpectedInt(exp.getRight(), IF22Package.Literals.LESS_THAN__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final GreaterThan exp) {
+    this.checkExpectedInt(exp.getLeft(), IF22Package.Literals.GREATER_THAN__LEFT);
+    this.checkExpectedInt(exp.getRight(), IF22Package.Literals.GREATER_THAN__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final LessThanOrEquals exp) {
+    this.checkExpectedInt(exp.getLeft(), IF22Package.Literals.LESS_THAN_OR_EQUALS__LEFT);
+    this.checkExpectedInt(exp.getRight(), IF22Package.Literals.LESS_THAN_OR_EQUALS__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final GreaterThanOrEquals exp) {
+    this.checkExpectedInt(exp.getLeft(), IF22Package.Literals.GREATER_THAN_OR_EQUALS__LEFT);
+    this.checkExpectedInt(exp.getRight(), IF22Package.Literals.GREATER_THAN_OR_EQUALS__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Equals exp) {
+    ExpType leftType = this.getTypeAndCheckNull(exp.getLeft(), IF22Package.Literals.EQUALS__LEFT);
+    ExpType rightType = this.getTypeAndCheckNull(exp.getLeft(), IF22Package.Literals.EQUALS__RIGHT);
+    this.checkExpectedSame(leftType, rightType);
+  }
+  
+  @Check
+  public void checkType(final NotEquals exp) {
+    ExpType leftType = this.getTypeAndCheckNull(exp.getLeft(), IF22Package.Literals.NOT_EQUALS__LEFT);
+    ExpType rightType = this.getTypeAndCheckNull(exp.getLeft(), IF22Package.Literals.NOT_EQUALS__RIGHT);
+    this.checkExpectedSame(leftType, rightType);
+  }
+  
+  @Check
+  public void checkType(final And exp) {
+    this.checkExpectedBoolean(exp.getLeft(), IF22Package.Literals.AND__LEFT);
+    this.checkExpectedBoolean(exp.getRight(), IF22Package.Literals.AND__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final Or exp) {
+    this.checkExpectedBoolean(exp.getLeft(), IF22Package.Literals.OR__LEFT);
+    this.checkExpectedBoolean(exp.getRight(), IF22Package.Literals.OR__RIGHT);
   }
 }

@@ -133,31 +133,13 @@ public interface IF22Package extends EPackage
   int BOOLEAN_OPERATION = 14;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_OPERATION__LEFT = EXP_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_OPERATION__RIGHT = EXP_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Boolean Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOLEAN_OPERATION_FEATURE_COUNT = EXP_FEATURE_COUNT + 2;
+  int BOOLEAN_OPERATION_FEATURE_COUNT = EXP_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EqualityImpl <em>Equality</em>}' class.
@@ -168,24 +150,6 @@ public interface IF22Package extends EPackage
    * @generated
    */
   int EQUALITY = 15;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY__LEFT = BOOLEAN_OPERATION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY__RIGHT = BOOLEAN_OPERATION__RIGHT;
 
   /**
    * The number of structural features of the '<em>Equality</em>' class.
@@ -207,24 +171,6 @@ public interface IF22Package extends EPackage
   int LESS_GREATER_THAN = 16;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LESS_GREATER_THAN__LEFT = EQUALITY__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LESS_GREATER_THAN__RIGHT = EQUALITY__RIGHT;
-
-  /**
    * The number of structural features of the '<em>Less Greater Than</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -234,41 +180,23 @@ public interface IF22Package extends EPackage
   int LESS_GREATER_THAN_FEATURE_COUNT = EQUALITY_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl <em>Concatenation</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationPartImpl <em>Concatenation Part</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl
-   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConcatenation()
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationPartImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConcatenationPart()
    * @generated
    */
-  int CONCATENATION = 17;
+  int CONCATENATION_PART = 17;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * The number of structural features of the '<em>Concatenation Part</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONCATENATION__LEFT = LESS_GREATER_THAN__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONCATENATION__RIGHT = LESS_GREATER_THAN__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Concatenation</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONCATENATION_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+  int CONCATENATION_PART_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddSubImpl <em>Add Sub</em>}' class.
@@ -281,31 +209,13 @@ public interface IF22Package extends EPackage
   int ADD_SUB = 18;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_SUB__LEFT = CONCATENATION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_SUB__RIGHT = CONCATENATION__RIGHT;
-
-  /**
    * The number of structural features of the '<em>Add Sub</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADD_SUB_FEATURE_COUNT = CONCATENATION_FEATURE_COUNT + 0;
+  int ADD_SUB_FEATURE_COUNT = CONCATENATION_PART_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.MulDivImpl <em>Mul Div</em>}' class.
@@ -316,24 +226,6 @@ public interface IF22Package extends EPackage
    * @generated
    */
   int MUL_DIV = 19;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MUL_DIV__LEFT = ADD_SUB__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MUL_DIV__RIGHT = ADD_SUB__RIGHT;
 
   /**
    * The number of structural features of the '<em>Mul Div</em>' class.
@@ -355,24 +247,6 @@ public interface IF22Package extends EPackage
   int PRIMITIVE = 20;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMITIVE__LEFT = MUL_DIV__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMITIVE__RIGHT = MUL_DIV__RIGHT;
-
-  /**
    * The number of structural features of the '<em>Primitive</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -392,24 +266,6 @@ public interface IF22Package extends EPackage
   int KEYWORD = 23;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEYWORD__LEFT = PRIMITIVE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEYWORD__RIGHT = PRIMITIVE__RIGHT;
-
-  /**
    * The number of structural features of the '<em>Keyword</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -427,24 +283,6 @@ public interface IF22Package extends EPackage
    * @generated
    */
   int TYPE = 1;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE__LEFT = KEYWORD__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE__RIGHT = KEYWORD__RIGHT;
 
   /**
    * The number of structural features of the '<em>Type</em>' class.
@@ -973,24 +811,6 @@ public interface IF22Package extends EPackage
   int CONSTANT = 22;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTANT__LEFT = PRIMITIVE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTANT__RIGHT = PRIMITIVE__RIGHT;
-
-  /**
    * The number of structural features of the '<em>Constant</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1008,24 +828,6 @@ public interface IF22Package extends EPackage
    * @generated
    */
   int FUNCTION_CALL = 24;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__LEFT = PRIMITIVE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_CALL__RIGHT = PRIMITIVE__RIGHT;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' reference.
@@ -1084,24 +886,6 @@ public interface IF22Package extends EPackage
   int INT_TYPE = 26;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INT_TYPE__LEFT = TYPE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INT_TYPE__RIGHT = TYPE__RIGHT;
-
-  /**
    * The number of structural features of the '<em>Int Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1121,24 +905,6 @@ public interface IF22Package extends EPackage
   int STRING_TYPE = 27;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_TYPE__LEFT = TYPE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_TYPE__RIGHT = TYPE__RIGHT;
-
-  /**
    * The number of structural features of the '<em>String Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1156,24 +922,6 @@ public interface IF22Package extends EPackage
    * @generated
    */
   int BOOLEAN_TYPE = 28;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_TYPE__LEFT = TYPE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOLEAN_TYPE__RIGHT = TYPE__RIGHT;
 
   /**
    * The number of structural features of the '<em>Boolean Type</em>' class.
@@ -1201,7 +949,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int AND__LEFT = BOOLEAN_OPERATION__LEFT;
+  int AND__LEFT = BOOLEAN_OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1210,7 +958,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int AND__RIGHT = BOOLEAN_OPERATION__RIGHT;
+  int AND__RIGHT = BOOLEAN_OPERATION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>And</em>' class.
@@ -1219,7 +967,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int AND_FEATURE_COUNT = BOOLEAN_OPERATION_FEATURE_COUNT + 0;
+  int AND_FEATURE_COUNT = BOOLEAN_OPERATION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.OrImpl <em>Or</em>}' class.
@@ -1238,7 +986,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int OR__LEFT = BOOLEAN_OPERATION__LEFT;
+  int OR__LEFT = BOOLEAN_OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1247,7 +995,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int OR__RIGHT = BOOLEAN_OPERATION__RIGHT;
+  int OR__RIGHT = BOOLEAN_OPERATION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Or</em>' class.
@@ -1256,7 +1004,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int OR_FEATURE_COUNT = BOOLEAN_OPERATION_FEATURE_COUNT + 0;
+  int OR_FEATURE_COUNT = BOOLEAN_OPERATION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EqualsImpl <em>Equals</em>}' class.
@@ -1275,7 +1023,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int EQUALS__LEFT = EQUALITY__LEFT;
+  int EQUALS__LEFT = EQUALITY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1284,7 +1032,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int EQUALS__RIGHT = EQUALITY__RIGHT;
+  int EQUALS__RIGHT = EQUALITY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Equals</em>' class.
@@ -1293,7 +1041,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int EQUALS_FEATURE_COUNT = EQUALITY_FEATURE_COUNT + 0;
+  int EQUALS_FEATURE_COUNT = EQUALITY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.NotEqualsImpl <em>Not Equals</em>}' class.
@@ -1312,7 +1060,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int NOT_EQUALS__LEFT = EQUALITY__LEFT;
+  int NOT_EQUALS__LEFT = EQUALITY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1321,7 +1069,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int NOT_EQUALS__RIGHT = EQUALITY__RIGHT;
+  int NOT_EQUALS__RIGHT = EQUALITY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Not Equals</em>' class.
@@ -1330,7 +1078,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int NOT_EQUALS_FEATURE_COUNT = EQUALITY_FEATURE_COUNT + 0;
+  int NOT_EQUALS_FEATURE_COUNT = EQUALITY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessThanImpl <em>Less Than</em>}' class.
@@ -1349,7 +1097,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int LESS_THAN__LEFT = LESS_GREATER_THAN__LEFT;
+  int LESS_THAN__LEFT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1358,7 +1106,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int LESS_THAN__RIGHT = LESS_GREATER_THAN__RIGHT;
+  int LESS_THAN__RIGHT = LESS_GREATER_THAN_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Less Than</em>' class.
@@ -1367,7 +1115,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int LESS_THAN_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+  int LESS_THAN_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanImpl <em>Greater Than</em>}' class.
@@ -1386,7 +1134,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int GREATER_THAN__LEFT = LESS_GREATER_THAN__LEFT;
+  int GREATER_THAN__LEFT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1395,7 +1143,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int GREATER_THAN__RIGHT = LESS_GREATER_THAN__RIGHT;
+  int GREATER_THAN__RIGHT = LESS_GREATER_THAN_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Greater Than</em>' class.
@@ -1404,7 +1152,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int GREATER_THAN_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+  int GREATER_THAN_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessThanOrEqualsImpl <em>Less Than Or Equals</em>}' class.
@@ -1423,7 +1171,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int LESS_THAN_OR_EQUALS__LEFT = LESS_GREATER_THAN__LEFT;
+  int LESS_THAN_OR_EQUALS__LEFT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1432,7 +1180,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int LESS_THAN_OR_EQUALS__RIGHT = LESS_GREATER_THAN__RIGHT;
+  int LESS_THAN_OR_EQUALS__RIGHT = LESS_GREATER_THAN_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Less Than Or Equals</em>' class.
@@ -1441,7 +1189,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int LESS_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+  int LESS_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanOrEqualsImpl <em>Greater Than Or Equals</em>}' class.
@@ -1460,7 +1208,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int GREATER_THAN_OR_EQUALS__LEFT = LESS_GREATER_THAN__LEFT;
+  int GREATER_THAN_OR_EQUALS__LEFT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1469,7 +1217,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int GREATER_THAN_OR_EQUALS__RIGHT = LESS_GREATER_THAN__RIGHT;
+  int GREATER_THAN_OR_EQUALS__RIGHT = LESS_GREATER_THAN_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Greater Than Or Equals</em>' class.
@@ -1478,7 +1226,44 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int GREATER_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 0;
+  int GREATER_THAN_OR_EQUALS_FEATURE_COUNT = LESS_GREATER_THAN_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl <em>Concatenation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl
+   * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConcatenation()
+   * @generated
+   */
+  int CONCATENATION = 37;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCATENATION__LEFT = CONCATENATION_PART_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCATENATION__RIGHT = CONCATENATION_PART_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Concatenation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCATENATION_FEATURE_COUNT = CONCATENATION_PART_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddImpl <em>Add</em>}' class.
@@ -1488,7 +1273,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getAdd()
    * @generated
    */
-  int ADD = 37;
+  int ADD = 38;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1497,7 +1282,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int ADD__LEFT = ADD_SUB__LEFT;
+  int ADD__LEFT = ADD_SUB_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1506,7 +1291,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int ADD__RIGHT = ADD_SUB__RIGHT;
+  int ADD__RIGHT = ADD_SUB_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Add</em>' class.
@@ -1515,7 +1300,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int ADD_FEATURE_COUNT = ADD_SUB_FEATURE_COUNT + 0;
+  int ADD_FEATURE_COUNT = ADD_SUB_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.SubImpl <em>Sub</em>}' class.
@@ -1525,7 +1310,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getSub()
    * @generated
    */
-  int SUB = 38;
+  int SUB = 39;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1534,7 +1319,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int SUB__LEFT = ADD_SUB__LEFT;
+  int SUB__LEFT = ADD_SUB_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1543,7 +1328,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int SUB__RIGHT = ADD_SUB__RIGHT;
+  int SUB__RIGHT = ADD_SUB_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Sub</em>' class.
@@ -1552,7 +1337,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_FEATURE_COUNT = ADD_SUB_FEATURE_COUNT + 0;
+  int SUB_FEATURE_COUNT = ADD_SUB_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.MulImpl <em>Mul</em>}' class.
@@ -1562,7 +1347,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getMul()
    * @generated
    */
-  int MUL = 39;
+  int MUL = 40;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1571,7 +1356,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int MUL__LEFT = MUL_DIV__LEFT;
+  int MUL__LEFT = MUL_DIV_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1580,7 +1365,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int MUL__RIGHT = MUL_DIV__RIGHT;
+  int MUL__RIGHT = MUL_DIV_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Mul</em>' class.
@@ -1589,7 +1374,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int MUL_FEATURE_COUNT = MUL_DIV_FEATURE_COUNT + 0;
+  int MUL_FEATURE_COUNT = MUL_DIV_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.DivImpl <em>Div</em>}' class.
@@ -1599,7 +1384,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getDiv()
    * @generated
    */
-  int DIV = 40;
+  int DIV = 41;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1608,7 +1393,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int DIV__LEFT = MUL_DIV__LEFT;
+  int DIV__LEFT = MUL_DIV_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1617,7 +1402,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int DIV__RIGHT = MUL_DIV__RIGHT;
+  int DIV__RIGHT = MUL_DIV_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Div</em>' class.
@@ -1626,7 +1411,7 @@ public interface IF22Package extends EPackage
    * @generated
    * @ordered
    */
-  int DIV_FEATURE_COUNT = MUL_DIV_FEATURE_COUNT + 0;
+  int DIV_FEATURE_COUNT = MUL_DIV_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ParenthesisImpl <em>Parenthesis</em>}' class.
@@ -1636,25 +1421,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getParenthesis()
    * @generated
    */
-  int PARENTHESIS = 41;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARENTHESIS__LEFT = PRIMITIVE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARENTHESIS__RIGHT = PRIMITIVE__RIGHT;
+  int PARENTHESIS = 42;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -1682,25 +1449,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getNot()
    * @generated
    */
-  int NOT = 42;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NOT__LEFT = PRIMITIVE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NOT__RIGHT = PRIMITIVE__RIGHT;
+  int NOT = 43;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -1728,25 +1477,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getVarRef()
    * @generated
    */
-  int VAR_REF = 43;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VAR_REF__LEFT = PRIMITIVE__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VAR_REF__RIGHT = PRIMITIVE__RIGHT;
+  int VAR_REF = 44;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -1774,25 +1505,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getIntConstant()
    * @generated
    */
-  int INT_CONSTANT = 44;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INT_CONSTANT__LEFT = CONSTANT__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INT_CONSTANT__RIGHT = CONSTANT__RIGHT;
+  int INT_CONSTANT = 45;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1820,25 +1533,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getStringConstant()
    * @generated
    */
-  int STRING_CONSTANT = 45;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_CONSTANT__LEFT = CONSTANT__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_CONSTANT__RIGHT = CONSTANT__RIGHT;
+  int STRING_CONSTANT = 46;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1866,25 +1561,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 46;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOL_CONSTANT__LEFT = CONSTANT__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOL_CONSTANT__RIGHT = CONSTANT__RIGHT;
+  int BOOL_CONSTANT = 47;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1912,25 +1589,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getThis()
    * @generated
    */
-  int THIS = 47;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int THIS__LEFT = KEYWORD__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int THIS__RIGHT = KEYWORD__RIGHT;
+  int THIS = 48;
 
   /**
    * The number of structural features of the '<em>This</em>' class.
@@ -1949,7 +1608,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getTrue()
    * @generated
    */
-  int TRUE = 48;
+  int TRUE = 49;
 
   /**
    * The number of structural features of the '<em>True</em>' class.
@@ -1968,7 +1627,7 @@ public interface IF22Package extends EPackage
    * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getFalse()
    * @generated
    */
-  int FALSE = 49;
+  int FALSE = 50;
 
   /**
    * The number of structural features of the '<em>False</em>' class.
@@ -2351,28 +2010,6 @@ public interface IF22Package extends EPackage
   EClass getBooleanOperation();
 
   /**
-   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.BooleanOperation#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see dk.sdu.mmmi.mdsd.iF22.BooleanOperation#getLeft()
-   * @see #getBooleanOperation()
-   * @generated
-   */
-  EReference getBooleanOperation_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.BooleanOperation#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see dk.sdu.mmmi.mdsd.iF22.BooleanOperation#getRight()
-   * @see #getBooleanOperation()
-   * @generated
-   */
-  EReference getBooleanOperation_Right();
-
-  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Equality <em>Equality</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2393,14 +2030,14 @@ public interface IF22Package extends EPackage
   EClass getLessGreaterThan();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Concatenation <em>Concatenation</em>}'.
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.ConcatenationPart <em>Concatenation Part</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Concatenation</em>'.
-   * @see dk.sdu.mmmi.mdsd.iF22.Concatenation
+   * @return the meta object for class '<em>Concatenation Part</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.ConcatenationPart
    * @generated
    */
-  EClass getConcatenation();
+  EClass getConcatenationPart();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.AddSub <em>Add Sub</em>}'.
@@ -2567,6 +2204,28 @@ public interface IF22Package extends EPackage
   EClass getAnd();
 
   /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.And#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.And#getLeft()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.And#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.And#getRight()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Right();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Or <em>Or</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2575,6 +2234,28 @@ public interface IF22Package extends EPackage
    * @generated
    */
   EClass getOr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Or#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Or#getLeft()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Or#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Or#getRight()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Right();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Equals <em>Equals</em>}'.
@@ -2587,6 +2268,28 @@ public interface IF22Package extends EPackage
   EClass getEquals();
 
   /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Equals#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Equals#getLeft()
+   * @see #getEquals()
+   * @generated
+   */
+  EReference getEquals_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Equals#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Equals#getRight()
+   * @see #getEquals()
+   * @generated
+   */
+  EReference getEquals_Right();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.NotEquals <em>Not Equals</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2595,6 +2298,28 @@ public interface IF22Package extends EPackage
    * @generated
    */
   EClass getNotEquals();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.NotEquals#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.NotEquals#getLeft()
+   * @see #getNotEquals()
+   * @generated
+   */
+  EReference getNotEquals_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.NotEquals#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.NotEquals#getRight()
+   * @see #getNotEquals()
+   * @generated
+   */
+  EReference getNotEquals_Right();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.LessThan <em>Less Than</em>}'.
@@ -2607,6 +2332,28 @@ public interface IF22Package extends EPackage
   EClass getLessThan();
 
   /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.LessThan#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.LessThan#getLeft()
+   * @see #getLessThan()
+   * @generated
+   */
+  EReference getLessThan_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.LessThan#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.LessThan#getRight()
+   * @see #getLessThan()
+   * @generated
+   */
+  EReference getLessThan_Right();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThan <em>Greater Than</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2615,6 +2362,28 @@ public interface IF22Package extends EPackage
    * @generated
    */
   EClass getGreaterThan();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThan#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.GreaterThan#getLeft()
+   * @see #getGreaterThan()
+   * @generated
+   */
+  EReference getGreaterThan_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThan#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.GreaterThan#getRight()
+   * @see #getGreaterThan()
+   * @generated
+   */
+  EReference getGreaterThan_Right();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals <em>Less Than Or Equals</em>}'.
@@ -2627,6 +2396,28 @@ public interface IF22Package extends EPackage
   EClass getLessThanOrEquals();
 
   /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals#getLeft()
+   * @see #getLessThanOrEquals()
+   * @generated
+   */
+  EReference getLessThanOrEquals_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals#getRight()
+   * @see #getLessThanOrEquals()
+   * @generated
+   */
+  EReference getLessThanOrEquals_Right();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals <em>Greater Than Or Equals</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2635,6 +2426,60 @@ public interface IF22Package extends EPackage
    * @generated
    */
   EClass getGreaterThanOrEquals();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals#getLeft()
+   * @see #getGreaterThanOrEquals()
+   * @generated
+   */
+  EReference getGreaterThanOrEquals_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals#getRight()
+   * @see #getGreaterThanOrEquals()
+   * @generated
+   */
+  EReference getGreaterThanOrEquals_Right();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Concatenation <em>Concatenation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Concatenation</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Concatenation
+   * @generated
+   */
+  EClass getConcatenation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Concatenation#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Concatenation#getLeft()
+   * @see #getConcatenation()
+   * @generated
+   */
+  EReference getConcatenation_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Concatenation#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Concatenation#getRight()
+   * @see #getConcatenation()
+   * @generated
+   */
+  EReference getConcatenation_Right();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Add <em>Add</em>}'.
@@ -2647,6 +2492,28 @@ public interface IF22Package extends EPackage
   EClass getAdd();
 
   /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Add#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Add#getLeft()
+   * @see #getAdd()
+   * @generated
+   */
+  EReference getAdd_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Add#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Add#getRight()
+   * @see #getAdd()
+   * @generated
+   */
+  EReference getAdd_Right();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Sub <em>Sub</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2655,6 +2522,28 @@ public interface IF22Package extends EPackage
    * @generated
    */
   EClass getSub();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Sub#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Sub#getLeft()
+   * @see #getSub()
+   * @generated
+   */
+  EReference getSub_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Sub#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Sub#getRight()
+   * @see #getSub()
+   * @generated
+   */
+  EReference getSub_Right();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Mul <em>Mul</em>}'.
@@ -2667,6 +2556,28 @@ public interface IF22Package extends EPackage
   EClass getMul();
 
   /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Mul#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Mul#getLeft()
+   * @see #getMul()
+   * @generated
+   */
+  EReference getMul_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Mul#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Mul#getRight()
+   * @see #getMul()
+   * @generated
+   */
+  EReference getMul_Right();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Div <em>Div</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2675,6 +2586,28 @@ public interface IF22Package extends EPackage
    * @generated
    */
   EClass getDiv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Div#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Div#getLeft()
+   * @see #getDiv()
+   * @generated
+   */
+  EReference getDiv_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.iF22.Div#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see dk.sdu.mmmi.mdsd.iF22.Div#getRight()
+   * @see #getDiv()
+   * @generated
+   */
+  EReference getDiv_Right();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.iF22.Parenthesis <em>Parenthesis</em>}'.
@@ -3166,22 +3099,6 @@ public interface IF22Package extends EPackage
     EClass BOOLEAN_OPERATION = eINSTANCE.getBooleanOperation();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BOOLEAN_OPERATION__LEFT = eINSTANCE.getBooleanOperation_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BOOLEAN_OPERATION__RIGHT = eINSTANCE.getBooleanOperation_Right();
-
-    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EqualityImpl <em>Equality</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3202,14 +3119,14 @@ public interface IF22Package extends EPackage
     EClass LESS_GREATER_THAN = eINSTANCE.getLessGreaterThan();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl <em>Concatenation</em>}' class.
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationPartImpl <em>Concatenation Part</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl
-     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConcatenation()
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationPartImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConcatenationPart()
      * @generated
      */
-    EClass CONCATENATION = eINSTANCE.getConcatenation();
+    EClass CONCATENATION_PART = eINSTANCE.getConcatenationPart();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddSubImpl <em>Add Sub</em>}' class.
@@ -3364,6 +3281,22 @@ public interface IF22Package extends EPackage
     EClass AND = eINSTANCE.getAnd();
 
     /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__LEFT = eINSTANCE.getAnd_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__RIGHT = eINSTANCE.getAnd_Right();
+
+    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.OrImpl <em>Or</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3372,6 +3305,22 @@ public interface IF22Package extends EPackage
      * @generated
      */
     EClass OR = eINSTANCE.getOr();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__LEFT = eINSTANCE.getOr_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__RIGHT = eINSTANCE.getOr_Right();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.EqualsImpl <em>Equals</em>}' class.
@@ -3384,6 +3333,22 @@ public interface IF22Package extends EPackage
     EClass EQUALS = eINSTANCE.getEquals();
 
     /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUALS__LEFT = eINSTANCE.getEquals_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUALS__RIGHT = eINSTANCE.getEquals_Right();
+
+    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.NotEqualsImpl <em>Not Equals</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3392,6 +3357,22 @@ public interface IF22Package extends EPackage
      * @generated
      */
     EClass NOT_EQUALS = eINSTANCE.getNotEquals();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NOT_EQUALS__LEFT = eINSTANCE.getNotEquals_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NOT_EQUALS__RIGHT = eINSTANCE.getNotEquals_Right();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessThanImpl <em>Less Than</em>}' class.
@@ -3404,6 +3385,22 @@ public interface IF22Package extends EPackage
     EClass LESS_THAN = eINSTANCE.getLessThan();
 
     /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LESS_THAN__LEFT = eINSTANCE.getLessThan_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LESS_THAN__RIGHT = eINSTANCE.getLessThan_Right();
+
+    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanImpl <em>Greater Than</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3412,6 +3409,22 @@ public interface IF22Package extends EPackage
      * @generated
      */
     EClass GREATER_THAN = eINSTANCE.getGreaterThan();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GREATER_THAN__LEFT = eINSTANCE.getGreaterThan_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GREATER_THAN__RIGHT = eINSTANCE.getGreaterThan_Right();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.LessThanOrEqualsImpl <em>Less Than Or Equals</em>}' class.
@@ -3424,6 +3437,22 @@ public interface IF22Package extends EPackage
     EClass LESS_THAN_OR_EQUALS = eINSTANCE.getLessThanOrEquals();
 
     /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LESS_THAN_OR_EQUALS__LEFT = eINSTANCE.getLessThanOrEquals_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LESS_THAN_OR_EQUALS__RIGHT = eINSTANCE.getLessThanOrEquals_Right();
+
+    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.GreaterThanOrEqualsImpl <em>Greater Than Or Equals</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3432,6 +3461,48 @@ public interface IF22Package extends EPackage
      * @generated
      */
     EClass GREATER_THAN_OR_EQUALS = eINSTANCE.getGreaterThanOrEquals();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GREATER_THAN_OR_EQUALS__LEFT = eINSTANCE.getGreaterThanOrEquals_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GREATER_THAN_OR_EQUALS__RIGHT = eINSTANCE.getGreaterThanOrEquals_Right();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl <em>Concatenation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.ConcatenationImpl
+     * @see dk.sdu.mmmi.mdsd.iF22.impl.IF22PackageImpl#getConcatenation()
+     * @generated
+     */
+    EClass CONCATENATION = eINSTANCE.getConcatenation();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONCATENATION__LEFT = eINSTANCE.getConcatenation_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONCATENATION__RIGHT = eINSTANCE.getConcatenation_Right();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.AddImpl <em>Add</em>}' class.
@@ -3444,6 +3515,22 @@ public interface IF22Package extends EPackage
     EClass ADD = eINSTANCE.getAdd();
 
     /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADD__LEFT = eINSTANCE.getAdd_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADD__RIGHT = eINSTANCE.getAdd_Right();
+
+    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.SubImpl <em>Sub</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3452,6 +3539,22 @@ public interface IF22Package extends EPackage
      * @generated
      */
     EClass SUB = eINSTANCE.getSub();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUB__LEFT = eINSTANCE.getSub_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUB__RIGHT = eINSTANCE.getSub_Right();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.MulImpl <em>Mul</em>}' class.
@@ -3464,6 +3567,22 @@ public interface IF22Package extends EPackage
     EClass MUL = eINSTANCE.getMul();
 
     /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MUL__LEFT = eINSTANCE.getMul_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MUL__RIGHT = eINSTANCE.getMul_Right();
+
+    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.DivImpl <em>Div</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3472,6 +3591,22 @@ public interface IF22Package extends EPackage
      * @generated
      */
     EClass DIV = eINSTANCE.getDiv();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIV__LEFT = eINSTANCE.getDiv_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIV__RIGHT = eINSTANCE.getDiv_Right();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.iF22.impl.ParenthesisImpl <em>Parenthesis</em>}' class.

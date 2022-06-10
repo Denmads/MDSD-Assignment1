@@ -82,8 +82,8 @@ public class IF22Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLessGreaterThanAccess().getGroup_1_0_1(), "rule__LessGreaterThan__Group_1_0_1__0");
 			builder.put(grammarAccess.getLessGreaterThanAccess().getGroup_1_0_2(), "rule__LessGreaterThan__Group_1_0_2__0");
 			builder.put(grammarAccess.getLessGreaterThanAccess().getGroup_1_0_3(), "rule__LessGreaterThan__Group_1_0_3__0");
-			builder.put(grammarAccess.getConcatenationAccess().getGroup(), "rule__Concatenation__Group__0");
-			builder.put(grammarAccess.getConcatenationAccess().getGroup_1(), "rule__Concatenation__Group_1__0");
+			builder.put(grammarAccess.getConcatenationPartAccess().getGroup(), "rule__ConcatenationPart__Group__0");
+			builder.put(grammarAccess.getConcatenationPartAccess().getGroup_1(), "rule__ConcatenationPart__Group_1__0");
 			builder.put(grammarAccess.getAddSubAccess().getGroup(), "rule__AddSub__Group__0");
 			builder.put(grammarAccess.getAddSubAccess().getGroup_1(), "rule__AddSub__Group_1__0");
 			builder.put(grammarAccess.getAddSubAccess().getGroup_1_0_0(), "rule__AddSub__Group_1_0_0__0");
@@ -139,7 +139,7 @@ public class IF22Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBooleanOperationAccess().getRightAssignment_1_1(), "rule__BooleanOperation__RightAssignment_1_1");
 			builder.put(grammarAccess.getEqualityAccess().getRightAssignment_1_1(), "rule__Equality__RightAssignment_1_1");
 			builder.put(grammarAccess.getLessGreaterThanAccess().getRightAssignment_1_1(), "rule__LessGreaterThan__RightAssignment_1_1");
-			builder.put(grammarAccess.getConcatenationAccess().getRightAssignment_1_2(), "rule__Concatenation__RightAssignment_1_2");
+			builder.put(grammarAccess.getConcatenationPartAccess().getRightAssignment_1_2(), "rule__ConcatenationPart__RightAssignment_1_2");
 			builder.put(grammarAccess.getAddSubAccess().getRightAssignment_1_1(), "rule__AddSub__RightAssignment_1_1");
 			builder.put(grammarAccess.getMulDivAccess().getRightAssignment_1_1(), "rule__MulDiv__RightAssignment_1_1");
 			builder.put(grammarAccess.getPrimitiveAccess().getBodyAssignment_0_2(), "rule__Primitive__BodyAssignment_0_2");

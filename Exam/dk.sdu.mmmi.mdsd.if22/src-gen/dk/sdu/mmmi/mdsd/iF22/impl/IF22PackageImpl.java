@@ -11,6 +11,7 @@ import dk.sdu.mmmi.mdsd.iF22.BoolConstant;
 import dk.sdu.mmmi.mdsd.iF22.BooleanOperation;
 import dk.sdu.mmmi.mdsd.iF22.BooleanType;
 import dk.sdu.mmmi.mdsd.iF22.Concatenation;
+import dk.sdu.mmmi.mdsd.iF22.ConcatenationPart;
 import dk.sdu.mmmi.mdsd.iF22.Constant;
 import dk.sdu.mmmi.mdsd.iF22.Div;
 import dk.sdu.mmmi.mdsd.iF22.End;
@@ -193,7 +194,7 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass concatenationEClass = null;
+  private EClass concatenationPartEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -327,6 +328,13 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   private EClass greaterThanOrEqualsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass concatenationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -873,28 +881,6 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
-  public EReference getBooleanOperation_Left()
-  {
-    return (EReference)booleanOperationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getBooleanOperation_Right()
-  {
-    return (EReference)booleanOperationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getEquality()
   {
     return equalityEClass;
@@ -917,9 +903,9 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
-  public EClass getConcatenation()
+  public EClass getConcatenationPart()
   {
-    return concatenationEClass;
+    return concatenationPartEClass;
   }
 
   /**
@@ -1104,9 +1090,53 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
+  public EReference getAnd_Left()
+  {
+    return (EReference)andEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAnd_Right()
+  {
+    return (EReference)andEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getOr()
   {
     return orEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOr_Left()
+  {
+    return (EReference)orEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOr_Right()
+  {
+    return (EReference)orEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1126,9 +1156,53 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
+  public EReference getEquals_Left()
+  {
+    return (EReference)equalsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEquals_Right()
+  {
+    return (EReference)equalsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getNotEquals()
   {
     return notEqualsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNotEquals_Left()
+  {
+    return (EReference)notEqualsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNotEquals_Right()
+  {
+    return (EReference)notEqualsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1148,9 +1222,53 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
+  public EReference getLessThan_Left()
+  {
+    return (EReference)lessThanEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLessThan_Right()
+  {
+    return (EReference)lessThanEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getGreaterThan()
   {
     return greaterThanEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGreaterThan_Left()
+  {
+    return (EReference)greaterThanEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGreaterThan_Right()
+  {
+    return (EReference)greaterThanEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1170,9 +1288,86 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
+  public EReference getLessThanOrEquals_Left()
+  {
+    return (EReference)lessThanOrEqualsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLessThanOrEquals_Right()
+  {
+    return (EReference)lessThanOrEqualsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getGreaterThanOrEquals()
   {
     return greaterThanOrEqualsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGreaterThanOrEquals_Left()
+  {
+    return (EReference)greaterThanOrEqualsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGreaterThanOrEquals_Right()
+  {
+    return (EReference)greaterThanOrEqualsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConcatenation()
+  {
+    return concatenationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConcatenation_Left()
+  {
+    return (EReference)concatenationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConcatenation_Right()
+  {
+    return (EReference)concatenationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1192,9 +1387,53 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
+  public EReference getAdd_Left()
+  {
+    return (EReference)addEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAdd_Right()
+  {
+    return (EReference)addEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSub()
   {
     return subEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSub_Left()
+  {
+    return (EReference)subEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSub_Right()
+  {
+    return (EReference)subEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1214,9 +1453,53 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
    * @generated
    */
   @Override
+  public EReference getMul_Left()
+  {
+    return (EReference)mulEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMul_Right()
+  {
+    return (EReference)mulEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDiv()
   {
     return divEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDiv_Left()
+  {
+    return (EReference)divEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDiv_Right()
+  {
+    return (EReference)divEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1464,14 +1747,12 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
     expEClass = createEClass(EXP);
 
     booleanOperationEClass = createEClass(BOOLEAN_OPERATION);
-    createEReference(booleanOperationEClass, BOOLEAN_OPERATION__LEFT);
-    createEReference(booleanOperationEClass, BOOLEAN_OPERATION__RIGHT);
 
     equalityEClass = createEClass(EQUALITY);
 
     lessGreaterThanEClass = createEClass(LESS_GREATER_THAN);
 
-    concatenationEClass = createEClass(CONCATENATION);
+    concatenationPartEClass = createEClass(CONCATENATION_PART);
 
     addSubEClass = createEClass(ADD_SUB);
 
@@ -1500,28 +1781,56 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
     booleanTypeEClass = createEClass(BOOLEAN_TYPE);
 
     andEClass = createEClass(AND);
+    createEReference(andEClass, AND__LEFT);
+    createEReference(andEClass, AND__RIGHT);
 
     orEClass = createEClass(OR);
+    createEReference(orEClass, OR__LEFT);
+    createEReference(orEClass, OR__RIGHT);
 
     equalsEClass = createEClass(EQUALS);
+    createEReference(equalsEClass, EQUALS__LEFT);
+    createEReference(equalsEClass, EQUALS__RIGHT);
 
     notEqualsEClass = createEClass(NOT_EQUALS);
+    createEReference(notEqualsEClass, NOT_EQUALS__LEFT);
+    createEReference(notEqualsEClass, NOT_EQUALS__RIGHT);
 
     lessThanEClass = createEClass(LESS_THAN);
+    createEReference(lessThanEClass, LESS_THAN__LEFT);
+    createEReference(lessThanEClass, LESS_THAN__RIGHT);
 
     greaterThanEClass = createEClass(GREATER_THAN);
+    createEReference(greaterThanEClass, GREATER_THAN__LEFT);
+    createEReference(greaterThanEClass, GREATER_THAN__RIGHT);
 
     lessThanOrEqualsEClass = createEClass(LESS_THAN_OR_EQUALS);
+    createEReference(lessThanOrEqualsEClass, LESS_THAN_OR_EQUALS__LEFT);
+    createEReference(lessThanOrEqualsEClass, LESS_THAN_OR_EQUALS__RIGHT);
 
     greaterThanOrEqualsEClass = createEClass(GREATER_THAN_OR_EQUALS);
+    createEReference(greaterThanOrEqualsEClass, GREATER_THAN_OR_EQUALS__LEFT);
+    createEReference(greaterThanOrEqualsEClass, GREATER_THAN_OR_EQUALS__RIGHT);
+
+    concatenationEClass = createEClass(CONCATENATION);
+    createEReference(concatenationEClass, CONCATENATION__LEFT);
+    createEReference(concatenationEClass, CONCATENATION__RIGHT);
 
     addEClass = createEClass(ADD);
+    createEReference(addEClass, ADD__LEFT);
+    createEReference(addEClass, ADD__RIGHT);
 
     subEClass = createEClass(SUB);
+    createEReference(subEClass, SUB__LEFT);
+    createEReference(subEClass, SUB__RIGHT);
 
     mulEClass = createEClass(MUL);
+    createEReference(mulEClass, MUL__LEFT);
+    createEReference(mulEClass, MUL__RIGHT);
 
     divEClass = createEClass(DIV);
+    createEReference(divEClass, DIV__LEFT);
+    createEReference(divEClass, DIV__RIGHT);
 
     parenthesisEClass = createEClass(PARENTHESIS);
     createEReference(parenthesisEClass, PARENTHESIS__BODY);
@@ -1588,8 +1897,8 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
     booleanOperationEClass.getESuperTypes().add(this.getExp());
     equalityEClass.getESuperTypes().add(this.getBooleanOperation());
     lessGreaterThanEClass.getESuperTypes().add(this.getEquality());
-    concatenationEClass.getESuperTypes().add(this.getLessGreaterThan());
-    addSubEClass.getESuperTypes().add(this.getConcatenation());
+    concatenationPartEClass.getESuperTypes().add(this.getLessGreaterThan());
+    addSubEClass.getESuperTypes().add(this.getConcatenationPart());
     mulDivEClass.getESuperTypes().add(this.getAddSub());
     primitiveEClass.getESuperTypes().add(this.getMulDiv());
     constantEClass.getESuperTypes().add(this.getPrimitive());
@@ -1606,6 +1915,7 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
     greaterThanEClass.getESuperTypes().add(this.getLessGreaterThan());
     lessThanOrEqualsEClass.getESuperTypes().add(this.getLessGreaterThan());
     greaterThanOrEqualsEClass.getESuperTypes().add(this.getLessGreaterThan());
+    concatenationEClass.getESuperTypes().add(this.getConcatenationPart());
     addEClass.getESuperTypes().add(this.getAddSub());
     subEClass.getESuperTypes().add(this.getAddSub());
     mulEClass.getESuperTypes().add(this.getMulDiv());
@@ -1670,14 +1980,12 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
     initEClass(expEClass, Exp.class, "Exp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(booleanOperationEClass, BooleanOperation.class, "BooleanOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBooleanOperation_Left(), this.getBooleanOperation(), null, "left", null, 0, 1, BooleanOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBooleanOperation_Right(), this.getEquality(), null, "right", null, 0, 1, BooleanOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equalityEClass, Equality.class, "Equality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(lessGreaterThanEClass, LessGreaterThan.class, "LessGreaterThan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(concatenationEClass, Concatenation.class, "Concatenation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(concatenationPartEClass, ConcatenationPart.class, "ConcatenationPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(addSubEClass, AddSub.class, "AddSub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1706,28 +2014,56 @@ public class IF22PackageImpl extends EPackageImpl implements IF22Package
     initEClass(booleanTypeEClass, BooleanType.class, "BooleanType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAnd_Left(), this.getBooleanOperation(), null, "left", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnd_Right(), this.getEquality(), null, "right", null, 0, 1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOr_Left(), this.getBooleanOperation(), null, "left", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOr_Right(), this.getEquality(), null, "right", null, 0, 1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(equalsEClass, Equals.class, "Equals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEquals_Left(), this.getEquality(), null, "left", null, 0, 1, Equals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEquals_Right(), this.getLessGreaterThan(), null, "right", null, 0, 1, Equals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(notEqualsEClass, NotEquals.class, "NotEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNotEquals_Left(), this.getEquality(), null, "left", null, 0, 1, NotEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNotEquals_Right(), this.getLessGreaterThan(), null, "right", null, 0, 1, NotEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lessThanEClass, LessThan.class, "LessThan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLessThan_Left(), this.getLessGreaterThan(), null, "left", null, 0, 1, LessThan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLessThan_Right(), this.getConcatenationPart(), null, "right", null, 0, 1, LessThan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(greaterThanEClass, GreaterThan.class, "GreaterThan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGreaterThan_Left(), this.getLessGreaterThan(), null, "left", null, 0, 1, GreaterThan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGreaterThan_Right(), this.getConcatenationPart(), null, "right", null, 0, 1, GreaterThan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lessThanOrEqualsEClass, LessThanOrEquals.class, "LessThanOrEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLessThanOrEquals_Left(), this.getLessGreaterThan(), null, "left", null, 0, 1, LessThanOrEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLessThanOrEquals_Right(), this.getConcatenationPart(), null, "right", null, 0, 1, LessThanOrEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(greaterThanOrEqualsEClass, GreaterThanOrEquals.class, "GreaterThanOrEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGreaterThanOrEquals_Left(), this.getLessGreaterThan(), null, "left", null, 0, 1, GreaterThanOrEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGreaterThanOrEquals_Right(), this.getConcatenationPart(), null, "right", null, 0, 1, GreaterThanOrEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(concatenationEClass, Concatenation.class, "Concatenation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConcatenation_Left(), this.getConcatenationPart(), null, "left", null, 0, 1, Concatenation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConcatenation_Right(), this.getAddSub(), null, "right", null, 0, 1, Concatenation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(addEClass, Add.class, "Add", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAdd_Left(), this.getAddSub(), null, "left", null, 0, 1, Add.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdd_Right(), this.getMulDiv(), null, "right", null, 0, 1, Add.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subEClass, Sub.class, "Sub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSub_Left(), this.getAddSub(), null, "left", null, 0, 1, Sub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSub_Right(), this.getMulDiv(), null, "right", null, 0, 1, Sub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mulEClass, Mul.class, "Mul", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMul_Left(), this.getMulDiv(), null, "left", null, 0, 1, Mul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMul_Right(), this.getPrimitive(), null, "right", null, 0, 1, Mul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(divEClass, Div.class, "Div", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDiv_Left(), this.getMulDiv(), null, "left", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDiv_Right(), this.getPrimitive(), null, "right", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parenthesisEClass, Parenthesis.class, "Parenthesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParenthesis_Body(), this.getExp(), null, "body", null, 0, 1, Parenthesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

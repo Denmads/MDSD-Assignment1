@@ -7,7 +7,6 @@ import dk.sdu.mmmi.mdsd.iF22.BooleanType;
 import dk.sdu.mmmi.mdsd.iF22.Concatenation;
 import dk.sdu.mmmi.mdsd.iF22.Constant;
 import dk.sdu.mmmi.mdsd.iF22.Div;
-import dk.sdu.mmmi.mdsd.iF22.Equality;
 import dk.sdu.mmmi.mdsd.iF22.Equals;
 import dk.sdu.mmmi.mdsd.iF22.Exp;
 import dk.sdu.mmmi.mdsd.iF22.FunctionCall;
@@ -16,6 +15,7 @@ import dk.sdu.mmmi.mdsd.iF22.GreaterThanOrEquals;
 import dk.sdu.mmmi.mdsd.iF22.IntConstant;
 import dk.sdu.mmmi.mdsd.iF22.IntType;
 import dk.sdu.mmmi.mdsd.iF22.Keyword;
+import dk.sdu.mmmi.mdsd.iF22.LessGreaterThan;
 import dk.sdu.mmmi.mdsd.iF22.LessThan;
 import dk.sdu.mmmi.mdsd.iF22.LessThanOrEquals;
 import dk.sdu.mmmi.mdsd.iF22.Mul;
@@ -61,7 +61,7 @@ public class ExpParser {
   
   protected static Object _parse(final Equals exp) {
     CharSequence _xifexpression = null;
-    Equality _right = exp.getRight();
+    LessGreaterThan _right = exp.getRight();
     if ((_right instanceof StringConstant)) {
       StringConcatenation _builder = new StringConcatenation();
       Object _parse = ExpParser.parse(exp.getLeft());

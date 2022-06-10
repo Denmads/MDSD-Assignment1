@@ -14,6 +14,6 @@ package dk.sdu.mmmi.mdsd.iF22;
  * @model
  * @generated
  */
-public interface AddSub extends Concatenation
+public interface AddSub extends ConcatenationPart
 {
 } // AddSub

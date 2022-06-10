@@ -57,16 +57,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Exp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanOperation" eSuperTypes="#//Exp">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanOperation"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Equality"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanOperation" eSuperTypes="#//Exp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Equality" eSuperTypes="#//BooleanOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="LessGreaterThan" eSuperTypes="#//Equality"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Concatenation" eSuperTypes="#//LessGreaterThan"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AddSub" eSuperTypes="#//Concatenation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConcatenationPart" eSuperTypes="#//LessGreaterThan"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddSub" eSuperTypes="#//ConcatenationPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="MulDiv" eSuperTypes="#//AddSub"/>
   <eClassifiers xsi:type="ecore:EClass" name="Primitive" eSuperTypes="#//MulDiv"/>
   <eClassifiers xsi:type="ecore:EClass" name="Referable">
@@ -84,18 +79,84 @@
   <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanType" eSuperTypes="#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//BooleanOperation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//BooleanOperation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Equals" eSuperTypes="#//Equality"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NotEquals" eSuperTypes="#//Equality"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LessThan" eSuperTypes="#//LessGreaterThan"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GreaterThan" eSuperTypes="#//LessGreaterThan"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LessThanOrEquals" eSuperTypes="#//LessGreaterThan"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GreaterThanOrEquals" eSuperTypes="#//LessGreaterThan"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Add" eSuperTypes="#//AddSub"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sub" eSuperTypes="#//AddSub"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Mul" eSuperTypes="#//MulDiv"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Div" eSuperTypes="#//MulDiv"/>
+  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//BooleanOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanOperation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Equality"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//BooleanOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanOperation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Equality"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Equals" eSuperTypes="#//Equality">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Equality"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//LessGreaterThan"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NotEquals" eSuperTypes="#//Equality">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Equality"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//LessGreaterThan"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LessThan" eSuperTypes="#//LessGreaterThan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//LessGreaterThan"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ConcatenationPart"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GreaterThan" eSuperTypes="#//LessGreaterThan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//LessGreaterThan"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ConcatenationPart"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LessThanOrEquals" eSuperTypes="#//LessGreaterThan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//LessGreaterThan"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ConcatenationPart"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GreaterThanOrEquals" eSuperTypes="#//LessGreaterThan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//LessGreaterThan"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ConcatenationPart"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Concatenation" eSuperTypes="#//ConcatenationPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ConcatenationPart"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//AddSub"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Add" eSuperTypes="#//AddSub">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AddSub"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//MulDiv"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sub" eSuperTypes="#//AddSub">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AddSub"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//MulDiv"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mul" eSuperTypes="#//MulDiv">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//MulDiv"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Primitive"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Div" eSuperTypes="#//MulDiv">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//MulDiv"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Primitive"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parenthesis" eSuperTypes="#//Primitive">
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Exp" containment="true"/>
   </eClassifiers>
