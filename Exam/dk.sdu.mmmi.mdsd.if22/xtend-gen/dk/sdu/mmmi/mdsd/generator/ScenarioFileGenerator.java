@@ -368,7 +368,7 @@ public class ScenarioFileGenerator {
         return "";
       }
       String exp = ExpParser.parse(stmt.getTypeAndValidation()).toString();
-      exp = exp.replace("this", Util.variableName(stmt)).replace("int", Util.variableName(stmt)).replace("String", Util.variableName(stmt)).replace("boolean", Util.variableName(stmt));
+      exp = exp.replaceAll("this", Util.variableName(stmt).toString()).replaceAll("int", Util.variableName(stmt).toString()).replaceAll("String", Util.variableName(stmt).toString()).replaceAll("boolean", Util.variableName(stmt).toString());
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("if (!(");
       _builder.append(exp);
@@ -533,7 +533,7 @@ public class ScenarioFileGenerator {
   }
   
   public String parseExpWithReplace(final Exp exp, final Question question) {
-    return ExpParser.parse(exp).toString().replace("this", Util.variableName(question)).replace("int", Util.variableName(question)).replace("String", Util.variableName(question)).replace("boolean", Util.variableName(question));
+    return ExpParser.parse(exp).toString().replaceAll("this", Util.variableName(question).toString()).replaceAll("int", Util.variableName(question).toString()).replaceAll("String", Util.variableName(question).toString()).replaceAll("boolean", Util.variableName(question).toString());
   }
   
   public CharSequence genLogic(final Statement stmt) {

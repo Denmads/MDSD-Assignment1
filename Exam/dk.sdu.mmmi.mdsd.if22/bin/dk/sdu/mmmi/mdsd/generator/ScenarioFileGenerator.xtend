@@ -152,7 +152,7 @@ class ScenarioFileGenerator {
 		}
 		
 		var exp = stmt.typeAndValidation.parse.toString
-		exp = exp.replace("this", stmt.variableName).replace("int", stmt.variableName).replace("String", stmt.variableName).replace("boolean", stmt.variableName)
+		exp = exp.replaceAll("this", stmt.variableName.toString).replaceAll("int", stmt.variableName.toString).replaceAll("String", stmt.variableName.toString).replaceAll("boolean", stmt.variableName.toString)
 		
 		'''
 		if (!(«exp»)) {
@@ -202,6 +202,6 @@ class ScenarioFileGenerator {
 	}
 	
 	def parseExpWithReplace(Exp exp, Question question) {
-		exp.parse.toString.replace("this", question.variableName).replace("int", question.variableName).replace("String", question.variableName).replace("boolean", question.variableName)
+		exp.parse.toString.replaceAll("this", question.variableName.toString).replaceAll("int", question.variableName.toString).replaceAll("String", question.variableName.toString).replaceAll("boolean", question.variableName.toString)
 	}
 }

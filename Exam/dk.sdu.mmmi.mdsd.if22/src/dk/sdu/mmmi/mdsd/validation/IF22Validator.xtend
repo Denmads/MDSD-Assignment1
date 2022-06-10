@@ -141,7 +141,7 @@ class IF22Validator extends AbstractIF22Validator {
 			error("There should be exactly one type in the expression.", IF22Package.eINSTANCE.question_TypeAndValidation, TOO_MANY_TYPE_KEYWORDS)
 		}
 		
-		if (stmt.variable !== null && stmt.returnTypeOfQuestion != stmt.variable.type) {
+		if (stmt.variable !== null && !stmt.returnTypeOfQuestion.toJavaType.equals(stmt.variable.type.toJavaType)) {
 			error("Cannot assign different type to variable.", IF22Package.eINSTANCE.question_Variable, VAR_TYPE_MISMATCH)
 		}
 	}
@@ -154,22 +154,12 @@ class IF22Validator extends AbstractIF22Validator {
 			error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_NUMBER_MISMATCH)
 		}
 		
-		for (var i = 0; i < funcParams.size; i++) {
+		//TODO: need to derive type from exp
+		/*for (var i = 0; i < funcParams.size; i++) {
 			if (funcParams.get(i) != fCall.arguments.get(i)) {
-				error("Argument and paramter types are not matching.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_TYPE_MISMATCH)
+				error("Argument and parameter types are not matching.", IF22Package.eINSTANCE.functionCall_Arguments, PARAMETER_TYPE_MISMATCH)
 			}
-		}
+		}*/
 	}
-	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					IF22Package.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
 	
 }

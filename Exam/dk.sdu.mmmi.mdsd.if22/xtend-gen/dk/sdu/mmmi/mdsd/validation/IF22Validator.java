@@ -173,7 +173,7 @@ public class IF22Validator extends AbstractIF22Validator {
     if (_notEquals) {
       this.error("There should be exactly one type in the expression.", IF22Package.eINSTANCE.getQuestion_TypeAndValidation(), IF22Validator.TOO_MANY_TYPE_KEYWORDS);
     }
-    if (((stmt.getVariable() != null) && (!Objects.equal(Util.returnTypeOfQuestion(stmt), stmt.getVariable().getType())))) {
+    if (((stmt.getVariable() != null) && (!Util.toJavaType(Util.returnTypeOfQuestion(stmt)).equals(Util.toJavaType(stmt.getVariable().getType()))))) {
       this.error("Cannot assign different type to variable.", IF22Package.eINSTANCE.getQuestion_Variable(), IF22Validator.VAR_TYPE_MISMATCH);
     }
   }
@@ -186,14 +186,6 @@ public class IF22Validator extends AbstractIF22Validator {
     boolean _notEquals = (_size != _size_1);
     if (_notEquals) {
       this.error("Number of parameters and arguments are wrong.", IF22Package.eINSTANCE.getFunctionCall_Arguments(), IF22Validator.PARAMETER_NUMBER_MISMATCH);
-    }
-    for (int i = 0; (i < funcParams.size()); i++) {
-      Type _get = funcParams.get(i);
-      Exp _get_1 = fCall.getArguments().get(i);
-      boolean _notEquals_1 = (!Objects.equal(_get, _get_1));
-      if (_notEquals_1) {
-        this.error("Argument and paramter types are not matching.", IF22Package.eINSTANCE.getFunctionCall_Arguments(), IF22Validator.PARAMETER_TYPE_MISMATCH);
-      }
     }
   }
 }

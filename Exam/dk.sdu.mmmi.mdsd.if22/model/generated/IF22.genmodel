@@ -5,7 +5,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="8.0"
     copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="IF22" basePackage="dk.sdu.mmmi.mdsd" disposableProviderFactory="true"
-      fileExtensions="if22" ecorePackage="IF22.ecore#/">
+      fileExtensions="if" ecorePackage="IF22.ecore#/">
     <genClasses ecoreClass="IF22.ecore#//IF22">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IF22.ecore#//IF22/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IF22.ecore#//IF22/functions"/>
